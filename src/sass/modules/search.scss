@@ -1,0 +1,201 @@
+.searchContainer {
+	width: 0;
+	min-height: 40px;
+	background: #f1f1f1;
+	position: absolute;
+	z-index: 10000;
+	// top: 50px;
+	top: 0;
+	right: 0;
+	transform-origin: 100% 0;
+	transition-property: min-height, width, top, right;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+
+	.searchForm {
+		width: 100%;
+		height: 40px;
+		margin: 0 auto;
+		position: relative;
+		transition-property: width, height, transform;
+		transition-duration: 0.5s;
+		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+
+		&__input {
+			width: 100%;
+			height: 100%;
+			padding: 0 10% 0 10px;
+			font-weight: 700;
+			border: none;
+			background: transparent;
+			font-size: 0.8em;
+			color: #ec5a62;
+			transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);
+
+			&::-ms-clear {  display: none; width : 0; height: 0; }
+			&::-ms-reveal {  display: none; width : 0; height: 0; }
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration { display: none; }
+
+			&::-webkit-input-placeholder {
+				color: #c2c2c2;
+			}
+
+			&:-moz-placeholder {
+				color: #c2c2c2;
+			}
+
+			&::-moz-placeholder {
+				color: #c2c2c2;
+			}
+
+			&:-ms-input-placeholder {
+				color: #c2c2c2;
+			}
+
+			&:focus::-webkit-input-placeholder {
+				color: transparent;
+			}
+
+			&:focus,
+			.searchForm__submit:focus {
+				outline: none;
+			}
+		}
+
+		&__submit {
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			text-indent: 100px;
+			overflow: hidden;
+			right: 0;
+			top: 50%;
+			background: transparent url(../images/magnifier.svg) no-repeat center center;
+			background-size: 100%;
+			border: none;
+			pointer-events: none;
+			transform-origin: 50% 50%;
+			opacity: 0;
+			transform: translate3d(-30px,-50%,0) scale3d(0,0,1);
+		}
+	}
+
+	.searchClose {
+		width: 36px;
+		height: 36px;
+		position: absolute;
+		right: 1em;
+		top: 1em;
+		overflow: hidden;
+		text-indent: 100%;
+		cursor: pointer;
+		pointer-events: none;
+		opacity: 0;
+		transform: scale3d(0,0,1);
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			border-radius: 3px;
+			opacity: 0.2;
+			background: #000;
+		}
+
+		&:hover.searchClose::before,
+		&:hover.searchClose::after {
+			opacity: 1;
+		}
+
+		&::before {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+	}
+
+	// TODO: Rename to js-open
+	&.open {
+		width: 100%;
+		min-height: 100%;
+		top: 0px;
+		right: 0px;
+
+		.searchForm {
+			width: 80%;
+			height: 160px;
+			transform: translate3d(0,3em,0);
+
+			&__input {
+				font-size: 7em;
+			}
+
+			&__submit {
+				pointer-events: auto;
+				opacity: 1;
+				transform: translate3d(-30px,-50%,0) scale3d(1,1,1);
+				transition: opacity 0.3s, transform 0.3s;
+				transition-delay: 0.5s;
+			}
+		}
+
+		.searchClose {
+			opacity: 1;
+			pointer-events: auto;
+			transform: scale3d(1,1,1);
+			transition: opacity 0.3s, transform 0.3s;
+			transition-delay: 0.5s;
+		}
+	}
+}
+
+input[type="search"] { 
+	box-sizing: border-box;	
+}
+
+
+
+.searchContainer.open .searchForm__input {
+	@include respondTo(medium) {
+		padding: 0 25% 0 10px;
+		font-size: 5em;
+	}
+
+	@include respondTo(small) {
+		padding: 0 25% 0 10px;
+		font-size: 3em;
+	}
+
+	@include respondTo(x-small) {
+		padding: 0 25% 0 10px;
+		font-size: 2em;
+	}
+}
+
+.searchContainer.open .searchForm__submit {  
+	@include respondTo(x-small) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
+
+	@include respondTo(small) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
+
+	@include respondTo(medium) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
+}
+
+
+
