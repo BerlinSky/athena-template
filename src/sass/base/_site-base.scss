@@ -29,15 +29,15 @@ body, input, select, textarea {
 body {
   padding: 0;
 
-  @include respondTo(medium) {
-    padding-top: 3.5em;
-  } 
-  @include respondTo(large) {
-    padding-top: 3.5em;
-  } 
-  @include respondTo(xlarge) {
-    padding-top: 3.5em;
-  }
+  // @include respondTo(medium) {
+  //   padding-top: 3.5em;
+  // } 
+  // @include respondTo(large) {
+  //   padding-top: 3.5em;
+  // } 
+  // @include respondTo(xlarge) {
+  //   padding-top: 3.5em;
+  // }
 
   // background-color: yellow;
 }
