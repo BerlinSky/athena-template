@@ -1,0 +1,47 @@
+.media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+
+  &__figure {
+    margin-right: 1em;
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  &__body,
+  &__body:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin: 0;
+  } 
+
+  &__subtitle {
+    margin: 0 0 .3em;
+    font-size: 1.0rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  &__description {
+    font-size: 1.0rem;
+    font-weight: 300;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--reverse > &__figure {
+    order: 1;
+    margin: 0 0 0 1em;
+  }
+}
+
+
+
+
