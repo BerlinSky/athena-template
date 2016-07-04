@@ -2,13 +2,13 @@
   margin-right: 10px;
   text-align: right;
 
-  @include respondTo(x-small) {
-    text-align: center;
-  }
+  // @include respondTo(x-small) {
+  //   text-align: center;
+  // }
 
-  @include respondTo(small) {
-    text-align: center;
-  }
+  // @include respondTo(small) {
+  //   text-align: center;
+  // }
 }
 
 .actionButton {
