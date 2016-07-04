@@ -10,6 +10,14 @@
 	padding: 5px 10px 10px 5px;
 	// background-color: yellow;
 
+	@include respondTo(small) {
+		flex-direction: column;
+	}
+
+	@include respondTo(x-small) {
+		flex-direction: column;
+	}
+
 	&__section{
 		flex: 1;
 
@@ -28,6 +36,14 @@
 
 	&__section + &__section {
 		margin-left: 1em;
+
+		@include respondTo(x-small) {
+			margin-left: 0;
+		}
+
+		@include respondTo(small) {
+			margin-left: 0;
+		}
 	}
 
 	&__panel {
@@ -62,23 +78,10 @@
 			outline: none;
 		}
 
-		input[type="submit"] {
-			padding: .3em 1em;
-			background: #555;
-			border: none;
-			color: #fff;   
-			border-radius: 0;
-			cursor: pointer;
-		}
-
 		label {
 			width: 5em;
 			margin-right: .5em;
 			text-align: right;
-		}
-
-		input[type="submit"] {
-			margin-left: auto;
 		}
 	}
 }
@@ -86,6 +89,14 @@
 .buttonPanel {
 	margin-right: 10px;
 	text-align: right;
+
+	@include respondTo(x-small) {
+		text-align: center;
+	}
+
+	@include respondTo(small) {
+		text-align: center;
+	}
 }
 
 /* small screens */
