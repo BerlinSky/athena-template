@@ -86,18 +86,6 @@
 	}
 }
 
-.buttonPanel {
-	margin-right: 10px;
-	text-align: right;
-
-	@include respondTo(x-small) {
-		text-align: center;
-	}
-
-	@include respondTo(small) {
-		text-align: center;
-	}
-}
 
 /* small screens */
 // @media (max-width: 600px) {

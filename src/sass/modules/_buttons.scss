@@ -1,3 +1,16 @@
+.buttonPanel {
+  margin-right: 10px;
+  text-align: right;
+
+  @include respondTo(x-small) {
+    text-align: center;
+  }
+
+  @include respondTo(small) {
+    text-align: center;
+  }
+}
+
 .actionButton {
   appearance: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
