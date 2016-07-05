@@ -23,4 +23,14 @@
 	}
 }
 
+.footerPanel {
+	// background-color: yellow;
+
+	&__item {
+		&--default {
+			text-align: center;
+		}
+	}
+}
+
 
