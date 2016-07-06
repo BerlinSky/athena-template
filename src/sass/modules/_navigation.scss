@@ -92,6 +92,20 @@
   line-height: inherit;
   text-align: right;
 
+  &__menu {
+    // @include respondTo(medium) {
+    //   visibility: hidden;
+    // } 
+
+    // @include respondTo(large) {
+    //   visibility: hidden;
+    // } 
+
+    // @include respondTo(x-large) {
+    //   visibility: hidden;
+    // }
+  }
+
   ul {
     height: inherit;
     line-height: inherit;
