@@ -33,9 +33,10 @@
 .l-footer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   // flex-direction: column;
   // justify-content: space-around;
-  // align-items: center;
+  align-items: center;
 }
 
 .l-mainContent {

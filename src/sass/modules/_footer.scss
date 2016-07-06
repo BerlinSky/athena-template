@@ -31,9 +31,22 @@
 }
 
 .footerPanel {
-	background-color: yellow;
+	// background-color: yellow;
 	border: 1px solid red;
-	
+
+	order: 2;
+
+	&__links {
+		@include respondTo(x-small) {
+			order: 1;
+			flex-grow: 1;
+		}
+		@include respondTo(small) {
+			order: 1;
+			flex-grow: 1;
+		}
+	}
+
 	&__item {
 		&--default {
 			text-align: center;
