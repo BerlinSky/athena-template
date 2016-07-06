@@ -21,6 +21,13 @@
 		letter-spacing: _font(kerning-heading);
 		// text-transform: uppercase;
 	}
+
+	.siteBtn {
+		display: inline-block;
+		background-color: white;
+		color: black;
+		min-width: 40px;
+	}
 }
 
 .footerPanel {
@@ -30,6 +37,18 @@
 		&--default {
 			text-align: center;
 		}
+	}
+}
+
+.foorterIconPanel {
+	width: 100%;
+
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+
+	&__item {
+		// border: 1px solid red;
 	}
 }
 
