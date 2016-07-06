@@ -15,6 +15,19 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+
+    @include respondTo(x-small) {
+      visibility: hidden;
+    } 
+
+    @include respondTo(small) {
+      visibility: hidden;
+    } 
+
+    // @include respondTo(medium) {
+    //   visibility: hidden;
+    // } 
+
   }
 }
 
