@@ -31,8 +31,9 @@
 }
 
 .footerPanel {
-	// background-color: yellow;
-
+	background-color: yellow;
+	border: 1px solid red;
+	
 	&__item {
 		&--default {
 			text-align: center;

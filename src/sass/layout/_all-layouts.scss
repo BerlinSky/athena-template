@@ -27,15 +27,15 @@
     // @include respondTo(medium) {
     //   visibility: hidden;
     // } 
-
   }
 }
 
 .l-footer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  // flex-direction: column;
+  // justify-content: space-around;
+  // align-items: center;
 }
 
 .l-mainContent {
