@@ -9823,7 +9823,36 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)(function () {});
+(0, _jquery2.default)(function () {
+	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
+		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
+
+		mobileMenu.css({ 'display': 'block' });
+		mobileMenu.css({ right: '-320px' });
+		mobileMenu.addClass('magictime slideLeft');
+		setTimeout(function () {
+			mobileMenu.css({ right: 0 });
+			mobileMenu.removeClass('slideLeft');
+		}, 1000);
+
+		(0, _jquery2.default)('html, body').on('touchmove', function (evt) {
+			//prevent native touch activity like scrolling
+			evt.preventDefault();
+		});
+	});
+
+	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
+		(0, _jquery2.default)('html, body').unbind('touchmove');
+
+		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
+		mobileMenu.addClass('magictime slideRight');
+
+		setTimeout(function () {
+			mobileMenu.css({ 'display': 'none' });
+			mobileMenu.removeClass('slideRight');
+		}, 1000);
+	});
+});
 
 },{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map
