@@ -9854,7 +9854,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	});
 });
 
-(0, _jquery2.default)('.dataForm .input-group input').focusout(function () {
+(0, _jquery2.default)('.dataForm .inputGroup input').focusout(function () {
 	var text_val = (0, _jquery2.default)(this).val();
 
 	if (text_val === "") {

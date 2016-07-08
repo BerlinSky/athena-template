@@ -32,7 +32,7 @@ $(function () {
 });
 
   
-$('.dataForm .input-group input').focusout(function(){
+$('.dataForm .inputGroup input').focusout(function(){
   let text_val = $(this).val();
   
   if(text_val === "") {
