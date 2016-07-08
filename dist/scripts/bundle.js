@@ -9854,5 +9854,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	});
 });
 
+(0, _jquery2.default)('.dataForm .input-group input').focusout(function () {
+	var text_val = (0, _jquery2.default)(this).val();
+
+	if (text_val === "") {
+		(0, _jquery2.default)(this).removeClass('has-value');
+	} else {
+		(0, _jquery2.default)(this).addClass('has-value');
+	}
+});
+
 },{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map
