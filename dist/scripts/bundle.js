@@ -9855,12 +9855,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 (0, _jquery2.default)('.dataForm .inputGroup input').focusout(function () {
-	var text_val = (0, _jquery2.default)(this).val();
+	var textVal = (0, _jquery2.default)(undefined).val();
 
-	if (text_val === "") {
-		(0, _jquery2.default)(this).removeClass('has-value');
+	if (textVal === "") {
+		(0, _jquery2.default)(undefined).removeClass('has-value');
 	} else {
-		(0, _jquery2.default)(this).addClass('has-value');
+		(0, _jquery2.default)(undefined).addClass('has-value');
 	}
 });
 

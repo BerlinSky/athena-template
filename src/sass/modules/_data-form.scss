@@ -3,21 +3,13 @@
   padding-bottom: 20px;
 
   input {
-    background: none;
-    border: solid 2px #21a1e1;
-    color: #21a1e1;
-    padding: 15px 40px;
-    font-size: 18px;
-    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    padding: 5px;
   }
 
   input:focus, input:active {
     outline: none;
-  }
-
-  input[type="text"], input[type="email"] {
-    border: none;
-    border-bottom: solid 2px #21a1e1;
   }
 
   .inputGroup {
@@ -26,23 +18,20 @@
     position: relative;
   }
 
-  .inputGroup input {
-    padding: 15px 0px;
-  }
-
   .inputGroup label {
     position: absolute;
     top: 50%;
     left: 0px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     transform: translateY(-50%);
-    // font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
     font-style: italic;
-    font-size: 18px;
+    font-size: 14px;
     color: #999;
     pointer-events: none;
     transition: all 0.15s ease-out 0s;
   }
-  
+
   .inputGroup input:focus + label,
   .inputGroup input.has-value + label {
     top: -10px;

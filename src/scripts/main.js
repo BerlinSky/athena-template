@@ -32,14 +32,14 @@ $(function () {
 });
 
   
-$('.dataForm .inputGroup input').focusout(function(){
-  let text_val = $(this).val();
+$('.dataForm .inputGroup input').focusout(() => {
+  const textVal = $(this).val();
   
-  if(text_val === "") {
+  if(textVal === "") {
     $(this).removeClass('has-value');
   } else {
     $(this).addClass('has-value');
-  }
+  } 
 });
   
 
