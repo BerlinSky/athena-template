@@ -6,6 +6,9 @@
     "test": "jest",
     "start": "gulp"
   },
+  "browser": {
+    "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -34,5 +37,9 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "browserify-shim": "^3.8.12",
+    "selectric": "^1.10.1"
   }
 }

@@ -1,46 +1,18 @@
 import $ from 'jquery';
+import 'chosen';
 
 $(function () {
-	$('[data-mobileMenu="open"]').click(function() {
-		const mobileMenu = $('[data-mobileMenu="panel"]');
+	console.log("Here!");
 
-		mobileMenu.css({'display': 'block'});
-		mobileMenu.css({right: '-320px'});
-		mobileMenu.addClass('magictime slideLeft');
-		setTimeout(function(){
-			mobileMenu.css({right: 0});
-			mobileMenu.removeClass('slideLeft');
-		}, 1000);
-
-		$('html, body').on('touchmove', function(evt){ 
-	     //prevent native touch activity like scrolling
-	     evt.preventDefault(); 
-	   });
+	$(".chosenSelect").chosen({
+		max_selected_options: 1
 	})
 
-	$('[data-mobileMenu="close"]').click(function() {
-		$('html, body').unbind('touchmove');
-
-		const mobileMenu = $('[data-mobileMenu="panel"]');
-		mobileMenu.addClass('magictime slideRight');
-		
-		setTimeout(function(){
-			mobileMenu.css({'display': 'none'});
-			mobileMenu.removeClass('slideRight');
-		}, 1000);
-	})
+	console.log("There!");
 });
 
-  
-$('.dataForm .inputGroup input').focusout(() => {
-  const textVal = $(this).val();
-  
-  if(textVal === "") {
-    $(this).removeClass('has-value');
-  } else {
-    $(this).addClass('has-value');
-  } 
-});
+
+
   
 
 
