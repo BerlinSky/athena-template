@@ -37,70 +37,48 @@ nav {
 	text-transform: uppercase;
 	font-size: 14px;
 	cursor: pointer;
+
+	&:hover {
+	  background: #333;
+	  // border-radius: 5px;
+	}
 }
 
-nav > ul {
-	// position: fixed;
- //  left: 1.725rem;
- //  width: 100%;
-
-  // list-style: none;
-  // padding: 0;
-  // margin: 0;
-  // display: inline-block;
-  // background: #ddd;
-  // border-radius: 5px;
-}
-nav > ul > li {
-  // width: 150px;
-  // height: 65px;
-  // line-height: 65px;
-  // position: relative;
-  // text-transform: uppercase;
-  // font-size: 14px;
-  // cursor: pointer;
-}
-nav > ul > li:hover {
-  // background: #333;
-  // border-radius: 5px;
-}
-
-ul.drop-menu {
+.dropMenuList {
   position: absolute;
   top: 100%;
   left: 0%;
   width: 100%;
   padding: 0;
-}
-ul.drop-menu li {
-  // background: #666;
-  background: #000;
-  color: rgba(255, 255, 255, 0.7);
-}
-ul.drop-menu li:hover {
-  // background: #606060;
-  background: #333;
-}
-ul.drop-menu li:last-child {
-  // border-radius: 0px 0px 5px 5px;
+
+  &__item {
+    // background: #666;
+    background: #000;
+    color: rgba(255, 255, 255, 0.7);
+
+    &:hover {
+		  // background: #606060;
+		  background: #333;
+		}
+  }
 }
 
-ul.drop-menu li {
+ul.dropMenuList li {
   display: none;
 }
 
-li:hover > ul.drop-menu li {
+li:hover > ul.dropMenuList li {
   display: block;
 }
   
-li:hover > ul.drop-menu.menu-1 {
+.navlinks__dropMenu:hover > .menu__swish {
 	perspective: 1000px;
 
 	li {
 		// opacity: 0;
 		@for $i from 1 through 6 {
 			&:nth-child(#{$i}) {
-				animation-name: menu1;
+				animation-name: animated__swish;
 		    animation-duration: 250ms * $i;
 		    animation-timing-function: ease-in-out;
 		    fill-mode: forwards;
@@ -108,7 +86,7 @@ li:hover > ul.drop-menu.menu-1 {
 		}
 	}
 
-	@keyframes menu1 {
+	@keyframes animated__swish {
 		0% {
 			opacity: 0;
 			transform: rotateY(-90deg) translateY(30px);
@@ -120,7 +98,7 @@ li:hover > ul.drop-menu.menu-1 {
 	}
 }        
 
-li:hover > ul.drop-menu.menu-2 {
+.navlinks__dropMenu:hover > .menu__dropIn {
 	perspective: 1000px;
 	transform-origin: top center;
 
@@ -128,7 +106,7 @@ li:hover > ul.drop-menu.menu-2 {
 		// opacity: 0;
 		@for $i from 1 through 6 {
 			&:nth-child(#{$i}) {
-				animation-name: menu2;
+				animation-name: animated__dropIn;
 		    animation-duration: 250ms * $i;
 		    animation-timing-function: ease-in-out;
 		    fill-mode: forwards;
@@ -136,7 +114,7 @@ li:hover > ul.drop-menu.menu-2 {
 		}
 	}
 
-	@keyframes menu2 {
+	@keyframes animated__dropIn {
 		0% {
 			opacity: 0;
 			transform: rotateX(-90deg);
@@ -148,7 +126,7 @@ li:hover > ul.drop-menu.menu-2 {
 	}
 } 
 
-li:hover > ul.drop-menu.menu-3 {
+.navlinks__dropMenu:hover > .menu__flipIn--left {
 	perspective: 1000px;
 	transform-origin: top right;
 
@@ -156,7 +134,7 @@ li:hover > ul.drop-menu.menu-3 {
 		// opacity: 0;
 		@for $i from 1 through 6 {
 			&:nth-child(#{$i}) {
-				animation-name: menu3;
+				animation-name: animate__flipIn--left;
 		    animation-duration: 250ms * $i;
 		    animation-timing-function: ease-in-out;
 		    fill-mode: forwards;
@@ -164,7 +142,7 @@ li:hover > ul.drop-menu.menu-3 {
 		}
 	}
 
-	@keyframes menu3 {
+	@keyframes animate__flipIn--left {
 		0% {
 			opacity: 0;
 			transform: rotate(30deg) translate(-30px);
@@ -176,7 +154,7 @@ li:hover > ul.drop-menu.menu-3 {
 	}
 } 
 
-li:hover > ul.drop-menu.menu-4 {
+.navlinks__dropMenu:hover > .menu__flipIn--right {
 	perspective: 1000px;
 	transform-origin: top right;
 
@@ -184,7 +162,7 @@ li:hover > ul.drop-menu.menu-4 {
 		// opacity: 0;
 		@for $i from 1 through 6 {
 			&:nth-child(#{$i}) {
-				animation-name: menu4;
+				animation-name: animate__flipIn--right;
 		    animation-duration: 250ms * $i;
 		    animation-timing-function: ease-in-out;
 		    fill-mode: forwards;
@@ -192,7 +170,7 @@ li:hover > ul.drop-menu.menu-4 {
 		}
 	}
 
-	@keyframes menu4 {
+	@keyframes animate__flipIn--right {
 		0% {
 			opacity: 0;
 			transform: rotate(-30deg) translate(30px);
