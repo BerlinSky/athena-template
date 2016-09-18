@@ -18,41 +18,47 @@
 @import "./chosen/chosen";
 @import "./search-bar/search-bar";
 
-// navigation {
-// 	z-index: 5000;
-// }
 
 nav {
-	// position: fixed;
-
-  // padding: 50px;
   text-align: center;
-	// z-index: 1000;
-
 }
-nav > ul {
+
+.navLinks--fixed {
 	position: fixed;
-    // top: 0;
   left: 1.725rem;
   width: 100%;
+}
 
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.navlinks__dropMenu {
+	width: 150px;
+	height: 65px;
+	line-height: 65px;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+nav > ul {
+	// position: fixed;
+ //  left: 1.725rem;
+ //  width: 100%;
+
+  // list-style: none;
+  // padding: 0;
+  // margin: 0;
   // display: inline-block;
   // background: #ddd;
   // border-radius: 5px;
 }
 nav > ul > li {
-  // float: left;
-  width: 150px;
-  height: 65px;
-  line-height: 65px;
-  position: relative;
-  text-transform: uppercase;
-  font-size: 14px;
-  // color: rgba(0, 0, 0, 0.7);
-  cursor: pointer;
+  // width: 150px;
+  // height: 65px;
+  // line-height: 65px;
+  // position: relative;
+  // text-transform: uppercase;
+  // font-size: 14px;
+  // cursor: pointer;
 }
 nav > ul > li:hover {
   // background: #333;
