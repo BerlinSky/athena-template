@@ -11112,13 +11112,24 @@ require('chosen');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-	console.log("Here!");
+  console.log("Here!");
 
-	(0, _jquery2.default)(".chosenSelect").chosen({
-		max_selected_options: 1
-	});
+  (0, _jquery2.default)(".chosenSelect").chosen({
+    max_selected_options: 1
+  });
 
-	console.log("There!");
+  console.log("There!");
+
+  (0, _jquery2.default)('.actionForm .input-group input').focusout(function () {
+
+    var text_val = (0, _jquery2.default)(this).val();
+
+    if (text_val === "") {
+      (0, _jquery2.default)(this).removeClass('has-value');
+    } else {
+      (0, _jquery2.default)(this).addClass('has-value');
+    }
+  });
 });
 
 },{"chosen":2,"jquery":1}]},{},[3])
