@@ -23,6 +23,39 @@ $(function () {
     
   });
 
+  // Fixed header component:
+
+  let main = $("main");
+  let header = $("header");
+  let hHeight;
+
+  function setTopHeight() {
+    hHeight = header.offsetHeight;
+    main.css("padding-top", hHeight + "px");
+  }
+
+  function onScroll() {
+    window.addEventListener("scroll", callbackFunc);
+
+    function callbackFunc() {
+      const y = window.pageYOffset;
+      if (y > 50) {
+        header.addClass("scroller");
+      } else {
+        header.removeClass("scroller");
+      }
+    }
+  }
+
+  window.onload = function() {
+    setTopHeight();
+    onScroll();
+  };
+
+  window.onresize = function() {
+    setTopHeight();
+    onScroll();
+  };
 });
 
 

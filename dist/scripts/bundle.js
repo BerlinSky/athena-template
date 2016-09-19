@@ -11130,6 +11130,40 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       (0, _jquery2.default)(this).addClass('has-value');
     }
   });
+
+  // Fixed header component:
+
+  var main = (0, _jquery2.default)("main");
+  var header = (0, _jquery2.default)("header");
+  var hHeight = void 0;
+
+  function setTopHeight() {
+    hHeight = header.offsetHeight;
+    main.css("padding-top", hHeight + "px");
+  }
+
+  function onScroll() {
+    window.addEventListener("scroll", callbackFunc);
+
+    function callbackFunc() {
+      var y = window.pageYOffset;
+      if (y > 50) {
+        header.addClass("scroller");
+      } else {
+        header.removeClass("scroller");
+      }
+    }
+  }
+
+  window.onload = function () {
+    setTopHeight();
+    onScroll();
+  };
+
+  window.onresize = function () {
+    setTopHeight();
+    onScroll();
+  };
 });
 
 },{"chosen":2,"jquery":1}]},{},[3])
