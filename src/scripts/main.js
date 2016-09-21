@@ -1,62 +1,87 @@
 import $ from 'jquery';
-import 'chosen';
 
 $(function () {
-	console.log("Here!");
 
-	$(".chosenSelect").chosen({
-		max_selected_options: 1
-	})
+  const perfMarkButton = $('.js-performance-mark');
 
-	console.log("There!");
+  perfMarkButton.click(function( event ) {
 
-  $('.actionForm .input-group input').focusout(function() {
-    
-    const text_val = $(this).val();
-    
-    if(text_val === "") {
-      $(this).removeClass('has-value');
-    } 
-    else {
-      $(this).addClass('has-value');
-    }
-    
+    runPerformanceMark();
+
+    // console.log('Start: Performance Mark()');
+
+    // if(!window.performance || !window.performance.mark || !window.performance.measure) {
+    //   alert("Unfortunately, your browser does not support performance.mark().");
+    //   return;
+    // }
+
+    // performance.mark("loadTest-start");
+    // loadTest();
+    // performance.mark("loadTest-end");
+
+    // performance.measure("loadTest", "loadTest-start", "loadTest-end");
+
+    // performance.clearMarks("loadTest-start");
+    // performance.clearMarks("loadTest-end");
+
+    // const result = performance.getEntriesByName("loadTest");
+
+    // console.log('Result', result);
+    // console.log('Result: duration', result[0].duration);
+
+    // console.log('End: Performance Mark()');
+
+    // performance.clearMeasures("loadTest");
   });
 
-  // Fixed header component:
-
-  let main = $("main");
-  let header = $("header");
-  let hHeight;
-
-  function setTopHeight() {
-    hHeight = header.offsetHeight;
-    main.css("padding-top", hHeight + "px");
-  }
-
-  function onScroll() {
-    window.addEventListener("scroll", callbackFunc);
-
-    function callbackFunc() {
-      const y = window.pageYOffset;
-      if (y > 50) {
-        header.addClass("scroller");
-      } else {
-        header.removeClass("scroller");
-      }
-    }
-  }
-
-  window.onload = function() {
-    setTopHeight();
-    onScroll();
-  };
-
-  window.onresize = function() {
-    setTopHeight();
-    onScroll();
-  };
 });
+
+function runPerformanceMark() {
+  console.log('Start: Performance Mark()');
+
+  if(!window.performance || !window.performance.mark || !window.performance.measure) {
+    alert("Unfortunately, your browser does not support performance.mark().");
+    return;
+  }
+
+  performance.mark("loadTest-start");
+  loadTest();
+  performance.mark("loadTest-end");
+
+  performance.measure("loadTest", "loadTest-start", "loadTest-end");
+
+  performance.clearMarks("loadTest-start");
+  performance.clearMarks("loadTest-end");
+
+  const result = performance.getEntriesByName("loadTest");
+
+  console.log('Result', result);
+  console.log('Result: duration', result[0].duration);
+
+  console.log('End: Performance Mark()');
+
+  performance.clearMeasures("loadTest");
+}
+
+function loadTest() {
+  let booklist = [];
+  
+  for(let i = 0; i < 100; i++) {
+    const book = {
+      id: i,
+      dimensions: {
+        height: Math.round(Math.random() * 200),
+        width: Math.round(Math.random() * 100),
+        depth: Math.round(Math.random() * 10)
+      },
+      pubDate: new Date()
+    };
+
+    booklist.push(book);
+  }
+
+  return booklist;
+}
 
 
   
