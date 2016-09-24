@@ -20,98 +20,8 @@
 @import "./chosen/chosen";
 @import "./search-bar/search-bar";
 @import "./logon-form/logon-form";
+@import "./flip-card/flip-card";
 
-// Flip cards:
-.flipCardContainer {
-  cursor: pointer;
-  perspective: 1000;
-  border: 2px solid #ccc;
-}
-
-.flipCardContainer:hover .flip,  
-  .flipCardContainer.flip {
-    transform: rotateY(180deg);
-  }
-
-.flipCardContainer, .front, .back {
-  width: 640px;
-  height: 360px;
-}
-
-.flip {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-
-.front, .back {
-  backface-visibility: hidden;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-shadow: 8px 8px 25px 5px #ccc;
-}
-
-.front p{
-  z-index: 2;
-}
-
-
-// nav {
-//   display: flex;
-//   align-items: flex-end;
-//   justify-content: space-between;
-//   transition: align-items .3s;
-// }
-
-// .logo {
-// }
-
-// .logo {
-//   display: block;
-//   padding: 20px 30px;
-//   transition: all .2s;
-//   max-width: 80px;
-//   max-height: 80px;
-//   margin: 5px 0 0 5px;
-
-//   @include break(md) {
-// 	  margin: 10px 0 0 10px;
-//   }
-// }
-
-
-// ul {
-//   display: flex;
-//   margin: 50px 50px 0 0;
-//   padding: 0;
-//   transition: margin .2s;
-// }
-
-// li:not(:last-child) {
-//   margin-right: 20px;
-// }
-
-// li a {
-//   display: block;
-//   padding: 10px 20px;
-// }
-
-// .toggle-menu {
-//   box-shadow: none;
-//   background: transparent;
-//   border: 0;
-// }
-
-// .toggle-menu {
-//   display: none;
-//   font-size: 2rem;
-//   color: #fff;
-//   margin: 10px 10px 0 0;
-//   transition: margin .2s;
-// }
 
 .toggle-menu {
   display: block;
@@ -157,10 +67,10 @@ main {
 }
 
 
-@media screen and (max-width: 1060px) {
-  header {
-    padding: 10px;
-  }
+// @media screen and (max-width: 1060px) {
+//   header {
+//     padding: 10px;
+//   }
   // nav {
   //   align-items: center;
   // }
@@ -175,4 +85,4 @@ main {
   // .toggle-menu {
   //   display: block;
   // }
-}
+// }
