@@ -9824,86 +9824,35 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
+  (0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
+    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
-  var perfMarkButton = (0, _jquery2.default)('.js-performance-mark');
+    mobileMenu.css({ 'display': 'block' });
+    mobileMenu.css({ right: '-320px' });
+    mobileMenu.addClass('magictime slideLeft');
 
-  perfMarkButton.click(function (event) {
+    setTimeout(function () {
+      mobileMenu.css({ right: 0 });
+      mobileMenu.removeClass('slideLeft');
+    }, 1000);
 
-    runPerformanceMark();
+    (0, _jquery2.default)('html, body').on('touchmove', function (evt) {
+      evt.preventDefault();
+    });
+  });
 
-    // console.log('Start: Performance Mark()');
+  (0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
+    (0, _jquery2.default)('html, body').unbind('touchmove');
 
-    // if(!window.performance || !window.performance.mark || !window.performance.measure) {
-    //   alert("Unfortunately, your browser does not support performance.mark().");
-    //   return;
-    // }
+    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
-    // performance.mark("loadTest-start");
-    // loadTest();
-    // performance.mark("loadTest-end");
-
-    // performance.measure("loadTest", "loadTest-start", "loadTest-end");
-
-    // performance.clearMarks("loadTest-start");
-    // performance.clearMarks("loadTest-end");
-
-    // const result = performance.getEntriesByName("loadTest");
-
-    // console.log('Result', result);
-    // console.log('Result: duration', result[0].duration);
-
-    // console.log('End: Performance Mark()');
-
-    // performance.clearMeasures("loadTest");
+    mobileMenu.addClass('magictime slideRight');
+    setTimeout(function () {
+      mobileMenu.css({ 'display': 'none' });
+      mobileMenu.removeClass('slideRight');
+    }, 1000);
   });
 });
-
-function runPerformanceMark() {
-  console.log('Start: Performance Mark()');
-
-  if (!window.performance || !window.performance.mark || !window.performance.measure) {
-    alert("Unfortunately, your browser does not support performance.mark().");
-    return;
-  }
-
-  performance.mark("loadTest-start");
-  loadTest();
-  performance.mark("loadTest-end");
-
-  performance.measure("loadTest", "loadTest-start", "loadTest-end");
-
-  performance.clearMarks("loadTest-start");
-  performance.clearMarks("loadTest-end");
-
-  var result = performance.getEntriesByName("loadTest");
-
-  console.log('Result', result);
-  console.log('Result: duration', result[0].duration);
-
-  console.log('End: Performance Mark()');
-
-  performance.clearMeasures("loadTest");
-}
-
-function loadTest() {
-  var booklist = [];
-
-  for (var i = 0; i < 100; i++) {
-    var book = {
-      id: i,
-      dimensions: {
-        height: Math.round(Math.random() * 200),
-        width: Math.round(Math.random() * 100),
-        depth: Math.round(Math.random() * 10)
-      },
-      pubDate: new Date()
-    };
-
-    booklist.push(book);
-  }
-
-  return booklist;
-}
 
 },{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map

@@ -22,9 +22,8 @@
 <body>
   
   <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
-
     <navigation class="l-navigation navigation">
-      <!-- <h1 class="logo"><a href="#">Athena</a></h1> -->
+      <h1 class="logo"><a href="#">RL</a></h1>
       <nav class="l-navlinks navlinks">
         <ul>
           <li class="navlinks__item"><a href="#">Books</a></li>
@@ -41,20 +40,44 @@
             <a class="js-buttonSearchOpen fa-search" href="#search">Search</a>
           </li> -->
           <li class="navActions__item navActions__menu">
-            <a class="js-actionMenu fa-bars">Menu</a>
+            <a class="js-actionMenu fa-bars" data-mobileMenu="open">Menu</a>
           </li>
         </ul>
       </nav>
     </navigation>
-
-
+      
+    <div class="mobileMenu" data-mobileMenu="panel">
+      <a class="menuClose" data-mobileMenu="close">
+        <i class="fa fa-times"></i>
+      </a>    
+      <ul class="navigation__link--list">
+        <li class="navigation__link--logo">RL</li>
+        <li class='active navigation__link navigation__link--mobile'>
+          <a target=''>Books</a>
+        </li>
+        <li class='navigation__link navigation__link--mobile'>
+          <a target=''>Authors</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Book Clubs</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Logout</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Login</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Join</a>
+        </li>  
+      </ul>
+    </div>
 
     <section class="l-mainContent mainContent">
       <div class="milkwayContainer">
         <div class="siteCover">
           <h1 class="siteCover__caption">Bustling Daily Life in reading</h1>
         </div>
-
         <span></span>
         <span></span>
         <span></span>
