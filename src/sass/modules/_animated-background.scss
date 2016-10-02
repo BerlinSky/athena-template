@@ -3,7 +3,10 @@
 	display: block;
 	background-color: #000;
 	width: 100%;
-	height: 600px;
+	height: 300px;
+	@include break(md) {
+		height: 600px;
+	}
 	overflow: hidden;
 }
 
@@ -12,7 +15,10 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 600px;
+	height: 350px;
+	@include break(md) {
+		height: 600px;
+	}
 
 	transform-origin: 50% 50%;
 
