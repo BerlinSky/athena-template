@@ -49,6 +49,12 @@
 }
 
 .navlinks {
+  display: none;
+
+  @include break(md) {
+    display: flex;
+  }
+
   border-left: solid 1px _palette(border);
   height: inherit;
   line-height: inherit;
@@ -81,16 +87,21 @@
   }
 }
 
-@include respondTo(medium) {
-  .navlinks {
-    display: none;
-  }
-}
+  // @include respondTo(medium) {
+  //   .navlinks {
+  //     display: none;
+  //   }
+  // }
+
 
 .navActions {
   height: inherit;
   line-height: inherit;
   text-align: right;
+
+  @include break(md) {
+    display: none;
+  }
 
   &__menu {
     // @include respondTo(medium) {
