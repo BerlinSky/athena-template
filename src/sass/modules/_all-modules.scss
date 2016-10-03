@@ -26,13 +26,16 @@
 
 .actionForm__panel {
   .textAreaInpunt {
-    padding-top: 35px;
+    // padding-top: 35px;
+    padding: 35px 20px 10px 20px;
+    font-size: 18px;
+    line-height: 1.45;
   }
 } 
 
-.dataForm .inputGroup label.textArealabel {
-  top: 20px;
-}
+// .dataForm .inputGroup label.textArealabel {
+//   top: 20px;
+// }
 
 .ratingBox {
   // background-color: tomato;
