@@ -133,8 +133,8 @@
 
   .dropdownPanel {
     background-color: #fff;
-    height: 70px;
-    padding-top: 30px;  
+    height: 80px;
+    padding-top: 35px;
     // padding-left: 25px; 
   }
 }
@@ -158,4 +158,27 @@
     border-bottom-color: inherit;
   }
 }
+
+.selectStyled select {
+  background: transparent;
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.5rem;
+  border: 0;
+  border-radius: 0;
+  height: 2.5rem;
+  -webkit-appearance: none;
+}
+
+.selectStyled {
+   width: 98%;
+   height: 2.5rem;
+   overflow: hidden;
+   // background: url(../../images/dd-down.png) no-repeat right #ddd;
+   background: url(../../images/down_arrow_select.jpg) no-repeat right #fff;
+   border: 1px solid #ccc;
+   margin-right: auto;
+   margin-left: auto;
+ }
 

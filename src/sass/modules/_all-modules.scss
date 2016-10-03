@@ -24,43 +24,6 @@
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
 
-// .actionForm__panel {
-//   .textAreaInpunt {
-//     // padding-top: 35px;
-//     padding: 35px 20px 10px 20px;
-//     font-size: 18px;
-//     line-height: 1.45;
-//   }
-// } 
-
-.ratingBox {
-  // background-color: tomato;
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-  .ratinglabel {
-    padding-right: 10px;
-  }
-
-  ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
-  }
-
-  a {
-    // color: inherit;
-    color: darkgoldenrod;
-    text-decoration: none;
-  }
-}
-
-.actionButtonBox {
-  display: flex;
-  justify-content: flex-end;
-}
 
 .toggle-menu {
   display: block;
