@@ -7,7 +7,7 @@ $(function () {
     mobileMenu.css({'display': 'block'});
     mobileMenu.css({right: '-320px'});
     mobileMenu.addClass('magictime slideLeft');
-    
+
     setTimeout(function(){
       mobileMenu.css({right: 0});
       mobileMenu.removeClass('slideLeft');
@@ -29,6 +29,18 @@ $(function () {
       mobileMenu.removeClass('slideRight');
     }, 1000);
   })
+
+  $('.dataForm__section .inputGroup input').focusout((event) => {
+    const input = $(event.target);
+    const textVal = input.val();
+    if(textVal === "") {
+      input.removeClass('js-userData');
+    } 
+    else {
+      input.addClass('js-userData');
+    } 
+  });
+  
 });
 
 
