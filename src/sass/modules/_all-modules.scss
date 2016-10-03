@@ -24,6 +24,16 @@
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
 
+.actionForm__panel {
+  .textAreaInpunt {
+    padding-top: 35px;
+  }
+} 
+
+.dataForm .inputGroup label.textArealabel {
+  top: 20px;
+}
+
 .ratingBox {
   // background-color: tomato;
   display: flex;
