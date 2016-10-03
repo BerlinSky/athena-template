@@ -89,26 +89,64 @@
 
       <div class="panelContainer">
         <div class="formContainer">
-          <form class="actionForm">
-            <div class="actionForm__section">
-              <div class="actionForm__panel">
-                <input type="text" placeholder="Title">
-              </div>
-              <div class="actionForm__panel">
-                <input type="text" placeholder="Author">
-              </div>
-              <div class="actionForm__panel">
-                <input type="text" placeholder="Image Link">
-              </div>
-            </div>
-            <div class="actionForm__section"">
-              <div class="actionForm__panel">
-                <textarea name="" cols="10" rows="5" placeholder="Description"></textarea>
-              </div>
-            </div>
-          </form>
+          <form class="dataForm">
 
-          <div class="buttonPanel"><a class="actionButton">add book</a></div>
+            <div class="dataForm__section">
+              <!-- <div class="cartInputError">
+                <div class="cartInputError__denote">*</div>
+                <div class="cartInputError__text">Please enter a book title.</div>
+              </div> -->
+              <div class="inputGroup">
+                <input class="dataInput" type="text">
+                <label>* Title</label>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <input class="dataInput" type="text">
+                <label>Author(s)</label>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+               <input class="dataInput" type="text">
+               <label>* Image Link</label>
+             </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <div class="actionForm__panel">
+                  <textarea name="" cols="10" rows="5" placeholder="Description"></textarea>
+                  <!-- <label>Description</label> -->
+                </div>
+              </div>
+            </div>
+                     
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <div class="dropdownPanel">
+                  <select class="" tabindex="-1" aria-hidden="true">
+                    <option>Rating</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="4">5 Stars</option>
+                   </select>
+                  <label class="dropdownlabel">* Rating</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="buttonPanel"><a class="actionButton">add book</a></div>
+            </div>
+
+            <!-- <div class="buttonPanel"><a class="actionButton">add book</a></div> -->
+          </form>
         </div>
       </div>
 
