@@ -24,6 +24,34 @@
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
 
+.ratingBox {
+  // background-color: tomato;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  .ratinglabel {
+    padding-right: 10px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  a {
+    // color: inherit;
+    color: darkgoldenrod;
+    text-decoration: none;
+  }
+}
+
+.actionButtonBox {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .toggle-menu {
   display: block;
