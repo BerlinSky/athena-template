@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Athena - Reading Life</title>
+
+  <meta name="description" content="" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0" />
+  <meta http-equiv="Content-Language" content="en">
+
+  <!--Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="stylesheet" href="styles/font-awesome.min.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  
+  <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
+    <navigation class="l-navigation navigation">
+      <h1 class="logo"><a href="#">RL</a></h1>
+      <nav class="l-navlinks navlinks">
+        <ul>
+          <li class="navlinks__item"><a href="#">Books</a></li>
+          <li class="navlinks__item"><a href="#">Authors</a></li>
+          <li class="navlinks__item"><a href="#">Book Clubs</a></li>
+          <li class="navlinks__item"><a href="#">Logout</a></li>
+          <li class="navlinks__item"><a href="#">Login</a></li>
+          <li class="navlinks__item"><a href="#">Join</a></li>
+        </ul>
+      </nav>
+      <nav class="navActions">
+        <ul>
+        <!--   <li class="navActions__item navActions__item__search visble">
+            <a class="js-buttonSearchOpen fa-search" href="#search">Search</a>
+          </li> -->
+          <li class="navActions__item navActions__menu">
+            <a class="js-actionMenu fa-bars" data-mobileMenu="open">Menu</a>
+          </li>
+        </ul>
+      </nav>
+    </navigation>
+      
+    <div class="mobileMenu" data-mobileMenu="panel">
+      <a class="menuClose" data-mobileMenu="close">
+        <i class="fa fa-times"></i>
+      </a>    
+      <ul class="navigation__link--list">
+        <li class="navigation__link--logo">RL</li>
+        <li class='active navigation__link navigation__link--mobile'>
+          <a target=''>Books</a>
+        </li>
+        <li class='navigation__link navigation__link--mobile'>
+          <a target=''>Authors</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Book Clubs</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Logout</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Login</a>
+        </li>
+        <li class=' navigation__link navigation__link--mobile'>
+          <a target=''>Join</a>
+        </li>  
+      </ul>
+    </div>
+
+    <section class="l-mainContent mainContent">
+      <div class="milkwayContainer">
+        <div class="siteCover">
+          <h1 class="siteCover__caption">Bustling Daily Life in reading</h1>
+        </div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="panelContainer">
+        <div class="formContainer">
+          <form class="dataForm">
+
+            <div class="dataForm__section">
+              <!-- <div class="cartInputError">
+                <div class="cartInputError__denote">*</div>
+                <div class="cartInputError__text">Please enter a book title.</div>
+              </div> -->
+              <div class="inputGroup">
+                <input class="dataInput" type="text">
+                <label>* Title</label>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <input class="dataInput" type="text">
+                <label>Author(s)</label>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+               <input class="dataInput" type="text">
+               <label>* Image Link</label>
+             </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <div class="actionForm__panel">
+                  <textarea class="textAreaInpunt" name="" cols="10" rows="5"></textarea>
+                  <label class="textArealabel">Description</label>
+                </div>
+              </div>
+            </div>
+                     
+            <div class="dataForm__section">
+              <div class="inputGroup">
+                <div class="dropdownPanel">
+                  <div class="selectStyled">
+                    <select class="" tabindex="-1" aria-hidden="true">
+                      <option>Rating</option>
+                      <option value="1">1 Star</option>
+                      <option value="2">2 Stars</option>
+                      <option value="3">3 Stars</option>
+                      <option value="4">4 Stars</option>
+                      <option value="4">5 Stars</option>
+                     </select>
+                    <label class="dropdownlabel">* Rating</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dataForm__section">
+              <div class="buttonPanel"><a class="actionButton">add book</a></div>
+            </div>
+
+            <!-- <div class="buttonPanel"><a class="actionButton">add book</a></div> -->
+          </form>
+        </div>
+      </div>
+
+      <div class="panelContainer">
+        <div class="formContainer">
+          <form class="searchBar">
+            <input class="searchBar__inputText" placeholder="Search for ..." />
+            <input class="searchBar__button" type="submit" />
+          </form>
+        </div>
+     
+        <div class="media">
+          <img class="media__figure image" src="./images/the-grapes-of-wrath.jpg" alt="image">
+           <div class="media__body">
+            <h3 class="media__title">The Grapes of Wrath</h3>
+            <div class="media__subtitle">by John Steinbeck</div>
+             <p class="media__description">
+              An epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads.
+             </p>
+             <div class="ratingBox">
+               <div class="ratinglabel">Rating:</div>
+               <ul>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+               </ul>
+             </div>
+             <div class="actionButtonBox">
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-pencil"> Edit</i></a></div>
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-trash"> Remove</i></a></div>
+             </div>
+          </div>
+        </div>
+        <div class="media">
+          <img class="media__figure image" src="./images/the-grapes-of-wrath.jpg" alt="image">
+           <div class="media__body">
+             <h3 class="media__title">The Grapes of Wrath</h3>
+             <div class="media__subtitle">by John Steinbeck</div>
+             <p class="media__description">
+              An epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads.
+             </p>
+             <div class="ratingBox">
+               <div class="ratinglabel">Rating:</div>
+               <ul>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+               </ul>
+             </div>
+             <div class="actionButtonBox">
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-pencil"> Edit</i></a></div>
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-trash"> Remove</i></a></div>
+             </div>
+          </div>
+        </div>
+        <div class="media">
+          <img class="media__figure image" src="./images/the-grapes-of-wrath.jpg" alt="image">
+           <div class="media__body">
+             <h3 class="media__title">The Grapes of Wrath</h3>
+             <div class="media__subtitle">by John Steinbeck</div>
+             <p class="media__description">
+              An epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads.
+             </p>
+             <div class="ratingBox">
+               <div class="ratinglabel">Rating:</div>
+               <ul>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+                 <li><a><i class="fa fa-star-o"></i></a></li>
+               </ul>
+             </div>
+             <div class="actionButtonBox">
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-pencil"> Edit</i></a></div>
+               <div class="buttonPanel"><a class="actionButton"><i class="fa fa-trash"> Remove</i></a></div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="searchContainer js-searchContainer">
+      <form class="searchForm">
+        <input class="searchForm__input" type="search" placeholder="Search..."/>
+        <button class="searchForm__submit js-buttonSearchSubmit" type="submit">Search</button>
+      </form>
+      <div class="searchContent">
+
+      </div>
+      <span class="searchClose js-buttonSearchClose"></span>
+    </section>
+
+    <footer class="l-footer footer">
+      <div class="footerPanel footerPanel__utility">
+        <div class="foorterIconPanel__item">
+        </div>
+      </div>
+      <div class="footerPanel footerPanel__links">
+        <div class="footerPanel__item footerPanel__item--default copyright">&copy; Inspired by Athena</div>
+        <div class="footerPanel__item footerPanel__item--default copyright">sit amet, consectetur adipisicing elit.</div>
+      </div> 
+      <div class="footerPanel footerPanel__social">
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="scripts/bundle.js"></script>
+
+</body>
+
+</html>
