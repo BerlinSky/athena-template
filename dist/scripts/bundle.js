@@ -9815,53 +9815,16 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-  (0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
-    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-
-    mobileMenu.css({ 'display': 'block' });
-    mobileMenu.css({ right: '-320px' });
-    mobileMenu.addClass('magictime slideLeft');
-
-    setTimeout(function () {
-      mobileMenu.css({ right: 0 });
-      mobileMenu.removeClass('slideLeft');
-    }, 1000);
-
-    (0, _jquery2.default)('html, body').on('touchmove', function (evt) {
-      evt.preventDefault();
-    });
-  });
-
-  (0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
-    (0, _jquery2.default)('html, body').unbind('touchmove');
-
-    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-
-    mobileMenu.addClass('magictime slideRight');
-    setTimeout(function () {
-      mobileMenu.css({ 'display': 'none' });
-      mobileMenu.removeClass('slideRight');
-    }, 1000);
-  });
-
-  (0, _jquery2.default)('.dataForm__section .inputGroup input').focusout(function (event) {
-    var input = (0, _jquery2.default)(event.target);
-    var textVal = input.val();
-    if (textVal === "") {
-      input.removeClass('js-userData');
-    } else {
-      input.addClass('js-userData');
-    }
-  });
+  console.log("main");
 });
 
 },{"jquery":1}]},{},[2])
