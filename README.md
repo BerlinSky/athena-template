@@ -1,16 +1,13 @@
 # Web Application Starter Kit
 
-### Create a page template: header-footer.html
+### Create a site menu template: site-menu.html
 
-### Branch: header-footer
+### Branch: site-menu
 
 ### Design goals:
-1. Extend the structure from the base-page
-2. Update the header section to house an application logo and a site menu block
-3. The application logo will be left aligned 
-4. The hamburger icon for the site menu will be right aligned in the mobile mode
-5. The site menu block will slide out from right in the mobile mode
-6. The structure adds a site footer
+1. Extend the structure from the header-footer
+2. Add a vertical menu in the mobile mode
+3. Add a horizontal menu in the desktop mode 
 
 ### Steps to use the starter kit
 
@@ -25,3 +22,4 @@ npm install
 ```
 npm strt
 ```
+
