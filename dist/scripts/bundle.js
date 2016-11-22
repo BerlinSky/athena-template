@@ -9852,16 +9852,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       mobileMenu.removeClass('slideRight');
     }, 1000);
   });
-
-  (0, _jquery2.default)('.dataForm__section .inputGroup input').focusout(function (event) {
-    var input = (0, _jquery2.default)(event.target);
-    var textVal = input.val();
-    if (textVal === "") {
-      input.removeClass('js-userData');
-    } else {
-      input.addClass('js-userData');
-    }
-  });
 });
 
 },{"jquery":1}]},{},[2])
