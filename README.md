@@ -1,34 +1,27 @@
 # Web Application Starter Kit
 
--- With Gulp, ES6, Browser-sync, Jest
+### Create a page template: header-footer.html
 
-### Features and Components
-1. Set up a template with flexbox for a book list app
+### Branch: header-footer
 
-### Web Application Basic Structure
-1. Flexbox layout 
-
-### Import JQuery in ES6 Syntax
-
-```
-  import $ from 'jquery';
-```
+### Design goals:
+1. Extend the structure from the base-page
+2. Update the header section to house an application logo and a site menu block
+3. The application logo will be left aligned 
+4. The hamburger icon for the site menu will be right aligned in the mobile mode
+5. The site menu block will slide out from right in the mobile mode
+6. The structure adds a site footer
 
 ### Steps to use the starter kit
 
 ##### #1 Clone the project
 
 ##### #2 Install the NPM packages:
-  ```
-  npm install
-  ```
+```
+npm install
+```
 
 ##### #3 Start the app by running gulp:
-  ```
-  npm strt
-  ```
-
-##### #4 Run the unit test:
-  ```
-  npm test
-  ```
+```
+npm strt
+```
