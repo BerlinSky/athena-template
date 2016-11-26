@@ -24,6 +24,7 @@ $ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
 .accordion {
   box-shadow: 0 1px 8px rgba(#000, .25);
   border-collapse: collapse;
+  padding-bottom: 1.0rem;
   margin-bottom: 1.0rem;
   overflow-y: auto;
   height: 100%;
@@ -96,7 +97,6 @@ $ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
     .accordion__header {
       color: #fff;
       padding: 5px 0;
-      color: #fff;
       font-size: 1rem;
       letter-spacing: 0.1rem;
       margin: 2px 0 2px 0;
@@ -115,6 +115,7 @@ $ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
 
 input[name='panel']:checked~.accordion__content.accordion__content--small {
   height: 100%;
+  padding-bottom: 70px;
   // height: 150px;
 }
 
