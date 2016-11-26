@@ -1,11 +1,11 @@
 # Web Application Starter Kit
 
-### Create a site menu template: site-menu-2.html
+### Create a site menu template: site-menu-3.html
 
-### Branch: site-menu-2
+### Branch: site-menu-3
 
 ### Design goals:
-In the mobile mode: Construct a menu with accordion on the category level, so the user can expand or collapse menu categories. 
+In the desktop mode: Create an animated menu.
 
 ### Steps to use the starter kit
 
