@@ -15,21 +15,266 @@
   <link rel="stylesheet" href="styles/font-awesome.min.css">
   <link rel="stylesheet" href="styles/main.css">
 
+  <style>
+    .menuTemplate3 {
+      margin: 0 auto;
+      width: auto;
+      float: left;
+      position: relative;
+      z-index: 4;
+      height: 36px;
+      border: 1px solid #111;
+      font-family: Arial, Helvetica, sans-serif;
+      list-style: none;
+      padding: 0;
+    }
+
+    .menuTemplate3 div {
+      box-sizing: content-box;
+    }
+
+    .menuTemplate3 li {
+      padding: 0;
+      float: left;
+      height: 36px;
+      position: relative;
+      color: #EEE;
+      z-index: 5;
+    }
+
+    .menuTemplate3 li:hover,
+    .menuTemplate3 li.onhover {
+      border-top: 0;
+    }
+
+    .menuTemplate3 a {
+      padding: 0 30px;
+      line-height: 36px;
+      font-size: 12px;
+      font-weight: normal;
+      display: inline-block;
+      outline: 0;
+      text-decoration: none;
+      color: #FFF;
+      position: relative;
+    }
+
+    .menuTemplate3 li:hover a,
+    .menuTemplate3 li.onhover a {
+      background-color: #222;
+      color: #FFF;
+      z-index: 9;
+    }
+
+    .menuTemplate3 a.arrow {
+      background: url(arrow.gif) no-repeat right center;
+    }
+
+    .menuTemplate3 li.menuRight {
+      float: right;
+      margin-right: 0px;
+    }
+
+    .menuTemplate3 li.separator {
+      font-size: 0;
+      overflow: hidden;
+      border-left: 1px solid #aaa;
+      height: 20px;
+      margin-top: 8px;
+      z-index: 4;
+    }
+
+    .menuTemplate3 .drop {
+      position: absolute;
+      z-index: 5;
+      left: -9999px;
+      border: 1px solid #000;
+      background: #222;
+      text-align: left;
+      padding: 20px;
+      top: 35px;
+      color: #999;
+    }
+
+    .menuTemplate3 .drop a {
+      padding-left: 0px;
+      padding-right: 0px;
+      line-height: 26px;
+      font-size: 12px;
+      font-weight: normal;
+      display: inline;
+      text-align: left;
+      position: static;
+      z-index: 0;
+    }
+
+    .menuTemplate3 li:hover .drop,
+    .menuTemplate3 li.onhover .drop {
+      left: -1px;
+    }
+
+    .menuTemplate3 li:hover .dropToLeft,
+    .menuTemplate3 li.onhover .dropToLeft {
+      left: auto;
+      right: -1px;
+    }
+
+    .menuTemplate3 li:hover .dropToLeft2,
+    .menuTemplate3 li.onhover .dropToLeft2 {
+      left: auto;
+      right: -60px;
+    }
+
+    .menuTemplate3 div.drop div div {
+      padding: 6px 20px;
+    }
+
+    .menuTemplate1 li:hover .drop a,
+    .menuTemplate1 li.onhover .drop a {
+      background: none;
+      background-image: none;
+      padding: 0 0;
+    }
+
+    .menuTemplate3 div.drop div a {
+      line-height: 24px;
+      color: white;
+      background: none;
+    }
+
+    .menuTemplate3 div.drop div a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: Red;
+    }
+
+    .menuTemplate3 div.left {
+      float: left;
+    }
+
+    .decor3_1 {
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -moz-box-shadow: 1px 2px 4px 2px #999;
+      -webkit-box-shadow: 1px 2px 4px 2px #999;
+      box-shadow: 1px 2px 4px 2px #999;
+    }
+
+    .decor3_2 {
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      -moz-box-shadow: 0px 8px 14px #777;
+      -webkit-box-shadow: 0px 8px 14px #777;
+      box-shadow: 0px 8px 14px #777;
+    }
+  </style>
 </head>
 
 <body>
   <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
     <navigation class="l-navigation navigation">
       <h1 class="logo"><a href="#">RL</a></h1>
-      <nav class="l-navlinks navlinks desktopMenu">
-        <ul>
-          <li class="navlinks__item"><a href="#">Books</a></li>
-          <li class="navlinks__item"><a href="#">Authors</a></li>
-          <li class="navlinks__item"><a href="#">Book Clubs</a></li>
-          <li class="navlinks__item"><a href="#">Logout</a></li>
-          <li class="navlinks__item"><a href="#">Login</a></li>
-          <li class="navlinks__item"><a href="#">Join</a></li>
+      <nav class="l-navlinks navlinks-x desktopMenu">
+
+        <ul class="menuTemplate3 decor3_1-x">
+          <li><a href="#CSS-Menu">CSS Menu</a></li>
+          <li><a href="#Horizontal-Menus" class="arrow">Horizontal Menus</a>
+            <div class="drop decor3_2" style="width: 640px;">
+              <div class='left'>
+                <b>CSS Menu</b>
+                <div>
+                  <a href="#">Html 5 menu</a><br />
+                  <a href="#">Web menu CSS</a><br />
+                  <a href="#">Css menus</a><br />
+                  <a href="#">Nav element</a><br />
+                  <a href="#">SEO menu</a>
+                </div>
+              </div>
+              <div class='left'>
+                <b>Menu Templates</b>
+                <div>
+                  <a href="#">Menu template</a><br />
+                  <a href="#">Menu skin</a><br />
+                  <a href="#">Web menu styles</a><br />
+                  <a href="#">Best css menus</a>
+                </div>
+              </div>
+              <div class='left'>
+                <b>SEO Friendly</b>
+                <div>
+                  <a href="#">Search engine friendly</a><br />
+                  <a href="#">Best css menu</a><br />
+                  <a href="#">Most popular menus</a><br />
+                  <a href="#">Best web menu designs</a><br />
+                  <a href="#">E-Commerce sites</a><br />
+                  <a href="#">CSS Templates</a><br />
+                  <a href="#">Menu Design Templates</a><br />
+                  <a href="#">Clean layout & alignment</a><br />
+                  <a href="#">Favorite menus</a>
+                </div>
+              </div>
+              <div class='left' style="text-align:right; width:200px;">
+                <img src="../img/demo/hd6.png" style="width:128px; height:128px;" /><br /> Search Engine friendly
+              </div>
+              <div style='clear: both;'></div>
+            </div>
+          </li>
+          <li><a href="#CSS">CSS</a></li>
+          <li><a href="#Horizontal-Menu-CSS">Horizontal Menu CSS</a></li>
+          <li><a href="#Web-Menu" class="arrow">Horizontal Web Menu</a>
+            <div class="drop decor3_2 dropToLeft2" style="width: 500px;">
+              <div class='left'>
+                <b>SHOPPING TOOLS</b>
+                <div>
+                  <a href="#">Build your script</a><br />
+                  <a href="#">Review current offers</a><br />
+                  <a href="#">See All ...</a>
+                </div>
+                <b>RSS FEED</b>
+                <div>
+                  <a href="#">Find a location</a><br />
+                  <a href="#">Request a test drive</a><br />
+                  <a href="#">See All ...</a>
+                </div>
+              </div>
+              <div class='left'>
+                <b>BE CREATIVE</b>
+                <div>
+                  <a href="#">Build your script</a><br />
+                  <a href="#">Review current offers</a><br />
+                  <a href="#">See All ...</a>
+                </div>
+              </div>
+              <div class='left' style="text-align:right; width:160px;">
+                <img src="../img/demo/hd7.png" style="width:128px; height:128px;" /><br /> Contact Us
+              </div>
+
+            </div>
+          </li>
+          <li><a href="#Web-Menus" class="arrow">Web Menus</a>
+            <div class="drop decor3_2 dropToLeft" style="width: 460px;">
+              <img src="../img/demo/css-menu-t3.jpg" style="float:left; width:98px;
+                height:180px;margin:10px 80px 10px 40px;" />
+              <div class='left'>
+                <b>PURE CSS MENU</b>
+                <div>
+                  <a href="#">Build your script</a><br />
+                  <a href="#">Review current offers</a><br />
+                  <a href="#">See All ...</a>
+                </div>
+                <b>POPOUT MENU</b>
+                <div>
+                  <a href="#">Find a location</a><br />
+                  <a href="#">Request a test drive</a><br />
+                  <a href="#">See All ...</a>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
+
       </nav>
       <nav class="navActions">
         <ul>
