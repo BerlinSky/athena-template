@@ -16,36 +16,9 @@
   <link rel="stylesheet" href="styles/main.css">
 
   <style>
-    .menuFlat li {
-      padding: 0;
-      float: left;
-      height: 36px;
-      position: relative;
-      color: #EEE;
-      z-index: 5;
-    }
 
-    .menuFlat li .menuFlat__Title {
-      text-transform: uppercase;
-    }
 
-    .menuFlat li:hover,
-    .menuFlat li.onhover {
-      border-top: 0;
-    }
-
-    .menuFlat a {
-      padding: 0 30px;
-      font-size: 12px;
-      font-weight: normal;
-      display: inline-block;
-      outline: 0;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .menuFlat li:hover a,
-    .menuFlat li.onhover a {
+    .menuFlat li:hover a {
       color: #FFF;
       z-index: 9;
     }
@@ -79,19 +52,16 @@
       z-index: 0;
     }
 
-    .menuFlat li:hover .menuFlat__extended,
-    .menuFlat li.onhover .menuFlat__extended {
+    .menuFlat li:hover .menuFlat__extended {
       left: -1px;
     }
 
-    .menuFlat li:hover .menuFlat__extendedToLeft,
-    .menuFlat li.onhover .menuFlat__extendedToLeft {
+    .menuFlat li:hover .menuFlat__extendedToLeft {
       left: auto;
       right: -1px;
     }
 
-    .menuFlat li:hover .menuFlat__extendedToLeft2,
-    .menuFlat li.onhover .menuFlat__extendedToLeft2 {
+    .menuFlat li:hover .menuFlat__extendedToLeft2 {
       left: auto;
       right: -60px;
     }
@@ -100,8 +70,7 @@
       padding: 6px 20px;
     }
 
-    .menuTemplate1 li:hover .menuFlat__extended a,
-    .menuTemplate1 li.onhover .menuFlat__extended a {
+    .menuTemplate1 li:hover .menuFlat__extended a {
       background: none;
       background-image: none;
       padding: 0 0;
@@ -135,7 +104,6 @@
           <li><a href="#" class="menuFlat__Title">Books</a></li>
           <li><a href="#" class="menuFlat__Title">Authors</a></li>
           <li><a href="#" class="menuFlat__Title">Book Clubs</a></li>
-          <li><a href="#" class="menuFlat__Title">CSS Menu</a></li>
           <li><a href="#" class="menuFlat__Title">Children Books</a>
             <div class="menuFlat__extended decor3_2 menuFlat__extendedToLeft2" style="width: 500px;">
               <div class='left'>

@@ -65,3 +65,25 @@ main {
 .scroller .toggle-menu {
   margin: 0;
 }
+
+// memnu flat
+.menuFlat li {
+  padding: 0;
+  float: left;
+  position: relative;
+  .menuFlat__Title {
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    border: none;
+  }
+}
+
+.menuFlat a {
+  padding: 0 30px;
+  font-size: 0.925rem;
+  font-weight: normal;
+  display: inline-block;
+  outline: 0;
+  text-decoration: none;
+  position: relative;
+}
