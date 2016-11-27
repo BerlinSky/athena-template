@@ -1,14 +1,12 @@
 # Web Application Starter Kit
 
-### Create a page template: index-base.html
+### Set up the Express server based on the base-page branch 
 
-### Branch: base-page
+### Branch: express-server
 
-### Design goal:
-1. A structure with placeholders for header and footer 
-2. A Responsive template
-3. The template suports a fixed header
-4. The template suports a fixed footer
+### Design goals:
+1. Set up an Express server
+2. Utilize npm start, prestart, and postsrart
 
 ### Steps to use the starter kit
 
