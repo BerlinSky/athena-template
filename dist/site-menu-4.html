@@ -16,76 +16,14 @@
   <link rel="stylesheet" href="styles/main.css">
 
   <style>
-
-
-    .menuFlat li:hover a {
-      color: #FFF;
-      z-index: 9;
-    }
-
-    .menuFlat li.menuRight {
-      float: right;
-      margin-right: 0px;
-    }
-
-    .menuFlat .menuFlat__extended {
-      position: absolute;
-      z-index: 5;
-      left: -9999px;
-      border: 1px solid #000;
-      background: #222;
-      text-align: left;
-      padding: 20px;
-      top: 65px;
-      color: #999;
-    }
-
-    .menuFlat .menuFlat__extended a {
-      padding-left: 0px;
-      padding-right: 0px;
-      line-height: 26px;
-      font-size: 12px;
-      font-weight: normal;
-      display: inline;
-      text-align: left;
-      position: static;
-      z-index: 0;
-    }
-
-    .menuFlat li:hover .menuFlat__extended {
-      left: -1px;
-    }
-
-    .menuFlat li:hover .menuFlat__extendedToLeft {
-      left: auto;
-      right: -1px;
-    }
-
-    .menuFlat li:hover .menuFlat__extendedToLeft2 {
-      left: auto;
-      right: -60px;
-    }
-
-    .menuFlat div.menuFlat__extended div div {
-      padding: 6px 20px;
-    }
-
-    .menuTemplate1 li:hover .menuFlat__extended a {
-      background: none;
-      background-image: none;
-      padding: 0 0;
-    }
-
     .menuFlat div.menuFlat__extended div a {
       line-height: 24px;
-      color: white;
-      background: none;
+      color: #999;
     }
 
     .menuFlat div.menuFlat__extended div a:hover {
       text-decoration: underline;
       cursor: pointer;
-      color: Red;
     }
 
     .menuFlat div.left {
@@ -101,31 +39,142 @@
       <nav class="l-navlinks desktopMenu">
 
         <ul class="menuFlat">
-          <li><a href="#" class="menuFlat__Title">Books</a></li>
-          <li><a href="#" class="menuFlat__Title">Authors</a></li>
-          <li><a href="#" class="menuFlat__Title">Book Clubs</a></li>
-          <li><a href="#" class="menuFlat__Title">Children Books</a>
-            <div class="menuFlat__extended decor3_2 menuFlat__extendedToLeft2" style="width: 500px;">
+          <li><a href="#" class="menuFlat__Title">Books</a>
+            <div class="menuFlat__extended menuFlat__extended--right" style="width: 500px;">
               <div class='left'>
-                <b>By Category</b>
-                <div>
-                  <a href="#">Build your script</a><br />
-                  <a href="#">Review current offers</a><br />
-                  <a href="#">See All ...</a>
+                <h2>By Category</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>Baby-2 Years Old</a>
+                  <a target=''>Ages 3-5 Years Old</a>
+                  <a target=''>Ages 6-8 Years Old</a>
+                  <a target=''>Ages 9-12 Years Old</a>
+                  <a target=''>Teen & Young Adult</a>
+                  <a target=''>K-12 Teachers</a>
                 </div>
-                <b>Featured in Children's Books</b>
-                <div>
-                  <a href="#">Find a location</a><br />
-                  <a href="#">Request a test drive</a><br />
-                  <a href="#">See All ...</a>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
                 </div>
               </div>
               <div class='left'>
-                <b>Featured in Children's Books</b>
-                <div>
-                  <a href="#">Build your script</a><br />
-                  <a href="#">Review current offers</a><br />
-                  <a href="#">See All ...</a>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#" class="menuFlat__Title">Authors</a>
+            <div class="menuFlat__extended menuFlat__extended--right" style="width: 500px;">
+              <div class='left'>
+                <h2>By Category</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>Baby-2 Years Old</a>
+                  <a target=''>Ages 3-5 Years Old</a>
+                  <a target=''>Ages 6-8 Years Old</a>
+                  <a target=''>Ages 9-12 Years Old</a>
+                  <a target=''>Teen & Young Adult</a>
+                  <a target=''>K-12 Teachers</a>
+                </div>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+              <div class='left'>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#" class="menuFlat__Title">Book Clubs</a>
+            <div class="menuFlat__extended menuFlat__extended--left" style="width: 500px;">
+              <div class='left'>
+                <h2>By Category</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>Baby-2 Years Old</a>
+                  <a target=''>Ages 3-5 Years Old</a>
+                  <a target=''>Ages 6-8 Years Old</a>
+                  <a target=''>Ages 9-12 Years Old</a>
+                  <a target=''>Teen & Young Adult</a>
+                  <a target=''>K-12 Teachers</a>
+                </div>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+              <div class='left'>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#" class="menuFlat__Title">Children Books</a>
+            <div class="menuFlat__extended menuFlat__extended--left" style="width: 500px;">
+              <div class='left'>
+                <h2>By Category</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>Baby-2 Years Old</a>
+                  <a target=''>Ages 3-5 Years Old</a>
+                  <a target=''>Ages 6-8 Years Old</a>
+                  <a target=''>Ages 9-12 Years Old</a>
+                  <a target=''>Teen & Young Adult</a>
+                  <a target=''>K-12 Teachers</a>
+                </div>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
+                </div>
+              </div>
+              <div class='left'>
+                <h2>Featured in Children's Books</h2>
+                <div class="menuFlat__item--category">
+                  <a target=''>100 Children's Books to Read in a Lifetime</a>
+                  <a target=''>Award Winning Books</a>
+                  <a target=''>Best Books of the Month</a>
+                  <a target=''>Best Sellers</a>
+                  <a target=''>Personalized Books</a>
+                  <a target=''>Kindle Children's Books</a>
                 </div>
               </div>
             </div>
