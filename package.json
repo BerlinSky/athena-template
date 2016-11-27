@@ -4,7 +4,9 @@
   "description": "The template project for Ahten book list app",
   "scripts": {
     "test": "jest",
-    "start": "gulp"
+    "prestart": "node build-scripts/run-message.js",
+    "start": "npm-run-all --parallel open:source",
+    "open:source": "node build-scripts/src-server.js"
   },
   "browser": {
     "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
@@ -22,6 +24,7 @@
     "browserify": "^12.0.1",
     "eslint": "^2.7.0",
     "exorcist": "^0.4.0",
+    "express": "^4.14.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cssnano": "^2.1.2",
@@ -34,6 +37,8 @@
     "jest-cli": "^13.0.0",
     "jquery": "^2.2.2",
     "node-font-awesome": "^1.0.2",
+    "npm-run-all": "^3.1.1",
+    "open": "0.0.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
