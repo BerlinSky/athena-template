@@ -4,9 +4,9 @@
   "description": "The template project for Ahten book list app",
   "scripts": {
     "test": "jest",
-    "prestart": "node build-scripts/run-message.js",
+    "prestart": "babel-node build-scripts/run-message.js",
     "start": "npm-run-all --parallel open:source",
-    "open:source": "node build-scripts/src-server.js"
+    "open:source": "babel-node build-scripts/src-server.js"
   },
   "browser": {
     "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
@@ -14,11 +14,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.7.6",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
     "babel-jest": "^13.0.0",
+    "babel-loader": "^6.2.8",
     "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-register": "^6.7.2",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.2",
     "browserify": "^12.0.1",
