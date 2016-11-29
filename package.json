@@ -43,7 +43,9 @@
     "open": "0.0.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "1.13.2",
+    "webpack-dev-middleware": "1.8.4"
   },
   "dependencies": {
     "browserify-shim": "^3.8.12",
