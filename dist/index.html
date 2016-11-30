@@ -21,8 +21,43 @@
 </head>
 
 <body>
-      
-  <a href="header-footer.html">View the template</a>  
+
+  <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
+    <navigation class="l-navigation navigation">
+      <h1 class="logo"><a href="#">RL</a></h1>
+      <nav class="l-navlinks navlinks">
+      </nav>
+      <nav class="navActions">
+        <ul>
+          <li class="navActions__item navActions__menu">
+            <a class="js-actionMenu fa-bars" data-mobileMenu="open">Menu</a>
+          </li>
+        </ul>
+      </nav>
+    </navigation>
+
+    <footer class="l-footer footer">
+      <div class="footerPanel footerPanel__utility">
+        <div class="foorterIconPanel__item">
+        </div>
+      </div>
+      <div class="footerPanel footerPanel__links">
+        <div class="footerPanel__item footerPanel__item--default copyright">&copy; Inspired by Athena</div>
+        <div class="footerPanel__item footerPanel__item--default copyright">sit amet, consectetur adipisicing elit.</div>
+      </div>
+      <div class="footerPanel footerPanel__social">
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="mobileMenu" data-mobileMenu="panel">
+    <a class="menuClose" data-mobileMenu="close">
+      <i class="fa fa-times"></i>
+    </a>
+    <ul class="navigation__link--list">
+    </ul>
+  </div>
 
   <script src="scripts/bundle.js"></script>
 
