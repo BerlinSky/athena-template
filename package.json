@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "The template project for Ahten book list app",
   "scripts": {
-    "test": "jest",
     "prestart": "babel-node build-scripts/run-message.js",
-    "start": "npm-run-all --parallel open:source eslint:watch",
+    "start": "npm-run-all --parallel open:source eslint:watch test:watch",
     "open:source": "babel-node build-scripts/src-server.js",
     "js:lint": "esw webpack.config.* src build-scripts --color",
-    "eslint:watch": "npm run js:lint -- --watch"
+    "eslint:watch": "npm run js:lint -- --watch",
+    "test": "mocha --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "browser": {
     "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
@@ -26,6 +27,7 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.2",
     "browserify": "^12.0.1",
+    "chai": "^3.5.0",
     "css-loader": "^0.26.0",
     "eslint": "^2.13.1",
     "eslint-plugin-import": "^2.2.0",
@@ -43,6 +45,8 @@
     "gulp-util": "^3.0.7",
     "jest-cli": "^13.0.0",
     "jquery": "^2.2.2",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.2.0",
     "node-font-awesome": "^1.0.2",
     "npm-run-all": "^3.1.1",
     "open": "0.0.5",
