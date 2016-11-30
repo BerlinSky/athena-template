@@ -1,3 +1,9 @@
+// colors
+$white: #fff;
+$black: #000;
+$dark-grey: #222;
+$light-grey: #999;
+$light-green: #27ae60;
 // memnu flat
 .menuFlat li {
   padding: 0;
@@ -10,7 +16,7 @@
   }
   .menuFlat__Title:hover,
   .menuFlat__Title:focus {
-    color: #27ae60;
+    color: $light-green;
   }
 }
 
@@ -28,13 +34,13 @@
   position: absolute;
   z-index: 5;
   left: -9999px;
-  border: 1px solid #000;
-  background: #222;
+  border: 1px solid $black;
+  background: $dark-grey;
   text-align: left;
   padding: 18px;
   top: 65px;
   width: 500px;
-  color: #999;
+  color: $light-grey;
   a {
     padding-left: 0px;
     padding-right: 0px;
@@ -64,7 +70,7 @@
 
 .menuFlat div.menuFlat__extended div {
   h2 {
-    color: #fff;
+    color: $white;
     text-transform: capitalize;
     letter-spacing: 0.1px;
     font-size: 1.0rem;
@@ -79,6 +85,9 @@
     a {
       text-decoration: none;
       border: none;
+    }
+    a:hover {
+      color: $light-green;
     }
     a:link {
       text-decoration: none;
