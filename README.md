@@ -19,5 +19,5 @@ npm install
 
 ##### #3 Start the app by running gulp:
 ```
-npm strt
+npm start
 ```
