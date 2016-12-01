@@ -67,10 +67,23 @@ main {
 
 // Splash holiday
 .splashContainer {
-  height: 100vh;
+  // height: 100vh;
   background-color: green;
-  overflow-y: auto;
-  overflow-x: hidden;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  .leftPanel {
+    background-color: yellow;
+    flex: 0 0 20%;
+  }
+  .rightPanel {
+    background-color: rebeccapurple;
+    height: 1200px;
+    overflow-y: auto;
+    flex: 1 1 80%;
+  }
 }
 
 .snowBottom {
