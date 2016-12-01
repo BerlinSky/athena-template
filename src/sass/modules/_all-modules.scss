@@ -23,8 +23,6 @@
 @import "./logon-form/logon-form";
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
-
-
 .toggle-menu {
   display: block;
   font-size: 2rem;
@@ -33,9 +31,8 @@
   transition: margin .2s;
   background: transparent;
   border: 0;
-
   @include break(md) {
-  	display: none;
+    display: none;
   }
 }
 
@@ -68,23 +65,22 @@ main {
   margin: 0;
 }
 
+// Splash holiday
+.splashContainer {
+  height: 100vh;
+  background-color: green;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-// @media screen and (max-width: 1060px) {
-//   header {
-//     padding: 10px;
-//   }
-  // nav {
-  //   align-items: center;
-  // }
-  // ul {
-  //   display: none;
-  // }
-  // .logo {
-  //   max-width: 130px;
-  //   max-height: 100px;
-  //   margin: 5px 0 0 5px;
-  // }
-  // .toggle-menu {
-  //   display: block;
-  // }
-// }
+.snowBottom {
+  // background: url("http://cdn.gunsnroses.com/site/splash_holiday2016/holiday-2016_snow01.png") no-repeat transparent;
+  height: 200px;
+  width: 100%;
+  // margin-top: -200px;
+  // position: absolute;
+  // bottom: 0px;
+  background-size: contain;
+  background-position: bottom;
+  background-color: tomato;
+}
