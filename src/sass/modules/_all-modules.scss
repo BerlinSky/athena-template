@@ -81,8 +81,14 @@ main {
   }
   .rightPanel {
     background-color: rebeccapurple;
-    height: 100vh;
+    // height: 100vh;
     flex: 1 1 80%;
+    .expandable {
+      color: white;
+      width: 100%;
+      overflow-y: auto;
+      background-color: blue;
+    }
   }
 }
 
