@@ -17,7 +17,14 @@ export default {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-      { test: /\.scss$/, exclude: /node_modules/, loaders: [ 'style', 'css?sourceMap', 'sass' ] }
+      { test: /\.scss$/, 
+        loaders: [ 
+          'style-loader',
+          'css-loader?sourceMap',
+          'postcss-loader?sourceMap',
+          'sass-loader' 
+        ] 
+      }
     ]
   }
 }
