@@ -1,6 +1,6 @@
 # Web Application Starter Kit
 
-### Set up Bebel based on the express-server branch 
+### Set up Babel based on the express-server branch 
 
 ### Design goals:
 1. Set up Bebel to transpile the latest JS
