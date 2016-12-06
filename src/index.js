@@ -1,4 +1,4 @@
-import './main.css';
+import './sass/main.scss';
 import $ from 'jquery';
 
 /* eslint-disable no-console */
