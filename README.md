@@ -1,11 +1,9 @@
 # Web Application Starter Kit
 
-### Set up the Express server based on the base-page branch 
-
-### Branch: express-server
+### Set up the Express server based on the express-server-3 branch 
 
 ### Design goals:
-1. Set up an Express server
+1. Set up EsLint
 2. Utilize npm start, prestart, and postsrart
 
 ### Steps to use the starter kit
