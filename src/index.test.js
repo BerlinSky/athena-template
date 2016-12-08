@@ -13,8 +13,8 @@ describe('JSDom test', () => {
   it('should also pass', (done) => {
     const indexPage = fs.readFileSync('./src/index.html', "utf-8");
     jsdom.env(indexPage, function(err, window) {
-      const targetElem = window.document.getElementById('targetSpan');
-      expect(targetElem.innerHTML).to.equal("This is the landing page.");
+      const targetElem = window.document.getElementById('targetElem');
+      expect(targetElem.innerHTML).to.equal("Menus");
       done();
       window.close();
     });

@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
-export function getUsers() {
-  return get('users');
+export function getMenus() {
+  return get('menus');
 }
 
 function get(url) {

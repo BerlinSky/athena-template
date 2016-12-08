@@ -1,8 +1,7 @@
 import './sass/main.scss';
 import $ from 'jquery';
 
-import {getUsers} from './services/data-service';
-
+import {getMenus} from './services/data-service';
 
 /* eslint-disable no-console */
 
@@ -10,20 +9,19 @@ $(function() {
   console.log("bundle works just fine.");
 });
 
+getMenus().then(result => {
+  let menuList = "";
 
-// Populate table of users via API call.
-getUsers().then(result => {
-  let usersBody = "";
-
-  result.forEach(user => {
-    usersBody+= `<tr>
-      <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
-      <td>${user.id}</td>
-      <td>${user.firstName}</td>
-      <td>${user.lastName}</td>
-      <td>${user.email}</td>
-      </tr>`
+  result.forEach(menu => {
+    menuList+= `
+    <li>
+      <div>${menu.id}</div>
+      <div>${menu.name}</div>
+      <div>${menu.description}</div>
+      <div>${menu.link}</div>
+    </li>
+    `
   });
 
-  global.document.getElementById('users').innerHTML = usersBody;
+  global.document.getElementById('menus').innerHTML = menuList;
 });
