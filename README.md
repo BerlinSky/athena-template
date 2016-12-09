@@ -1,10 +1,10 @@
 # Web Application Starter Kit
 
-### Set up the Express server based on the express-server-5 branch 
+### Set up local http JSON data based on the further-setup branch
 
 ### Design goals:
-1. Set up SASS preprocessor
-2. Utilize npm start, prestart, and postsrart
+1. Fetch the JSON data from express server
+2. Paint the page with JQuery
 
 ### Steps to use the starter kit
 
