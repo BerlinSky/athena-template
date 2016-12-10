@@ -9,7 +9,11 @@
     "js:lint": "esw webpack.config.* src build-scripts --color",
     "eslint:watch": "npm run js:lint -- --watch",
     "test": "mocha --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "clean": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean test js:lint",
+    "build": "babel-node build-scripts/create-build.js",
+    "postbuild": "babel-node build-scripts/dist-server.js"
   },
   "browser": {
     "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
@@ -17,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
+    "autoprefixer": "6.5.3",
     "babel-cli": "6.18.0",
     "babel-core": "6.18.2",
     "babel-jest": "13.0.0",
@@ -29,6 +33,7 @@
     "browser-sync": "2.11.2",
     "browserify": "12.0.1",
     "chai": "3.5.0",
+    "compression": "1.6.2",
     "css-loader": "0.26.0",
     "eslint": "2.13.1",
     "eslint-plugin-import": "2.2.0",
@@ -44,6 +49,7 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-uglify": "1.5.3",
     "gulp-util": "3.0.7",
+    "html-webpack-plugin": "2.24.1",
     "jest-cli": "13.0.0",
     "jquery": "2.2.2",
     "jsdom": "^9.8.3",
@@ -52,14 +58,14 @@
     "node-sass": "^3.13.0",
     "npm-run-all": "^3.1.1",
     "open": "0.0.5",
-    "postcss-cli": "^2.6.0",
+    "postcss-cli": "2.6.0",
     "postcss-loader": "^1.2.0",
-    "postcss-smart-import": "^0.6.0",
-    "sass-loader": "^4.0.2",
+    "postcss-smart-import": "0.6.0",
+    "sass-loader": "4.0.2",
     "style-loader": "^0.13.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0",
+    "vinyl-source-stream": "1.1.0",
+    "watchify": "3.7.0",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4"
   },
