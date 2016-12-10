@@ -40,6 +40,7 @@
     "eslint-watch": "2.1.14",
     "exorcist": "0.4.0",
     "express": "4.14.0",
+    "favicons-webpack-plugin": "0.0.7",
     "gulp": "3.9.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-cssnano": "2.1.2",
