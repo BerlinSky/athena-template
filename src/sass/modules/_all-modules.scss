@@ -4,9 +4,11 @@
 @import "menu";
 @import "main-content";
 @import "./mobile-menu/mobile-menu";
+@import "./menu-flat/menu-flat";
 @import "site-cover";
 @import "site-show";
 @import "footer";
+@import "search";
 @import "panel-container";
 @import "media";
 @import "image";
@@ -17,11 +19,11 @@
 @import "selectric";
 @import "drop-menu";
 @import "animated-background";
+@import "./accordion/accordion";
 @import "./search-bar/search-bar";
 @import "./logon-form/logon-form";
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
-
 
 .toggle-menu {
   display: block;
@@ -31,9 +33,8 @@
   transition: margin .2s;
   background: transparent;
   border: 0;
-
   @include break(md) {
-  	display: none;
+    display: none;
   }
 }
 
@@ -65,24 +66,3 @@ main {
 .scroller .toggle-menu {
   margin: 0;
 }
-
-
-// @media screen and (max-width: 1060px) {
-//   header {
-//     padding: 10px;
-//   }
-  // nav {
-  //   align-items: center;
-  // }
-  // ul {
-  //   display: none;
-  // }
-  // .logo {
-  //   max-width: 130px;
-  //   max-height: 100px;
-  //   margin: 5px 0 0 5px;
-  // }
-  // .toggle-menu {
-  //   display: block;
-  // }
-// }

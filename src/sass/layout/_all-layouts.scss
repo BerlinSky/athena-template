@@ -1,33 +1,21 @@
 .l-siteContainer {
-	display: flex;
-	flex-direction: column;
-
-  & > * {
-    flex:1 1 auto;
+  display: flex;
+  flex-direction: column;
+  &>* {
+    flex: 1 1 auto;
   }
 }
 
 .l-navigation {
   display: flex;
   justify-content: space-between;
-
   .l-navlinks {
+    display: none;
+    @include break(md) {
+      display: flex;
+    }
     flex: 1;
-    display: flex;
-    // justify-content: flex-end;
     justify-content: space-around;
-
-    @include respondTo(x-small) {
-      visibility: hidden;
-    } 
-
-    @include respondTo(small) {
-      visibility: hidden;
-    } 
-
-    // @include respondTo(medium) {
-    //   visibility: hidden;
-    // } 
   }
 }
 
@@ -48,14 +36,11 @@
     top: 0;
     right: 0;
     z-index: 200;
-
     // background-color: yellow;
   }
-
   .l-mainContent {
     overflow-y: auto;
-    -webkit-overflow-scrolling:touch;
-
+    -webkit-overflow-scrolling: touch;
     margin-top: 50px;
   }
 }
@@ -66,13 +51,9 @@
     bottom: 0;
     right: 0;
     z-index: 200;
-
     // background-color: yellow;
   }
-
   .l-mainContent {
     margin-bottom: 45px;
   }
 }
-
-
