@@ -54,13 +54,13 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
   }
 
-  .suggestions {
+  .results {
     margin: 0;
     padding: 0;
     position: relative;
   }
 
-  .suggestions li {
+  .results li {
     background:white;
     list-style: none;
     border-bottom: 1px solid #D8D8D8;
@@ -73,16 +73,11 @@
     text-transform: capitalize;
   }
 
-  span.population {
+  span.item {
     font-size: 15px;
   }
 
-  .details {
-    text-align: center;
-    font-size: 15px;
-  }
-
-  .hl {
+  .highlight {
     background:#27ae60;
     color: #fff;
   }
