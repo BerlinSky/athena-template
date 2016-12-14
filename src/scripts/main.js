@@ -9,7 +9,7 @@ books.push(...booklist);
 function searchMatches(keyWords, books) {
   return books.filter(book => {
     const regex = new RegExp(keyWords, 'gi');
-    return book.author.match(regex) || book.description.match(regex);
+    return book.author.match(regex) || book.title.match(regex);
   });
 }
 
@@ -18,12 +18,12 @@ function displaySearchResults() {
 
   const html = matchArray.map(book => {
     const regex = new RegExp(this.value, 'gi');
-    const cityName = book.author.replace(regex, `<span class="highlight">${this.value}</span>`);
-    const stateName = book.description.replace(regex, `<span class="highlight">${this.value}</span>`);
+    const author = book.author.replace(regex, `<span class="highlight">${this.value}</span>`);
+    const title = book.title.replace(regex, `<span class="highlight">${this.value}</span>`);
     return `
       <li>
-        <span class="name">${cityName}</span>
-        <span class="item">${stateName}</span>
+        <span class="name">${author}</span>
+        <span class="item">${title}</span>
       </li>
     `;
   }).join('');

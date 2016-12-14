@@ -7,45 +7,27 @@ Object.defineProperty(exports, "__esModule", {
 var booklist = [{
   "id": 1,
   "title": "The Grapes of Wrath",
-  "author": "John Steinbeck",
-  "description": "An epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads.",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51IeBzZguDL.jpg",
-  "imageUrl-local": "./images/the-grapes-of-wrath.jpg"
+  "author": "John Steinbeck"
 }, {
   "id": 2,
   "title": "Great Expectations",
-  "author": "Charles Dickens",
-  "description": "This is a gripping tale of crime and guilt, revenge and reward",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/410lfZOQI6L._SX318_BO1,204,203,200_.jpg",
-  "imageUrl-local": "./images/great-expectations.jpg"
+  "author": "Charles Dickens"
 }, {
   "id": 3,
   "title": "Wuthering Heights",
-  "author": "Emily Brontë",
-  "description": "Wuthering Heights is a wild, passionate story of the intense and almost demonic love between Catherine Earnshaw and Heathcliff.",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81zx%2BPUBRFL.jpg",
-  "imageUrl-local": "./images/wuthering-heights.jpg"
+  "author": "Emily Brontë"
 }, {
   "id": 4,
   "title": "Sense and Sensibility",
-  "author": "Jane Austen",
-  "description": "The sisters learn that sense must mix with sensibility if they are to find personal happiness in a society where status and money govern the rules of love.",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/415AMIk9PQL._SX324_BO1,204,203,200_.jpg",
-  "imageUrl-local": "./images/sense-and-sensibility.jpg"
+  "author": "Jane Austen"
 }, {
   "id": 5,
   "title": "Vanity Fair",
-  "author": "William Makepeace Thackeray",
-  "description": "This is a novel without a hero, satirizing society in early 19th-century Britain.",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/516voTm5L%2BL.jpg",
-  "imageUrl-local": "./images/vanity-fair.jpg"
+  "author": "William Makepeace Thackeray"
 }, {
   "id": 6,
   "title": "Middlemarch",
-  "author": "George Eliot",
-  "description": "The author ortrays a whole community--tradespeople, middle classes, country gentry--in the rising provincial town of Middlemarch, circa 1830.",
-  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51vOou9D1XL.jpg",
-  "imageUrl-local": "./images/middle-march.jpg"
+  "author": "George Eliot"
 }];
 
 exports.default = booklist;
@@ -70,7 +52,7 @@ books.push.apply(books, _toConsumableArray(_booklist2.default));
 function searchMatches(keyWords, books) {
   return books.filter(function (book) {
     var regex = new RegExp(keyWords, 'gi');
-    return book.author.match(regex) || book.description.match(regex);
+    return book.author.match(regex) || book.title.match(regex);
   });
 }
 
@@ -81,9 +63,9 @@ function displaySearchResults() {
 
   var html = matchArray.map(function (book) {
     var regex = new RegExp(_this.value, 'gi');
-    var cityName = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    var stateName = book.description.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    return '\n      <li>\n        <span class="name">' + cityName + '</span>\n        <span class="item">' + stateName + '</span>\n      </li>\n    ';
+    var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
+    var title = book.title.replace(regex, '<span class="highlight">' + _this.value + '</span>');
+    return '\n      <li>\n        <span class="name">' + author + '</span>\n        <span class="item">' + title + '</span>\n      </li>\n    ';
   }).join('');
   results.innerHTML = html;
 }
