@@ -35,48 +35,13 @@ exports.default = booklist;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _booklist = require('./booklist');
+var _searchForm = require('./search-form');
 
-var _booklist2 = _interopRequireDefault(_booklist);
+var _searchForm2 = _interopRequireDefault(_searchForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // import $ from 'jquery';
-
-// search form
-
-
-var books = [];
-books.push.apply(books, _toConsumableArray(_booklist2.default));
-
-function searchMatches(keyWords) {
-  return books.filter(function (book) {
-    var regex = new RegExp(keyWords, 'gi');
-    return book.author.match(regex) || book.title.match(regex);
-  });
-}
-
-function displaySearchResults() {
-  var _this = this;
-
-  var matchArray = searchMatches(this.value);
-
-  var html = matchArray.map(function (book) {
-    var regex = new RegExp(_this.value, 'gi');
-    var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    var title = book.title.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    return '\n      <li>\n        <span class="name">' + author + '</span>\n        <span class="item">' + title + '</span>\n      </li>\n    ';
-  }).join('');
-  results.innerHTML = html;
-}
-
-var searchInput = document.querySelector('.search');
-var results = document.querySelector('.results');
-
-searchInput.addEventListener('change', displaySearchResults);
-searchInput.addEventListener('keyup', displaySearchResults);
-
-// search form - end
+(0, _searchForm2.default)(); // import $ from 'jquery';
 
 
 var menuOpen = document.querySelector('[data-mobileMenu="open"]');
@@ -120,6 +85,57 @@ menuClose.addEventListener('click', closeMenu);
 // $(function () {
 
 // });
+
+},{"./search-form":3}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = activateSearchForm;
+
+var _booklist = require('./booklist');
+
+var _booklist2 = _interopRequireDefault(_booklist);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // search form
+
+
+var books = [];
+books.push.apply(books, _toConsumableArray(_booklist2.default));
+
+function searchMatches(keyWords) {
+  return books.filter(function (book) {
+    var regex = new RegExp(keyWords, 'gi');
+    return book.author.match(regex) || book.title.match(regex);
+  });
+}
+
+function displaySearchResults() {
+  var _this = this;
+
+  var matchArray = searchMatches(this.value);
+
+  var html = matchArray.map(function (book) {
+    var regex = new RegExp(_this.value, 'gi');
+    var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
+    var title = book.title.replace(regex, '<span class="highlight">' + _this.value + '</span>');
+    return '\n      <li>\n        <span class="name">' + author + '</span>\n        <span class="item">' + title + '</span>\n      </li>\n    ';
+  }).join('');
+  results.innerHTML = html;
+}
+
+var searchInput = document.querySelector('.search');
+var results = document.querySelector('.results');
+
+function activateSearchForm() {
+  searchInput.addEventListener('change', displaySearchResults);
+  searchInput.addEventListener('keyup', displaySearchResults);
+}
+
+// search form - end
 
 },{"./booklist":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map
