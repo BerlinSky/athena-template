@@ -1,5 +1,44 @@
 // import $ from 'jquery';
 
+// search form
+import booklist from './booklist';
+
+const books = [];
+books.push(...booklist);
+
+function searchMatches(keyWords, books) {
+  return books.filter(book => {
+    const regex = new RegExp(keyWords, 'gi');
+    return book.author.match(regex) || book.description.match(regex);
+  });
+}
+
+function displaySearchResults() {
+  const matchArray = searchMatches(this.value, books);
+
+  const html = matchArray.map(book => {
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = book.author.replace(regex, `<span class="highlight">${this.value}</span>`);
+    const stateName = book.description.replace(regex, `<span class="highlight">${this.value}</span>`);
+    return `
+      <li>
+        <span class="name">${cityName}</span>
+        <span class="item">${stateName}</span>
+      </li>
+    `;
+  }).join('');
+  results.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.search');
+const results = document.querySelector('.results');
+
+searchInput.addEventListener('change', displaySearchResults);
+searchInput.addEventListener('keyup', displaySearchResults);
+
+// search form - end
+
+
 const menuOpen = document.querySelector('[data-mobileMenu="open"]');
 const menuClose = document.querySelector('[data-mobileMenu="close"]');
 const mobileMenu = document.querySelector('[data-mobileMenu="panel"]');
@@ -29,7 +68,6 @@ function closeMenu() {
   mobileMenu.classList.add('slideRight');
 
   setTimeout(() => {
-    console.log('inside timeout 2');
     mobileMenu.style.display = 'none';
     mobileMenu.classList.remove('slideRight');
   }, 1000);
