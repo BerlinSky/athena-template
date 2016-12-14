@@ -4,7 +4,6 @@ const menuOpen = document.querySelector('[data-mobileMenu="open"]');
 const menuClose = document.querySelector('[data-mobileMenu="close"]');
 const mobileMenu = document.querySelector('[data-mobileMenu="panel"]');
 
-
 function noTouchMove(evt) {
   evt.preventDefault();
 }
@@ -15,7 +14,7 @@ function openMenu() {
   mobileMenu.classList.add('magictime');
   mobileMenu.classList.add('slideLeft');
 
-  setTimeout(function(){
+  setTimeout(() => {
     mobileMenu.style.right = '0';
     mobileMenu.classList.remove('slideLeft');
   }, 1000);
@@ -29,7 +28,8 @@ function closeMenu() {
   mobileMenu.classList.add('magictime');
   mobileMenu.classList.add('slideRight');
 
-  setTimeout(function(){
+  setTimeout(() => {
+    console.log('inside timeout 2');
     mobileMenu.style.display = 'none';
     mobileMenu.classList.remove('slideRight');
   }, 1000);

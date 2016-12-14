@@ -32,6 +32,7 @@ function closeMenu() {
   mobileMenu.classList.add('slideRight');
 
   setTimeout(function () {
+    console.log('inside timeout 2');
     mobileMenu.style.display = 'none';
     mobileMenu.classList.remove('slideRight');
   }, 1000);
