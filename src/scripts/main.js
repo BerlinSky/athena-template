@@ -6,7 +6,7 @@ import booklist from './booklist';
 const books = [];
 books.push(...booklist);
 
-function searchMatches(keyWords, books) {
+function searchMatches(keyWords) {
   return books.filter(book => {
     const regex = new RegExp(keyWords, 'gi');
     return book.author.match(regex) || book.title.match(regex);
@@ -14,7 +14,7 @@ function searchMatches(keyWords, books) {
 }
 
 function displaySearchResults() {
-  const matchArray = searchMatches(this.value, books);
+  const matchArray = searchMatches(this.value);
 
   const html = matchArray.map(book => {
     const regex = new RegExp(this.value, 'gi');

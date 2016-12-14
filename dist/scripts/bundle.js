@@ -49,7 +49,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var books = [];
 books.push.apply(books, _toConsumableArray(_booklist2.default));
 
-function searchMatches(keyWords, books) {
+function searchMatches(keyWords) {
   return books.filter(function (book) {
     var regex = new RegExp(keyWords, 'gi');
     return book.author.match(regex) || book.title.match(regex);
@@ -59,7 +59,7 @@ function searchMatches(keyWords, books) {
 function displaySearchResults() {
   var _this = this;
 
-  var matchArray = searchMatches(this.value, books);
+  var matchArray = searchMatches(this.value);
 
   var html = matchArray.map(function (book) {
     var regex = new RegExp(_this.value, 'gi');
