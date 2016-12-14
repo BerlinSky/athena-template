@@ -39,11 +39,27 @@ var _searchForm = require('./search-form');
 
 var _searchForm2 = _interopRequireDefault(_searchForm);
 
+var _mobileMenu = require('./mobile-menu');
+
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _searchForm2.default)(); // import $ from 'jquery';
+// import $ from 'jquery';
+(0, _searchForm2.default)();
+(0, _mobileMenu2.default)();
 
+// $(function () {
 
+// });
+
+},{"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = activateMobileMenu;
 var menuOpen = document.querySelector('[data-mobileMenu="open"]');
 var menuClose = document.querySelector('[data-mobileMenu="close"]');
 var mobileMenu = document.querySelector('[data-mobileMenu="panel"]');
@@ -78,15 +94,12 @@ function closeMenu() {
   }, 1000);
 }
 
-menuOpen.addEventListener('click', openMenu);
+function activateMobileMenu() {
+  menuOpen.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+}
 
-menuClose.addEventListener('click', closeMenu);
-
-// $(function () {
-
-// });
-
-},{"./search-form":3}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
