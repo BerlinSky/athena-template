@@ -10,7 +10,16 @@ activateMobileMenu();
 // });
 
 
+// my fav memu list
+function saveFavList() {
+  console.log("save list");
+}
 
+const saveFavListBtn = document.querySelector('.js-favListForm_save');
+
+saveFavListBtn.addEventListener('click', saveFavList);
+
+// my fav memu list - End
 
 
 

@@ -53,6 +53,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // });
 
+
+// my fav memu list
+function saveFavList() {
+  console.log("save list");
+}
+
+var saveFavListBtn = document.querySelector('.js-favListForm_save');
+
+saveFavListBtn.addEventListener('click', saveFavList);
+
+// my fav memu list - End
+
 },{"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){
 'use strict';
 

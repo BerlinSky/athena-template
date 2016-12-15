@@ -37,7 +37,7 @@
   }
 
   .favMenuList input + label:before {
-    content: "\01F5FD";
+    content: "\0125FD";
     margin-right: 10px;
   }
 
@@ -45,11 +45,11 @@
     content: "\01F353";
   }
 
-  .add-items {
+  .favListForm {
     margin-top: 20px;
   }
 
-  .add-items input {
+  .favListForm input {
     padding:10px;
     outline:0;
     border:1px solid rgba(0,0,0,0.1);
