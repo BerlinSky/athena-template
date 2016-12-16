@@ -75,6 +75,14 @@ function paintFavList(books, favMenuList) {
   favMenuList.innerHTML = html;
 }
 
+function markFavItem(e) {
+  var et = e.target;
+  if (!et.matches('input')) return;
+
+  var index = et.dataset.index;
+  books[index].isFav = !books[index].isFav;
+}
+
 function saveFavList(e) {
   e.preventDefault();
 
@@ -84,7 +92,7 @@ function saveFavList(e) {
 paintFavList(books, favMenuList);
 
 favListForm.addEventListener('submit', saveFavList);
-
+favMenuList.addEventListener('click', markFavItem);
 // my fav memu list - End
 
 },{"./booklist":1,"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){

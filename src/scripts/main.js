@@ -32,6 +32,14 @@ function paintFavList(books, favMenuList) {
   favMenuList.innerHTML = html;
 }
 
+function markFavItem(e) {
+  const et = e.target;
+  if (!et.matches('input')) return;
+
+  const index = et.dataset.index;
+  books[index].isFav = !books[index].isFav;
+}
+
 function saveFavList(e) {
   e.preventDefault();
 
@@ -41,15 +49,6 @@ function saveFavList(e) {
 paintFavList(books, favMenuList);
 
 favListForm.addEventListener('submit', saveFavList);
-
+favMenuList.addEventListener('click', markFavItem);
 // my fav memu list - End
-
-
-
-
-
-
-
-
-
 
