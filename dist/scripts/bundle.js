@@ -87,8 +87,6 @@ function saveFavList(e) {
   e.preventDefault();
 
   localStorage.setItem('favMenuList', books);
-
-  console.log("save list");
 }
 
 paintFavList(books, favMenuList);
