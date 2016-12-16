@@ -54,6 +54,7 @@ books.push.apply(books, _toConsumableArray(_booklist2.default));
 
 var favListForm = document.querySelector('.js-favListForm');
 var favMenuList = document.querySelector('.js-favMenuList');
+var favMenuListLocalName = 'favMenuList';
 
 function paintFavList(books, favMenuList) {
   var html = books.map(function (book, i) {
@@ -80,31 +81,28 @@ function saveFavList(e) {
     }
   });
 
-  var favMenuListSaved = [];
+  var favName = this.querySelector('.js-favListForm_listName').value;
   var itemToSave = {
-    name: "myList",
+    favName: favName,
     favList: favList
   };
 
+  var favMenuListSaved = [];
   favMenuListSaved.push(itemToSave);
   if (favList.length > 0) {
-    localStorage.setItem('favMenuList', JSON.stringify(favMenuListSaved));
+    localStorage.setItem(favMenuListLocalName, JSON.stringify(favMenuListSaved));
   }
 }
 
 function readFavList(favMenuListName) {
-  console.log('favMenuListName', favMenuListName);
-
-  var favMenuListSaved = JSON.parse(localStorage.getItem(favMenuListName));
-
-  console.log("favMenuListSaved", favMenuListSaved);
+  return JSON.parse(localStorage.getItem(favMenuListName));
 }
 
 favListForm.addEventListener('submit', saveFavList);
 favMenuList.addEventListener('click', markFavItem);
 
 function activateFavMenuList() {
-  readFavList('favMenuList');
+  readFavList(favMenuListLocalName);
   paintFavList(books, favMenuList);
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);

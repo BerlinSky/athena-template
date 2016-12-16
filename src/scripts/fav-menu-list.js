@@ -6,6 +6,7 @@ books.push(...booklist);
 
 const favListForm = document.querySelector('.js-favListForm');
 const favMenuList = document.querySelector('.js-favMenuList');
+const favMenuListLocalName = 'favMenuList';
 
 function paintFavList(books, favMenuList) {
   const html = books.map((book, i) => {
@@ -37,31 +38,29 @@ function saveFavList(e) {
     }
   })
 
-  const favMenuListSaved = [];
+  const favName = (this.querySelector('.js-favListForm_listName')).value;
   const itemToSave = {
-    name: "myList",
+    favName,
     favList
   };
 
+  const favMenuListSaved = [];
   favMenuListSaved.push(itemToSave);
   if (favList.length > 0) {
-    localStorage.setItem('favMenuList', JSON.stringify(favMenuListSaved));
+    localStorage.setItem(favMenuListLocalName, JSON.stringify(favMenuListSaved));
   }
 }
 
+
 function readFavList(favMenuListName) {
-  console.log('favMenuListName', favMenuListName);
-
-  const favMenuListSaved = JSON.parse(localStorage.getItem(favMenuListName));
-
-  console.log("favMenuListSaved", favMenuListSaved);
+  return JSON.parse(localStorage.getItem(favMenuListName));
 }
 
 favListForm.addEventListener('submit', saveFavList);
 favMenuList.addEventListener('click', markFavItem);
 
 export default function activateFavMenuList() {
-  readFavList('favMenuList');
+  readFavList(favMenuListLocalName);
   paintFavList(books, favMenuList);
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
