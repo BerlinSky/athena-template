@@ -55,13 +55,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 // my fav memu list
-function saveFavList() {
+function saveFavList(e) {
+  e.preventDefault();
+
   console.log("save list");
 }
 
-var saveFavListBtn = document.querySelector('.js-favListForm_save');
+var favListForm = document.querySelector('.js-favListForm');
 
-saveFavListBtn.addEventListener('click', saveFavList);
+favListForm.addEventListener('submit', saveFavList);
 
 // my fav memu list - End
 

@@ -11,13 +11,15 @@ activateMobileMenu();
 
 
 // my fav memu list
-function saveFavList() {
+function saveFavList(e) {
+  e.preventDefault();
+
   console.log("save list");
 }
 
-const saveFavListBtn = document.querySelector('.js-favListForm_save');
+const favListForm = document.querySelector('.js-favListForm');
 
-saveFavListBtn.addEventListener('click', saveFavList);
+favListForm.addEventListener('submit', saveFavList);
 
 // my fav memu list - End
 
