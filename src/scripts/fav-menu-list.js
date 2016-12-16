@@ -37,17 +37,34 @@ function saveFavList(e) {
     }
   })
 
+  const favMenuListSaved = [];
+  const itemToSave = {
+    name: "myList",
+    favList
+  };
+
+  favMenuListSaved.push(itemToSave);
   if (favList.length > 0) {
-    localStorage.setItem('favMenuList', JSON.stringify(favList));
+    localStorage.setItem('favMenuList', JSON.stringify(favMenuListSaved));
   }
+}
+
+function readFavList(favMenuListName) {
+  console.log('favMenuListName', favMenuListName);
+
+  const favMenuListSaved = JSON.parse(localStorage.getItem(favMenuListName));
+
+  console.log("favMenuListSaved", favMenuListSaved);
 }
 
 favListForm.addEventListener('submit', saveFavList);
 favMenuList.addEventListener('click', markFavItem);
 
 export default function activateFavMenuList() {
+  readFavList('favMenuList');
   paintFavList(books, favMenuList);
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
 }
+
 // my fav memu list - End

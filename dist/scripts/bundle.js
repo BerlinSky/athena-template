@@ -80,19 +80,36 @@ function saveFavList(e) {
     }
   });
 
+  var favMenuListSaved = [];
+  var itemToSave = {
+    name: "myList",
+    favList: favList
+  };
+
+  favMenuListSaved.push(itemToSave);
   if (favList.length > 0) {
-    localStorage.setItem('favMenuList', JSON.stringify(favList));
+    localStorage.setItem('favMenuList', JSON.stringify(favMenuListSaved));
   }
+}
+
+function readFavList(favMenuListName) {
+  console.log('favMenuListName', favMenuListName);
+
+  var favMenuListSaved = JSON.parse(localStorage.getItem(favMenuListName));
+
+  console.log("favMenuListSaved", favMenuListSaved);
 }
 
 favListForm.addEventListener('submit', saveFavList);
 favMenuList.addEventListener('click', markFavItem);
 
 function activateFavMenuList() {
+  readFavList('favMenuList');
   paintFavList(books, favMenuList);
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
 }
+
 // my fav memu list - End
 
 },{"./booklist":1}],3:[function(require,module,exports){
