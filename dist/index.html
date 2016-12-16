@@ -21,11 +21,23 @@
   <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
     <header class="l-navigation navigation">
       <h1 class="logo"><a href="#">RL</a></h1>
-      <nav class="l-navlinks desktopMenu">
+      <nav class="l-navlinks desktopMenu js-desktopMenu">
 
-        <ul class="menuFlat">
-          <li><a href="#" class="menuFlat__Title">Books</a>
-            <div class="menuFlat__extended menuFlat__extended--right">
+        <ul class="menuFlat js-menuFlat">
+          <div class="dropdownBackground">
+            <span class="arrow"></span>
+          </div>
+
+          <li>
+            <a href="#" class="menuFlat__Title-x">Books</a>
+
+            <div class="dropdown">
+              <div class="bio">
+                <img src="https://logo.clearbit.com/wesbos.com">
+                <p>Wes Bos sure does love web development. He teaches things like JavaScript, CSS and BBQ. Wait. BBQ isn't part of web development. It should be though!</p>
+              </div>
+            </div>
+            <!--<div class="menuFlat__extended menuFlat__extended--right">
               <div class='left'>
                 <h2>By Category</h2>
                 <div class="menuFlat__item--category">
@@ -57,10 +69,41 @@
                   <a target=''>Kindle Children's Books</a>
                 </div>
               </div>
-            </div>
+            </div>-->
           </li>
-          <li><a href="#" class="menuFlat__Title">Authors</a>
-            <div class="menuFlat__extended menuFlat__extended--right">
+          <li><a href="#" class="menuFlat__Title-x">Authors</a>
+            <ul class="dropdown courses">
+              <li>
+                <span class="code">RFB</span>
+                <a href="https://ReactForBeginners.com">React For Beginners</a>
+              </li>
+              <li>
+                <span class="code">ES6</span>
+                <a href="https://ES6.io">ES6 For Everyone</a>
+              </li>
+              <li>
+                <span class="code">STPU</span>
+                <a href="https://SublimeTextBook.com">Sublime Text Power User</a>
+              </li>
+              <li>
+                <span class="code">WTF</span>
+                <a href="http://flexbox.io">What The Flexbox?!</a>
+              </li>
+              <li>
+                <span class="code">LRX</span>
+                <a href="http://LearnRedux.com">Learn Redux</a>
+              </li>
+              <li>
+                <span class="code">CLPU</span>
+                <a href="http://CommandLinePowerUser.com">Command Line Power User</a>
+              </li>
+              <li>
+                <span class="code">MMD</span>
+                <a href="http://MasteringMarkdown.com">Mastering Markdown</a>
+              </li>
+            </ul>
+
+            <!--<div class="menuFlat__extended menuFlat__extended--right">
               <div class='left'>
                 <h2>By Category</h2>
                 <div class="menuFlat__item--category">
@@ -92,9 +135,9 @@
                   <a target=''>Kindle Children's Books</a>
                 </div>
               </div>
-            </div>
+            </div>-->
           </li>
-          <li><a href="#" class="menuFlat__Title">Book Clubs</a>
+          <!--<li><a href="#" class="menuFlat__Title">Book Clubs</a>
             <div class="menuFlat__extended menuFlat__extended--left">
               <div class='left'>
                 <h2>By Category</h2>
@@ -165,7 +208,7 @@
             </div>
           </li>
           <li><a href="#" class="menuFlat__Title">Log In</a></li>
-          <li><a href="#" class="menuFlat__Title">Join</a></li>
+          <li><a href="#" class="menuFlat__Title">Join</a></li>-->
         </ul>
 
       </nav>
