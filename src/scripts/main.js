@@ -43,7 +43,16 @@ function markFavItem(e) {
 function saveFavList(e) {
   e.preventDefault();
 
-  localStorage.setItem('favMenuList', books);
+  const favList = [];
+  books.map((book) => {
+    if (book.isFav) {
+      favList.push(book);
+    }
+  })
+
+  if (favList.length > 0) {
+    localStorage.setItem('favMenuList', JSON.stringify(favList));
+  }
 }
 
 paintFavList(books, favMenuList);
