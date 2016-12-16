@@ -35,13 +35,10 @@ exports.default = booklist;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _searchForm = require('./search-form');
-
-var _searchForm2 = _interopRequireDefault(_searchForm);
-
-var _mobileMenu = require('./mobile-menu');
-
-var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = activateFavMenuList;
 
 var _booklist = require('./booklist');
 
@@ -49,18 +46,8 @@ var _booklist2 = _interopRequireDefault(_booklist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // import $ from 'jquery';
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // my fav memu list
 
-
-(0, _searchForm2.default)();
-(0, _mobileMenu2.default)();
-
-// $(function () {
-
-// });
-
-
-// my fav memu list
 
 var books = [];
 books.push.apply(books, _toConsumableArray(_booklist2.default));
@@ -98,13 +85,42 @@ function saveFavList(e) {
   }
 }
 
-paintFavList(books, favMenuList);
-
 favListForm.addEventListener('submit', saveFavList);
 favMenuList.addEventListener('click', markFavItem);
+
+function activateFavMenuList() {
+  paintFavList(books, favMenuList);
+  favListForm.addEventListener('submit', saveFavList);
+  favMenuList.addEventListener('click', markFavItem);
+}
 // my fav memu list - End
 
-},{"./booklist":1,"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){
+},{"./booklist":1}],3:[function(require,module,exports){
+'use strict';
+
+var _searchForm = require('./search-form');
+
+var _searchForm2 = _interopRequireDefault(_searchForm);
+
+var _mobileMenu = require('./mobile-menu');
+
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+
+var _favMenuList = require('./fav-menu-list');
+
+var _favMenuList2 = _interopRequireDefault(_favMenuList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _searchForm2.default)(); // import $ from 'jquery';
+
+(0, _mobileMenu2.default)();
+(0, _favMenuList2.default)();
+// $(function () {
+
+// });
+
+},{"./fav-menu-list":2,"./mobile-menu":4,"./search-form":5}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -150,7 +166,7 @@ function activateMobileMenu() {
   menuClose.addEventListener('click', closeMenu);
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -201,5 +217,5 @@ function activateSearchForm() {
 
 // search form - end
 
-},{"./booklist":1}]},{},[2])
+},{"./booklist":1}]},{},[3])
 //# sourceMappingURL=bundle.js.map
