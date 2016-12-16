@@ -11,13 +11,34 @@ activateMobileMenu();
 
 
 // my fav memu list
+
+import booklist from './booklist';
+
+const books = [];
+books.push(...booklist);
+
+const favListForm = document.querySelector('.js-favListForm');
+const favMenuList = document.querySelector('.js-favMenuList');
+
+function paintFavList(books, favMenuList) {
+  const html = books.map((book, i) => {
+    return `
+        <li>
+          <input type="checkbox" data-index=${i} id="item${i}" ${book.isFav ? 'checked' : ''} />
+          <label for="item${i}">${book.author}</label>
+        </li>
+      `;
+  }).join('');
+  favMenuList.innerHTML = html;
+}
+
 function saveFavList(e) {
   e.preventDefault();
 
   console.log("save list");
 }
 
-const favListForm = document.querySelector('.js-favListForm');
+paintFavList(books, favMenuList);
 
 favListForm.addEventListener('submit', saveFavList);
 

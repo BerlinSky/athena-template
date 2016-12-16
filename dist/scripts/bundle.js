@@ -43,9 +43,15 @@ var _mobileMenu = require('./mobile-menu');
 
 var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
 
+var _booklist = require('./booklist');
+
+var _booklist2 = _interopRequireDefault(_booklist);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import $ from 'jquery';
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // import $ from 'jquery';
+
+
 (0, _searchForm2.default)();
 (0, _mobileMenu2.default)();
 
@@ -55,19 +61,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 // my fav memu list
+
+var books = [];
+books.push.apply(books, _toConsumableArray(_booklist2.default));
+
+var favListForm = document.querySelector('.js-favListForm');
+var favMenuList = document.querySelector('.js-favMenuList');
+
+function paintFavList(books, favMenuList) {
+  var html = books.map(function (book, i) {
+    return '\n        <li>\n          <input type="checkbox" data-index=' + i + ' id="item' + i + '" ' + (book.isFav ? 'checked' : '') + ' />\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
+  }).join('');
+  favMenuList.innerHTML = html;
+}
+
 function saveFavList(e) {
   e.preventDefault();
 
   console.log("save list");
 }
 
-var favListForm = document.querySelector('.js-favListForm');
+paintFavList(books, favMenuList);
 
 favListForm.addEventListener('submit', saveFavList);
 
 // my fav memu list - End
 
-},{"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){
+},{"./booklist":1,"./mobile-menu":3,"./search-form":4}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
