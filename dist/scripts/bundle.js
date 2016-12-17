@@ -9829,7 +9829,7 @@ var triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
 var background = document.querySelector('.js-fancySiteMenu__shadow');
 var nav = document.querySelector('.js-fancySiteMenu');
 
-function handleEnter() {
+function shadowed() {
   var _this = this;
 
   this.classList.add('js-shadowed');
@@ -9854,16 +9854,16 @@ function handleEnter() {
   background.style.setProperty('transform', 'translate(' + coords.left + 'px, ' + coords.top + 'px)');
 }
 
-function handleLeave() {
+function unshadowed() {
   this.classList.remove('js-shadowed', 'js-shadowed--revealed');
   background.classList.remove('open');
 }
 
 triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseenter', handleEnter);
+  return trigger.addEventListener('mouseenter', shadowed);
 });
 triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseleave', handleLeave);
+  return trigger.addEventListener('mouseleave', unshadowed);
 });
 
 (0, _jquery2.default)(function () {

@@ -6,34 +6,34 @@ const triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
 const background  = document.querySelector('.js-fancySiteMenu__shadow');
 const nav  = document.querySelector('.js-fancySiteMenu');
 
-  function handleEnter() {
-    this.classList.add('js-shadowed');
-    setTimeout(() => this.classList.contains('js-shadowed') && this.classList.add('js-shadowed--revealed'), 100);
-    background.classList.add('open');
+function shadowed() {
+  this.classList.add('js-shadowed');
+  setTimeout(() => this.classList.contains('js-shadowed') && this.classList.add('js-shadowed--revealed'), 100);
+  background.classList.add('open');
 
-    const dropdown = this.querySelector('.fancySiteMenu__plate');
-    const dropdownCoords = dropdown.getBoundingClientRect();
-    const navCoords = nav.getBoundingClientRect();
+  const dropdown = this.querySelector('.fancySiteMenu__plate');
+  const dropdownCoords = dropdown.getBoundingClientRect();
+  const navCoords = nav.getBoundingClientRect();
 
-    const coords = {
-      height: dropdownCoords.height,
-      width: dropdownCoords.width,
-      top: dropdownCoords.top - navCoords.top,
-      left: dropdownCoords.left - navCoords.left
-    };
+  const coords = {
+    height: dropdownCoords.height,
+    width: dropdownCoords.width,
+    top: dropdownCoords.top - navCoords.top,
+    left: dropdownCoords.left - navCoords.left
+  };
 
-    background.style.setProperty('width', `${coords.width}px`);
-    background.style.setProperty('height', `${coords.height}px`);
-    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
-  }
+  background.style.setProperty('width', `${coords.width}px`);
+  background.style.setProperty('height', `${coords.height}px`);
+  background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+}
 
-  function handleLeave() {
-    this.classList.remove('js-shadowed', 'js-shadowed--revealed');
-    background.classList.remove('open');
-  }
+function unshadowed() {
+  this.classList.remove('js-shadowed', 'js-shadowed--revealed');
+  background.classList.remove('open');
+}
 
-  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+triggers.forEach(trigger => trigger.addEventListener('mouseenter', shadowed));
+triggers.forEach(trigger => trigger.addEventListener('mouseleave', unshadowed));
 
 $(function () {
   $('[data-mobileMenu="open"]').click(function() {

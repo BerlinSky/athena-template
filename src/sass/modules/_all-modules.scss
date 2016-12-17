@@ -106,7 +106,8 @@ body {
   width: 100px;
   height: 100px;
   position: absolute;
-  background: #fff;
+  // background: #fff;
+  background: #999;
   border-radius: 4px;
   box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
   transition:all 0.3s, opacity 0.1s, translate 0.2s;
@@ -120,8 +121,8 @@ body {
     width: 20px;
     height: 20px;
     display: block;
-    // background: black;
-    background: white;
+    background: #999;
+    // background: white;
     transform: translateY(-50%) rotate(45deg);
   }
 }
@@ -146,10 +147,16 @@ body {
 
 .fancySiteMenu__item--simpleList {
   min-width: 400px;
+  // background-color: #fff;
   li {
     // padding: 10px 0;
-    padding: 5px 0;
+    padding: 0 5px;
     display: block;
+    color: #999;
+    font-size: 1.1rem;
+    // border: solid 1px green;
+    background-color: #333;
+    margin: 5px;
     // border-bottom: 1px solid rgba(0,0,0,0.2);
   }
   a {
