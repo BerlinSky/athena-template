@@ -9834,7 +9834,7 @@ function handleEnter() {
 
   this.classList.add('js-shadowed');
   setTimeout(function () {
-    return _this.classList.contains('js-shadowed') && _this.classList.add('trigger-enter-active');
+    return _this.classList.contains('js-shadowed') && _this.classList.add('js-shadowed--revealed');
   }, 100);
   background.classList.add('open');
 
@@ -9855,7 +9855,7 @@ function handleEnter() {
 }
 
 function handleLeave() {
-  this.classList.remove('js-shadowed', 'trigger-enter-active');
+  this.classList.remove('js-shadowed', 'js-shadowed--revealed');
   background.classList.remove('open');
 }
 

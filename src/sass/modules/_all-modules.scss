@@ -97,7 +97,7 @@ body {
   display: block;
 }
 
-.trigger-enter-active .fancySiteMenu__plate {
+.js-shadowed--revealed .fancySiteMenu__plate {
   opacity: 1;
 }
 
@@ -138,7 +138,7 @@ body {
 
   img {
     float: left;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-right: 20px;
   }
 }
