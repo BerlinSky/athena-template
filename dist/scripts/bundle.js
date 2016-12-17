@@ -9825,9 +9825,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // menu flat 2
 
-var triggers = document.querySelectorAll('.fancySiteMenuItems > li');
-var background = document.querySelector('.fancySiteMenu__shadow');
-var nav = document.querySelector('.fancySiteMenu');
+var triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
+var background = document.querySelector('.js-fancySiteMenu__shadow');
+var nav = document.querySelector('.js-fancySiteMenu');
 
 function handleEnter() {
   var _this = this;
@@ -9835,10 +9835,10 @@ function handleEnter() {
   this.classList.add('trigger-enter');
   setTimeout(function () {
     return _this.classList.contains('trigger-enter') && _this.classList.add('trigger-enter-active');
-  }, 150);
+  }, 100);
   background.classList.add('open');
 
-  var dropdown = this.querySelector('.dropdown');
+  var dropdown = this.querySelector('.fancySiteMenu_plate');
   var dropdownCoords = dropdown.getBoundingClientRect();
   var navCoords = nav.getBoundingClientRect();
 

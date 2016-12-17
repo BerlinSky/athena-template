@@ -2,16 +2,16 @@ import $ from 'jquery';
 
 // menu flat 2
 
-const triggers = document.querySelectorAll('.fancySiteMenuItems > li');
-  const background  = document.querySelector('.fancySiteMenu__shadow');
-  const nav  = document.querySelector('.fancySiteMenu');
+const triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
+const background  = document.querySelector('.js-fancySiteMenu__shadow');
+const nav  = document.querySelector('.js-fancySiteMenu');
 
   function handleEnter() {
     this.classList.add('trigger-enter');
-    setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
+    setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 100);
     background.classList.add('open');
 
-    const dropdown = this.querySelector('.dropdown');
+    const dropdown = this.querySelector('.fancySiteMenu_plate');
     const dropdownCoords = dropdown.getBoundingClientRect();
     const navCoords = nav.getBoundingClientRect();
 
