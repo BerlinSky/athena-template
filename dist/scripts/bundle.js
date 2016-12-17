@@ -9825,7 +9825,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // menu flat 2
 
-var triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
+var triggers = document.querySelectorAll('.js-fancySiteMenuItems > .js-fancySiteMenuItems__item');
 var background = document.querySelector('.js-fancySiteMenu__shadow');
 var nav = document.querySelector('.js-fancySiteMenu');
 

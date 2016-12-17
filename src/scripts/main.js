@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 // menu flat 2
 
-const triggers = document.querySelectorAll('.js-fancySiteMenuItems > li');
+const triggers = document.querySelectorAll('.js-fancySiteMenuItems > .js-fancySiteMenuItems__item');
 const background  = document.querySelector('.js-fancySiteMenu__shadow');
 const nav  = document.querySelector('.js-fancySiteMenu');
 
