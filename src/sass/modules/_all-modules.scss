@@ -63,7 +63,7 @@ body {
     justify-content: center;
 
     > a {
-      color: yellow;
+      color: #999;
       text-decoration: none;
       // font-size: 20px;
       background: rgba(0,0,0,0.2);
@@ -72,6 +72,9 @@ body {
       display: inline-block;
       // margin: 20px;
       border-radius: 5px;
+    }
+    > a:hover {
+      color: #27ae60;
     }
   }
 }
@@ -154,13 +157,17 @@ body {
   }
 }
 
-a.button {
-  background: black;
-  display: block;
-  padding: 10px;
-  color: white;
-  margin-bottom: 10px;
+.fancySiteMenu__item--buttonList {
+  min-width: 300px;
+  a.button {
+    background: #333;
+    display: block;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+  }
 }
+
 
 
 /* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
