@@ -141,9 +141,10 @@ body {
 }
 
 .fancySiteMenu__item--simpleList {
-  min-width: 300px;
+  min-width: 400px;
   li {
-    padding: 10px 0;
+    // padding: 10px 0;
+    padding: 5px 0;
     display: block;
     border-bottom: 1px solid rgba(0,0,0,0.2);
   }
@@ -154,7 +155,7 @@ body {
 }
 
 a.button {
-  background:black;
+  background: black;
   display: block;
   padding: 10px;
   color: white;
