@@ -67,10 +67,10 @@ body {
       text-decoration: none;
       // font-size: 20px;
       background: rgba(0,0,0,0.2);
-      // padding:10px 20px;
+      // padding: 10px 20px;
       padding: 0 20px;
       display: inline-block;
-      // margin:20px;
+      // margin: 20px;
       border-radius: 5px;
     }
   }
@@ -81,11 +81,13 @@ body {
   position: absolute;
   overflow: hidden;
   padding: 20px;
-  top: -20px;
+  // top: -20px;
+  top: -35px;
   border-radius: 2px;
   transition: all 0.5s;
   transform: translateY(100px);
   will-change: transform;
+  z-index: 3000;
   display: none;
 }
 
