@@ -9827,7 +9827,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var triggers = document.querySelectorAll('.cool > li');
 var background = document.querySelector('.dropdownBackground');
-var nav = document.querySelector('.top');
+var nav = document.querySelector('.fancySiteMenu');
 
 function handleEnter() {
   var _this = this;
