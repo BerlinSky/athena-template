@@ -72,6 +72,7 @@ body {
       display: inline-block;
       // margin: 20px;
       border-radius: 5px;
+      border-bottom-color: transparent;
     }
     > a:hover {
       color: #27ae60;
@@ -149,7 +150,7 @@ body {
     // padding: 10px 0;
     padding: 5px 0;
     display: block;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    // border-bottom: 1px solid rgba(0,0,0,0.2);
   }
   a {
     text-decoration: none;
