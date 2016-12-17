@@ -33,8 +33,16 @@ body {
   min-height: 100vh;
 }
 
+.siteNavigation {
+  background-color: #000;
+  border-bottom: 1px solid hsla(0,0%,63%,.3);
+  height: 3.5em;
+  line-height: 3.5em;
+  min-width: 100%;
+}
+
 .top {
-  background-color: tomato;
+  // background-color: tomato;
   flex: 1;
   position: relative;
   perspective: 600px;
@@ -69,19 +77,20 @@ body {
 }
 
 .dropdown {
-  opacity: 0;
+  // opacity: 0;
   position: absolute;
   overflow: hidden;
   padding:20px;
   top:-20px;
   border-radius:2px;
   transition: all 0.5s;
+  // transform: translate(-50%, 100px);
   transform: translateY(100px);
   will-change: transform;
   display: none;
 
-  left: 0;
   // display: block;
+  border: solid 1px crimson;
 }
 
 .trigger-enter .dropdown {
