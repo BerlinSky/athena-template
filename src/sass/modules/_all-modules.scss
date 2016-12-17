@@ -101,7 +101,7 @@ body {
   opacity: 1;
 }
 
-.dropdownBackground {
+.fancySiteMenu__shadow {
   width:100px;
   height:100px;
   position: absolute;
@@ -126,7 +126,7 @@ body {
   }
 }
 
-.dropdownBackground.open {
+.fancySiteMenu__shadow.open {
   opacity: 1;
 }
 

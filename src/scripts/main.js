@@ -3,7 +3,7 @@ import $ from 'jquery';
 // menu flat 2
 
 const triggers = document.querySelectorAll('.fancySiteMenuItems > li');
-  const background  = document.querySelector('.dropdownBackground');
+  const background  = document.querySelector('.fancySiteMenu__shadow');
   const nav  = document.querySelector('.fancySiteMenu');
 
   function handleEnter() {
