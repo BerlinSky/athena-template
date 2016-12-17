@@ -7,8 +7,8 @@ const background  = document.querySelector('.js-fancySiteMenu__shadow');
 const nav  = document.querySelector('.js-fancySiteMenu');
 
   function handleEnter() {
-    this.classList.add('trigger-enter');
-    setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 100);
+    this.classList.add('js-shadowed');
+    setTimeout(() => this.classList.contains('js-shadowed') && this.classList.add('trigger-enter-active'), 100);
     background.classList.add('open');
 
     const dropdown = this.querySelector('.fancySiteMenu__plate');
@@ -28,7 +28,7 @@ const nav  = document.querySelector('.js-fancySiteMenu');
   }
 
   function handleLeave() {
-    this.classList.remove('trigger-enter', 'trigger-enter-active');
+    this.classList.remove('js-shadowed', 'trigger-enter-active');
     background.classList.remove('open');
   }
 

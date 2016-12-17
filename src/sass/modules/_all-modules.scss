@@ -90,11 +90,10 @@ body {
   transition: all 0.5s;
   transform: translateY(100px);
   will-change: transform;
-  // z-index: 3000;
   display: none;
 }
 
-.trigger-enter .fancySiteMenu__plate {
+.js-shadowed .fancySiteMenu__plate {
   display: block;
 }
 
@@ -173,12 +172,6 @@ body {
     color: #27ae60;
   }
 }
-
-
-/* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
-.button[href*=twitter] { background: #019FE9; }
-.button[href*=facebook] { background: #3B5998; }
-.button[href*=courses] { background: #ffc600; }
 
 // menu-flat-2 - End
 

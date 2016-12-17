@@ -9832,9 +9832,9 @@ var nav = document.querySelector('.js-fancySiteMenu');
 function handleEnter() {
   var _this = this;
 
-  this.classList.add('trigger-enter');
+  this.classList.add('js-shadowed');
   setTimeout(function () {
-    return _this.classList.contains('trigger-enter') && _this.classList.add('trigger-enter-active');
+    return _this.classList.contains('js-shadowed') && _this.classList.add('trigger-enter-active');
   }, 100);
   background.classList.add('open');
 
@@ -9855,7 +9855,7 @@ function handleEnter() {
 }
 
 function handleLeave() {
-  this.classList.remove('trigger-enter', 'trigger-enter-active');
+  this.classList.remove('js-shadowed', 'trigger-enter-active');
   background.classList.remove('open');
 }
 
