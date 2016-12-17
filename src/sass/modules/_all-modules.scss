@@ -138,20 +138,17 @@ body {
   }
 }
 
-
 .fancySiteMenu__item--simpleList {
   min-width: 300px;
-}
-
-.fancySiteMenu__item--simpleList li {
-  padding: 10px 0;
-  display: block;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-.fancySiteMenu__plate a {
-  text-decoration: none;
-  color: #ffc600;
+  li {
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  a {
+    text-decoration: none;
+    color: #ffc600;
+  }
 }
 
 a.button {
