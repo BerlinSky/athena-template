@@ -9825,11 +9825,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // menu flat 2
 
-// const triggers = document.querySelectorAll('.cool > li');
-var triggers = document.querySelectorAll('.js-menuFlat > li');
-
+var triggers = document.querySelectorAll('.cool > li');
 var background = document.querySelector('.dropdownBackground');
-var nav = document.querySelector('.js-desktopMenu');
+var nav = document.querySelector('.top');
 
 function handleEnter() {
   var _this = this;
@@ -9861,8 +9859,12 @@ function handleLeave() {
   background.classList.remove('open');
 }
 
-// triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-// triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+triggers.forEach(function (trigger) {
+  return trigger.addEventListener('mouseenter', handleEnter);
+});
+triggers.forEach(function (trigger) {
+  return trigger.addEventListener('mouseleave', handleLeave);
+});
 
 (0, _jquery2.default)(function () {
   (0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {

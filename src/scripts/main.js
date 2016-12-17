@@ -2,11 +2,9 @@ import $ from 'jquery';
 
 // menu flat 2
 
-// const triggers = document.querySelectorAll('.cool > li');
-const triggers = document.querySelectorAll('.js-menuFlat > li');
-
+const triggers = document.querySelectorAll('.cool > li');
   const background  = document.querySelector('.dropdownBackground');
-  const nav  = document.querySelector('.js-desktopMenu');
+  const nav  = document.querySelector('.top');
 
   function handleEnter() {
     this.classList.add('trigger-enter');
@@ -34,8 +32,8 @@ const triggers = document.querySelectorAll('.js-menuFlat > li');
     background.classList.remove('open');
   }
 
-  // triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-  // triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 
 $(function () {
   $('[data-mobileMenu="open"]').click(function() {
