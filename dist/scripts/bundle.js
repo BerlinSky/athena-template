@@ -9838,7 +9838,7 @@ function handleEnter() {
   }, 100);
   background.classList.add('open');
 
-  var dropdown = this.querySelector('.fancySiteMenu_plate');
+  var dropdown = this.querySelector('.fancySiteMenu__plate');
   var dropdownCoords = dropdown.getBoundingClientRect();
   var navCoords = nav.getBoundingClientRect();
 

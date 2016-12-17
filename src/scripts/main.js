@@ -11,7 +11,7 @@ const nav  = document.querySelector('.js-fancySiteMenu');
     setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 100);
     background.classList.add('open');
 
-    const dropdown = this.querySelector('.fancySiteMenu_plate');
+    const dropdown = this.querySelector('.fancySiteMenu__plate');
     const dropdownCoords = dropdown.getBoundingClientRect();
     const navCoords = nav.getBoundingClientRect();
 

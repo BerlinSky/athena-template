@@ -59,7 +59,7 @@ body {
 .fancySiteMenuItems {
   > li {
     position: relative;
-    display:flex;
+    display: flex;
     justify-content: center;
 
     > a {
@@ -71,39 +71,35 @@ body {
       padding: 0 20px;
       display: inline-block;
       // margin:20px;
-      border-radius:5px;
+      border-radius: 5px;
     }
   }
 }
 
-.fancySiteMenu_plate {
-  // opacity: 0;
+.fancySiteMenu__plate {
+  opacity: 0;
   position: absolute;
   overflow: hidden;
-  padding:20px;
-  top:-20px;
-  border-radius:2px;
+  padding: 20px;
+  top: -20px;
+  border-radius: 2px;
   transition: all 0.5s;
-  // transform: translate(-50%, 100px);
   transform: translateY(100px);
   will-change: transform;
   display: none;
-
-  // display: block;
-  border: solid 1px crimson;
 }
 
-.trigger-enter .fancySiteMenu_plate {
+.trigger-enter .fancySiteMenu__plate {
   display: block;
 }
 
-.trigger-enter-active .fancySiteMenu_plate {
+.trigger-enter-active .fancySiteMenu__plate {
   opacity: 1;
 }
 
 .fancySiteMenu__shadow {
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   background: #fff;
   border-radius: 4px;
@@ -112,16 +108,15 @@ body {
   transform-origin: 50% 0%;
   display: flex;
   justify-content: center;
-  opacity:0;
-  // opacity: 1;
+  opacity: 0;
 
   .marker {
     position: absolute;
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     display: block;
     // background: black;
-    background:white;
+    background: white;
     transform: translateY(-50%) rotate(45deg);
   }
 }
@@ -130,21 +125,22 @@ body {
   opacity: 1;
 }
 
-.bio {
-  min-width:500px;
-  display:flex;
+.fancySiteMenu__item--imageGallery {
+  min-width: 500px;
+  display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.7;
+
+  img {
+    float: left;
+    margin-right: 20px;
+  }
 }
 
-.bio img {
-  float:left;
-  margin-right:20px;
-}
 
 .courses {
-  min-width:300px;
+  min-width: 300px;
 }
 
 .courses li {
@@ -153,7 +149,7 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.fancySiteMenu_plate a {
+.fancySiteMenu__plate a {
   text-decoration: none;
   color: #ffc600;
 }
@@ -161,8 +157,8 @@ body {
 a.button {
   background:black;
   display: block;
-  padding:10px;
-  color:white;
+  padding: 10px;
+  color: white;
   margin-bottom: 10px;
 }
 
