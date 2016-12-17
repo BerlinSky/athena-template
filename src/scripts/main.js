@@ -34,8 +34,8 @@ const triggers = document.querySelectorAll('.js-menuFlat > li');
     background.classList.remove('open');
   }
 
-  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+  // triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  // triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 
 $(function () {
   $('[data-mobileMenu="open"]').click(function() {

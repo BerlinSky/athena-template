@@ -9861,12 +9861,8 @@ function handleLeave() {
   background.classList.remove('open');
 }
 
-triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseenter', handleEnter);
-});
-triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseleave', handleLeave);
-});
+// triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+// triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 
 (0, _jquery2.default)(function () {
   (0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
