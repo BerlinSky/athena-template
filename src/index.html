@@ -180,39 +180,15 @@
 
     <div class="l-mainContent mainContent">
 
-      <div class="savedFavMenuFormContainer">
-        <h2 class="js-savedFavListName"></h2>
+      <div class="searchFormContainer">
+        <h2>Search Menu List</h2>
+        <p></p>
         <form class="searchForm">
-          <!--<input type="text" class="search" value="My Saved Fav Name" readonly>-->
-          <ul class="results js-savedFavList">
-            <li>
-              <span class="name">John Steinbeck</span>
-              <span class="item">The Grapes of Wrath</span>
-            </li>
-            <li>
-              <span class="name">Charles Dickens</span>
-              <span class="item">Great Expectations</span>
-            </li>
-            <li>
-              <span class="name">Emily Brontë</span>
-              <span class="item">Wuthering Heights</span>
-            </li>
-            <li>
-              <span class="name">Jane Austen</span>
-              <span class="item">Sense and Sensibility</span>
-            </li>
-            <li>
-              <span class="name">William Makepeace thackeray</span>
-              <span class="item">Vanity Fair</span>
-            </li>
-            <li>
-              <span class="name">George Eliot</span>
-              <span class="item">Middlemarch</span>
-            </li>
+          <input type="text" class="search" placeholder="Title or Author">
+          <ul class="results">
           </ul>
         </form>
       </div>
-
 
       <div class="favMenuContainer">
         <h2>Favorite Menu List</h2>
@@ -225,13 +201,16 @@
         </form>
       </div>
 
-      <div class="searchFormContainer">
+      <div class="savedFavMenuFormContainer">
+        <h2>Saved Favorite Menu List</h2>
+        <p></p>
+        <div class="js-savedFavListName"></div>
         <form class="searchForm">
-          <input type="text" class="search" placeholder="Title or Author">
-          <ul class="results">
+          <ul class="js-savedFavList">
           </ul>
         </form>
       </div>
+
     </div>
 
     <footer class="l-footer footer">
