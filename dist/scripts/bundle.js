@@ -113,6 +113,9 @@ function activateFavMenuList() {
 },{"./booklist":1}],3:[function(require,module,exports){
 'use strict';
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); // import $ from 'jquery';
+
+
 var _searchForm = require('./search-form');
 
 var _searchForm2 = _interopRequireDefault(_searchForm);
@@ -127,13 +130,39 @@ var _favMenuList2 = _interopRequireDefault(_favMenuList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _searchForm2.default)(); // import $ from 'jquery';
+// import activateFavMenuList from './fav-menu-list';
 
 (0, _mobileMenu2.default)();
+(0, _searchForm2.default)();
 (0, _favMenuList2.default)();
 // $(function () {
 
 // });
+
+var favMenuListLocalName = 'favMenuList';
+
+var _JSON$parse = JSON.parse(localStorage.getItem(favMenuListLocalName)),
+    _JSON$parse2 = _slicedToArray(_JSON$parse, 1),
+    favMenuListLocal = _JSON$parse2[0];
+
+var favName = favMenuListLocal.favName,
+    favList = favMenuListLocal.favList;
+
+var savedFavListElem = document.querySelector('.js-savedFavList');
+//js-savedFavList
+
+function paintFavList(books, favMenuList) {
+  console.dir(books);
+
+  var html = books.map(function (book, i) {
+    return '\n        <li>\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
+  }).join('');
+  favMenuList.innerHTML = html;
+}
+
+console.log(favName, favList);
+
+paintFavList(favList, savedFavListElem);
 
 },{"./fav-menu-list":2,"./mobile-menu":4,"./search-form":5}],4:[function(require,module,exports){
 'use strict';
