@@ -149,19 +149,16 @@ var favName = favMenuListLocal.favName,
     favList = favMenuListLocal.favList;
 
 var savedFavListElem = document.querySelector('.js-savedFavList');
-//js-savedFavList
+var savedFavListLabel = document.querySelector('.js-savedFavListName');
 
 function paintFavList(books, favMenuList) {
-  console.dir(books);
-
   var html = books.map(function (book, i) {
     return '\n        <li>\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
   }).join('');
   favMenuList.innerHTML = html;
 }
 
-console.log(favName, favList);
-
+savedFavListLabel.innerHTML = favName;
 paintFavList(favList, savedFavListElem);
 
 },{"./fav-menu-list":2,"./mobile-menu":4,"./search-form":5}],4:[function(require,module,exports){
