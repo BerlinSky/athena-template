@@ -40,16 +40,48 @@
   input {
     width: 100%;
   }
+
+  h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      padding: 10px 0;
+      font-weight: 100;
+      display: flex;
+    }
+  }
 }
 
-.savedFavMenuFormContainer {
-  // padding: 20px;
-  // max-width: 350px;
-  // background: hsla(0,0%,100%,.95);
-  // box-shadow: 0 0 0 10px rgba(0,0,0,.1);
-  // border-radius: 5px;
-  // margin-top: 50px;
+.fancyCheckboxList {
+  label {
+    flex:1;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+
+  input + label:before {
+    content: "\0125FD";
+    margin-right: 10px;
+  }
+
+  input:checked + label:before {
+    content: "\01F353";
+  }
 }
+
 
 .toggle-menu {
   display: block;
