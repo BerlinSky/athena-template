@@ -136,10 +136,8 @@ var _savedFavs2 = _interopRequireDefault(_savedFavs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _mobileMenu2.default)();
-// activateSearchForm();
-// import $ from 'jquery';
-// import activateSearchForm from './search-form';
+(0, _mobileMenu2.default)(); // import $ from 'jquery';
+
 (0, _favMenuList2.default)();
 (0, _savedFavs2.default)();
 
