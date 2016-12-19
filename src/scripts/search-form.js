@@ -17,19 +17,18 @@ function displaySearchResults() {
   const html = matchArray.map(book => {
     const regex = new RegExp(this.value, 'gi');
     const author = book.author.replace(regex, `<span class="highlight">${this.value}</span>`);
-    const title = book.title.replace(regex, `<span class="highlight">${this.value}</span>`);
+    // const title = book.title.replace(regex, `<span class="highlight">${this.value}</span>`);
     return `
       <li>
-        <span class="name">${author}</span>
-        <span class="item">${title}</span>
+        <div class="name">${author}</div>
       </li>
     `;
   }).join('');
   results.innerHTML = html;
 }
 
-const searchInput = document.querySelector('.search');
-const results = document.querySelector('.results');
+const searchInput = document.querySelector('.js-searchInput');
+const results = document.querySelector('.js-results');
 
 export default function activateSearchForm() {
   searchInput.addEventListener('change', displaySearchResults);

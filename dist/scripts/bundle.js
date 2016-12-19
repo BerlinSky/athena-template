@@ -211,7 +211,7 @@ var savedFavListLabel = document.querySelector('.js-savedFavListName');
 
 function paintFavList(books, favMenuListElem) {
   var html = books.map(function (book, i) {
-    return '\n        <li>\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
+    return '\n        <li class=\'searchResultList\'>\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
   }).join('');
   favMenuListElem.innerHTML = html;
 }
@@ -256,14 +256,14 @@ function displaySearchResults() {
   var html = matchArray.map(function (book) {
     var regex = new RegExp(_this.value, 'gi');
     var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    var title = book.title.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    return '\n      <li>\n        <span class="name">' + author + '</span>\n        <span class="item">' + title + '</span>\n      </li>\n    ';
+    // const title = book.title.replace(regex, `<span class="highlight">${this.value}</span>`);
+    return '\n      <li>\n        <div class="name">' + author + '</div>\n      </li>\n    ';
   }).join('');
   results.innerHTML = html;
 }
 
-var searchInput = document.querySelector('.search');
-var results = document.querySelector('.results');
+var searchInput = document.querySelector('.js-searchInput');
+var results = document.querySelector('.js-results');
 
 function activateSearchForm() {
   searchInput.addEventListener('change', displaySearchResults);

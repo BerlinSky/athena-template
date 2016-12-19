@@ -7,7 +7,7 @@ const savedFavListLabel = document.querySelector('.js-savedFavListName');
 function paintFavList(books, favMenuListElem) {
   const html = books.map((book, i) => {
     return `
-        <li>
+        <li class='searchResultList'>
           <label for="item${i}">${book.author}</label>
         </li>
       `;
