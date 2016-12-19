@@ -54,11 +54,26 @@ books.push.apply(books, _toConsumableArray(_booklist2.default));
 
 var favListForm = document.querySelector('.js-favListForm');
 var favMenuList = document.querySelector('.js-favMenuList');
+var searchInput = document.querySelector('.js-searchInput');
+
 var favMenuListLocalName = 'favMenuList';
 
-function paintFavList(books, favMenuList) {
-  var html = books.map(function (book, i) {
-    return '\n        <li>\n          <input type="checkbox" data-index=' + i + ' id="item' + i + '" ' + (book.isFav ? 'checked' : '') + ' />\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
+function searchMatches(keyWords) {
+  return books.filter(function (book) {
+    var regex = new RegExp(keyWords, 'gi');
+    return book.author.match(regex) || book.title.match(regex);
+  });
+}
+
+function paintFavList() {
+  var _this = this;
+
+  var matchArray = searchMatches(this.value);
+
+  var html = matchArray.map(function (book, i) {
+    var regex = new RegExp(_this.value, 'gi');
+    var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
+    return '\n      <li>\n        <input type="checkbox" data-index=' + i + ' id="item' + i + '" ' + (book.isFav ? 'checked' : '') + ' />\n        <label for="item' + i + '">' + author + '</label>\n      </li>\n    ';
   }).join('');
   favMenuList.innerHTML = html;
 }
@@ -94,16 +109,10 @@ function saveFavList(e) {
   }
 }
 
-function readFavList(favMenuListName) {
-  return JSON.parse(localStorage.getItem(favMenuListName));
-}
-
-favListForm.addEventListener('submit', saveFavList);
-favMenuList.addEventListener('click', markFavItem);
-
 function activateFavMenuList() {
-  readFavList(favMenuListLocalName);
-  paintFavList(books, favMenuList);
+  searchInput.addEventListener('change', paintFavList);
+  searchInput.addEventListener('keyup', paintFavList);
+
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
 }
@@ -112,10 +121,6 @@ function activateFavMenuList() {
 
 },{"./booklist":1}],3:[function(require,module,exports){
 'use strict';
-
-var _searchForm = require('./search-form');
-
-var _searchForm2 = _interopRequireDefault(_searchForm);
 
 var _mobileMenu = require('./mobile-menu');
 
@@ -131,9 +136,10 @@ var _savedFavs2 = _interopRequireDefault(_savedFavs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import $ from 'jquery';
 (0, _mobileMenu2.default)();
-(0, _searchForm2.default)();
+// activateSearchForm();
+// import $ from 'jquery';
+// import activateSearchForm from './search-form';
 (0, _favMenuList2.default)();
 (0, _savedFavs2.default)();
 
@@ -141,7 +147,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // });
 
-},{"./fav-menu-list":2,"./mobile-menu":4,"./saved-favs":5,"./search-form":6}],4:[function(require,module,exports){
+},{"./fav-menu-list":2,"./mobile-menu":4,"./saved-favs":5}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -221,56 +227,5 @@ function activateSavedMenuFavList() {
   paintFavList(favList, savedFavListElem);
 }
 
-},{}],6:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = activateSearchForm;
-
-var _booklist = require('./booklist');
-
-var _booklist2 = _interopRequireDefault(_booklist);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // search form
-
-
-var books = [];
-books.push.apply(books, _toConsumableArray(_booklist2.default));
-
-function searchMatches(keyWords) {
-  return books.filter(function (book) {
-    var regex = new RegExp(keyWords, 'gi');
-    return book.author.match(regex) || book.title.match(regex);
-  });
-}
-
-function displaySearchResults() {
-  var _this = this;
-
-  var matchArray = searchMatches(this.value);
-
-  var html = matchArray.map(function (book) {
-    var regex = new RegExp(_this.value, 'gi');
-    var author = book.author.replace(regex, '<span class="highlight">' + _this.value + '</span>');
-    // const title = book.title.replace(regex, `<span class="highlight">${this.value}</span>`);
-    return '\n      <li>\n        <div class="name">' + author + '</div>\n      </li>\n    ';
-  }).join('');
-  results.innerHTML = html;
-}
-
-var searchInput = document.querySelector('.js-searchInput');
-var results = document.querySelector('.js-results');
-
-function activateSearchForm() {
-  searchInput.addEventListener('change', displaySearchResults);
-  searchInput.addEventListener('keyup', displaySearchResults);
-}
-
-// search form - end
-
-},{"./booklist":1}]},{},[3])
+},{}]},{},[3])
 //# sourceMappingURL=bundle.js.map

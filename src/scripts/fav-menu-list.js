@@ -6,16 +6,29 @@ books.push(...booklist);
 
 const favListForm = document.querySelector('.js-favListForm');
 const favMenuList = document.querySelector('.js-favMenuList');
+const searchInput = document.querySelector('.js-searchInput');
+
 const favMenuListLocalName = 'favMenuList';
 
-function paintFavList(books, favMenuList) {
-  const html = books.map((book, i) => {
+function searchMatches(keyWords) {
+  return books.filter(book => {
+    const regex = new RegExp(keyWords, 'gi');
+    return book.author.match(regex) || book.title.match(regex);
+  });
+}
+
+function paintFavList() {
+  const matchArray = searchMatches(this.value);
+
+  const html = matchArray.map((book, i) => {
+    const regex = new RegExp(this.value, 'gi');
+    const author = book.author.replace(regex, `<span class="highlight">${this.value}</span>`);
     return `
-        <li>
-          <input type="checkbox" data-index=${i} id="item${i}" ${book.isFav ? 'checked' : ''} />
-          <label for="item${i}">${book.author}</label>
-        </li>
-      `;
+      <li>
+        <input type="checkbox" data-index=${i} id="item${i}" ${book.isFav ? 'checked' : ''} />
+        <label for="item${i}">${author}</label>
+      </li>
+    `;
   }).join('');
   favMenuList.innerHTML = html;
 }
@@ -51,17 +64,10 @@ function saveFavList(e) {
   }
 }
 
-
-function readFavList(favMenuListName) {
-  return JSON.parse(localStorage.getItem(favMenuListName));
-}
-
-favListForm.addEventListener('submit', saveFavList);
-favMenuList.addEventListener('click', markFavItem);
-
 export default function activateFavMenuList() {
-  readFavList(favMenuListLocalName);
-  paintFavList(books, favMenuList);
+  searchInput.addEventListener('change', paintFavList);
+  searchInput.addEventListener('keyup', paintFavList);
+
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
 }
