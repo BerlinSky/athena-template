@@ -22,7 +22,6 @@
 @import "./accordion/accordion";
 @import "./chosen/chosen";
 @import "./search-form/search-form";
-@import "./fav-menu-list/fav-menu-list";
 @import "./search-bar/search-bar";
 @import "./logon-form/logon-form";
 @import "./flip-card/flip-card";
@@ -79,6 +78,16 @@
 
   input:checked + label:before {
     content: "\01F353";
+  }
+}
+
+.favListForm {
+  margin-top: 20px;
+
+  input {
+    padding:10px;
+    outline:0;
+    border:1px solid rgba(0,0,0,0.1);
   }
 }
 
