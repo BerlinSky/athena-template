@@ -29,13 +29,26 @@
 @import "./three-d-menu/three-d-menu";
 
 
-.savedFavMenuFormContainer {
+.widgetContainer {
   padding: 20px;
   max-width: 350px;
   background: hsla(0,0%,100%,.95);
   box-shadow: 0 0 0 10px rgba(0,0,0,.1);
   border-radius: 5px;
   margin-top: 50px;
+
+  input {
+    width: 100%;
+  }
+}
+
+.savedFavMenuFormContainer {
+  // padding: 20px;
+  // max-width: 350px;
+  // background: hsla(0,0%,100%,.95);
+  // box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+  // border-radius: 5px;
+  // margin-top: 50px;
 }
 
 .toggle-menu {
