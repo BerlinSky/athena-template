@@ -1,10 +1,10 @@
-const favMenuListLocalName = 'favMenuList';
-const [ favMenuListLocal ] = JSON.parse(localStorage.getItem(favMenuListLocalName));
-const { favName, favList } = favMenuListLocal;
 const savedFavListElem = document.querySelector('.js-savedFavList');
 const savedFavListLabel = document.querySelector('.js-savedFavListName');
 
-function paintFavList(books, favMenuListElem) {
+function paintFavList(favMenuListElem) {
+  const favMenuListLocalName = 'favMenuList';
+  const [ favMenuListLocal ] = JSON.parse(localStorage.getItem(favMenuListLocalName));
+  const { favName, favList: books } = favMenuListLocal;
   const html = books.map((book, i) => {
     return `
         <li class='searchResultList'>
@@ -13,9 +13,9 @@ function paintFavList(books, favMenuListElem) {
       `;
   }).join('');
   favMenuListElem.innerHTML = html;
+  savedFavListLabel.innerHTML = favName;
 }
 
 export default function activateSavedMenuFavList() {
-  savedFavListLabel.innerHTML = favName;
-  paintFavList(favList, savedFavListElem);
+  paintFavList(savedFavListElem);
 }

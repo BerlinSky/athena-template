@@ -4,6 +4,8 @@ import booklist from './booklist';
 const books = [];
 books.push(...booklist);
 
+import activateSavedMenuFavList from './saved-favs';
+
 const favListForm = document.querySelector('.js-favListForm');
 const favMenuList = document.querySelector('.js-favMenuList');
 const searchInput = document.querySelector('.js-searchInput');
@@ -62,6 +64,8 @@ function saveFavList(e) {
   if (favList.length > 0) {
     localStorage.setItem(favMenuListLocalName, JSON.stringify(favMenuListSaved));
   }
+
+  activateSavedMenuFavList();
 }
 
 export default function activateFavMenuList() {
@@ -70,6 +74,8 @@ export default function activateFavMenuList() {
 
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
+
+  activateSavedMenuFavList();
 }
 
 // my fav memu list - End

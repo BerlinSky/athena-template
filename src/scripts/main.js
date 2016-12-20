@@ -2,11 +2,11 @@
 
 import activateMobileMenu from './mobile-menu';
 import activateFavMenuList from './fav-menu-list';
-import activateSavedMenuFavList from './saved-favs';
+// import activateSavedMenuFavList from './saved-favs';
 
 activateMobileMenu();
 activateFavMenuList();
-activateSavedMenuFavList();
+// activateSavedMenuFavList();
 
 // $(function () {
 

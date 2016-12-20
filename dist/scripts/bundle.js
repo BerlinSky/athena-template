@@ -44,6 +44,10 @@ var _booklist = require('./booklist');
 
 var _booklist2 = _interopRequireDefault(_booklist);
 
+var _savedFavs = require('./saved-favs');
+
+var _savedFavs2 = _interopRequireDefault(_savedFavs);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // my fav memu list
@@ -107,6 +111,8 @@ function saveFavList(e) {
   if (favList.length > 0) {
     localStorage.setItem(favMenuListLocalName, JSON.stringify(favMenuListSaved));
   }
+
+  (0, _savedFavs2.default)();
 }
 
 function activateFavMenuList() {
@@ -115,11 +121,13 @@ function activateFavMenuList() {
 
   favListForm.addEventListener('submit', saveFavList);
   favMenuList.addEventListener('click', markFavItem);
+
+  (0, _savedFavs2.default)();
 }
 
 // my fav memu list - End
 
-},{"./booklist":1}],3:[function(require,module,exports){
+},{"./booklist":1,"./saved-favs":5}],3:[function(require,module,exports){
 'use strict';
 
 var _mobileMenu = require('./mobile-menu');
@@ -130,22 +138,21 @@ var _favMenuList = require('./fav-menu-list');
 
 var _favMenuList2 = _interopRequireDefault(_favMenuList);
 
-var _savedFavs = require('./saved-favs');
-
-var _savedFavs2 = _interopRequireDefault(_savedFavs);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _mobileMenu2.default)(); // import $ from 'jquery';
+// import activateSavedMenuFavList from './saved-favs';
 
+// import $ from 'jquery';
+
+(0, _mobileMenu2.default)();
 (0, _favMenuList2.default)();
-(0, _savedFavs2.default)();
+// activateSavedMenuFavList();
 
 // $(function () {
 
 // });
 
-},{"./fav-menu-list":2,"./mobile-menu":4,"./saved-favs":5}],4:[function(require,module,exports){
+},{"./fav-menu-list":2,"./mobile-menu":4}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -201,28 +208,28 @@ Object.defineProperty(exports, "__esModule", {
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 exports.default = activateSavedMenuFavList;
-var favMenuListLocalName = 'favMenuList';
-
-var _JSON$parse = JSON.parse(localStorage.getItem(favMenuListLocalName)),
-    _JSON$parse2 = _slicedToArray(_JSON$parse, 1),
-    favMenuListLocal = _JSON$parse2[0];
-
-var favName = favMenuListLocal.favName,
-    favList = favMenuListLocal.favList;
-
 var savedFavListElem = document.querySelector('.js-savedFavList');
 var savedFavListLabel = document.querySelector('.js-savedFavListName');
 
-function paintFavList(books, favMenuListElem) {
+function paintFavList(favMenuListElem) {
+  var favMenuListLocalName = 'favMenuList';
+
+  var _JSON$parse = JSON.parse(localStorage.getItem(favMenuListLocalName)),
+      _JSON$parse2 = _slicedToArray(_JSON$parse, 1),
+      favMenuListLocal = _JSON$parse2[0];
+
+  var favName = favMenuListLocal.favName,
+      books = favMenuListLocal.favList;
+
   var html = books.map(function (book, i) {
     return '\n        <li class=\'searchResultList\'>\n          <label for="item' + i + '">' + book.author + '</label>\n        </li>\n      ';
   }).join('');
   favMenuListElem.innerHTML = html;
+  savedFavListLabel.innerHTML = favName;
 }
 
 function activateSavedMenuFavList() {
-  savedFavListLabel.innerHTML = favName;
-  paintFavList(favList, savedFavListElem);
+  paintFavList(savedFavListElem);
 }
 
 },{}]},{},[3])
