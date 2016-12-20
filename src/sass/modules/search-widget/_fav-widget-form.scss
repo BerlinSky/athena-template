@@ -47,6 +47,38 @@
     justify-content:space-between;
     text-transform: capitalize;
   }
+
+  input.search {
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    border: 5px solid #F7F7F7;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .widgetSection {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .widgetSection__title {
+    text-align: center;
+    color: #999;
+  }
+
+  .widgetList__Title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.10rem;
+    font-weight: 200;
+  }
 }
 
 .fancyCheckboxList {
@@ -80,14 +112,4 @@
   }
 }
 
-input.search {
-  margin: 0;
-  text-align: center;
-  outline: 0;
-  border: 5px solid #F7F7F7;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
-}
+
