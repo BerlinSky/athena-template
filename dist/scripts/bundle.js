@@ -140,13 +140,10 @@ var _favMenuList2 = _interopRequireDefault(_favMenuList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import activateSavedMenuFavList from './saved-favs';
-
 // import $ from 'jquery';
 
 (0, _mobileMenu2.default)();
 (0, _favMenuList2.default)();
-// activateSavedMenuFavList();
 
 // $(function () {
 
