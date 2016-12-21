@@ -25,7 +25,7 @@
 
 ##### #3 Start the app by running gulp:
   ```
-  npm strt
+  npm start
   ```
 
 ##### #4 Run the unit test:
