@@ -22,7 +22,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  gulp
+  npm start
   ```
 
 ---
