@@ -13,7 +13,7 @@
 1. Learn type-ahead
 2. Learn JS regex
 
-### Surge: oafish-brother.surge.sh
+### Surge: http://oafish-brother.surge.sh
 
 ### Steps to use the iteration
 1. Clone the project
