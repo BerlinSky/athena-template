@@ -12,7 +12,7 @@
 5. Add a footer sectrion to the template
 
 ### Developer's Notes
-1. The updated template is saved as index.html
++ The updated template is saved as index.html
 
 ### Steps to use the iteration
 1. Clone the project
@@ -42,7 +42,7 @@
 4. Support fixed footer
 
 ### Developer's Notes
-1. The initial template is saved as index-base.html
++ The initial template is saved as index-base.html
 
 ### Steps to use the iteration
 1. Clone the project
