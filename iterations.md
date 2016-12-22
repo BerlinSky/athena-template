@@ -1,14 +1,15 @@
 # Iteration List
 
-## Iteration 5. _Improve "the desktop" site menu with animation_
+## Iteration 5. _Improve "the desktop mode" site menu with animation_
 
 ### Branch: site-menu-3
 
 ### Design Goals:
-1. Update the mobile menu with accordion feature, so the user can expand or collapse a menu category.
+1. Apply animation to the desktop site menu.
 
 ### Developer's Notes
 + The updated template is saved as index.html
++ Learn how to use animation in SCSS
 
 ### Steps to use the iteration
 1. Clone the project
@@ -24,11 +25,6 @@
   npm start
   ```
 ---
-Iteration #5 -
-Create a site menu template: site-menu-3.html
-Branch: site-menu-3
-Design goals:
-1. In the desktop mode: The menu will be animated. 
 
 ## Iteration 4. _Improve the mobile site menu_
 
@@ -39,6 +35,7 @@ Design goals:
 
 ### Developer's Notes
 + The updated template is saved as index.html
++ Learn how to apply accordion with SCSS
 
 ### Steps to use the iteration
 1. Clone the project
@@ -65,6 +62,8 @@ Design goals:
 
 ### Developer's Notes
 + The updated template is saved as index.html
++ Learn the SMACSS basic 
++ Learn CSS flex-box basic
 
 ### Steps to use the iteration
 1. Clone the project
