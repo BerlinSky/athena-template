@@ -2,7 +2,7 @@
 
 ## Iteration 3. _Construct the site menu_
 
-## Branch: site-menu
+### Branch: site-menu
 
 ### Design Goals:
 1. In the mobile mode: Create a vertically stacked menu. 
@@ -29,7 +29,7 @@
 
 ## Iteration 2. _Add header and footer to the base template_
 
-## Branch: header-footer
+### Branch: header-footer
 
 ### Design Goals:
 1. Add a header section to the template
