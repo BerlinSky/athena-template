@@ -1,6 +1,41 @@
 # Iteration List
 
-## Iteration 6. _Create a type-ahead form (UI Only)_
+## Iteration 8. _Implement the type-ahead logic_
+
+### Branch: search-form
+
+### Design Goals:
+1. Create a search form 
+2. Implement the type-ahead feature
+3. Hightlight the matching text
+
+Add booklist.js
+2. Add JS regex logic in main.js
+3. Dynamically update the search results
+
+### Developer's Notes
+1. Learn JS regex 
+2. Learn how to update the search form
+
+### Surge: http://lush-plants.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b search-form [github repository] search-form
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
+## Iteration 7. _Create a type-ahead form (UI Only)_
 
 ### Branch: site-menu-5
 
