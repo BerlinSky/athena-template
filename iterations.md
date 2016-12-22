@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 3. Construct the site menu
+## Iteration 3. _Construct the site menu_
 
 ## Branch: site-menu
 
@@ -27,7 +27,7 @@
 
 ---
 
-## Iteration 2. Add header and footer to the base template
+## Iteration 2. _Add header and footer to the base template_
 
 ## Branch: header-footer
 
@@ -58,7 +58,7 @@
 ---
 
 
-## Iteration 1. Create a page template
+## Iteration 1. _Create a page template_
 
 ### Branch: base-page
 
