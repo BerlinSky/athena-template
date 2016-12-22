@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 13. _Create a component combining the type-ahead and my-favorites features_
+## Iteration 13. _Combine the type-ahead and my-favorites features_
 
 ### Branch: my-favorites-4
 
