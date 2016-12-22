@@ -1,5 +1,32 @@
 # Iteration List
 
+## Iteration 15. _Set up an express server_
+
+### Branch: express 
++ based on the base-page branch 
+
+### Design Goals:
++ Set up an express server in a DEV project
+
+### Developer's Notes
++ Learn npm scripts: "npm start" along with prestart and postsrart
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites-5 [github repository] my-favorites-5
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 14. _Tune up the saved-favorites component_
 
 ### Branch: my-favorites-5
