@@ -1,5 +1,31 @@
 # Iteration List
 
+## Iteration 13. _Create a component combining the type-ahead and my-favorites features
+
+### Branch: my-favorites-4
+
+### Design Goals:
++ Add type-ahead search capability to the my-favorites component
+
+### Developer's Notes
++ Practice on UI and JS
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites-4 [github repository] my-favorites-4
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 12. _Create a "my saved favorites" component_
 
 ### Branch: my-favorites-3
