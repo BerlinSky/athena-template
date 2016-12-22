@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 6. _Improve "the desktop mode" site menu to support a second level menu structure_
+## Iteration 6. _Improve site menu to support a complex menu structure_
 
 ### Branch: site-menu-4
 
