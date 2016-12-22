@@ -1,5 +1,31 @@
 # Iteration List
 
+## Iteration 10. _Create a "my favorites" menu (UI)_
+
+### Branch: my-favorites
+
+### Design Goals:
++ Create the UI for the my favorites menu
+
+### Developer's Notes
++ Learn how to create a form with a list of checked/unchecked items
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites [github repository] my-favorites
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 9. _Organize the JS codes into modules_
 
 ### Branch: search-form-2
