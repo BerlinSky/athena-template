@@ -1,5 +1,31 @@
 # Iteration List
 
+## Iteration 14. _Tune up the saved-favorites component_
+
+### Branch: my-favorites-5
+
+### Design Goals:
++ Improve the saved-favorites component
+
+### Developer's Notes
++ Practice on UI and JS
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites-5 [github repository] my-favorites-5
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 13. _Combine the type-ahead and my-favorites features_
 
 ### Branch: my-favorites-4
