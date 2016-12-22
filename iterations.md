@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 6. _Create a type-ahead form with highlighted matching text_
+## Iteration 6. _Create a type-ahead form (UI Only)_
 
 ### Branch: site-menu-5
 
