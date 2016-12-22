@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 5. _Improve "the desktop" site menu with animation_
+
+### Branch: site-menu-3
+
+### Design Goals:
+1. Update the mobile menu with accordion feature, so the user can expand or collapse a menu category.
+
+### Developer's Notes
++ The updated template is saved as index.html
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b site-menu-3 [github repository] site-menu-3
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+---
+Iteration #5 -
+Create a site menu template: site-menu-3.html
+Branch: site-menu-3
+Design goals:
+1. In the desktop mode: The menu will be animated. 
+
 ## Iteration 4. _Improve the mobile site menu_
 
 ### Branch: site-menu-2
@@ -23,7 +53,6 @@
   ```
   npm start
   ```
-
 ---
 
 ## Iteration 3. _Construct the site menu_
