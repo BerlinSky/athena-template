@@ -1,5 +1,32 @@
 # Iteration List
 
+## Iteration 12. _Create "the my saved favorites" component_
+
+### Branch: my-favorites-3
+
+### Design Goals:
+1. Create UI component (widget) to display the saved favorites
+2. Retrieve the saved user options from local storage
+
+### Developer's Notes
++ Learn how to read data to local storage
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites-3 [github repository] my-favorites-3
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 11. _Add the behavior to "the my favorites" menu_
 
 ### Branch: my-favorites-2
