@@ -1,5 +1,33 @@
 # Iteration List
 
+## Iteration 11. _Implement the behavior to "the my favorites" menu_
+
+### Branch: my-favorites-2
+
+### Design Goals:
+1. Implement the expected behavior to "the my favorites" menu
+2. Save the user options to the local storage
+
+### Developer's Notes
+1. Learn how to save data to local storage
+2. Learn JS event deligation
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b my-favorites-2 [github repository] my-favorites-2
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 10. _Create a "my favorites" menu (UI)_
 
 ### Branch: my-favorites
