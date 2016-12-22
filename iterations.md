@@ -23,7 +23,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -49,7 +49,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -77,7 +77,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -107,7 +107,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -137,7 +137,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -165,7 +165,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -192,7 +192,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -219,7 +219,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
   
 ---
@@ -248,7 +248,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -278,7 +278,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 ---
@@ -308,7 +308,7 @@
   ```
 3. Start the app by running gulp:
   ```
-  npm start
+  gulp
   ```
 
 
