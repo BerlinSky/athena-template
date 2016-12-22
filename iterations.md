@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 11. _Implement the behavior to "the my favorites" menu_
+## Iteration 11. _Add the behavior to "the my favorites" menu_
 
 ### Branch: my-favorites-2
 
