@@ -9,7 +9,8 @@
 + Set up an express server in a DEV project
 
 ### Developer's Notes
-+ Learn npm scripts: "npm start" along with prestart and postsrart
+1. Learn Express
+2. Learn npm scripts: "npm start" along with prestart and postsrart
 
 ### Steps to use the iteration
 1. Clone the project
