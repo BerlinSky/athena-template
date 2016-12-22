@@ -10,8 +10,7 @@
 3. Hightlight the matching text
 
 ### Developer's Notes
-1. Learn type-ahead
-2. Learn JS regex
++ Learn the UI for a type-ahead form
 
 ### Surge: http://oafish-brother.surge.sh
 
