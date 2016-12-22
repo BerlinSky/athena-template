@@ -1,6 +1,6 @@
 # Iteration List
 
-## Iteration 12. _Create "the my saved favorites" component_
+## Iteration 12. _Create a "my saved favorites" component_
 
 ### Branch: my-favorites-3
 
@@ -27,12 +27,12 @@
 
 ---
 
-## Iteration 11. _Add the behavior to "the my favorites" menu_
+## Iteration 11. _Add the behavior to the "my favorites" menu_
 
 ### Branch: my-favorites-2
 
 ### Design Goals:
-1. Implement the expected behavior to "the my favorites" menu
+1. Implement the expected behavior to the "my favorites" menu
 2. Save the user options to the local storage
 
 ### Developer's Notes
