@@ -1,5 +1,33 @@
 # Iteration List
 
+## Iteration 6. _Improve "the desktop mode" site menu to support a second level menu structure_
+
+### Branch: site-menu-4
+
+### Design Goals:
+1. Expand the desktop site menu with a second level structure.
+
+### Developer's Notes
++ Learn how to create a complex site menu structure
+
+### Surge: http://wry-icicle.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b site-menu-4 [github repository] site-menu-4
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 5. _Improve "the desktop mode" site menu with animation_
 
 ### Branch: site-menu-3
