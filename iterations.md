@@ -1,5 +1,36 @@
 # Iteration List
 
+## Iteration 6. _Create a type-ahead form with highlighted matching text_
+
+### Branch: site-menu-5
+
+### Design Goals:
+1. Create a search form 
+2. Implement the type-ahead feature
+3. Hightlight the matching text
+
+### Developer's Notes
+1. Learn type-ahead
+2. Learn JS regex
+
+### Surge: oafish-brother.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b site-menu-5 [github repository] site-menu-5
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 6. _Improve site menu to support a complex menu structure_
 
 ### Branch: site-menu-4
