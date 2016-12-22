@@ -1,5 +1,36 @@
 # Iteration List
 
+## Iteration 2. Add header and footer to the base template
+
+## Branch: header-footer
+
+### Design Goals:
+1. Add a header section to the template
+2. Place an application logo to the top-left of the template
+3. Align the hamburger icon for the site menu to the upper-right of the template to show/hide the site menu in the mobile mode
+4. The site menu block will slide out from right in the mobile mode
+5. Add a footer sectrion to the template
+
+### Developer's Notes
+1. The updated template is saved as index.html
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b header-footer [github repository] header-footer
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
+
 ## Iteration 1. Create a page template
 
 ### Branch: base-page
