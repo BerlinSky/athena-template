@@ -1,5 +1,33 @@
 # Iteration List
 
+## Iteration 17. _Bundle the application assets with an automation tool_
+
+### Branch: express-server-3 
++ based on the express-server-2 branch 
+
+### Design Goals:
++ Bundle the application assets with webpack
+
+### Developer's Notes
++ How to use webpack to bundle the assets
++ How to load CSS with webpack
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b express-server-3 [github repository] express-server-3
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 16. _Set up babel transpiler_
 
 ### Branch: express-server-2 
