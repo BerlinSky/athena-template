@@ -1,8 +1,35 @@
 # Iteration List
 
+## Iteration 16. _Set up babel transpiler_
+
+### Branch: express-server-2 
++ based on the express-server branch 
+
+### Design Goals:
++ Set up babel transpiler
+
+### Developer's Notes
++ Learn babel
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b express-server-2 [github repository] express-server-2
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 15. _Set up an express server_
 
-### Branch: express 
+### Branch: express-server 
 + based on the base-page branch 
 
 ### Design Goals:
@@ -15,7 +42,7 @@
 ### Steps to use the iteration
 1. Clone the project
   ```
-  git clone -b my-favorites-5 [github repository] my-favorites-5
+  git clone -b express-server [github repository] express-server
   ```
 2. Install the NPM packages:
   ```
