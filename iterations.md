@@ -1,5 +1,32 @@
 # Iteration List
 
+## Iteration 20. _Set up sass loader_
+
+### Branch: further-setup 
++ based on the express-server-5 branch 
+
+### Design Goals:
++ Set up sass loader to support autoprefixer and source-map
+
+### Developer's Notes
++ Learn sass loader
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b further-setup [github repository] further-setup
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 19. _Set up a test framework with an assertion library_
 
 ### Branch: express-server-5 
