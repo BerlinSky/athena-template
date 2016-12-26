@@ -1,5 +1,32 @@
 # Iteration List
 
+## Iteration 18. _Set up ESLint for JavaScript_
+
+### Branch: express-server-4 
++ based on the express-server-3 branch 
+
+### Design Goals:
++ Use eslint to lint the javascript files
+
+### Developer's Notes
++ How to configure ESLint
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b express-server-4 [github repository] express-server-4
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 17. _Bundle the application assets with an automation tool_
 
 ### Branch: express-server-3 
