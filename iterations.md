@@ -1,5 +1,33 @@
 # Iteration List
 
+## Iteration 21. _Serve local http JSON data_
+
+### Branch: further-setup-2 
++ based on the further-setup branch 
+
+### Design Goals:
++ Fetch the JSON data from express server
+
+### Developer's Notes
++ Learn how to fetch JSON data
++ Repository pattern
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b further-setup-2 [github repository] further-setup-2
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 20. _Set up sass loader_
 
 ### Branch: further-setup 
