@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 18. _Set up a test framework with an assertion library_
+
+### Branch: express-server-5 
++ based on the express-server-4 branch 
+
+### Design Goals:
++ Set up a test framework and an assertion library
+
+### Developer's Notes
++ Learn unit test
++ Learn how a test framework works
++ Learn how to use an assertion library
++ Learn JSDOM
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b express-server-5 [github repository] express-server-5
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 18. _Set up ESLint for JavaScript_
 
 ### Branch: express-server-4 
