@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 23. _Set up Jade transformation_
+
+### Branch: jade-base-page 
++ based on the base-page branch 
+
+### Design Goals:
+1. Set up production build with minification
+2. Set up source-map for the production build
+3. Set up compression for js and html
+
+### Developer's Notes
++ Set up Jade process to render html
++ Learn Jade
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b jade-base-page [github repository] jade-base-page
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 22. _Set up a mock server and production build_
 
 ### Branch: further-setup-3 
@@ -25,7 +55,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Build the application:
   ```
   npm build
   ```
@@ -53,7 +83,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app:
   ```
   npm start
   ```
@@ -80,7 +110,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app:
   ```
   npm start
   ```
@@ -110,7 +140,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app:
   ```
   npm start
   ```
@@ -137,7 +167,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app by running:
   ```
   npm start
   ```
@@ -165,7 +195,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app by running:
   ```
   npm start
   ```
@@ -192,7 +222,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app by running:
   ```
   npm start
   ```
@@ -220,7 +250,7 @@
   ```
   npm install
   ```
-3. Start the app by running gulp:
+3. Start the app by running:
   ```
   npm start
   ```
