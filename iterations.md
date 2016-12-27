@@ -6,12 +6,9 @@
 + based on the base-page branch 
 
 ### Design Goals:
-1. Set up production build with minification
-2. Set up source-map for the production build
-3. Set up compression for js and html
++ Set up Jade process to render html
 
 ### Developer's Notes
-+ Set up Jade process to render html
 + Learn Jade
 
 ### Steps to use the iteration
