@@ -11,10 +11,10 @@
 3. Set up compression for js and html
 
 ### Developer's Notes
-a. Change source-map setting
-b. Change the build destination to “dist”
-c. Add minify plugin
-d. Add deduce plugin
+1. Change source-map setting
+2. Change the build destination to “dist”
+3. Add minify plugin
+4. Add deduce plugin
 
 ### Steps to use the iteration
 1. Clone the project
