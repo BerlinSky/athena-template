@@ -12,67 +12,12 @@ html(lang='en')
 				h1.logo
 					a(href="#") RL
 
-				nav.desktopMenu.fancySiteMenu.js-fancySiteMenu
-					div.fancySiteMenu__shadow.js-fancySiteMenu__shadow
-						span.marker
-
-					ul.fancySiteMenuItems.js-fancySiteMenuItems
-						li.js-fancySiteMenuItems__item
-							a(href="#") Books
-							div.fancySiteMenu__plate
-								div.fancySiteMenu__item--imageGallery
-									img(src="./images/sense-and-sensibility.jpg")
-									p The story revolves around the Dashwood sisters, Elinor and Marianne. Whereas the former is a sensible, rational creature, her younger sister is wildly romantic--a characteristic that offers Austen plenty of scope for both satire and compassion.
-
-						li.js-fancySiteMenuItems__item
-							a(href="#") Authors
-								ul.fancySiteMenu__plate.fancySiteMenu__item--simpleList
-									li
-										span Baby's Books
-										a(href="#") Baby-2 Years Old
-									li
-										span Baby's Books
-										a(href="#") Ages 3-5 Years Old
-									li
-										span Baby's Books
-										a(href="#") Ages 6-8 Years Old
-									li
-										span Baby's Books
-										a(href="#") Ages 9-12 Years Old
-									li
-										span Baby's Books
-										a(href="#") Award Winning Books
-									li
-										span Baby's Books
-										a(href="#") Best Books of the Month
-									li
-										span Baby's Books
-										a(href="#") Best Sellers
-
-
-						li.js-fancySiteMenuItems__item
-							a(href="#") Book Clubs
-							ul.fancySiteMenu__plate.fancySiteMenu__item--buttonList
-								li
-									a.buttonItem(href="#") Afterthoughts Book Club
-								li
-									a.buttonItem(href="#") Breakfast Book Club
-								li
-									a.buttonItem(href="#") Coffee, Books & More
-								li
-									a.buttonItem(href="#") The Reading Café
-						li.js-fancySiteMenuItems__item
-							a(href="#") Children Books
-						li.js-fancySiteMenuItems__item
-							a.menuFlat__Title(href="#") Log In
-						li.js-fancySiteMenuItems__item
-							a.menuFlat__Title(href="#") Join
+				include jade/components/nav-desktop.jade
 
 				nav.navActions
 					ul
 						li.navActions__item.navActions__menu
 							a.js-actionMenu.fa-bars(data-mobileMenu="open") Menu
-
 
 			include jade/components/footer.jade
 
