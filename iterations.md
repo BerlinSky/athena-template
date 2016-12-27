@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 24. _Add fancy site menu to the site_
+
+### Branch: more-site-menu 
++ based on the site-menu-4 branch 
+
+### Design Goals:
++ Replace the desktop menu with the fancy site menu
+
+### Developer's Notes
++ Learn follow-along menu nagivation
+
+###Surge: 
+	broad-authority.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b more-site-menu [github repository] more-site-menu
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 23. _Set up Jade transformation_
 
 ### Branch: jade-base-page 
