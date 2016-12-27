@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
+import jade from 'gulp-jade';
 import eslint from 'gulp-eslint';
 import exorcist from 'exorcist';
 import browserSync from 'browser-sync';
@@ -20,6 +21,7 @@ import util from 'gulp-util';
 
 const config = {
 	paths: {
+		jade: './src/*.jade',
 		html: './src/*.html',
 		js: './src/scripts/**/*.js?',
 		sass: './src/sass/**/*.scss',
@@ -71,7 +73,12 @@ gulp.task('lint', () => {
 gulp.task('html', () => {
 	log('html task starts');
 
-	gulp.src(config.paths.html)
+	gulp.src(config.paths.jade)
+		.pipe(jade(
+			{
+				pretty: true
+			}
+		))
 		.pipe(gulp.dest(config.paths.dist));
 
 	log('html task ends');
@@ -99,7 +106,7 @@ gulp.task('html-watch', ['html'], () => sync.reload());
 gulp.task('sass-watch', ['sass'], () => sync.reload());
 
 gulp.task('watch', ['serve'], () => {
-  gulp.watch('src/*.html', ['html-watch'])
+  gulp.watch('src/*.jade', ['html-watch'])
   gulp.watch(config.paths.sass, ['sass-watch'])
   gulp.watch('src/scripts/**/*', ['js-watch'])
 })
