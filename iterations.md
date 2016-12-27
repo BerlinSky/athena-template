@@ -1,5 +1,37 @@
 # Iteration List
 
+## Iteration 22. _Set up a mock server and production build_
+
+### Branch: further-setup-3 
++ based on the further-setup-2 branch 
+
+### Design Goals:
+1. Set up production build with minification
+2. Set up source-map for the production build
+3. Set up compression for js and html
+
+### Developer's Notes
+a. Change source-map setting
+b. Change the build destination to “dist”
+c. Add minify plugin
+d. Add deduce plugin
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b further-setup-3 [github repository] further-setup-3
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm build
+  ```
+
+---
+
 ## Iteration 21. _Serve local http JSON data_
 
 ### Branch: further-setup-2 
