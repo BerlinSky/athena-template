@@ -1,3 +1,11 @@
+include ../includes/mixins.jade
+
+mixin simpleList(itemName, linkName)
+	li
+		span= itemName
+		+space
+		a(href="#")= linkName
+
 nav.desktopMenu.fancySiteMenu.js-fancySiteMenu
 	div.fancySiteMenu__shadow.js-fancySiteMenu__shadow
 		span.marker
@@ -12,28 +20,14 @@ nav.desktopMenu.fancySiteMenu.js-fancySiteMenu
 
 		li.js-fancySiteMenuItems__item
 			a(href="#") Authors
-				ul.fancySiteMenu__plate.fancySiteMenu__item--simpleList
-					li
-						span Baby's Books
-						a(href="#") Baby-2 Years Old
-					li
-						span Baby's Books
-						a(href="#") Ages 3-5 Years Old
-					li
-						span Baby's Books
-						a(href="#") Ages 6-8 Years Old
-					li
-						span Baby's Books
-						a(href="#") Ages 9-12 Years Old
-					li
-						span Baby's Books
-						a(href="#") Award Winning Books
-					li
-						span Baby's Books
-						a(href="#") Best Books of the Month
-					li
-						span Baby's Books
-						a(href="#") Best Sellers
+			ul.fancySiteMenu__plate.fancySiteMenu__item--simpleList
+				+simpleList("Baby's Books", "Baby-2 Years Old")
+				+simpleList("Baby's Books", "Ages 3-5 Years Old")
+				+simpleList("Baby's Books", "Ages 6-8 Years Old")
+				+simpleList("Baby's Books", "Ages 9-12 Years Old")
+				+simpleList("Baby's Books", "Award Winning Books")
+				+simpleList("Baby's Books", "Best Books of the Month")
+				+simpleList("Baby's Books", "Best Sellers")
 
 		li.js-fancySiteMenuItems__item
 			a(href="#") Book Clubs
