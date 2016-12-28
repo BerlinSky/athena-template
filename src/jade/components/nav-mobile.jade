@@ -5,8 +5,8 @@ mixin accordionPanel(panelId, displayName)
 mixin accordionHeader(displayName)
 	h2.accordion__header= displayName
 
-mixin linkItem(displayName)
-	li.navigation__link.navigation__link--mobile
+mixin linkItem(displayName, active)
+	li.navigation__link.navigation__link--mobile(class=active)
 		a(target='')=displayName
 
 div.mobileMenu(data-mobileMenu="panel")
@@ -15,9 +15,10 @@ div.mobileMenu(data-mobileMenu="panel")
 	div.accordion
 		div
 			+accordionPanel('panel-1', 'Books')
+			div.accordion__content.accordion__content--mobile
 				+accordionHeader('Popular in Books')
 				ul.navigation__link--list
-					+linkItem('Bargain Books')
+					+linkItem('Bargain Books', 'active')
 					+linkItem('Best Books of the Month')
 					+linkItem('Children\'s Books')
 					+linkItem('Deals in Books')
@@ -25,7 +26,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('More in Books')
 				ul.navigation__link--list
-					+linkItem('100 Books to Read in a Lifetime')
+					+linkItem('100 Books to Read in a Lifetime', 'active')
 					+linkItem('100 Books for a Lifetime of Eating & Drinking')
 					+linkItem('Amazon Book Review Blog')
 					+linkItem('Amazon Books on Facebook')
@@ -33,7 +34,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('Text Books')
 				ul.navigation__link--list
-					+linkItem('Textbooks Store')
+					+linkItem('Textbooks Store', 'active')
 					+linkItem('Textbook Rentals')
 					+linkItem('Sell Us Your Books')
 					+linkItem('Kindle eTextbooks')
@@ -42,7 +43,7 @@ div.mobileMenu(data-mobileMenu="panel")
 			div.accordion__content.accordion__content--mobile
 				+accordionHeader('Arts')
 				ul.navigation__link--list
-					+linkItem('Architecture')
+					+linkItem('Architecture', 'active')
 					+linkItem('Business of Art')
 					+linkItem('Decorative Arts & Design')
 					+linkItem('Drawing')
@@ -52,16 +53,17 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('Photography')
 				ul.navigation__link--list
-					+linkItem('Photography & Video')
+					+linkItem('Photography & Video', 'active')
 					+linkItem('History & Criticism')
 					+linkItem('Sculpture')
 					+linkItem('Study & Teaching')
 		div
 			+accordionPanel('panel-3', 'Book Clubs')
 			div.accordion__content.accordion__content--mobile
+
 				+accordionHeader('Business & Money')
 				ul.navigation__link--list
-					+linkItem('Great Business Sagas')
+					+linkItem('Great Business Sagas', 'active')
 					+linkItem('Global Economics')
 					+linkItem('New & Notable')
 					+linkItem('Debut Authors')
@@ -69,7 +71,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('Featured in Business Books')
 				ul.navigation__link--list
-					+linkItem('Books Home')
+					+linkItem('Books Home', 'active')
 					+linkItem('Kindle MatchBook')
 					+linkItem('Best Books of 2015')
 					+linkItem('Book Awards')
@@ -77,7 +79,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('Featured Brands')
 				ul.navigation__link--list
-					+linkItem('Harvard Business Review Press')
+					+linkItem('Harvard Business Review Press', 'active')
 					+linkItem('Wiley')
 					+linkItem('Mcgraw-Hill')
 
@@ -87,7 +89,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('By Category')
 					ul.navigation__link--list
-						+linkItem('Baby-2 Years Ol')
+						+linkItem('Baby-2 Years Ol', 'active')
 						+linkItem('Ages 3-5 Years Old')
 						+linkItem('Ages 6-8 Years Old')
 						+linkItem('Ages 9-12 Years Old')
@@ -96,7 +98,7 @@ div.mobileMenu(data-mobileMenu="panel")
 
 				+accordionHeader('Featured in Children\'s Books')
 					ul.navigation__link--list
-						+linkItem('100 Children\'s Books to Read in a Lifetime')
+						+linkItem('100 Children\'s Books to Read in a Lifetime', 'active')
 						+linkItem('Award Winning Books')
 						+linkItem('Best Books of the Month')
 						+linkItem('Best Sellers')
