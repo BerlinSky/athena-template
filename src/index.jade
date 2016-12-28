@@ -1,26 +1,23 @@
-doctype
-html(lang='en')
-	head
-		title Athena - Reading Life
+extends jade/includes/base
 
-		include jade/includes/head.jade
+block pageTitle
+	title Athena - Reading Life
 
-	body
+block bodyContent
+	div.l-siteContainer.l-header-fixed.l-footer-fixed.siteContainer
+		header.l-navigation.siteNavigation
+			h1.logo
+				a(href="#") RL
 
-		div.l-siteContainer.l-header-fixed.l-footer-fixed.siteContainer
-			header.l-navigation.siteNavigation
-				h1.logo
-					a(href="#") RL
+			include jade/components/nav-desktop.jade
 
-				include jade/components/nav-desktop.jade
+			nav.navActions
+				ul
+					li.navActions__item.navActions__menu
+						a.js-actionMenu.fa-bars(data-mobileMenu="open") Menu
 
-				nav.navActions
-					ul
-						li.navActions__item.navActions__menu
-							a.js-actionMenu.fa-bars(data-mobileMenu="open") Menu
+		include jade/components/footer.jade
 
-			include jade/components/footer.jade
+	include jade/components/nav-mobile.jade
 
-		include jade/components/nav-mobile.jade
-
-		script(src="scripts/bundle.js")
+	script(src="scripts/bundle.js")
