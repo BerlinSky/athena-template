@@ -1,0 +1,46 @@
+extends jade/includes/base
+
+block pageTitle
+	title color palette
+
+block bodyContent
+	div.pageWrapper
+		div.pageHeader
+			a.button(href="#")
+				i.fa.fa-arrow-left
+			div.title Page Header
+			a.button(href="#")
+				i.fa.fa-arrow-right
+		div.pageContent
+			div.paletteBlock
+				div.paletteBlock__palette
+				div.paletteBlock__info
+					div color name
+					div variable name
+				ul.paletteBlock__usage
+					li Page Content 1
+					li Page Content 1
+					li Page Content 1
+			div.paletteBlock
+				div.paletteBlock__palette
+				div.paletteBlock__info
+				ul.paletteBlock__usage
+					li Page Content 2
+					li Page Content 2
+					li Page Content 2
+			div.paletteBlock
+				div.paletteBlock__palette
+				div.paletteBlock__info
+				ul.paletteBlock__usage
+					li Page Content 3
+					li Page Content 3
+					li Page Content 3
+			div.paletteBlock
+				div.paletteBlock__palette
+				div.paletteBlock__info
+				ul.paletteBlock__usage
+					li Page Content 4
+					li Page Content 4
+					li Page Content 4
+		div.pageFooter
+			div.title Page Footer
