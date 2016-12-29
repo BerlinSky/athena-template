@@ -47,7 +47,7 @@
   }
 
   .pageHeader {
-    background-color: #009cde;
+    background-color: #333;
     padding: 15px 5px;
 
     .title {
@@ -130,12 +130,18 @@
   }
 
   .pageFooter {
-    background-color: gold;
+    background-color: #333;
     padding: 15px 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
   }
 }
 
