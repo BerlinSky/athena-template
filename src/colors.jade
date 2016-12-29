@@ -9,7 +9,8 @@ extends jade/includes/base
 mixin paletteBlockBuilder ()
 	div.paletteBlock.fromData
 		for block in paletteBlocks
-			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')= block.paletteInfo.colorValue
+			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+				div= block.paletteInfo.colorValue
 			div.paletteBlock__info
 				div= block.paletteInfo.colorName
 				div= block.paletteInfo.varName
@@ -28,37 +29,9 @@ block bodyContent
 			div.title Page Header
 			a.button(href="#")
 				i.fa.fa-arrow-right
+
 		div.pageContent
 			+paletteBlockBuilder()
-			div.paletteBlock
-				div.paletteBlock__palette
-				div.paletteBlock__info
-					div color name
-					div variable name
-				ul.paletteBlock__usage
-					li Page Content 1
-					li Page Content 1
-					li Page Content 1
-			div.paletteBlock
-				div.paletteBlock__palette
-				div.paletteBlock__info
-				ul.paletteBlock__usage
-					li Page Content 2
-					li Page Content 2
-					li Page Content 2
-			div.paletteBlock
-				div.paletteBlock__palette
-				div.paletteBlock__info
-				ul.paletteBlock__usage
-					li Page Content 3
-					li Page Content 3
-					li Page Content 3
-			div.paletteBlock
-				div.paletteBlock__palette
-				div.paletteBlock__info
-				ul.paletteBlock__usage
-					li Page Content 4
-					li Page Content 4
-					li Page Content 4
+
 		div.pageFooter
 			div.title Page Footer

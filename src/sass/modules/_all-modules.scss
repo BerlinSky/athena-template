@@ -57,6 +57,8 @@
 
   .pageContent {
     background-color: #fff;
+    padding-right: 15px;
+    padding-left: 15px;
 
     // flex: 1;
     overflow-y: scroll;
@@ -68,14 +70,18 @@
 
     .paletteBlock {
       // background-color: tomato;
-      margin: 0 0 20px 0;
+      margin: 15px 0 20px 0;
 
       flex: 1 1 auto;
 
       .paletteBlock__palette {
         background-color: #009cde;;
         height: 70px;
-        border-radius: 6px
+        border-radius: 6px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .paletteBlock__info {
