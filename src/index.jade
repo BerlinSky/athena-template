@@ -1,23 +1,31 @@
 extends jade/includes/base
 
+mixin paletteBlockBuilder ()
+	for block in paletteBlocks
+		div.paletteBlock
+			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+				div= block.paletteInfo.colorValue
+			div.paletteBlock__info
+				div= block.paletteInfo.colorName
+				div= block.paletteInfo.varName
+			ul.paletteBlock__usage
+				for uage in block.colorUage
+					li= uage
+
 block pageTitle
-	title Athena - Reading Life
+	title color palette
 
 block bodyContent
-	div.l-siteContainer.l-header-fixed.l-footer-fixed.siteContainer
-		header.l-navigation.siteNavigation
-			h1.logo
-				a(href="#") RL
+	div.pageWrapper
+		div.pageHeader
+			//- a.button(href="#")
+			//- 	i.fa.fa-arrow-left
+			div.title Page Header
+			//- a.button(href="#")
+			//- 	i.fa.fa-arrow-right
 
-			include jade/components/nav-desktop.jade
+		div.pageContent
+			+paletteBlockBuilder()
 
-			nav.navActions
-				ul
-					li.navActions__item.navActions__menu
-						a.js-actionMenu.fa-bars(data-mobileMenu="open") Menu
-
-		include jade/components/footer.jade
-
-	include jade/components/nav-mobile.jade
-
-	script(src="scripts/bundle.js")
+		div.pageFooter
+			div.title Page Footer
