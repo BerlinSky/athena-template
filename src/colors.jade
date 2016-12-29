@@ -1,5 +1,22 @@
 extends jade/includes/base
 
+//- mixin mainNav ()
+//- 	ul#main-menu
+//- 		for menuItem in menuItems
+//- 			li(id= menuItem.itemId)
+//- 				a(href= menuItem.itemLink)= menuItem.itemAnchor
+
+mixin paletteBlockBuilder ()
+	div.paletteBlock.fromData
+		for block in paletteBlocks
+			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')= block.paletteInfo.colorValue
+			div.paletteBlock__info
+				div= block.paletteInfo.colorName
+				div= block.paletteInfo.varName
+				ul.paletteBlock__usage
+					for uage in block.colorUage
+						li= uage
+
 block pageTitle
 	title color palette
 
@@ -12,6 +29,7 @@ block bodyContent
 			a.button(href="#")
 				i.fa.fa-arrow-right
 		div.pageContent
+			+paletteBlockBuilder()
 			div.paletteBlock
 				div.paletteBlock__palette
 				div.paletteBlock__info

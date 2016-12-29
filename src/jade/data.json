@@ -1,0 +1,49 @@
+{
+	"paletteBlocks":[
+		{
+      "blockId": "primary",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "tomato",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    },
+		{
+      "blockId": "secondary",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "green",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    },
+		{
+      "blockId": "navigation",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "pink",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    },
+		{
+      "blockId": "sidebar",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "black",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    }
+	]
+}
+

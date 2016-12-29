@@ -3,6 +3,7 @@ import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import jade from 'gulp-jade';
+import data from 'gulp-data';
 import eslint from 'gulp-eslint';
 import exorcist from 'exorcist';
 import browserSync from 'browser-sync';
@@ -74,6 +75,10 @@ gulp.task('html', () => {
 	log('html task starts');
 
 	gulp.src(config.paths.jade)
+    .pipe(data(function() {
+        return require('./src/jade/data.json');
+      }
+    ))
 		.pipe(jade(
 			{
 				pretty: true
