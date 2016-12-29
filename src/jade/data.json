@@ -43,6 +43,39 @@
       "colorUage": [
         "Site Nav", "Footer", "Header", "Buttons"
       ]
+    },
+    {
+      "blockId": "primary",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "blue",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    },
+    {
+      "blockId": "primary",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "darkgray",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
+    },
+    {
+      "blockId": "primary",
+      "paletteInfo": {
+        "colorName": "pacific",
+        "colorValue": "gold",
+        "varName": "$-name-is-pacific"
+      },
+      "colorUage": [
+        "Site Nav", "Footer", "Header", "Buttons"
+      ]
     }
 	]
 }
