@@ -1,16 +1,16 @@
 extends jade/includes/base
 
 mixin paletteBlockBuilder ()
-	div.paletteBlock.fromData
-		for block in paletteBlocks
+	for block in paletteBlocks
+		div.paletteBlock
 			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
 				div= block.paletteInfo.colorValue
 			div.paletteBlock__info
 				div= block.paletteInfo.colorName
 				div= block.paletteInfo.varName
-				ul.paletteBlock__usage
-					for uage in block.colorUage
-						li= uage
+			ul.paletteBlock__usage
+				for uage in block.colorUage
+					li= uage
 
 block pageTitle
 	title color palette
