@@ -1,16 +1,23 @@
 extends jade/includes/base
 
+
+//- - var language = "FooLang"
+//- unless language == "Jade"
+//- 	p Not Awesome
+
 mixin paletteBlockBuilder ()
-	for block in paletteBlocks
-		div.paletteBlock
-			div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
-				div= block.paletteInfo.colorValue
-			div.paletteBlock__info
-				div= block.paletteInfo.colorName
-				div= block.paletteInfo.varName
-			ul.paletteBlock__usage
-				for uage in block.colorUage
-					li= uage
+	for website in websites
+		if website.siteId == 'newWorld'
+			for block in website.colorPaletteBlocks
+				div.paletteBlock
+					div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+						div= block.paletteInfo.colorValue
+					div.paletteBlock__info
+						div= block.paletteInfo.colorName
+						div= block.paletteInfo.varName
+					ul.paletteBlock__usage
+						for uage in block.colorUage
+							li= uage
 
 block pageTitle
 	title color palette
