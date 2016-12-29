@@ -57,8 +57,6 @@
 
   .pageContent {
     background-color: #fff;
-    padding-right: 15px;
-    padding-left: 15px;
 
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -67,10 +65,25 @@
     flex-direction: column;
     justify-content: flex-start;
 
+    @include break(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
     .paletteBlock {
+      border: 1px solid darkgray;
       margin: 15px 0 0 0;
+      padding: 15px;
 
       flex: 1 1 auto;
+
+      @include break(md) {
+        flex-basis: 50%;
+      }
+
+      @include break(lg) {
+        flex-basis: 25%;
+      }
 
       // display: flex;
 
@@ -95,11 +108,9 @@
       }
 
       .paletteBlock__usage {
-        // margin: 5px 0;
         margin: 1rem 0.5rem;
         padding: 0;
         list-style-type: none;
-        // margin-bottom: 1rem;
         line-height: 1.6;
 
         li {
