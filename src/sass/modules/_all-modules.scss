@@ -86,11 +86,12 @@
       flex: 1 1 auto;
 
       @include break(md) {
-        flex-basis: 50%;
+        flex: 0 0 50%;
       }
 
       @include break(lg) {
-        flex-basis: 25%;
+        // flex-basis: 25%;
+        flex: 0 0 25%;
       }
 
       // display: flex;
