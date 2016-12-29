@@ -8,9 +8,9 @@
         {
           "blockId": "primary",
           "paletteInfo": {
-            "colorName": "pacific",
-            "colorValue": "tomato",
-            "varName": "$-name-is-pacific"
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
           },
           "colorUage": [
             "Site Nav", "Footer", "Header", "Buttons"

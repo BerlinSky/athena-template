@@ -32,12 +32,12 @@
 .pageWrapper {
   // background-color: #fff;
   height: 100vh;
-  border: 5px solid silver;
+  // border: 5px solid silver;
 
   font-family: "TM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4;
-  color: #475058;
+  color: _color(trout);
 
   display: flex;
   flex-direction: column;
@@ -47,12 +47,12 @@
   }
 
   .pageHeader {
-    background-color: #333;
+    background-color: _color(mine_shaft);
     padding: 15px 5px;
 
     .title {
       text-transform: uppercase;
-      color: #fff;
+      color: _color(white);
       font-weight: 700;
       font-size: 1.5rem;
     }
@@ -63,7 +63,7 @@
   }
 
   .pageContent {
-    background-color: #fff;
+    background-color: _color(white);
 
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -97,9 +97,10 @@
       // display: flex;
 
       .paletteBlock__palette {
-        background-color: #009cde;;
+        // background-color: #009cde;
         height: 70px;
         border-radius: 6px;
+        text-transform: uppercase;
 
         display: flex;
         justify-content: center;
@@ -131,7 +132,7 @@
   }
 
   .pageFooter {
-    background-color: #333;
+    background-color: _color(mine_shaft);
     padding: 15px 5px;
 
     display: flex;
