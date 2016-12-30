@@ -1,0 +1,78 @@
+extends jade/includes/base
+
+mixin paletteBlockBuilder ()
+	for website in websites
+		if website.siteId == 'newWorld'
+			for block in website.colorPaletteBlocks
+				div.paletteBlock
+					div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+						div= block.paletteInfo.colorValue
+					div.paletteBlock__info
+						div= block.paletteInfo.colorName
+						div= block.paletteInfo.varName
+					ul.paletteBlock__usage
+						for uage in block.colorUage
+							li= uage
+
+mixin siteFooterBuilder(siteId)
+	for website in websites
+		if website.siteId == siteId
+			div.title
+				a(href=website.siteLink)= website.siteName
+
+block pageTitle
+	title color palette
+
+block bodyContent
+	div.pageWrapper
+		div.pageHeader
+			//- a.button(href="#")
+			//- 	i.fa.fa-arrow-left
+			div.title Site List
+			//- a.button(href="#")
+			//- 	i.fa.fa-arrow-right
+
+		div.pageContent
+			//- +paletteBlockBuilder()
+			div.siteBlock
+				h2 Site 1
+				h2 Site 1
+				h2 Site 1
+				h2 Site 1
+				h2 Site 1
+				//- div.paletteBlock
+				//- +paletteBlockBuilder()
+
+			div.siteBlock
+				h2 Site 2
+				//- +paletteBlockBuilder()
+
+			div.siteBlock
+				h2 Site 3
+				//- div.paletteBlock
+
+			div.siteBlock
+				//- div.paletteBlock
+				h2 Site 4
+
+			div.siteBlock
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+				h2 Site 5
+
+		div.pageFooter
+			//- +siteFooterBuilder('newWorld')
+			div
+				span Site List Footer

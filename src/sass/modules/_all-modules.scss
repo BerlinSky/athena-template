@@ -65,70 +65,87 @@
   .pageContent {
     background-color: _color(white);
 
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
-    @include break(md) {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
+    // @include break(md) {
+    //   flex-direction: row;
+    //   flex-wrap: wrap;
+    // }
 
-    .paletteBlock {
-      // border: 1px solid lightgray;
-      border: none;
+    .siteBlock {
+      border: 1px solid lightgray;
+      // border: none;
       margin: 0 0 0 0;
       padding: 15px;
+      // min-height: 500px;
 
-      flex: 1 1 auto;
-
-      @include break(md) {
-        flex: 0 0 50%;
-      }
-
-      @include break(lg) {
-        // flex-basis: 25%;
-        flex: 0 0 25%;
-      }
+      // flex: auto;
 
       // display: flex;
+      // flex-direction: column;
+      // justify-content: flex-start;
 
-      .paletteBlock__palette {
-        // background-color: #009cde;
-        height: 70px;
-        border-radius: 6px;
-        text-transform: uppercase;
+      .paletteBlock {
+        border: 5px solid blue;
+        // min-height: 500px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+        // border: none;
+        margin: 0 0 0 0;
+        padding: 15px;
 
-      .paletteBlock__info {
-        line-height: 1.6;
-        margin: 1rem 0.5rem;
-        font-size: 1rem;
+        // flex: 1 1 auto;
 
-        div {
-          margin-bottom: 0.3rem;
-        }
-      }
+        // @include break(md) {
+        //   flex: 0 0 50%;
+        // }
 
-      .paletteBlock__usage {
-        margin: 1rem 0.5rem;
-        padding: 0;
-        list-style-type: none;
-        line-height: 1.6;
+        // @include break(lg) {
+        //   // flex-basis: 25%;
+        //   flex: 0 0 25%;
+        // }
 
-        li {
-          margin-bottom: 0.5rem;
-          font-size: 1rem;
-        }
+        // display: flex;
+
+        // .paletteBlock__palette {
+        //   // background-color: #009cde;
+        //   height: 70px;
+        //   border-radius: 6px;
+        //   text-transform: uppercase;
+
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        // }
+
+        // .paletteBlock__info {
+        //   line-height: 1.6;
+        //   margin: 1rem 0.5rem;
+        //   font-size: 1rem;
+
+        //   div {
+        //     margin-bottom: 0.3rem;
+        //   }
+        // }
+
+        // .paletteBlock__usage {
+        //   margin: 1rem 0.5rem;
+        //   padding: 0;
+        //   list-style-type: none;
+        //   line-height: 1.6;
+
+        //   li {
+        //     margin-bottom: 0.5rem;
+        //     font-size: 1rem;
+        //   }
+        // }
       }
     }
+
   }
 
   .pageFooter {
