@@ -39,6 +39,39 @@
 
   .l-pageHeader {
     background-color: burlywood;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    @include break(md) {
+      justify-content: flex-start;
+
+      min-width: 150px;
+    }
+
+    .imageFrame {
+      margin-top: .7rem;
+      height: 30px;
+
+      @include break(md) {
+        margin: 1.0rem .5rem .2rem .5rem;
+      }
+
+      .imageResponsive {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .title {
+      margin-bottom: .5rem;
+
+      @include break(md) {
+        font-weight: 600;
+      }
+    }
   }
 
   .l-pageContentWrapper {
