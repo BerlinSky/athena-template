@@ -27,8 +27,43 @@
 @import "./flip-card/flip-card";
 @import "./three-d-menu/three-d-menu";
 
-// Color palette
+// Library
+.l-pageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
+  @include break(md) {
+    flex-direction: row;
+  }
+
+  .l-pageHeader {
+    background-color: burlywood;
+  }
+
+  .l-pageContentWrapper {
+    overflow-y: auto;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .l-contentContainer {
+      flex: 1;
+
+      background-color: greenyellow;
+    }
+
+    .l-footerContainer {
+      background-color: burlywood;
+    }
+  }
+}
+
+
+// Library - end
+
+// Color palette
 .pageWrapper {
   // background-color: #fff;
   height: 100vh;
