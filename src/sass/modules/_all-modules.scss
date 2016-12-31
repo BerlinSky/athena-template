@@ -38,7 +38,7 @@
   }
 
   .l-pageHeader {
-    background-color: burlywood;
+    background-color: #1a1a1a;
 
     display: flex;
     flex-direction: column;
@@ -51,25 +51,76 @@
       min-width: 150px;
     }
 
-    .imageFrame {
-      margin-top: .7rem;
-      height: 30px;
+    .l-logoContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
 
       @include break(md) {
-        margin: 1.0rem .5rem .2rem .5rem;
+        padding-top: 15px;
       }
 
-      .imageResponsive {
-        height: 100%;
-        width: auto;
+      .imageFrame {
+        margin-top: .7rem;
+        height: 30px;
+
+        @include break(md) {
+          margin: 1.0rem .5rem .2rem .5rem;
+          height: 50px;
+        }
+
+        .imageResponsive {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      .title {
+        margin-bottom: .5rem;
+
+        @include break(md) {
+          font-weight: 600;
+        }
       }
     }
 
-    .title {
-      margin-bottom: .5rem;
+    .l-menuWrapper {
 
-      @include break(md) {
-        font-weight: 600;
+      .l-menuContainer {
+
+        .menuList {
+          margin: 10px;
+          // padding: 5px;
+          // background-color: red;
+
+          .menuItem {
+            // background-color: green;
+
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            a {
+              display: block;
+              // margin-right: 5px;
+              color: #fff;
+              font-size: 1rem;
+              font-family: "Open Sans", Arial, Tahoma, sans-serif;
+              font-weight: 400;
+              line-height: 45px;
+              border: none;
+              padding: 0 20px 0 20px;
+              text-align: center;
+              transition: all 0.3s ease-in-out;
+              text-transform: uppercase;
+            }
+
+            a.currentSelection {
+              background-color: #554d41;
+            }
+          }
+        }
       }
     }
   }
@@ -88,7 +139,9 @@
     }
 
     .l-footerContainer {
-      background-color: burlywood;
+      padding: 15px;
+      background-color: #1a1a1a;
+      text-align: center;
     }
   }
 }
