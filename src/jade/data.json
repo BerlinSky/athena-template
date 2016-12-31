@@ -1,9 +1,1185 @@
 {
   "websites": [
     {
-      "siteId": "newWorld",
-      "siteName": "New World",
-      "siteLink": "www.newworld.com",
+      "siteId": "AmySchumer",
+      "siteName": "Amy Schumer",
+      "siteLink": "www.amyschumer.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "DixieChicks",
+      "siteName": "Dixie Chicks",
+      "siteLink": "www.dcxtourclub.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "FifthHarmony",
+      "siteName": "Fifth Harmony",
+      "siteLink": "www.5htourclub.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "GunsNRoses",
+      "siteName": "GunsNRoses",
+      "siteLink": "www.gunsnroses.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Madonna",
+      "siteName": "Madonna",
+      "siteLink": "www.madonna.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Mariahcarey",
+      "siteName": "Mariahcarey",
+      "siteLink": "www.mariahcarey.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Maroon5",
+      "siteName": "Maroon5",
+      "siteLink": "www.maroon5sin.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Nickelback",
+      "siteName": "Nickelback",
+      "siteLink": "www.nickelback.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "nkotb",
+      "siteName": "New Kids On The Block",
+      "siteLink": "www.nkotb.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Slayer",
+      "siteName": "Slayer",
+      "siteLink": "www.slatanicwehrmacht.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Sting",
+      "siteName": "Sting",
+      "siteLink": "www.sting.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "TobyKeith",
+      "siteName": "Toby Keith",
+      "siteLink": "www.tobykeith.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "Trans-Siberian",
+      "siteName": "Trans-Siberian",
+      "siteLink": "www.trans-siberian.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "U2",
+      "siteName": "U2",
+      "siteLink": "www.u2.com",
+      "colorPaletteBlocks": [
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "persimmon",
+            "colorValue": "#ff6347",
+            "varName": "_color(persimmon)"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "secondary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "green",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "navigation",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "pink",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "sidebar",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "black",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "blue",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "darkgray",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        },
+        {
+          "blockId": "primary",
+          "paletteInfo": {
+            "colorName": "pacific",
+            "colorValue": "gold",
+            "varName": "$-name-is-pacific"
+          },
+          "colorUage": [
+            "Site Nav", "Footer", "Header", "Buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "siteId": "ZacBrown",
+      "siteName": "Zac Brown Band",
+      "siteLink": "zamily.zacbrownband.com",
       "colorPaletteBlocks": [
         {
           "blockId": "primary",

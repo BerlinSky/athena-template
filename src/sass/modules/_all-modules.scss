@@ -85,31 +85,10 @@
     margin: 0 0 0 0;
     padding: 15px;
 
-    // flex: 1;
-
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-
-
-  }
-
-  .parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    @include break(md) {
-      flex-direction: row;
-      flex-wrap: wrap;
+    h2.siteName {
+      margin: 0;
     }
   }
-
-  .child {
-    flex: 1;
-  }
-
-
 
   .pageFooter {
     background-color: _color(mine_shaft);
@@ -124,6 +103,17 @@
       font-weight: 700;
       font-size: 1.25rem;
     }
+  }
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @include break(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
