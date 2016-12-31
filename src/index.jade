@@ -18,12 +18,6 @@ mixin paletteBlockBuilder ()
 							for uage in block.colorUage
 								li= uage
 
-//- mixin siteFooterBuilder(siteId)
-//- 	for website in websites
-//- 		if website.siteId == siteId
-//- 			div.title
-//- 				a(href=website.siteLink)= website.siteName
-
 block pageTitle
 	title color palette
 
@@ -32,17 +26,15 @@ block bodyContent
 		div.pageHeader
 			//- a.button(href="#")
 			//- 	i.fa.fa-arrow-left
-			div.title Site List
+			div.title Color Palette
 			//- a.button(href="#")
 			//- 	i.fa.fa-arrow-right
+			div.imageFrame
+				img(alt='img' src='./images/color-palette.png').imageResponsive
 
 		div.pageContent
 			+paletteBlockBuilder()
-			//- div.siteBlock
-				//- h2 New Year Site
-				//- div.parent
 
 		div.pageFooter
-			//- +siteFooterBuilder('newWorld')
 			div
 				span Site List Footer
