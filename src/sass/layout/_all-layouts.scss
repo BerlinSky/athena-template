@@ -1,50 +1,64 @@
 .l-pageContainer {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 
-  @include break(md) {
-    flex-direction: row;
-  }
+	@include break(md) {
+		flex-direction: row;
+	}
 
-  .l-pageHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+	.l-pageHeader {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
 
-    @include break(md) {
-      justify-content: flex-start;
-    }
+		@include break(md) {
+			justify-content: flex-start;
+		}
 
-    .l-logoContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-    }
-  }
+		.l-logoContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
 }
 
 .l-menuWrapper {
-  .l-menuContainer {
-    margin: 0;
-  }
+	.l-menuContainer {
+		margin: 0;
+	}
 }
 
 .l-pageContentWrapper {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 
-  .l-contentContainer {
-    flex: 1;
-  }
+	.l-contentContainer {
+		flex: 1;
+	}
 
-  .l-footerContainer {
-    margin: 0;
-  }
+	.l-footerContainer {
+		margin: 0;
+	}
+}
+
+.l-contentHeaderContainer {
+	.l-header {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+
+		.l-breadCrumbs {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+		}
+	}
 }

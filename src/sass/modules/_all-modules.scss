@@ -78,7 +78,14 @@
 
 .pageContentWrapper {
 
-  .ontentContainer {
+  .headerContainer {
+    background-color: lightgray;
+    .header {
+      background-color: rgba(245, 245, 245, 1);
+    }
+  }
+
+  .contentContainer {
     background-color: greenyellow;
   }
 
