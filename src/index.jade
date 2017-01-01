@@ -36,11 +36,11 @@ block bodyContent
 						img(alt='img' src='./images/ln-logo-small.png').imageResponsive
 					h4.title TMOT Stylus
 				div.l-toggleMenuContainer.toggleMenuContainer
-					a(href='#')
+					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
 
 			div.l-menuWrapper.menuWrapper
-				div.l-menuContainer.menuContainer
+				div.l-menuContainer.menuContainer.js-mobileMenu
 					ul.menuList
 						+menuItems('Home')
 						li.menuItem
