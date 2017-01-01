@@ -54,6 +54,13 @@
 
 .l-menuWrapper {
 	.l-menuContainer {
+    display: none;
+
+    @include break(md) {
+      display: block;
+    }
+
+    border-top: 1px solid #999999;
 		margin: 0;
 	}
 }
