@@ -1,5 +1,11 @@
 extends jade/includes/base
 
+mixin menuItems(...items)
+	each item in items
+		li.menuItem
+			a(href='#')
+				span= item
+
 block pageTitle
 	title LM OnTour
 
@@ -16,21 +22,7 @@ block bodyContent
 						li.menuItem
 							a(href='#').currentSelection
 								span Home
-						li.menuItem
-							a(href='#')
-								span Color Palette
-						li.menuItem
-							a(href='#')
-								span History
-						li.menuItem
-							a(href='#')
-								span Directory
-						li.menuItem
-							a(href='#')
-								span Who is who
-						li.menuItem
-							a(href='#')
-								span TV Stations
+						+menuItems('History', 'Layouts', 'Color Palette', 'Buttons', 'Themes', 'Events')
 
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
