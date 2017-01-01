@@ -9829,12 +9829,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     e.preventDefault();
 
     var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
-    // mobileMenu.css({'display': 'block'});
     mobileMenu.toggle("slow");
-
-    // $('html, body').on('touchmove', function(evt){
-    //    evt.preventDefault();
-    // });
   });
 });
 
