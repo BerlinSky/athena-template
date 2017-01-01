@@ -11,18 +11,35 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		align-items: center;
+		align-items: stretch;
+
+    padding: 5px 20px;
 
 		@include break(md) {
 			justify-content: flex-start;
 		}
 
-		.l-logoContainer {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			align-items: center;
-		}
+    .l-navContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .l-logoContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .l-toggleMenuContainer {
+        a {
+          border: none;
+          font-size: 1.0rem;
+          color: #009cde;
+        }
+      }
+    }
+
 	}
 }
 

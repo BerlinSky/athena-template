@@ -30,10 +30,15 @@ block pageTitle
 block bodyContent
 	div.l-pageContainer.pageContainer
 		div.l-pageHeader.pageHeader
-			div.l-logoContainer.logoContainer
-				div.imageFrame
-					img(alt='img' src='./images/ln-logo-small.png').imageResponsive
-				h4.title TMOT Stylus
+			div.l-navContainer.navContainer
+				div.l-logoContainer.logoContainer
+					div.imageFrame
+						img(alt='img' src='./images/ln-logo-small.png').imageResponsive
+					h4.title TMOT Stylus
+				div.l-toggleMenuContainer.toggleMenuContainer
+					a(href='#')
+						i.fa.fa-bars.fa-2x
+
 			div.l-menuWrapper.menuWrapper
 				div.l-menuContainer.menuContainer
 					ul.menuList
