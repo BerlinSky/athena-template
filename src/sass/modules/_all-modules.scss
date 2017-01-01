@@ -78,15 +78,18 @@
 
 .pageContentWrapper {
 
-  .headerContainer {
-    background-color: lightgray;
+  .contentHeaderContainer {
+    // background-color: lightgray;
     .header {
       background-color: rgba(245, 245, 245, 1);
     }
   }
 
   .contentContainer {
-    background-color: greenyellow;
+    // background-color: greenyellow;
+    border-top: 1px solid lightslategray;
+    padding-top: 30px;
+    padding-left: 20px;
   }
 
   .footerContainer {
