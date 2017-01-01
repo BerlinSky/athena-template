@@ -9,9 +9,9 @@ $(function () {
     // mobileMenu.css({'display': 'block'});
     mobileMenu.toggle("slow");
 
-    $('html, body').on('touchmove', function(evt){
-       evt.preventDefault();
-    });
+    // $('html, body').on('touchmove', function(evt){
+    //    evt.preventDefault();
+    // });
   })
 
 });

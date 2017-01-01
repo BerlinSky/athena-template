@@ -9832,9 +9832,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     // mobileMenu.css({'display': 'block'});
     mobileMenu.toggle("slow");
 
-    (0, _jquery2.default)('html, body').on('touchmove', function (evt) {
-      evt.preventDefault();
-    });
+    // $('html, body').on('touchmove', function(evt){
+    //    evt.preventDefault();
+    // });
   });
 });
 
