@@ -22,8 +22,29 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
+    }
+  }
+}
 
+.l-menuWrapper {
+  .l-menuContainer {
+    margin: 0;
+  }
+}
 
-     }
+.l-pageContentWrapper {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .l-contentContainer {
+    flex: 1;
+  }
+
+  .l-footerContainer {
+    margin: 0;
   }
 }
