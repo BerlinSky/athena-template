@@ -29,13 +29,22 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+
+        @include break(md) {
+          flex: 1;
+        }
       }
 
       .l-toggleMenuContainer {
+        @include break(md) {
+          display: none;
+        }
+
         a {
           border: none;
           font-size: 1.0rem;
           color: #009cde;
+          opacity: 0.75;
         }
       }
     }
