@@ -12,8 +12,6 @@
   }
 
   .l-pageHeader {
-    background-color: #1a1a1a;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,7 +19,16 @@
 
     @include break(md) {
       justify-content: flex-start;
+    }
+  }
+}
 
+.pageContainer {
+
+  .pageHeader {
+    background-color: #1a1a1a;
+
+    @include break(md) {
       min-width: 150px;
     }
 
