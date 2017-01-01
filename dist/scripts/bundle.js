@@ -9823,81 +9823,20 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// menu flat 2
-
-var triggers = document.querySelectorAll('.js-fancySiteMenuItems > .js-fancySiteMenuItems__item');
-var background = document.querySelector('.js-fancySiteMenu__shadow');
-var nav = document.querySelector('.js-fancySiteMenu');
-
-function shadowed() {
-  var _this = this;
-
-  this.classList.add('js-shadowed');
-  setTimeout(function () {
-    return _this.classList.contains('js-shadowed') && _this.classList.add('js-shadowed--revealed');
-  }, 100);
-  background.classList.add('open');
-
-  var dropdown = this.querySelector('.fancySiteMenu__plate');
-  var dropdownCoords = dropdown.getBoundingClientRect();
-  var navCoords = nav.getBoundingClientRect();
-
-  var coords = {
-    height: dropdownCoords.height,
-    width: dropdownCoords.width,
-    top: dropdownCoords.top - navCoords.top,
-    left: dropdownCoords.left - navCoords.left
-  };
-
-  background.style.setProperty('width', coords.width + 'px');
-  background.style.setProperty('height', coords.height + 'px');
-  background.style.setProperty('transform', 'translate(' + coords.left + 'px, ' + coords.top + 'px)');
-}
-
-function unshadowed() {
-  this.classList.remove('js-shadowed', 'js-shadowed--revealed');
-  background.classList.remove('open');
-}
-
-triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseenter', shadowed);
-});
-triggers.forEach(function (trigger) {
-  return trigger.addEventListener('mouseleave', unshadowed);
-});
-
 (0, _jquery2.default)(function () {
-  (0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
-    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
-    mobileMenu.css({ 'display': 'block' });
-    mobileMenu.css({ right: '-320px' });
-    mobileMenu.addClass('magictime slideLeft');
+  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
+    e.preventDefault();
 
-    setTimeout(function () {
-      mobileMenu.css({ right: 0 });
-      mobileMenu.removeClass('slideLeft');
-    }, 1000);
+    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
+    // mobileMenu.css({'display': 'block'});
+    mobileMenu.toggle("slow");
 
     (0, _jquery2.default)('html, body').on('touchmove', function (evt) {
       evt.preventDefault();
     });
   });
-
-  (0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
-    (0, _jquery2.default)('html, body').unbind('touchmove');
-
-    var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-
-    mobileMenu.addClass('magictime slideRight');
-    setTimeout(function () {
-      mobileMenu.css({ 'display': 'none' });
-      mobileMenu.removeClass('slideRight');
-    }, 1000);
-  });
 });
-
-// menu flat 2 - End
 
 },{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map
