@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 26. _Start a color palette based on JSON data_
+
+### Branch: jade-colors 
++ based on jade-more-site-menu
+
+### Design Goals:
++ Start a color palette with site Jade
+
+### Developer's Notes
++ Learn how to pull values from data.json file
+
+###Surge: 
+	http://unusual-boy.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b jade-colors [github repository] jade-colors
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 25. _Apply Jade to the site_
 
 ### Branch: jade-more-site-menu 
