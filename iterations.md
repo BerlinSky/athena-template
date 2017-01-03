@@ -1,5 +1,37 @@
 # Iteration List
 
+## Iteration 27. _Enhance color palette based on artist site JSON data_
+
+### Branch: jade-colors-2 
++ based on jade-colors
+
+### Design Goals:
++ Create a one-page site for color palette
+
+### Developer's Notes
+1. Use one-page responsive layout
+2. Add the structure for all the sites
+3. Site values are pulled from data.json file
+
+###Surge: 
+	http://rebel-fairies.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b jade-colors-2 [github repository] jade-colors-2
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 26. _Start a color palette based on JSON data_
 
 ### Branch: jade-colors 
