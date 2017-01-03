@@ -1,5 +1,36 @@
 # Iteration List
 
+## Iteration 28. _Create a sitebar layout with Jade_
+
+### Branch: sidebar-layout 
++ based on jade-colors-2
+
+### Design Goals:
++ Create a sidebar layout with Jade
+
+### Developer's Notes
+1. Use sidebar responsive layout
+2. Learn how to create sidebar layouts with flexbox 
+
+###Surge: 
+	http://crabby-pest.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b sidebar-layout [github repository] sidebar-layout
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 27. _Enhance color palette based on artist site JSON data_
 
 ### Branch: jade-colors-2 
