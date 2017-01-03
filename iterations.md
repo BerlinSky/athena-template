@@ -1,5 +1,37 @@
 # Iteration List
 
+## Iteration 25. _Apply Jade to the site_
+
+### Branch: jade-more-site-menu 
++ based on more-site-menu
+
+### Design Goals:
++ Convert the site to Jade
+
+### Developer's Notes
++ Learn Jade includes
++ Learn Jade mixins
++ Learn Jade inheritance
+
+###Surge: 
+	
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b jade-more-site-menu [github repository] jade-more-site-menu
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 24. _Add fancy site menu to the site_
 
 ### Branch: more-site-menu 
