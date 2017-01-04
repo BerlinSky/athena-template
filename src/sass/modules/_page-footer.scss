@@ -1,0 +1,14 @@
+.pageFooter {
+  background-color: _color(mine_shaft);
+  padding: 15px 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+}

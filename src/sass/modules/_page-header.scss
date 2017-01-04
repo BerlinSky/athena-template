@@ -1,0 +1,29 @@
+.pageWrapper {
+  .pageHeader {
+    background-color: _color(desert_storm);
+    padding: 30px 0 30px 5px;
+
+    .imageFrame {
+      height: 90px;
+      padding: 15px 0;
+
+      .imageResponsive {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .title {
+      padding-left: 5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.2rem;
+
+      @include break(sm) {
+        font-size: 1.5rem;
+      }
+
+      flex: 1;
+    }
+  }
+}

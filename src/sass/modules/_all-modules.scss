@@ -1,104 +1,13 @@
-// @import "site-container";
+@import "page-wrapper";
+@import "page-header";
+@import "site-block";
+@import "palette-block";
+@import "page-footer";
 
 .pageWrapper {
-
-  font-family: "TM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.4;
-  color: _color(trout);
-
-  .pageHeader {
-    background-color: _color(desert_storm);
-    padding: 30px 0 30px 5px;
-
-    .imageFrame {
-      height: 90px;
-      padding: 15px 0;
-
-      .imageResponsive {
-        height: 100%;
-        width: auto;
-      }
-    }
-
-    .title {
-      padding-left: 5px;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 1.2rem;
-
-      @include break(sm) {
-        font-size: 1.5rem;
-      }
-
-      flex: 1;
-    }
-  }
 
   .pageContent {
     background-color: _color(white);
   }
 
-  .siteBlock {
-    border-top: 1px solid lightgray;
-    width: 100%;
-    margin: 0 0 0 0;
-    padding: 15px;
-
-    h2.siteName {
-      margin: 0;
-    }
-  }
-
-  .pageFooter {
-    background-color: _color(mine_shaft);
-    padding: 15px 5px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .title {
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-  }
-}
-
-.paletteBlockContainer {
-
-  .paletteBlock {
-    border: none;
-    margin: 0 0 0 0;
-    padding: 15px;
-
-    .paletteBlock__palette {
-      height: 70px;
-      border-radius: 6px;
-      text-transform: uppercase;
-    }
-
-    .paletteBlock__info {
-      line-height: 1.6;
-      margin: 1rem 0.5rem;
-      font-size: 1rem;
-
-      div {
-        margin-bottom: 0.3rem;
-      }
-    }
-
-    .paletteBlock__usage {
-      margin: 1rem 0.5rem;
-      padding: 0;
-      list-style-type: none;
-      line-height: 1.6;
-
-      li {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-      }
-    }
-  }
 }

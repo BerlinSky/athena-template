@@ -1,0 +1,36 @@
+.paletteBlockContainer {
+
+  .paletteBlock {
+    border: none;
+    margin: 0 0 0 0;
+    padding: 15px;
+
+    .paletteBlock__palette {
+      height: 70px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .paletteBlock__info {
+      line-height: 1.6;
+      margin: 1rem 0.5rem;
+      font-size: 1rem;
+
+      div {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .paletteBlock__usage {
+      margin: 1rem 0.5rem;
+      padding: 0;
+      list-style-type: none;
+      line-height: 1.6;
+
+      li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
