@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 29. _Create a one-page layout with Flexbox_
+
+### Branch: one-page-layout 
++ based on jade-colors-2
+
+### Design Goals:
++ Create a one-page layout
+
+### Developer's Notes
+1. Learn how to create a one-page layouts with flexbox 
+
+###Surge: 
+	http://periodic-competition.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b one-page-layout [github repository] one-page-layout
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 28. _Create a sitebar layout with Jade_
 
 ### Branch: sidebar-layout 
