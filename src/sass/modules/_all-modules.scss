@@ -1,7 +1,5 @@
 // @import "site-container";
 
-// Color palette
-
 .pageWrapper {
 
   font-family: "TM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,10 +10,6 @@
   .pageHeader {
     background-color: _color(desert_storm);
     padding: 30px 0 30px 5px;
-
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
 
     .imageFrame {
       height: 90px;
@@ -30,9 +24,7 @@
     .title {
       padding-left: 5px;
       text-transform: uppercase;
-      // color: _color(white);
       font-weight: 700;
-
       font-size: 1.2rem;
 
       @include break(sm) {
@@ -45,18 +37,10 @@
 
   .pageContent {
     background-color: _color(white);
-
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
 
   .siteBlock {
     border-top: 1px solid lightgray;
-    // border: none;
     width: 100%;
     margin: 0 0 0 0;
     padding: 15px;
@@ -82,68 +66,39 @@
   }
 }
 
-.parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.paletteBlockContainer {
 
-  @include break(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
+  .paletteBlock {
+    border: none;
+    margin: 0 0 0 0;
+    padding: 15px;
 
-.paletteBlock {
-  // border: 1px solid lightgray;
-  border: none;
-  margin: 0 0 0 0;
-  padding: 15px;
-
-  flex: 1 1 auto;
-
-  @include break(md) {
-    flex: 0 0 50%;
-  }
-
-  @include break(lg) {
-    // flex-basis: 25%;
-    flex: 0 0 25%;
-  }
-
-  // display: flex;
-
-  .paletteBlock__palette {
-    // background-color: #009cde;
-    height: 70px;
-    border-radius: 6px;
-    text-transform: uppercase;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .paletteBlock__info {
-    line-height: 1.6;
-    margin: 1rem 0.5rem;
-    font-size: 1rem;
-
-    div {
-      margin-bottom: 0.3rem;
+    .paletteBlock__palette {
+      height: 70px;
+      border-radius: 6px;
+      text-transform: uppercase;
     }
-  }
 
-  .paletteBlock__usage {
-    margin: 1rem 0.5rem;
-    padding: 0;
-    list-style-type: none;
-    line-height: 1.6;
-
-    li {
-      margin-bottom: 0.5rem;
+    .paletteBlock__info {
+      line-height: 1.6;
+      margin: 1rem 0.5rem;
       font-size: 1rem;
+
+      div {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .paletteBlock__usage {
+      margin: 1rem 0.5rem;
+      padding: 0;
+      list-style-type: none;
+      line-height: 1.6;
+
+      li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
     }
   }
 }
-
-// Color palette: end

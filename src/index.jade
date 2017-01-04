@@ -6,10 +6,10 @@ mixin paletteBlockBuilder ()
 		div.siteBlock
 			h2.siteName= website.siteName
 			a.siteLink(href='http://' + website.siteLink)= website.siteLink
-			div.parent
+			div.l-paletteBlockContainer.paletteBlockContainer
 				for block in website.colorPaletteBlocks
-					div.paletteBlock
-						div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+					div.l-paletteBlock.paletteBlock
+						div.l-paletteBlock__palette.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
 							div= block.paletteInfo.colorValue
 						div.paletteBlock__info
 							div= block.paletteInfo.colorName
@@ -24,15 +24,11 @@ block pageTitle
 block bodyContent
 	div.l-pageWrapper.pageWrapper
 		div.l-pageHeader.pageHeader
-			//- a.button(href="#")
-			//- 	i.fa.fa-arrow-left
 			div.title Color Palette
-			//- a.button(href="#")
-			//- 	i.fa.fa-arrow-right
 			div.imageFrame
 				img(alt='img' src='./images/color-palette.png').imageResponsive
 
-		div.pageContent.pageContent
+		div.l-pageContent.pageContent
 			+paletteBlockBuilder()
 
 		div.pageFooter.pageFooter
