@@ -17,11 +17,11 @@
 
       .imageFrame {
         margin-top: .7rem;
-        height: 30px;
+        height: 80px;
 
         @include break(md) {
           margin: 1.0rem .5rem .2rem .5rem;
-          height: 40px;
+          height: 100px;
         }
 
         .imageResponsive {
