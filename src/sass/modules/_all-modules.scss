@@ -3,31 +3,19 @@
 // Color palette
 
 .pageWrapper {
-  // background-color: #fff;
-  height: 100vh;
-  // border: 5px solid silver;
 
   font-family: "TM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4;
   color: _color(trout);
 
-  display: flex;
-  flex-direction: column;
-
-  > div {
-    flex: 1 1 auto;
-  }
-
   .pageHeader {
     background-color: _color(desert_storm);
-    // border-bottom: 1px solid _color(silver_chalice);
-
     padding: 30px 0 30px 5px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
 
     .imageFrame {
       height: 90px;

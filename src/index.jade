@@ -22,8 +22,8 @@ block pageTitle
 	title color palette
 
 block bodyContent
-	div.pageWrapper
-		div.pageHeader
+	div.l-pageWrapper.pageWrapper
+		div.l-pageHeader.pageHeader
 			//- a.button(href="#")
 			//- 	i.fa.fa-arrow-left
 			div.title Color Palette
@@ -32,9 +32,9 @@ block bodyContent
 			div.imageFrame
 				img(alt='img' src='./images/color-palette.png').imageResponsive
 
-		div.pageContent
+		div.pageContent.pageContent
 			+paletteBlockBuilder()
 
-		div.pageFooter
+		div.pageFooter.pageFooter
 			div
 				span Site List Footer
