@@ -12,7 +12,7 @@
 1. Learn how to create a one-page layouts with flexbox 
 
 ###Surge: 
-	http://periodic-competition.surge.sh
+	
 
 ### Steps to use the iteration
 1. Clone the project
