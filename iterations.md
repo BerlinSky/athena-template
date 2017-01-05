@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 30 (Open). _To improve upon the one-page layout_
+
+### Branch: one-page-layout-2 
++ based on one-page-layout
+
+### Design Goals:
++ Improve one-page layout
+
+### Developer's Notes
+1. Learn how to create a one-page layouts with flexbox 
+
+###Surge: 
+	http://periodic-competition.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b one-page-layout-2 [github repository] one-page-layout-2
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 29. _Create a one-page layout with Flexbox_
 
 ### Branch: one-page-layout 
