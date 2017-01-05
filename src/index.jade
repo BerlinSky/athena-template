@@ -8,13 +8,12 @@ mixin menuItems(...items)
 
 mixin paletteBlockBuilder ()
 	for website in websites
-		//- if website.siteId == 'newWorld'
 		div.siteBlock
 			h2.siteName= website.siteName
 			a.siteLink(href='http://' + website.siteLink)= website.siteLink
-			div.parent
+			div.l-paletteBlockContainer.paletteBlockContainer
 				for block in website.colorPaletteBlocks
-					div.paletteBlock
+					div.l-paletteBlock.paletteBlock
 						div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
 							div= block.paletteInfo.colorValue
 						div.paletteBlock__info
