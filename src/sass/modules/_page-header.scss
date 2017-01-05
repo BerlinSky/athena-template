@@ -1,0 +1,74 @@
+.pageContainer {
+
+  .pageHeader {
+    background-color: #1a1a1a;
+
+    @include break(md) {
+      min-width: 150px;
+    }
+
+    .logoContainer {
+      @include break(md) {
+        padding-top: 15px;
+      }
+
+      .imageFrame {
+        margin-top: .7rem;
+        height: 80px;
+
+        @include break(md) {
+          margin: 1.0rem .5rem .2rem .5rem;
+          height: 100px;
+        }
+
+        .imageResponsive {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      .title {
+        margin-bottom: .5rem;
+
+        @include break(md) {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .menuWrapper {
+
+      .menuContainer {
+
+        .menuList {
+          margin: 10px;
+
+          .menuItem {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            a {
+              display: block;
+              color: #fff;
+              letter-spacing: 3px;
+              font-size: 14px;
+              font-family: "Open Sans", Arial, Tahoma, sans-serif;
+              font-weight: 500;
+              line-height: 38px;
+              border: none;
+              padding: 2px 20px 2px 20px;
+              text-align: center;
+              transition: all 0.3s ease-in-out;
+              text-transform: uppercase;
+            }
+
+            a.currentSelection {
+              background-color: #554d41;
+            }
+          }
+        }
+      }
+    }
+  }
+}
