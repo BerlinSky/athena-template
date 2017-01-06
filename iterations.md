@@ -2,7 +2,7 @@
 
 ## Iteration 33. _A (right) sidebar layout with flexbox_
 
-### Branch: sidebar-left-layout 
+### Branch: sidebar-right-layout 
 + based on sidebar-left-layout
 
 ### Design Goals:
@@ -13,12 +13,12 @@
 + Learn how to create a (left) sidebar layout
 
 ###Surge: 
-	http://odd-shame.surge.sh
+  http://female-door.surge.sh/
 
 ### Steps to use the iteration
 1. Clone the project
   ```
-  git clone -b sidebar-left-layout [github repository] sidebar-left-layout
+  git clone -b sidebar-right-layout [github repository] sidebar-right-layout
   ```
 2. Install the NPM packages:
   ```
