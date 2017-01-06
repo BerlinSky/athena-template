@@ -1,51 +1,9 @@
 import './main.css';
+import { colors } from './array-methods';
+
 // import $ from 'jquery';
 
 /* eslint-disable no-console */
-
-// $(function() {
-//   console.log("bundle works just fine.");
-// });
-
-// array methods: filer, sort, map, reduce, 
-
-const colors = [
-	{
-		color: "red",
-		value: "#f00",
-    mutiplier: 100
-	},
-	{
-		color: "green",
-		value: "#0f0",
-    mutiplier: 100
-	},
-	{
-		color: "blue",
-		value: "#00f",
-    mutiplier: 200
-	},
-	{
-		color: "cyan",
-		value: "#0ff",
-    mutiplier: 100
-	},
-	{
-		color: "magenta",
-		value: "#f0f",
-    mutiplier: 200
-	},
-	{
-		color: "yellow",
-		value: "#ff0",
-    mutiplier: 100
-	},
-	{
-		color: "black",
-		value: "#000",
-    mutiplier: 100
-	}
-];
 
 console.table(colors);
 
@@ -76,3 +34,13 @@ const totalMultipliers = colors.reduce( (total, color) => {
 }, 0)
 
 console.log(totalMultipliers);
+
+// Arrary some
+const hasBlack = colors.some( (color) => color.value === '#000' );
+
+console.log({hasBlack});
+
+// Arrary find
+
+
+// Arrary findIndex
