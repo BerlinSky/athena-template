@@ -1,5 +1,98 @@
 # Iteration List
 
+## Iteration 33. _A (right) sidebar layout with flexbox_
+
+### Branch: sidebar-left-layout 
++ based on sidebar-left-layout
+
+### Design Goals:
+2. Incorporate the color palette
+1. Learn how to create a (left) sidebar layout
+
+### Developer's Notes
++ Learn how to create a (left) sidebar layout
+
+###Surge: 
+	http://odd-shame.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b sidebar-left-layout [github repository] sidebar-left-layout
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
+## Iteration 32. _A (left) sidebar layout with flexbox_
+
+### Branch: sidebar-left-layout 
++ based on tm-ontour
+
+### Design Goals:
+2. Incorporate the color palette
+1. Learn how to create a (left) sidebar layout
+
+### Developer's Notes
++ Learn how to create a (left) sidebar layout
+
+###Surge: 
+	http://odd-shame.surge.sh
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b sidebar-left-layout [github repository] sidebar-left-layout
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
+## Iteration 31. _A sidebar layout style guide_
+
+### Branch: tm-ontour 
++ based on sidebar-layout
+
+### Design Goals:
+1. Set up for a style guide
+2. Incorporate the color palette
+
+### Developer's Notes
+1. Learn how to create a one-page layouts with flexbox 
+
+###Surge: 
+	http://green-north.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b tm-ontour [github repository] tm-ontour
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
+---
+
 ## Iteration 30 (Open). _To improve upon the one-page layout_
 
 ### Branch: one-page-layout-2 
