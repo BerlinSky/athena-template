@@ -13,7 +13,7 @@
 + Learn how to create a (left) sidebar layout
 
 ###Surge: 
-  http://female-door.surge.sh/
+	http://fierce-blood.surge.sh/
 
 ### Steps to use the iteration
 1. Clone the project
