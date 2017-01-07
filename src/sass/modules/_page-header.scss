@@ -43,6 +43,9 @@
         .menuList {
           margin: 10px;
 
+          display: flex;
+          justify-content: flex-end;
+
           .menuItem {
             width: 100%;
             margin: 0;

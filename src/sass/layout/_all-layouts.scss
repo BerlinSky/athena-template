@@ -3,9 +3,9 @@
 	display: flex;
 	flex-direction: column;
 
-	@include break(md) {
-		flex-direction: row;
-	}
+	// @include break(md) {
+	// 	flex-direction: row;
+	// }
 
 	.l-pageHeader {
 		display: flex;
@@ -16,7 +16,10 @@
     padding: 5px 20px;
 
 		@include break(md) {
-			justify-content: flex-start;
+			// justify-content: flex-start;
+
+      flex-direction: row;
+			justify-content: space-between;
 		}
 
     .l-navContainer {
@@ -54,11 +57,12 @@
 
 .l-menuWrapper {
 	.l-menuContainer {
-    display: none;
+    // display: none;
+    display: block;
 
-    @include break(md) {
-      display: block;
-    }
+    // @include break(md) {
+    //   display: block;
+    // }
 
     border-top: 1px solid #999999;
 		margin: 0;

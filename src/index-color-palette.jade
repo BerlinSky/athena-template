@@ -48,21 +48,18 @@ block bodyContent
 						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
 
 		div.l-pageContentWrapper.pageContentWrapper
-			//- div.l-contentHeaderContainer.contentHeaderContainer
+			div.l-contentHeaderContainer.contentHeaderContainer
 				div.l-header.header
 					div.l-container
-						//- span.title Color Palette
-						div.l-logoContainer.logoContainer
-							div.imageFrame
-								img(alt='img' src='./images/site-logo.png').imageResponsive
+						span.title Color Palette
 					div.l-container
-						div.l-menuContainer.menuContainer.js-mobileMenuContainer
-							ul.menuList
-								+menuItems('Home')
-								li.menuItem
-									a(href='#').currentSelection
-										span Color Palette
-								+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
+						ul.l-breadCrumbs.breadCrumbs
+							li
+								a(href="#") Home
+							li
+								i.fa.fa-angle-right
+							li
+								a(href="#") Color Palette
 
 			div.l-contentContainer.contentContainer
 				+paletteBlockBuilder()
