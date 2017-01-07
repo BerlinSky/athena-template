@@ -1,14 +1,15 @@
 .pageContainer {
 
   .pageHeader {
-    // background-color: #1a1a1a;
     background-color: #ffffff;
 
     @include break(md) {
-      min-width: 150px;
+      // min-width: 150px;
     }
 
     .logoContainer {
+      background-color: cornflowerblue;
+
       @include break(md) {
         padding: 50px;
         line-height: 50px;
@@ -40,6 +41,7 @@
     }
 
     .menuWrapper {
+      background-color: lightcoral;
 
       .menuContainer {
 
