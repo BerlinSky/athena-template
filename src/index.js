@@ -1,7 +1,4 @@
 import './main.css';
-// import { colors } from './array-methods';
-
-// import $ from 'jquery';
 
 /* eslint-disable no-console */
 
