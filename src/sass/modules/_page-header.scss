@@ -43,9 +43,9 @@
 
     .menuWrapper {
       // background-color: lightcoral;
+      padding: 5px;
 
       .menuContainer {
-
         // background-color: crimson;
         flex: 1;
 
@@ -94,6 +94,25 @@
           }
         }
       }
+
+      .searchContainer {
+        // background-color: darkgoldenrod;
+        margin: 0;
+      }
     }
   }
 }
+
+.searchButton {
+  line-height: 20px;
+  font-size: 18px;
+  color: #444;
+  text-decoration: none;
+  border: none;
+}
+
+.searchButton-default {
+  padding: 2px 30px;
+}
+
+
