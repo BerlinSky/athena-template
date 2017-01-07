@@ -8,11 +8,11 @@
     }
 
     .logoContainer {
-      background-color: cornflowerblue;
+      // background-color: cornflowerblue;
 
       @include break(md) {
-        padding: 50px 20px;
-        line-height: 50px;
+        padding: 20px 5px;
+        line-height: 40px;
         height: 80px;
       }
 
@@ -21,8 +21,9 @@
         height: 80px;
 
         @include break(md) {
-          margin: 1.0rem .5rem .2rem .5rem;
-          height: 100px;
+          margin: 8px .5rem 2px .5rem;
+          // margin: 1.0rem .5rem .2rem .5rem;
+          // height: 100px;
         }
 
         .imageResponsive {
@@ -41,40 +42,44 @@
     }
 
     .menuWrapper {
-      background-color: lightcoral;
+      // background-color: lightcoral;
 
       .menuContainer {
 
+        // background-color: crimson;
+        flex: 1;
+
         .menuList {
           // margin: 10px;
-          background-color: cornflowerblue;
+          // background-color: cornflowerblue;
 
 
           display: flex;
-          justify-content: flex-end;
+          justify-content: space-between;
           align-items: center;
 
           .menuItem {
-            width: 100%;
+            // width: 100%;
             margin: 0;
             padding: 0;
 
             a {
-              display: block;
-              color: #000000;
-              letter-spacing: 3px;
+              display: inline-block;
+              color: #444;
+              letter-spacing: 2.5px;
               font-size: 14px;
               font-family: "Open Sans", Arial, Tahoma, sans-serif;
               font-weight: 500;
               line-height: 38px;
               border: none;
-              padding: 2px 20px 2px 20px;
+              // padding: 2px 10px 2px 10px;
+              padding: 2px;
               text-align: center;
               transition: all 0.3s ease-in-out;
-              text-transform: uppercase;
+              // text-transform: uppercase;
 
               span {
-                padding: 0 20px;
+                padding: 0 10px;
                 white-space: nowrap;
                 border-right-width: 1px;
                 border-style: solid;

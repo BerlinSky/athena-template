@@ -56,12 +56,18 @@
 }
 
 .l-menuWrapper {
+  flex: 1;
   display: flex;
   align-items: center;
 
 	.l-menuContainer {
     // display: none;
-    display: block;
+    // display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 
     // @include break(md) {
     //   display: block;
