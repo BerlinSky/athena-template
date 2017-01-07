@@ -11,9 +11,9 @@
       background-color: cornflowerblue;
 
       @include break(md) {
-        padding: 50px;
+        padding: 50px 20px;
         line-height: 50px;
-        height: 50px;
+        height: 80px;
       }
 
       .imageFrame {
@@ -21,7 +21,7 @@
         height: 80px;
 
         @include break(md) {
-          // margin: 1.0rem .5rem .2rem .5rem;
+          margin: 1.0rem .5rem .2rem .5rem;
           height: 100px;
         }
 
@@ -47,6 +47,8 @@
 
         .menuList {
           // margin: 10px;
+          background-color: cornflowerblue;
+
 
           display: flex;
           justify-content: flex-end;
