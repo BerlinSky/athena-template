@@ -110,15 +110,30 @@
 }
 
 .searchButton {
-  line-height: 20px;
+  // line-height: 20px;
   font-size: 18px;
-  color: #444;
+  // color: #444;
   text-decoration: none;
   border: none;
+
+  line-height: 2.5rem;
+  color: #009cde;
 }
 
 .searchButton-default {
   padding: 2px 30px;
+}
+
+.l-searchWrapper {
+  .l-searchWrapper__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .searchInput {
+      flex: 1;
+    }
+  }
 }
 
 .searchWrapper {

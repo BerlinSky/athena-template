@@ -90,11 +90,11 @@
 	}
 
   .l-searchContainer {
-    display: none;
+    // display: none;
+    display: flex;
 
-    @include break(md) {
-      display: flex;
-    }
+    // @include break(md) {
+    // }
     flex-direction: column;
     justify-content: center;
     align-items: center;
