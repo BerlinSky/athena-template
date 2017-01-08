@@ -38,24 +38,24 @@ block bodyContent
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
 
-			div.l-menuWrapper.menuWrapper
+			div.l-menuWrapper.menuWrapper.js-menuWrapper
 				div.l-menuContainer.menuContainer.js-mobileMenuContainer
 					ul.menuList
 						+menuItems('Home')
 						li.menuItem
 							a(href='#').currentSelection
 								span Color Palette
-						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
+						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Buttons')
 
-				div.l-searchContainer.searchContainer
+				div.l-searchContainer.searchContainer.js-showSearchPanel
 					a.searchButton.searchButton--default
 						i.fa.fa-search
-				div.l-searchWrapper.searchWrapper
+				div.l-searchWrapper.searchWrapper.js-searchPanel
 					form(action="#" method='post').l-searchWrapper__form
 						a.searchButton.searchButton--whiteSquare
 							i.fa.fa-search
 						input(type="text" name="s" placeholder="Enter your search").searchInput
-						a.closeButton.closeButton--dimmedSquare
+						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper

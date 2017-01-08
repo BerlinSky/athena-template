@@ -41,11 +41,11 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  // justify-content: flex-end;
 
-  // @include break(md) {
-  //   flex-direction: row;
-  // }
+  @include break(md) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
 	.l-menuContainer {
     flex: 1;
@@ -64,27 +64,6 @@
 
 		margin: 0;
 	}
-
-  .l-searchContainer {
-    // display: none;
-    display: flex;
-
-    // @include break(md) {
-    // }
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .l-searchWrapper {
-    display: none;
-
-    .l-searchWrapper__form {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
 }
 
 .l-pageContentWrapper {
