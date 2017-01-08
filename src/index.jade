@@ -59,26 +59,9 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			//- div.l-contentHeaderContainer.contentHeaderContainer
-				div.l-header.header
-					div.l-container
-						//- span.title Color Palette
-						div.l-logoContainer.logoContainer
-							div.imageFrame
-								img(alt='img' src='./images/site-logo.png').imageResponsive
-					div.l-container
-						div.l-menuContainer.menuContainer.js-mobileMenuContainer
-							ul.menuList
-								+menuItems('Home')
-								li.menuItem
-									a(href='#').currentSelection
-										span Color Palette
-								+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
-
 			div.l-contentContainer.contentContainer
 				+paletteBlockBuilder()
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div
 					span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore
-
