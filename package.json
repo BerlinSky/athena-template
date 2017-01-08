@@ -11,9 +11,6 @@
     "test": "mocha --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
-  "browser": {
-    "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -62,9 +59,5 @@
     "watchify": "^3.7.0",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4"
-  },
-  "dependencies": {
-    "browserify-shim": "^3.8.12",
-    "selectric": "^1.10.1"
   }
 }
