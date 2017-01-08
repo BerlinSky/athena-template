@@ -48,13 +48,15 @@ block bodyContent
 						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
 
 				div.l-searchContainer.searchContainer
-					a.searchButton.searchButton-default
+					a.searchButton.searchButton--default
 						i.fa.fa-search
 				div.l-searchWrapper.searchWrapper
 					form(action="#" method='post').l-searchWrapper__form
-						i.fa.fa-search
+						a.searchButton.searchButton--whiteSquare
+							i.fa.fa-search
 						input(type="text" name="s" placeholder="Enter your search").searchInput
-						i.fa.fa-close
+						a.closeButton.closeButton--dimmedSquare
+							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
 			//- div.l-contentHeaderContainer.contentHeaderContainer
