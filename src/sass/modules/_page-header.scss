@@ -18,6 +18,7 @@
 
       .imageFrame {
         // margin-top: .7rem;
+        margin-top: 10px;
         height: 80px;
 
         @include break(md) {
@@ -44,6 +45,7 @@
     .menuWrapper {
       // background-color: lightcoral;
       padding: 5px;
+      border-top: 1px solid;
 
       .menuContainer {
         // background-color: crimson;
@@ -52,7 +54,6 @@
         .menuList {
           // margin: 10px;
           // background-color: cornflowerblue;
-
 
           display: flex;
           flex-direction: column;

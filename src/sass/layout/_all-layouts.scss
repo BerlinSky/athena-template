@@ -39,6 +39,8 @@
       }
 
       .l-toggleMenuContainer {
+        padding-right: 10px;
+
         @include break(md) {
           display: none;
         }
@@ -60,7 +62,8 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
+  align-items: stretch;
   justify-content: flex-end;
 
   @include break(md) {
@@ -87,7 +90,11 @@
 	}
 
   .l-searchContainer {
-    display: flex;
+    display: none;
+
+    @include break(md) {
+      display: flex;
+    }
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -180,7 +187,7 @@
   }
 }
 
-.l-.paletteBlock {
+.l-paletteBlock {
  flex: 1 1 auto;
 
   @include break(md) {
