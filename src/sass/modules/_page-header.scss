@@ -78,11 +78,9 @@
               font-weight: 500;
               line-height: 38px;
               border: none;
-              // padding: 2px 10px 2px 10px;
               padding: 2px;
               text-align: center;
               transition: all 0.3s ease-in-out;
-              // text-transform: uppercase;
 
               span {
                 padding: 0 10px;
@@ -111,11 +109,8 @@
       }
 
       .l-searchContainer {
-        // display: none;
         display: flex;
 
-        // @include break(md) {
-        // }
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -145,7 +140,6 @@
 
       .searchWrapper {
         background-color: #2991d6;
-        // height: 100px;
       }
 
       .searchContainer {
