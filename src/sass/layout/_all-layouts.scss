@@ -66,9 +66,9 @@
   align-items: stretch;
   justify-content: flex-end;
 
-  @include break(md) {
-    flex-direction: row;
-  }
+  // @include break(md) {
+  //   flex-direction: row;
+  // }
 
 	.l-menuContainer {
     // display: none;
