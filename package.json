@@ -1,7 +1,7 @@
 {
   "name": "athena",
   "version": "1.0.0",
-  "description": "The template project for Ahten book list app",
+  "description": "The template project for Athena book list app",
   "scripts": {
     "prestart": "babel-node build-scripts/run-message.js",
     "start": "npm-run-all --parallel open:source eslint:watch",
