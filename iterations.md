@@ -93,7 +93,7 @@
 
 ---
 
-## Iteration 30 (Open). _To improve upon the one-page layout_
+## Iteration 30. _To improve upon the one-page layout_
 
 ### Branch: one-page-layout-2 
 + based on one-page-layout
@@ -102,10 +102,11 @@
 + Improve one-page layout
 
 ### Developer's Notes
-1. Learn how to create a one-page layouts with flexbox 
+1. Add responsive menu
+2. Add search panel 
 
 ###Surge: 
-	
+	http://strange-drain.surge.sh
 
 ### Steps to use the iteration
 1. Clone the project
