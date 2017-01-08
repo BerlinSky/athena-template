@@ -2,10 +2,7 @@
 
   .pageHeader {
     background-color: #ffffff;
-
-    @include break(md) {
-      // min-width: 150px;
-    }
+    padding: 5px 20px;
 
     .logoContainer {
       // background-color: cornflowerblue;
@@ -106,6 +103,21 @@
         margin: 0;
       }
     }
+  }
+}
+
+.toggleMenuContainer {
+  padding-right: 10px;
+
+  @include break(md) {
+    display: none;
+  }
+
+  a {
+    border: none;
+    font-size: 1.0rem;
+    color: #009cde;
+    opacity: 0.75;
   }
 }
 

@@ -3,17 +3,11 @@
 	display: flex;
 	flex-direction: column;
 
-	// @include break(md) {
-	// 	flex-direction: row;
-	// }
-
 	.l-pageHeader {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: stretch;
-
-    padding: 5px 20px;
 
 		@include break(md) {
 			// justify-content: flex-start;
