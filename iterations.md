@@ -1,5 +1,36 @@
 # Iteration List
 
+## Iteration 37. _Understand array and object copy_
+
+### Branch: array-and-collection 
++ based on array-methods
+
+### Design Goals:
++ Show how to copy arrays and objects
+
+### Developer's Notes
+1. Learn array copy
+2. Learn object copy
+
+###Surge: 
+	
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b array-and-collection [github repository] array-and-collection
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 36. _Exercises for JS array methods_
 
 ### Branch: array-methods 
