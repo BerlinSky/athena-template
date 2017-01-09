@@ -1,13 +1,51 @@
 # Iteration List
 
+## Iteration 36. _Exercises for JS array methods_
+
+### Branch: array-methods 
++ based on express-server-5
+
+### Design Goals:
++ Show how to use some common arrary methods
+
+### Developer's Notes
++ Learn how to use some common arrary methods
+
+###Surge: 
+	
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b array-methods [github repository] array-methods
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
+## Iteration 35. _(Placeholder_
+
+---
+
+## Iteration 34. _(Placeholder)_
+
+---
+
 ## Iteration 33. _A (right) sidebar layout with flexbox_
 
 ### Branch: sidebar-right-layout 
 + based on sidebar-left-layout
 
 ### Design Goals:
-2. Incorporate the color palette
 1. Learn how to create a (left) sidebar layout
+2. Incorporate the color palette
 
 ### Developer's Notes
 + Learn how to create a (left) sidebar layout
