@@ -33,14 +33,19 @@ const totalMultipliers = colors.reduce( (total, color) => {
   return total += color.mutiplier;
 }, 0)
 
-console.log(totalMultipliers);
+console.log({ totalMultipliers });
 
 // Arrary some
 const hasBlack = colors.some( (color) => color.value === '#000' );
 
-console.log({hasBlack});
+console.log({ hasBlack });
 
 // Arrary find
+const findMultiplier = colors.find( (color) => color.mutiplier === 200 );
 
+console.log({ findMultiplier });
 
 // Arrary findIndex
+const colorFindIndex = colors.findIndex( (color) => color.value === '#ff0' );
+
+console.log({ colorFindIndex });
