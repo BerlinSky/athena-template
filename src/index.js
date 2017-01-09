@@ -1,28 +1,14 @@
 import './sass/main.scss';
-import $ from 'jquery';
-
-import {getMenus} from './services/data-service';
 
 /* eslint-disable no-console */
 
-$(function() {
-  console.log("retriving data ...");
+const menuListPromise = fetch('http://localhost:3010/menus');
+// console.log(menuListPromise);
 
-  getMenus().then(result => {
-    let menuList = "";
+menuListPromise
+  .then(data => data.json())
+  .then(data => { console.log(data) })
+  .catch((err) => {
+    console.error(err);
+  })
 
-    result.forEach(menu => {
-      menuList+= `
-      <li>
-        <div>${menu.id}</div>
-        <div>${menu.name}</div>
-        <div>${menu.description}</div>
-        <div>${menu.link}</div>
-      </li>
-      `
-    });
-
-    $('#menus').html(menuList);
-  });
-
-});
