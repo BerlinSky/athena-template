@@ -22,17 +22,3 @@ function myBand() {
 }
 
 myBand();
-
-/*
-// still has the access to the inner function of another function 
-// even though that function has gone out of the scope.
-// thus, we can invoke an inner function through a variable declared in "outer" context
-*/
-newBand("Magic Thinking");
-
-function delay(message) {
-  setTimeout(() => {
-    console.log( message );
-  }, 1000 );
-}
-delay( "Hello World" );
