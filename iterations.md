@@ -1,5 +1,35 @@
 # Iteration List
 
+## Iteration 38. _Understand JS Closure_
+
+### Branch: js-closure 
++ based on array-and-collection
+
+### Design Goals:
++ Show how to access an inner function with closure
+
+### Developer's Notes
+1. Learn closure
+
+###Surge: 
+	
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b js-closure [github repository] js-closure
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  npm start
+  ```
+
+---
+
 ## Iteration 37. _Understand array and object copy_
 
 ### Branch: array-and-collection 
