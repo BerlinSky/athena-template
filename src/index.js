@@ -30,20 +30,9 @@ myBand();
 */
 newBand("Magic Thinking");
 
-
-// var outer='outer';
-// var copy;
-// function outerFn() {
-//   var inner='inner';
-//   function innerFn(param){
-//     console.log(outer);
-//     console.log(inner);
-//     console.log(param);
-//     console.log(magic);
-//   }
-//   copy=innerFn;
-// }
-// console.log(magic); //ERROR: magic not defined
-// var magic="Magic";
-// outerFn();
-// copy("copy");
+function delay(message) {
+  setTimeout(() => {
+    console.log( message );
+  }, 1000 );
+}
+delay( "Hello World" );
