@@ -22,3 +22,5 @@ function myBand() {
 }
 
 myBand();
+
+newBand("Beatles");
