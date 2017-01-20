@@ -27,7 +27,7 @@ block pageTitle
 	title Reading Life
 
 block bodyContent
-	div.l-pageContainer.pageContainer
+	div.l-pageContainer.l-fixed-header.pageContainer
 		div.l-pageHeader.pageHeader
 			div.l-navContainer.navContainer
 				div.l-logoContainer.logoContainer
@@ -38,33 +38,30 @@ block bodyContent
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
 
-			div.l-menuWrapper.menuWrapper
+			div.l-menuWrapper.menuWrapper.js-menuWrapper
 				div.l-menuContainer.menuContainer.js-mobileMenuContainer
 					ul.menuList
 						+menuItems('Home')
 						li.menuItem
 							a(href='#').currentSelection
 								span Color Palette
-						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Spacing', 'Buttons')
+						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Buttons')
+
+				div.l-searchContainer.searchContainer.js-showSearchPanel
+					a.searchButton.searchButton--default
+						i.fa.fa-search
+				div.l-searchWrapper.searchWrapper.js-searchPanel
+					form(action="#" method='post').l-searchWrapper__form
+						a.searchButton.searchButton--whiteSquare
+							i.fa.fa-search
+						input(type="text" name="s" placeholder="Enter your search").searchInput
+						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
+							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			div.l-contentHeaderContainer.contentHeaderContainer
-				div.l-header.header
-					div.l-container
-						span.title Color Palette
-					div.l-container
-						ul.l-breadCrumbs.breadCrumbs
-							li
-								a(href="#") Home
-							li
-								i.fa.fa-angle-right
-							li
-								a(href="#") Color Palette
-
 			div.l-contentContainer.contentContainer
 				+paletteBlockBuilder()
 
-			div.l-contentFooterContainer.contentFooterContainer
-				div
-					span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore
-
+		div.l-contentFooterContainer.contentFooterContainer
+			div
+				span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore
