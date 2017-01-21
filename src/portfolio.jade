@@ -9,12 +9,10 @@ mixin menuItems(...items)
 mixin artistBlock(...items)
 	each item in items
 		div.artistBlock
-			//- div.artistBlock__icon
-			//- 	i.fa.fa-music
 			div.imageContainer
 				div.imageFrame
-					img(src="./images/icon-muffin.png")
 					//- img(src="./images/artist-orange.png")
+					img.image--round(src="./images/kitten.jpg")
 			div.artistBlock__title= item
 			div.artistBlock__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
@@ -35,9 +33,7 @@ block bodyContent
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
 				div.artistContent
-					div.currentArtistContainer
-						div.info current artist container
-						a.infoButton Display Info
+					//- div.currentArtistContainer
 					div.artistContainer
 						+artistBlock('artist 1', 'artist 2', 'artist 3', 'artist 4', 'artist 5', 'artist 6', 'artist 7', 'artist 8', 'artist 9', 'artist 10', 'artist 11', 'artist 12')
 
