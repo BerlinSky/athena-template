@@ -9,8 +9,11 @@ mixin menuItems(...items)
 mixin artistBlock(...items)
 	each item in items
 		div.artistBlock
-			div.artistBlock__icon
-				i.fa.fa-music
+			//- div.artistBlock__icon
+			//- 	i.fa.fa-music
+			div.imageContainer
+				div.imageFrame
+					img(src="./images/icon-muffin.png")
 			div.artistBlock__title= item
 			div.artistBlock__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 

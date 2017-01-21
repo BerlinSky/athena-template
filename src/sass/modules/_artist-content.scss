@@ -13,8 +13,23 @@
     justify-content: space-between;
     align-items: stretch;
 
+    margin-top: 20px;
+
     .artistBlock {
       flex: 1 1 25%;
+
+      .imageContainer {
+        max-width: 90%;
+
+        .imageFrame {
+          width: 50%;
+          img {
+            box-sizing: border-box;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
 
       .artistBlock__icon {
         color: #2991d6;
