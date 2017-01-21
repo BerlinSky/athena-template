@@ -93,6 +93,36 @@
 
 ## Iteration 35. _(Placeholder_
 
+### Branch: layout-collection-01 
++ based on one-page-layout
+
+### Design Goals:
++ Add a collection of layouts
+
+### Developer's Notes
++ Layouts:
+	1. default (index.html): no fixed header or fixed footer
+	2. fixed-header (fixed-header.html)
+	3. fixed header and fixed footer (fixed-footer.html)
+	4. fixed header and footer with a short content (short-content.html)
+
+###Surge: 
+	http://lippant-cars.surge.sh/
+
+### Steps to use the iteration
+1. Clone the project
+  ```
+  git clone -b layout-collection-01 [github repository] layout-collection-01
+  ```
+2. Install the NPM packages:
+  ```
+  npm install
+  ```
+3. Start the app by running gulp:
+  ```
+  gulp
+  ```
+
 ---
 
 ## Iteration 34. _(Placeholder)_
