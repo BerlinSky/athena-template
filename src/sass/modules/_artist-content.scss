@@ -1,5 +1,4 @@
 .artistContent {
-  // background-color: tomato;
   flex: 1;
 
   display: flex;
@@ -7,8 +6,6 @@
   justify-content: flex-start;
 
   .artistContainer {
-    // background-color: slategray;
-
     flex: 1;
 
     display: flex;
@@ -39,7 +36,27 @@
   }
 
   .currentArtistContainer {
-    background-color: lawngreen;
+    background-color: #082233;
+    color: #ffffff;
     padding: 30px 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .info {
+      font-size: 24px;
+      font-weight: 300;
+      color: #747474;
+    }
+
+    .infoButton {
+      background-color: #2991d6;
+      border-radius: 5px;
+      color: #fff;
+      display: inline-block;
+      padding: 11px 13px;
+      font-size: 14px;
+    }
   }
 }
