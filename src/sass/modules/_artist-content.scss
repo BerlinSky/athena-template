@@ -51,6 +51,22 @@
         line-height: 25px;
       }
     }
+
+  }
+
+  .artistBlock__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .currentArtistContainer {
+      background-color: inherit;
+
+      .infoButton {
+        background-color: coral;
+      }
+    }
   }
 
   .currentArtistContainer {

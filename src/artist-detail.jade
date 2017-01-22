@@ -6,14 +6,17 @@ mixin menuItems(...items)
 			a(href='#')
 				span= item
 
-mixin artistBlock(...items)
-	each item in items
-		div.artistBlock
-			div.imageContainer
-				div.imageFrame
-					img(src="./images/icon-muffin.png")
-			div.artistBlock__title= item
-			div.artistBlock__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+mixin artistDetail(item)
+	div.artistBlock.artistBlock__detail
+		div.imageContainer
+			div.imageFrame
+				//- img(src="./images/icon-muffin.png")
+				img(src="./images/artist-orange.png")
+
+		div.artistBlock__title= item
+		div.artistBlock__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		div.currentArtistContainer
+			a.infoButton Go Back
 
 block pageTitle
 	title Reading Life
@@ -32,11 +35,8 @@ block bodyContent
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
 				div.artistContent
-					div.currentArtistContainer
-						div.info current artist container
-						a.infoButton Display Info
-					div.artistContainer
-						+artistBlock('artist 1', 'artist 2', 'artist 3', 'artist 4', 'artist 5', 'artist 6', 'artist 7', 'artist 8', 'artist 9', 'artist 10', 'artist 11', 'artist 12')
+					div.artistDetailContainer
+						+artistDetail('artist 1')
 
 		div.l-contentFooterContainer.contentFooterContainer
 			div
