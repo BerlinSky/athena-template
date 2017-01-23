@@ -74,6 +74,9 @@
         justify-content: flex-start;
         align-items: center;
 
+        margin-top: 10px;
+        margin-bottom: 10px;
+
         .tourDate, .tourLocation {
           display: flex;
           flex-direction: column;
@@ -93,6 +96,14 @@
           height: 60px;
           line-height: 1.562rem;
           border-radius: 0;
+        }
+
+        .tourLocation {
+          display: inline-block;
+          margin-left: 5px;
+          font-size: 20px;
+          font-family: Yanone Kaffeesatz,serif;
+          line-height: 1.5rem;
         }
 
       }
