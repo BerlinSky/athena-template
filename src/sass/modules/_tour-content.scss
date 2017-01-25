@@ -1,0 +1,97 @@
+.contentContainer--tourContent {
+
+  display: block;
+  clear: both;
+
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include break(md) {
+    max-width: 56rem;
+  }
+
+  .tourHeaderPanel {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding: 5px;
+
+    h2 {
+      font-size: 1.1em;
+      margin: 15px 0 0 0;
+      width: 100%;
+      text-align: left;
+
+      @include break(md) {
+        padding: 0 5px 0 5px;
+      }
+    }
+  }
+
+  .tourListPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 5px;
+
+    h3 {
+      font-size: 1.4rem;
+      font-family: Homenaje,Helvetica,sans-serif;
+      font-weight: 800;
+      letter-spacing: .25em;
+      line-height: 1.65;
+      margin: 0 0 1em;
+      text-transform: uppercase;
+    }
+
+    .tourInfoBox {
+      // background-color: yellow;
+      width: 100%;
+
+      // @include break(md) {
+      //   width: 25%;
+      // }
+
+      color: #777;
+
+      .tourDateAndVenue {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: 1px solid #777;
+
+        margin-top: 10px;
+        padding-bottom: 20px;
+
+        .tourDate, .tourLocation {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+
+        .tourDate {
+          align-items: center;
+
+          color: #777;
+          line-height: 2.0rem;
+          border-radius: 0;
+        }
+
+        .tourLocation {
+          display: inline-block;
+          margin-bottom: 10px;
+          font-family: Yanone Kaffeesatz,serif;
+          line-height: 2.0rem;
+        }
+
+      }
+
+    }
+  }
+}
