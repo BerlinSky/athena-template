@@ -38,43 +38,48 @@
 		width: 100%;
 		padding: 5px;
 
-		h3 {
-			font-size: 1.4rem;
-			font-family: Homenaje,Helvetica,sans-serif;
-			font-weight: 800;
-			letter-spacing: .25em;
-			line-height: 1.65;
-			margin: 0 0 1em;
-			text-transform: uppercase;
-		}
+    border: 3px solid tomato;
+
+		// h3 {
+		// 	font-size: 1.4rem;
+		// 	font-family: Homenaje,Helvetica,sans-serif;
+		// 	font-weight: 800;
+		// 	letter-spacing: .25em;
+		// 	line-height: 1.65;
+		// 	margin: 0 0 1em;
+		// 	text-transform: uppercase;
+		// }
 
 		.tourInfoBox {
-			// background-color: yellow;
-			width: 100%;
-
-			// @include break(md) {
-			//   width: 25%;
-			// }
-
-			color: #777;
-
-			.tourDate, .tourLocation {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.tourDate {
-				color: #777;
-				line-height: 2.0rem;
-			}
-
-			.tourLocation {
-				font-family: Yanone Kaffeesatz,serif;
-				line-height: 2.0rem;
-			}
 		}
+
+    width: 100%;
+
+    // @include break(md) {
+    //   width: 25%;
+    // }
+
+    color: #777;
+
+    .tourItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tourDate {
+      color: #777;
+      line-height: 2.0rem;
+    }
+
+    .tourLocation {
+      font-family: Yanone Kaffeesatz,serif;
+      line-height: 2.0rem;
+    }
+    .tourItem {
+
+    }
 	}
 }
 

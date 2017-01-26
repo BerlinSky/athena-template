@@ -65,25 +65,35 @@ block bodyContent
 						a(href="/tour/ended")= ' (Show Past Dates)'
 					div.imageFrame
 						img(alt='img' src='./images/header-border.png').imageResponsive
+
+				div.tourListPanel
+					div.tourItem.tourDate
+						div.tourWeekDay Thu
+						div.tourMonthAndDate Apr 06
+						div.tourYear 2017
+					div.tourItem.tourLocation
+						div.tourLocation__city St. Louis, MO
+						div.tourLocation__name Phoenix, AZ, US
+						div.eventDetail
+							a.tourButton.tourButton--default(href="/tour")
+								span Event Details &nbsp;
+								i.fa.fa-chevron-circle-right
+					div.tourItem
+						div Special Guest
+					div.tourItem
+						div Sold out
+					div.tourItem
+						div Tickets Available
+					div.tourItem
+						div Specail Case
+
 				div.tourListPanel
 					div.tourInfoBox
-						div.tourDate
-							div.tourWeekDay Thu
-							div.tourMonthAndDate Apr 06
-							div.tourYear 2017
-						div.tourLocation
-							div.tourLocation__city St. Louis, MO
-							div.tourLocation__name Phoenix, AZ, US
-							div.eventDetail
-								a.tourButton.tourButton--default(href="/tour")
-									span Event Details &nbsp;
-									i.fa.fa-chevron-circle-right
-
-						div.tourDate
+						div.tourItem.tourDate
 							div.tourWeekDay Thu
 							div.tourMonth Apr
 							div.tourDay 06
-						div.tourLocation
+						div.tourItem.tourLocation
 							div.tourLocation__city Compton Terrace
 							div.tourLocation__name Indianapolis, IN, US
 							div.eventDetail
@@ -91,17 +101,18 @@ block bodyContent
 									span Event Details &nbsp;
 									i.fa.fa-chevron-circle-right
 
-						div.tourDate
-							div.tourWeekDay Thu
-							div.tourMonth Apr
-							div.tourDay 06
-						div.tourLocation
-							div.tourLocation__city Le Dome
-							div.tourLocation__name Marseilles, FR
-							div.eventDetail
-								a.tourButton.tourButton--default(href="/tour")
-									span Event Details &nbsp;
-									i.fa.fa-chevron-circle-right
+				div.tourListPanel
+					div.tourItem.tourDate
+						div.tourWeekDay Thu
+						div.tourMonth Apr
+						div.tourDay 06
+					div.tourItem.tourLocation
+						div.tourLocation__city Le Dome
+						div.tourLocation__name Marseilles, FR
+						div.eventDetail
+							a.tourButton.tourButton--default(href="/tour")
+								span Event Details &nbsp;
+								i.fa.fa-chevron-circle-right
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
