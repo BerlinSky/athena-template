@@ -6,21 +6,6 @@ mixin menuItems(...items)
 			a(href='#')
 				span= item
 
-mixin paletteBlockBuilder ()
-	for website in websites
-		div.siteBlock
-			div.l-siteBlockItemContainer.paletteBlockContainer
-				for block in website.colorPaletteBlocks
-					div.l-siteBlockItem.paletteBlock
-						div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
-							div= block.paletteInfo.colorValue
-						div.paletteBlock__info
-							div= block.paletteInfo.colorName
-							div= block.paletteInfo.varName
-						ul.paletteBlock__usage
-							for uage in block.colorUage
-								li= uage
-
 block pageTitle
 	title Reading Life
 
@@ -31,9 +16,24 @@ block bodyContent
 
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
-				//- +paletteBlockBuilder()
 				div.siteBlock
 					div.l-siteBlockItemContainer.paletteBlockContainer
+						div.l-siteBlockItem.paletteBlock
+							div.paletteBlock__palette(style='background-color: lightgreen;')
+								div block.paletteInfo.colorValue 1
+							div.paletteBlock__info
+								div  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ducimus fugiat beatae minima vel veritatis, in reiciendis nisi quod accusantium alias porro nulla ut ratione officia! Voluptatem ipsam fugiat nihil.
+								div(style='background-color: tomato;') Button #1
+							div.paletteBlock__info  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt pariatur maiores officia enim vel quis, debitis nobis, alias, eligendi praesentium, perspiciatis blanditiis asperiores incidunt temporibus odio nostrum cupiditate dolore tempore.
+
+						div.l-siteBlockItem.paletteBlock
+							div.paletteBlock__palette(style='background-color: lightgreen;')
+								div block.paletteInfo.colorValue 2
+							div.paletteBlock__info
+								div  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nisi totam adipisci esse, vero iusto.
+								div(style='background-color: tomato;') Button #2
+							div.paletteBlock__info  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem praesentium provident dolores optio nisi ipsum, repellat minus quisquam accusantium quibusdam consequatur itaque fugiat dolorum exercitationem quidem modi aperiam omnis illum?
+
 						div.l-siteBlockItem.paletteBlock
 							div.paletteBlock__palette(style='background-color: lightgreen;')
 								div block.paletteInfo.colorValue 1
