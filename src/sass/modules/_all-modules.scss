@@ -4,6 +4,13 @@
 @import "news-content";
 @import "tour-content";
 
+
+.siteBlockItem--reordered {
+  @include break(md) {
+    order: 1;
+  }
+}
+
 .paletteBlock {
   // border: none;
   border: 1px solid crimson;
