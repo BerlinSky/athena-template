@@ -1,0 +1,43 @@
+extends jade/includes/base
+
+mixin menuItems(...items)
+	each item in items
+		li.menuItem
+			a(href='#')
+				span= item
+
+mixin paletteBlockBuilder ()
+	for website in websites
+		div.siteBlock
+			div.l-siteBlockItemContainer.paletteBlockContainer
+				for block in website.colorPaletteBlocks
+					div.l-siteBlockItem.paletteBlock
+						div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+							div= block.paletteInfo.colorValue
+						div.paletteBlock__info
+							div= block.paletteInfo.colorName
+							div= block.paletteInfo.varName
+						ul.paletteBlock__usage
+							for uage in block.colorUage
+								li= uage
+
+block pageTitle
+	title Reading Life
+
+block bodyContent
+	div.l-pageContainer.pageContainer
+		div.l-pageHeader.pageHeader
+			div Page Header goes here.
+
+		div.l-pageContentWrapper.pageContentWrapper
+
+			div.l-contentContainer.contentContainer
+				+paletteBlockBuilder()
+
+			div.l-contentFooterContainer.contentFooterContainer
+				div.footerPanel.footerPanel--links
+					div.footerPanel__item
+						div.footerPanel__item__colorBar color bar
+						div.footerPanel__item__link
+							a(href="#") Nick-Nick-Nick.com
+						div.footerPanel__item__colorBar color bar
