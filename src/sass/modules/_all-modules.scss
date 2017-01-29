@@ -4,7 +4,6 @@
 @import "news-content";
 @import "tour-content";
 
-
 .siteBlockItem--reordered {
   @include break(md) {
     order: 1;
