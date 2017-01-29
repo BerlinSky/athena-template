@@ -142,6 +142,25 @@
 	}
 }
 
+.l-siteBlockItemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @include break(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.l-siteBlockItem {
+ flex: 1 1 auto;
+
+  @include break(md) {
+    flex: 0 0 50%;
+  }
+}
+
 .l-paletteBlockContainer {
   display: flex;
   flex-direction: column;
@@ -158,9 +177,5 @@
 
   @include break(md) {
     flex: 0 0 50%;
-  }
-
-  @include break(lg) {
-    flex: 0 0 25%;
   }
 }
