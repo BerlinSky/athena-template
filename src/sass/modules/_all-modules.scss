@@ -10,6 +10,12 @@
   }
 }
 
+.siteBlockItem--fullWith {
+  @include break(md) {
+    flex-basis: 100%;
+  }
+}
+
 .siteBlockItem--reorderTwo {
   @include break(md) {
     order: 2;
