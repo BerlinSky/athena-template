@@ -148,6 +148,11 @@
   justify-content: flex-start;
 
   @include break(md) {
+
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
     flex-direction: row;
     flex-wrap: wrap;
   }
