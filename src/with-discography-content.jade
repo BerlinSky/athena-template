@@ -61,10 +61,18 @@ block bodyContent
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer.contentContainer--discographyContent
 				div.imageGallery
-					each _ in Array(23)
+					each _ in Array(3)
 						div.imagePanel
 							div.imageFrame
-								img(alt='img' src='./images/sense-and-sensibility.jpg').imageResponsive
+								a(href="#")
+									img(alt='img' src='./images/musician.jpg').imageResponsive
+									//- img(alt='img' src='./images/sense-and-sensibility.jpg').imageResponsive
+					each _ in Array(11)
+						div.imagePanel
+							div.imageFrame
+								a(href="#")
+									//- img(alt='img' src='./images/musician.jpg').imageResponsive
+									img(alt='img' src='./images/sense-and-sensibility.jpg').imageResponsive
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
