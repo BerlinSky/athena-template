@@ -4,6 +4,24 @@
 @import "news-content";
 @import "tour-content";
 
+.siteBlockItem--reorderOne {
+  @include break(md) {
+    order: 1;
+  }
+}
+
+.siteBlockItem--reorderTwo {
+  @include break(md) {
+    order: 2;
+  }
+}
+
+.siteBlockItem--reorderThree {
+  @include break(md) {
+    order: 3;
+  }
+}
+
 .siteBlockItem--reordered {
   @include break(md) {
     order: 1;
