@@ -1,0 +1,92 @@
+.contentContainer--mediaContent {
+  // background-color: yellow;
+
+	display: block;
+	clear: both;
+  box-sizing: border-box;
+
+	width: 100%;
+  margin-top: 30px;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	@include break(md) {
+		max-width: 56rem;
+	}
+
+  .galleryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @include break(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .videoGallery, .photoGallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    .videoGallery {
+      width: 100%;
+      // background-color: yellow;
+
+      @include break(md) {
+        align-items: flex-start;
+        margin-right: 10px;
+      }
+
+      .imagePanel {
+        flex: 1;
+
+        background-color: mediumpurple;
+        border: 10px solid gray;
+        padding: 0;
+
+        min-width: 50%;
+        max-width: 50%;
+
+        @include break(md) {
+          min-width: 25%;
+          max-width: 25%;
+        }
+      }
+    }
+
+    .photoGallery {
+      width: 100%;
+      // background-color: lime;
+      @include break(md) {
+        align-items: flex-start;
+
+        margin-left: 10px;
+      }
+
+      .imagePanel {
+        flex: 1;
+
+        background-color: crimson;
+        border: 10px solid gray;
+        padding: 0;
+
+        min-width: 50%;
+        max-width: 50%;
+
+        @include break(md) {
+          min-width: 25%;
+          max-width: 25%;
+        }
+      }
+    }
+  }
+
+
+}
+
