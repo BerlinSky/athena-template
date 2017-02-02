@@ -97,7 +97,10 @@ gulp.task('sass', () => {
     .pipe(sass({
       includePaths: [fontAwesome.scssPath]
 	    }).on('error', sass.logError))
-    .pipe(prefix())
+    .pipe(prefix({
+        browsers: ['last 2 versions', 'ie 11'],
+        cascade: false
+        }))
     .pipe(cssnano())
     .pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.paths.css));
