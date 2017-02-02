@@ -43,6 +43,12 @@
         margin-right: 10px;
       }
 
+      .title {
+        width: 100%;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+      }
+
       .imagePanel {
         flex: 1;
 
@@ -67,6 +73,12 @@
         align-items: flex-start;
 
         margin-left: 10px;
+      }
+
+      .title {
+        width: 100%;
+        line-height: 2.5rem;
+        text-transform: uppercase;
       }
 
       .imagePanel {
