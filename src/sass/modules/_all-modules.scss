@@ -12,7 +12,8 @@
 
 .siteBlockItem--fullWith {
   @include break(md) {
-    flex-basis: 100%;
+    // flex-basis: 100%;
+    flex-basis: 80%;
   }
 }
 
@@ -39,7 +40,8 @@
   border: 1px solid crimson;
 
   margin: 0 0 0 0;
-  padding: 15px;
+  // padding: 15px;
+  flex: 0 0 45%;
 
   .paletteBlock__palette {
     height: 70px;
