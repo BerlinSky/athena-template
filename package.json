@@ -8,7 +8,7 @@
     "open:source": "babel-node build-scripts/src-server.js",
     "js:lint": "esw webpack.config.* src build-scripts --color",
     "eslint:watch": "npm run js:lint -- --watch",
-    "test": "mocha --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
+    "test": "mocha -r mock-local-storage --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "browser": {
@@ -47,6 +47,7 @@
     "jquery": "2.2.2",
     "jsdom": "^9.8.3",
     "mocha": "^3.2.0",
+    "mock-local-storage": "^1.0.2",
     "node-font-awesome": "^1.0.2",
     "npm-run-all": "^3.1.1",
     "open": "0.0.5",
