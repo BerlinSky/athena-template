@@ -5,14 +5,13 @@ describe('Local Storage, saveData, test', () => {
   it('should save', () => {
 
     // Arrange:
-    const expectedValue = "Lady Gaga2";
+    const expectedValue = "Lady Gaga";
 
     // Act:
     saveData();
-    const value = getData();
+    const storedValue = getData();
 
-// console.log(value);
     // Assert
-    expect(value).to.equal(expectedValue);
+    expect(storedValue).to.equal(expectedValue);
   });
 });
