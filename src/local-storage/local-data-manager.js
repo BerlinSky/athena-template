@@ -1,7 +1,7 @@
-export function saveData() {
-  localStorage.setItem("artistName", "Lady Gaga");
+export function saveDataToLocalStorage(itemName, itemValue) {
+  localStorage.setItem(itemName, itemValue);
 }
 
-export function getData() {
-  return localStorage.getItem("artistName");
+export function getDataFromLocalStorage(itemName) {
+  return localStorage.getItem(itemName);
 }
