@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import { stringify } from "./pre-processor";
-import { replaceSpecialChar} from "./replacers";
 
 describe('Local Storage, stringify, test simple object', () => {
   it('should get', () => {
@@ -54,7 +53,7 @@ describe('Local Storage, stringify, test with replacer', () => {
     const expectedValue = '{"name":"Lady Gaga","assistants":{"name":"Johnason","age":29}}';
 
     // Act:
-    const convertedValue = stringify(itemValue, replaceSpecialChar);
+    const convertedValue = stringify(itemValue);
 
     // Assert
     expect(convertedValue).to.equal(expectedValue);
