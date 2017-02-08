@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { stringify } from "./pre-processor";
+import { replaceSpecialChar} from "./replacers";
 
 describe('Local Storage, stringify, test simple object', () => {
   it('should get', () => {
@@ -32,6 +33,28 @@ describe('Local Storage, stringify, test nested object', () => {
 
     // Act:
     const convertedValue = stringify(itemValue);
+
+    // Assert
+    expect(convertedValue).to.equal(expectedValue);
+  });
+});
+
+describe('Local Storage, stringify, test with replacer', () => {
+  it('should get', () => {
+
+    // Arrange:
+    const itemValue = { 
+        "name": "Lady Gaga",
+        "assistants": {
+          "name": "Johnason",
+          "age": 29
+        }
+      };
+      
+    const expectedValue = '{"name":"Lady Gaga","assistants":{"name":"Johnason","age":29}}';
+
+    // Act:
+    const convertedValue = stringify(itemValue, replaceSpecialChar);
 
     // Assert
     expect(convertedValue).to.equal(expectedValue);
