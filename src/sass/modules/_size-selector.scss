@@ -1,7 +1,38 @@
 .sizeSelectorContainer {
   background-color: tomato;
-
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 10px;
+
+  .cart__itemSizePanel {
+    color: #000;
+    margin-bottom: 1rem;
+
+    ul {
+      background-color: green;
+
+      overflow: auto;
+      list-style-type: none;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      border-collapse: collapse;
+      flex: 1 1 20%;
+      background-color: #fff;
+      margin-right: 3px;
+
+      &:first-of-type {
+        // margin-left: 5px;
+      }
+
+      &:last-of-type {
+        // margin-right: 5px;
+      }
+    }
+  }
+
 }
