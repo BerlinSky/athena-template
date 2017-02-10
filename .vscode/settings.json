@@ -2,5 +2,6 @@
 {
   // `editor.detectIndentation` is on.
   "editor.tabSize": 2,
-  "editor.insertSpaces": false
+	"editor.insertSpaces": false,
+	"vsicons.presets.angular": false
 }
