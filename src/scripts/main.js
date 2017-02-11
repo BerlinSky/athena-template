@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+import { setContext } from './context';
+
 $(function () {
 
   $('.js-toggleMobileMenu').click(function(e) {
@@ -23,6 +25,17 @@ $(function () {
     e.preventDefault();
 
     menuWrapper.classList.remove('showSearchPanel');
+  })
+
+  const setContextBtn = $('.js-ommandButton__setContext');
+    console.log(setContextBtn);
+
+  setContextBtn.click(function(e) {
+    e.preventDefault();
+
+    console.log('here');
+
+    setContext();
   })
 
 });

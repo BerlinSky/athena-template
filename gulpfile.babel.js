@@ -54,8 +54,8 @@ function bundle() {
       console.error( '\nError: ', error.message, '\n');
       this.emit('end');
     })
-    .pipe(exorcist('dist/scripts/tmot-site.js.map'))
-    .pipe(source('tmot-site.js'))
+    .pipe(exorcist('dist/scripts/bundle.js.map'))
+    .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(ifElse(process.env.NODE_ENV === 'production', uglify))
     .pipe(gulp.dest('dist/scripts'));

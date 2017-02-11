@@ -6,9 +6,6 @@
     "test": "jest",
     "start": "gulp"
   },
-  "browser": {
-    "chosen": "./src/lib/chosen_v1.6.1/chosen.jquery.js"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -43,6 +40,7 @@
   },
   "dependencies": {
     "browserify-shim": "^3.8.12",
+    "lodash": "^4.17.4",
     "selectric": "^1.10.1"
   }
 }
