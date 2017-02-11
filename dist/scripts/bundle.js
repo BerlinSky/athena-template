@@ -26917,7 +26917,7 @@ var _localStorage = require("./services/local-storage");
 var _jsonHandler = require("./tools/json-handler");
 
 var itemValue = {
-  "name": "Lady Gaga",
+  "name": "Lady Gaga 6",
   "assistants": {
     "name": "Johnason",
     "age": 29
@@ -26987,6 +26987,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     e.preventDefault();
     (0, _context.getContext)();
   });
+
+  (0, _jquery2.default)(window).bind('storage', function (e) {
+    var contextData = e.originalEvent.newValue;
+    console.log("received the custom event from window", contextData);
+  });
+
+  // window.addEventListener('storage', function(e) {
+  //   const contextData = e.storageArea;
+  //   console.log("received the custom event from window", contextData);
+  // });
 });
 
 },{"./context":3,"jquery":1}],5:[function(require,module,exports){

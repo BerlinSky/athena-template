@@ -41,4 +41,14 @@ $(function () {
     getContext();
   })
 
+  $(window).bind('storage', function (e) {
+    const contextData = e.originalEvent.newValue;
+    console.log("received the custom event from window", contextData);
+  });
+
+  // window.addEventListener('storage', function(e) {
+  //   const contextData = e.storageArea;
+  //   console.log("received the custom event from window", contextData);
+  // });
+
 });
