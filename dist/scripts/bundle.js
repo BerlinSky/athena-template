@@ -26910,6 +26910,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.setContext = setContext;
+exports.getContext = getContext;
+
+var _localStorage = require("./services/local-storage");
 
 var _jsonHandler = require("./tools/json-handler");
 
@@ -26923,11 +26926,19 @@ var itemValue = {
 
 function setContext() {
   var convertedValue = (0, _jsonHandler.stringify)(itemValue);
+  console.log('context saved', convertedValue);
 
-  console.log('convertedValue', convertedValue);
+  (0, _localStorage.saveData)("context", convertedValue);
 }
 
-},{"./tools/json-handler":5}],4:[function(require,module,exports){
+function getContext() {
+  var convertedValue = (0, _localStorage.getData)("context");
+  console.log('context get', convertedValue);
+
+  return convertedValue;
+}
+
+},{"./services/local-storage":5,"./tools/json-handler":6}],4:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -26964,18 +26975,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   });
 
   var setContextBtn = (0, _jquery2.default)('.js-ommandButton__setContext');
-  console.log(setContextBtn);
 
   setContextBtn.click(function (e) {
     e.preventDefault();
-
-    console.log('here');
-
     (0, _context.setContext)();
+  });
+
+  var getContextBtn = (0, _jquery2.default)('.js-ommandButton__getContext');
+
+  getContextBtn.click(function (e) {
+    e.preventDefault();
+    (0, _context.getContext)();
   });
 });
 
 },{"./context":3,"jquery":1}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.saveData = saveData;
+exports.getData = getData;
+function saveData(itemName, itemValue) {
+  localStorage.setItem(itemName, itemValue);
+}
+
+function getData(itemName) {
+  return localStorage.getItem(itemName);
+}
+
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

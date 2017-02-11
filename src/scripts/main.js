@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { setContext } from './context';
+import { setContext, getContext } from './context';
 
 $(function () {
 
@@ -28,14 +28,17 @@ $(function () {
   })
 
   const setContextBtn = $('.js-ommandButton__setContext');
-    console.log(setContextBtn);
 
   setContextBtn.click(function(e) {
     e.preventDefault();
-
-    console.log('here');
-
     setContext();
+  })
+
+  const getContextBtn = $('.js-ommandButton__getContext');
+
+  getContextBtn.click(function(e) {
+    e.preventDefault();
+    getContext();
   })
 
 });

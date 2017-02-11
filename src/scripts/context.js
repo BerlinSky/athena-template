@@ -1,3 +1,4 @@
+import { saveData, getData } from './services/local-storage';
 import { stringify } from "./tools/json-handler";
 
  const itemValue = {
@@ -10,6 +11,14 @@ import { stringify } from "./tools/json-handler";
 
 export function setContext() {
   const convertedValue = stringify(itemValue);
+  console.log('context saved', convertedValue);
 
-  console.log('convertedValue', convertedValue);
+  saveData("context", convertedValue);
+}
+
+export function getContext() {
+  const convertedValue = getData("context");
+  console.log('context get', convertedValue);
+
+  return convertedValue;
 }
