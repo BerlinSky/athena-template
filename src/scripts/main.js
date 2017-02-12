@@ -15,19 +15,21 @@ $(function () {
 
   const menuWrapper = document.querySelector('.js-menuWrapper');
 
-  const showSearchPanel = document.querySelector('.js-showSearchPanel');
-  showSearchPanel.addEventListener('click', (e) => {
-    e.preventDefault();
+  const showSearchPanel = $('.js-showSearchPanel');
+  if (showSearchPanel.length) {
+    showSearchPanel.addEventListener('click', (e) => {
+      e.preventDefault();
+      menuWrapper.classList.add('showSearchPanel');
+    })
+  }
 
-    menuWrapper.classList.add('showSearchPanel');
-  })
-
-  const hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-  hideSearchPanel.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    menuWrapper.classList.remove('showSearchPanel');
-  })
+  const hideSearchPanel = $('.js-hideSearchPanel');
+  if (hideSearchPanel.length) {
+    hideSearchPanel.addEventListener('click', (e) => {
+      e.preventDefault();
+      menuWrapper.classList.remove('showSearchPanel');
+    })
+  }
 
   const setContextBtn = $('.js-commandButton__setContext');
 
@@ -64,9 +66,4 @@ $(function () {
     const dataTextArea = $('.js-eventAlert');
     dataTextArea.html(text);
   }
-  // window.addEventListener('storage', function(e) {
-  //   const contextData = e.storageArea;
-  //   console.log("received the custom event from window", contextData);
-  // });
-
 });

@@ -26963,19 +26963,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   var menuWrapper = document.querySelector('.js-menuWrapper');
 
-  var showSearchPanel = document.querySelector('.js-showSearchPanel');
-  showSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
+  var showSearchPanel = (0, _jquery2.default)('.js-showSearchPanel');
+  if (showSearchPanel.length) {
+    showSearchPanel.addEventListener('click', function (e) {
+      e.preventDefault();
+      menuWrapper.classList.add('showSearchPanel');
+    });
+  }
 
-    menuWrapper.classList.add('showSearchPanel');
-  });
-
-  var hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-  hideSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuWrapper.classList.remove('showSearchPanel');
-  });
+  var hideSearchPanel = (0, _jquery2.default)('.js-hideSearchPanel');
+  if (hideSearchPanel.length) {
+    hideSearchPanel.addEventListener('click', function (e) {
+      e.preventDefault();
+      menuWrapper.classList.remove('showSearchPanel');
+    });
+  }
 
   var setContextBtn = (0, _jquery2.default)('.js-commandButton__setContext');
 
@@ -27012,10 +27014,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var dataTextArea = (0, _jquery2.default)('.js-eventAlert');
     dataTextArea.html(text);
   }
-  // window.addEventListener('storage', function(e) {
-  //   const contextData = e.storageArea;
-  //   console.log("received the custom event from window", contextData);
-  // });
 });
 
 },{"./context":3,"./tools/json-handler":6,"jquery":1}],5:[function(require,module,exports){

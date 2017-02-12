@@ -1,10 +1,5 @@
 extends jade/includes/base
-
-mixin menuItems(...items)
-	each item in items
-		li.menuItem
-			a(href='#')
-				span= item
+include jade/components/menu-items
 
 block pageTitle
 	title Reading Life
@@ -23,7 +18,7 @@ block bodyContent
 			div.l-menuWrapper.menuWrapper.js-menuWrapper
 				div.l-menuContainer.menuContainer.js-mobileMenuContainer
 					ul.menuList
-						+menuItems('Home','Set Context', 'Get Context')
+						+menuItems()
 
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
