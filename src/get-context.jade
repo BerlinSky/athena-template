@@ -43,8 +43,16 @@ block bodyContent
 
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
-				div
-					a(href="#").commandButton.js-ommandButton__getContext
+				div.alertContainer
+					div.alert.alert--error
+						div.alert__icon
+							i.fa.fa-bell
+						div.alert__wrapper
+							span.js-eventAlert Context status
+
+				div.contextFormContainer
+					textarea(placeholder="Context Data").dataTextArea.js-dataTextArea
+					a(href="#").commandButton.js-commandButton__getContext
 						span.button_label Get Context
 
 		div.l-contentFooterContainer.contentFooterContainer

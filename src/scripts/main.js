@@ -27,14 +27,14 @@ $(function () {
     menuWrapper.classList.remove('showSearchPanel');
   })
 
-  const setContextBtn = $('.js-ommandButton__setContext');
+  const setContextBtn = $('.js-commandButton__setContext');
 
   setContextBtn.click(function(e) {
     e.preventDefault();
     setContext();
   })
 
-  const getContextBtn = $('.js-ommandButton__getContext');
+  const getContextBtn = $('.js-commandButton__getContext');
 
   getContextBtn.click(function(e) {
     e.preventDefault();
@@ -44,8 +44,14 @@ $(function () {
   $(window).bind('storage', function (e) {
     const contextData = e.originalEvent.newValue;
     console.log("received the custom event from window", contextData);
+
+    updateStorageStatus("Stored text data have been updated.");
   });
 
+  function updateStorageStatus(text) {
+    const dataTextArea = $('.js-eventAlert');
+    dataTextArea.html(text);
+  }
   // window.addEventListener('storage', function(e) {
   //   const contextData = e.storageArea;
   //   console.log("received the custom event from window", contextData);

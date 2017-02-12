@@ -2,7 +2,7 @@ import { saveData, getData } from './services/local-storage';
 import { stringify } from "./tools/json-handler";
 
  const itemValue = {
-        "name": "Lady Gaga 6",
+        "name": "Lady Gaga 7",
         "assistants": {
           "name": "Johnason",
           "age": 29

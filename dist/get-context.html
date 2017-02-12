@@ -41,7 +41,15 @@
       </div>
       <div class="l-pageContentWrapper pageContentWrapper">
         <div class="l-contentContainer contentContainer">
-          <div><a href="#" class="commandButton js-ommandButton__getContext"><span class="button_label">Get Context</span></a></div>
+          <div class="alertContainer">
+            <div class="alert alert--error">
+              <div class="alert__icon"><i class="fa fa-bell"></i></div>
+              <div class="alert__wrapper"><span class="js-eventAlert">Context status</span></div>
+            </div>
+          </div>
+          <div class="contextFormContainer">
+            <textarea placeholder="Context Data" class="dataTextArea js-dataTextArea"></textarea><a href="#" class="commandButton js-commandButton__getContext"><span class="button_label">Get Context</span></a>
+          </div>
         </div>
       </div>
       <div class="l-contentFooterContainer contentFooterContainer">

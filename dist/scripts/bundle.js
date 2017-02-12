@@ -26917,7 +26917,7 @@ var _localStorage = require("./services/local-storage");
 var _jsonHandler = require("./tools/json-handler");
 
 var itemValue = {
-  "name": "Lady Gaga 6",
+  "name": "Lady Gaga 7",
   "assistants": {
     "name": "Johnason",
     "age": 29
@@ -26974,14 +26974,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     menuWrapper.classList.remove('showSearchPanel');
   });
 
-  var setContextBtn = (0, _jquery2.default)('.js-ommandButton__setContext');
+  var setContextBtn = (0, _jquery2.default)('.js-commandButton__setContext');
 
   setContextBtn.click(function (e) {
     e.preventDefault();
     (0, _context.setContext)();
   });
 
-  var getContextBtn = (0, _jquery2.default)('.js-ommandButton__getContext');
+  var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
 
   getContextBtn.click(function (e) {
     e.preventDefault();
@@ -26991,8 +26991,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _jquery2.default)(window).bind('storage', function (e) {
     var contextData = e.originalEvent.newValue;
     console.log("received the custom event from window", contextData);
+
+    updateStorageStatus("Stored text data have been updated.");
   });
 
+  function updateStorageStatus(text) {
+    var dataTextArea = (0, _jquery2.default)('.js-eventAlert');
+    dataTextArea.html(text);
+  }
   // window.addEventListener('storage', function(e) {
   //   const contextData = e.storageArea;
   //   console.log("received the custom event from window", contextData);
