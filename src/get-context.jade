@@ -16,7 +16,6 @@ block bodyContent
 				div.l-logoContainer.logoContainer
 					div.imageFrame
 						img(alt='img' src='./images/site-logo.png').imageResponsive
-					//- h4.title Great Books
 				div.l-toggleMenuContainer.toggleMenuContainer
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
@@ -24,22 +23,7 @@ block bodyContent
 			div.l-menuWrapper.menuWrapper.js-menuWrapper
 				div.l-menuContainer.menuContainer.js-mobileMenuContainer
 					ul.menuList
-						+menuItems('Home')
-						li.menuItem
-							a(href='#').currentSelection
-								span Color Palette
-						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Buttons')
-
-				div.l-searchContainer.searchContainer.js-showSearchPanel
-					a.searchButton.searchButton--default
-						i.fa.fa-search
-				div.l-searchWrapper.searchWrapper.js-searchPanel
-					form(action="#" method='post').l-searchWrapper__form
-						a.searchButton.searchButton--whiteSquare
-							i.fa.fa-search
-						input(type="text" name="s" placeholder="Enter your search").searchInput
-						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
-							i.fa.fa-close
+						+menuItems('Home','Set Context', 'Get Context')
 
 		div.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
