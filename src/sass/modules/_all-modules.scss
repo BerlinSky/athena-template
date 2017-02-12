@@ -1,10 +1,6 @@
 @import "page-header";
 @import "page-content";
 @import "page-footer";
-@import "news-content";
-@import "tour-content";
-@import "media-content";
-@import "discography-content";
 
 .contextFormContainer, .alertContainer {
   display: flex;
@@ -80,42 +76,4 @@
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.03);
   background-repeat: repeat-x;
-}
-
-.paletteBlock {
-  border: none;
-  margin: 0 0 0 0;
-  padding: 15px;
-
-  .paletteBlock__palette {
-    height: 70px;
-    border-radius: 6px;
-    text-transform: uppercase;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .paletteBlock__info {
-    line-height: 1.6;
-    margin: 1rem 0.5rem;
-    font-size: 1rem;
-
-    div {
-      margin-bottom: 0.3rem;
-    }
-  }
-
-  .paletteBlock__usage {
-    margin: 1rem 0.5rem;
-    padding: 0;
-    list-style-type: none;
-    line-height: 1.6;
-
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-  }
 }
