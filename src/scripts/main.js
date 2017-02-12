@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 import { setContext, getContext } from './context';
+import { stringify, parse } from "./tools/json-handler";
+
 
 $(function () {
 
@@ -31,14 +33,24 @@ $(function () {
 
   setContextBtn.click(function(e) {
     e.preventDefault();
-    setContext();
+
+    const textArea = $('.js-setDataTextArea');
+    let data = textArea.val();
+
+    if (data.length > 0) {
+      data = parse(data);
+    }
+    console.log("input", data);
+
+    setContext(data);
   })
 
   const getContextBtn = $('.js-commandButton__getContext');
 
   getContextBtn.click(function(e) {
     e.preventDefault();
-    getContext();
+    const texArea = $('.js-getDataTextArea');
+    texArea.text(stringify(getContext()));
   })
 
   $(window).bind('storage', function (e) {

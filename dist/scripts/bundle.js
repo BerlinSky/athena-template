@@ -26917,15 +26917,16 @@ var _localStorage = require("./services/local-storage");
 var _jsonHandler = require("./tools/json-handler");
 
 var itemValue = {
-  "name": "Lady Gaga 7",
+  "name": "Lady Gaga 8",
   "assistants": {
     "name": "Johnason",
     "age": 29
   }
 };
 
-function setContext() {
-  var convertedValue = (0, _jsonHandler.stringify)(itemValue);
+function setContext(inputValue) {
+  var data = inputValue || itemValue;
+  var convertedValue = (0, _jsonHandler.stringify)(data);
   console.log('context saved', convertedValue);
 
   (0, _localStorage.saveData)("context", convertedValue);
@@ -26933,9 +26934,9 @@ function setContext() {
 
 function getContext() {
   var convertedValue = (0, _localStorage.getData)("context");
-  console.log('context get', convertedValue);
+  console.log('context get', (0, _jsonHandler.parse)(convertedValue));
 
-  return convertedValue;
+  return (0, _jsonHandler.parse)(convertedValue);
 }
 
 },{"./services/local-storage":5,"./tools/json-handler":6}],4:[function(require,module,exports){
@@ -26946,6 +26947,8 @@ var _jquery = require('jquery');
 var _jquery2 = _interopRequireDefault(_jquery);
 
 var _context = require('./context');
+
+var _jsonHandler = require('./tools/json-handler');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26978,14 +26981,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   setContextBtn.click(function (e) {
     e.preventDefault();
-    (0, _context.setContext)();
+
+    var textArea = (0, _jquery2.default)('.js-setDataTextArea');
+    var data = textArea.val();
+
+    if (data.length > 0) {
+      data = (0, _jsonHandler.parse)(data);
+    }
+    console.log("input", data);
+
+    (0, _context.setContext)(data);
   });
 
   var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
 
   getContextBtn.click(function (e) {
     e.preventDefault();
-    (0, _context.getContext)();
+    var texArea = (0, _jquery2.default)('.js-getDataTextArea');
+    texArea.text((0, _jsonHandler.stringify)((0, _context.getContext)()));
   });
 
   (0, _jquery2.default)(window).bind('storage', function (e) {
@@ -27005,7 +27018,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   // });
 });
 
-},{"./context":3,"jquery":1}],5:[function(require,module,exports){
+},{"./context":3,"./tools/json-handler":6,"jquery":1}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27028,11 +27041,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.stringify = stringify;
+exports.parse = parse;
 
 var _lodash = require('lodash');
 
 function stringify(value) {
   return JSON.stringify((0, _lodash.cloneDeep)(value));
+
+  /* eslint-disable no-console */
+  // console.log(s);
+}
+
+function parse(value) {
+  return JSON.parse((0, _lodash.cloneDeep)(value));
 
   /* eslint-disable no-console */
   // console.log(s);

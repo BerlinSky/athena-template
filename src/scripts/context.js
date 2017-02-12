@@ -1,16 +1,17 @@
 import { saveData, getData } from './services/local-storage';
-import { stringify } from "./tools/json-handler";
+import { stringify, parse } from "./tools/json-handler";
 
  const itemValue = {
-        "name": "Lady Gaga 7",
+        "name": "Lady Gaga 8",
         "assistants": {
           "name": "Johnason",
           "age": 29
         }
       };
 
-export function setContext() {
-  const convertedValue = stringify(itemValue);
+export function setContext(inputValue) {
+  const data = inputValue || itemValue;
+  const convertedValue = stringify(data);
   console.log('context saved', convertedValue);
 
   saveData("context", convertedValue);
@@ -18,7 +19,7 @@ export function setContext() {
 
 export function getContext() {
   const convertedValue = getData("context");
-  console.log('context get', convertedValue);
+  console.log('context get', parse(convertedValue));
 
-  return convertedValue;
+  return parse(convertedValue);
 }
