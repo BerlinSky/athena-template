@@ -2,7 +2,7 @@
 @import "page-content";
 @import "page-footer";
 
-.contextFormContainer, .alertContainer {
+.messageFormContainer, .alertContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   margin-top: 20px;
 }
 
-.contextFormContainer {
+.messageFormContainer {
   .dataTextArea {
     margin: 5px auto 10px auto;
     font-size: 0.825rem;
