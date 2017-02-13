@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { setContext, getContext } from './context';
+import { setContext, getContext } from './tools/message-handler';
 import { stringify, parse } from "./tools/json-handler";
 
 $(function () {

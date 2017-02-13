@@ -26904,49 +26904,13 @@ return jQuery;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{}],3:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.setContext = setContext;
-exports.getContext = getContext;
-
-var _localStorage = require("./services/local-storage");
-
-var _jsonHandler = require("./tools/json-handler");
-
-var itemValue = {
-  "name": "Lady Gaga 8",
-  "assistants": {
-    "name": "Johnason",
-    "age": 29
-  }
-};
-
-function setContext(inputValue) {
-  var data = inputValue || itemValue;
-  var convertedValue = (0, _jsonHandler.stringify)(data);
-  console.log('context saved', convertedValue);
-
-  (0, _localStorage.saveData)("context", convertedValue);
-}
-
-function getContext() {
-  var convertedValue = (0, _localStorage.getData)("context");
-  console.log('context get', (0, _jsonHandler.parse)(convertedValue));
-
-  return (0, _jsonHandler.parse)(convertedValue);
-}
-
-},{"./services/local-storage":5,"./tools/json-handler":6}],4:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _context = require('./context');
+var _messageHandler = require('./tools/message-handler');
 
 var _jsonHandler = require('./tools/json-handler');
 
@@ -26992,7 +26956,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
     console.log("input", data);
 
-    (0, _context.setContext)(data);
+    (0, _messageHandler.setContext)(data);
   });
 
   var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
@@ -27000,7 +26964,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   getContextBtn.click(function (e) {
     e.preventDefault();
     var texArea = (0, _jquery2.default)('.js-getDataTextArea');
-    texArea.text((0, _jsonHandler.stringify)((0, _context.getContext)()));
+    texArea.text((0, _jsonHandler.stringify)((0, _messageHandler.getContext)()));
   });
 
   (0, _jquery2.default)(window).bind('storage', function (e) {
@@ -27016,7 +26980,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   }
 });
 
-},{"./context":3,"./tools/json-handler":6,"jquery":1}],5:[function(require,module,exports){
+},{"./tools/json-handler":5,"./tools/message-handler":6,"jquery":1}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27032,7 +26996,7 @@ function getData(itemName) {
   return localStorage.getItem(itemName);
 }
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27057,5 +27021,42 @@ function parse(value) {
   // console.log(s);
 }
 
-},{"lodash":2}]},{},[4])
+},{"lodash":2}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.setContext = setContext;
+exports.getContext = getContext;
+
+var _localStorage = require("../services/local-storage");
+
+var _jsonHandler = require("./json-handler");
+
+var itemValue = {
+	"name": "Lady Gaga 8",
+	"type": "default",
+	"assistants": {
+		"name": "Johnason",
+		"age": 29
+	}
+};
+
+function setContext(inputValue) {
+	var data = inputValue || itemValue;
+	var convertedValue = (0, _jsonHandler.stringify)(data);
+
+	// console.log('context saved', convertedValue);
+	(0, _localStorage.saveData)("context", convertedValue);
+}
+
+function getContext() {
+	var convertedValue = (0, _localStorage.getData)("context");
+
+	// console.log('context get', parse(convertedValue));
+	return (0, _jsonHandler.parse)(convertedValue);
+}
+
+},{"../services/local-storage":4,"./json-handler":5}]},{},[3])
 //# sourceMappingURL=bundle.js.map
