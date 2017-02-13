@@ -26910,81 +26910,22 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _mobileMenu = require('./mobile-menu');
+
 var _messageForm = require('./message-form');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { setMessage, getMessage } from './tools/message-handler';
-// import { stringify, parse } from "./tools/json-handler";
-
 (0, _jquery2.default)(function () {
 
-  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
-    e.preventDefault();
-
-    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
-    mobileMenu.toggle("slow");
-  });
-
-  var menuWrapper = document.querySelector('.js-menuWrapper');
-
-  var showSearchPanel = (0, _jquery2.default)('.js-showSearchPanel');
-  if (showSearchPanel.length) {
-    showSearchPanel.addEventListener('click', function (e) {
-      e.preventDefault();
-      menuWrapper.classList.add('showSearchPanel');
-    });
-  }
-
-  var hideSearchPanel = (0, _jquery2.default)('.js-hideSearchPanel');
-  if (hideSearchPanel.length) {
-    hideSearchPanel.addEventListener('click', function (e) {
-      e.preventDefault();
-      menuWrapper.classList.remove('showSearchPanel');
-    });
-  }
+  (0, _mobileMenu.mobileMenuCommand)();
 
   (0, _messageForm.setMessageCommand)();
 
   (0, _messageForm.getMessageCommand)();
-  // const setContextBtn = $('.js-commandButton__setContext');
-
-  // setContextBtn.click(function(e) {
-  //   e.preventDefault();
-
-  //   const textArea = $('.js-setDataTextArea');
-  //   let data = textArea.val();
-
-  //   if (data.length > 0) {
-  //     data = parse(data);
-  //   }
-  //   console.log("input", data);
-
-  //   setMessage(data);
-  // })
-
-  //   const getContextBtn = $('.js-commandButton__getContext');
-
-  //   getContextBtn.click(function(e) {
-  //     e.preventDefault();
-  //     const texArea = $('.js-getDataTextArea');
-  //     texArea.text(stringify(getMessage()));
-  //   })
-
-  //   $(window).bind('storage', function (e) {
-  //     const contextData = e.originalEvent.newValue;
-  //     console.log("received the custom event from window", contextData);
-
-  //     updateStorageStatus("Stored text data have been updated.");
-  //   });
-
-  //   function updateStorageStatus(text) {
-  //     const dataTextArea = $('.js-eventAlert');
-  //     dataTextArea.html(text);
-  //   }
 });
 
-},{"./message-form":4,"jquery":1}],4:[function(require,module,exports){
+},{"./message-form":4,"./mobile-menu":5,"jquery":1}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27004,9 +26945,9 @@ var _jsonHandler = require('./tools/json-handler');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function setMessageCommand() {
-  var setContextBtn = (0, _jquery2.default)('.js-commandButton__setContext');
+  var setMessageBtn = (0, _jquery2.default)('.js-commandButton__setMessage');
 
-  setContextBtn.click(function (e) {
+  setMessageBtn.click(function (e) {
     e.preventDefault();
 
     var textArea = (0, _jquery2.default)('.js-setDataTextArea');
@@ -27022,19 +26963,19 @@ function setMessageCommand() {
 }
 
 function getMessageCommand() {
-  var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
+  var getMessageBtn = (0, _jquery2.default)('.js-commandButton__getMessage');
 
-  getContextBtn.click(function (e) {
+  getMessageBtn.click(function (e) {
     e.preventDefault();
     var texArea = (0, _jquery2.default)('.js-getDataTextArea');
     texArea.text((0, _jsonHandler.stringify)((0, _messageHandler.getMessage)()));
   });
 
   (0, _jquery2.default)(window).bind('storage', function (e) {
-    var contextData = e.originalEvent.newValue;
-    console.log("received the custom event from window", contextData);
+    var messageData = e.originalEvent.newValue;
+    console.log("received the custom event from window", messageData);
 
-    updateStorageStatus("Stored text data have been updated.");
+    updateStorageStatus("Stored message data have been updated.");
   });
 
   function updateStorageStatus(text) {
@@ -27043,7 +26984,49 @@ function getMessageCommand() {
   }
 }
 
-},{"./tools/json-handler":6,"./tools/message-handler":7,"jquery":1}],5:[function(require,module,exports){
+},{"./tools/json-handler":7,"./tools/message-handler":8,"jquery":1}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mobileMenuCommand = mobileMenuCommand;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mobileMenuCommand() {
+  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
+    e.preventDefault();
+
+    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
+    mobileMenu.toggle("slow");
+  });
+
+  var menuWrapper = document.querySelector('.js-menuWrapper');
+
+  var showSearchPanel = (0, _jquery2.default)('.js-showSearchPanel');
+
+  if (showSearchPanel.length) {
+    showSearchPanel.addEventListener('click', function (e) {
+      e.preventDefault();
+      menuWrapper.classList.add('showSearchPanel');
+    });
+  }
+
+  var hideSearchPanel = (0, _jquery2.default)('.js-hideSearchPanel');
+  if (hideSearchPanel.length) {
+    hideSearchPanel.addEventListener('click', function (e) {
+      e.preventDefault();
+      menuWrapper.classList.remove('showSearchPanel');
+    });
+  }
+}
+
+},{"jquery":1}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27059,7 +27042,7 @@ function getData(itemName) {
   return localStorage.getItem(itemName);
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27084,7 +27067,7 @@ function parse(value) {
   // console.log(s);
 }
 
-},{"lodash":2}],7:[function(require,module,exports){
+},{"lodash":2}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27121,5 +27104,5 @@ function getMessage() {
 	return (0, _jsonHandler.parse)(convertedValue);
 }
 
-},{"../services/local-storage":5,"./json-handler":6}]},{},[3])
+},{"../services/local-storage":6,"./json-handler":7}]},{},[3])
 //# sourceMappingURL=bundle.js.map

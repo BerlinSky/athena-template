@@ -4,9 +4,9 @@ import { setMessage, getMessage } from './tools/message-handler';
 import { stringify, parse } from "./tools/json-handler";
 
 export function setMessageCommand() {
-  const setContextBtn = $('.js-commandButton__setContext');
+  const setMessageBtn = $('.js-commandButton__setMessage');
 
-  setContextBtn.click(function(e) {
+  setMessageBtn.click(function(e) {
     e.preventDefault();
 
     const textArea = $('.js-setDataTextArea');
@@ -22,19 +22,19 @@ export function setMessageCommand() {
 }
 
 export function getMessageCommand() {
-  const getContextBtn = $('.js-commandButton__getContext');
+  const getMessageBtn = $('.js-commandButton__getMessage');
 
-  getContextBtn.click(function(e) {
+  getMessageBtn.click(function(e) {
     e.preventDefault();
     const texArea = $('.js-getDataTextArea');
     texArea.text(stringify(getMessage()));
   })
 
   $(window).bind('storage', function (e) {
-    const contextData = e.originalEvent.newValue;
-    console.log("received the custom event from window", contextData);
+    const messageData = e.originalEvent.newValue;
+    console.log("received the custom event from window", messageData);
 
-    updateStorageStatus("Stored text data have been updated.");
+    updateStorageStatus("Stored message data have been updated.");
   });
 
   function updateStorageStatus(text) {
