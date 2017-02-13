@@ -1,7 +1,8 @@
 import $ from 'jquery';
 
-import { setMessage, getMessage } from './tools/message-handler';
-import { stringify, parse } from "./tools/json-handler";
+import { setMessageCommand, getMessageCommand } from './message-form';
+// import { setMessage, getMessage } from './tools/message-handler';
+// import { stringify, parse } from "./tools/json-handler";
 
 $(function () {
 
@@ -30,39 +31,42 @@ $(function () {
     })
   }
 
-  const setContextBtn = $('.js-commandButton__setContext');
+  setMessageCommand();
 
-  setContextBtn.click(function(e) {
-    e.preventDefault();
+  getMessageCommand();
+  // const setContextBtn = $('.js-commandButton__setContext');
 
-    const textArea = $('.js-setDataTextArea');
-    let data = textArea.val();
+  // setContextBtn.click(function(e) {
+  //   e.preventDefault();
 
-    if (data.length > 0) {
-      data = parse(data);
-    }
-    console.log("input", data);
+  //   const textArea = $('.js-setDataTextArea');
+  //   let data = textArea.val();
 
-    setMessage(data);
-  })
+  //   if (data.length > 0) {
+  //     data = parse(data);
+  //   }
+  //   console.log("input", data);
 
-  const getContextBtn = $('.js-commandButton__getContext');
+  //   setMessage(data);
+  // })
 
-  getContextBtn.click(function(e) {
-    e.preventDefault();
-    const texArea = $('.js-getDataTextArea');
-    texArea.text(stringify(getMessage()));
-  })
+//   const getContextBtn = $('.js-commandButton__getContext');
 
-  $(window).bind('storage', function (e) {
-    const contextData = e.originalEvent.newValue;
-    console.log("received the custom event from window", contextData);
+//   getContextBtn.click(function(e) {
+//     e.preventDefault();
+//     const texArea = $('.js-getDataTextArea');
+//     texArea.text(stringify(getMessage()));
+//   })
 
-    updateStorageStatus("Stored text data have been updated.");
-  });
+//   $(window).bind('storage', function (e) {
+//     const contextData = e.originalEvent.newValue;
+//     console.log("received the custom event from window", contextData);
 
-  function updateStorageStatus(text) {
-    const dataTextArea = $('.js-eventAlert');
-    dataTextArea.html(text);
-  }
+//     updateStorageStatus("Stored text data have been updated.");
+//   });
+
+//   function updateStorageStatus(text) {
+//     const dataTextArea = $('.js-eventAlert');
+//     dataTextArea.html(text);
+//   }
 });

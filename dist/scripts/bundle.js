@@ -26910,11 +26910,12 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _messageHandler = require('./tools/message-handler');
-
-var _jsonHandler = require('./tools/json-handler');
+var _messageForm = require('./message-form');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import { setMessage, getMessage } from './tools/message-handler';
+// import { stringify, parse } from "./tools/json-handler";
 
 (0, _jquery2.default)(function () {
 
@@ -26943,6 +26944,66 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   }
 
+  (0, _messageForm.setMessageCommand)();
+
+  (0, _messageForm.getMessageCommand)();
+  // const setContextBtn = $('.js-commandButton__setContext');
+
+  // setContextBtn.click(function(e) {
+  //   e.preventDefault();
+
+  //   const textArea = $('.js-setDataTextArea');
+  //   let data = textArea.val();
+
+  //   if (data.length > 0) {
+  //     data = parse(data);
+  //   }
+  //   console.log("input", data);
+
+  //   setMessage(data);
+  // })
+
+  //   const getContextBtn = $('.js-commandButton__getContext');
+
+  //   getContextBtn.click(function(e) {
+  //     e.preventDefault();
+  //     const texArea = $('.js-getDataTextArea');
+  //     texArea.text(stringify(getMessage()));
+  //   })
+
+  //   $(window).bind('storage', function (e) {
+  //     const contextData = e.originalEvent.newValue;
+  //     console.log("received the custom event from window", contextData);
+
+  //     updateStorageStatus("Stored text data have been updated.");
+  //   });
+
+  //   function updateStorageStatus(text) {
+  //     const dataTextArea = $('.js-eventAlert');
+  //     dataTextArea.html(text);
+  //   }
+});
+
+},{"./message-form":4,"jquery":1}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setMessageCommand = setMessageCommand;
+exports.getMessageCommand = getMessageCommand;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _messageHandler = require('./tools/message-handler');
+
+var _jsonHandler = require('./tools/json-handler');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function setMessageCommand() {
   var setContextBtn = (0, _jquery2.default)('.js-commandButton__setContext');
 
   setContextBtn.click(function (e) {
@@ -26954,11 +27015,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     if (data.length > 0) {
       data = (0, _jsonHandler.parse)(data);
     }
-    console.log("input", data);
+    // console.log("input", data);
 
     (0, _messageHandler.setMessage)(data);
   });
+}
 
+function getMessageCommand() {
   var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
 
   getContextBtn.click(function (e) {
@@ -26978,9 +27041,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var dataTextArea = (0, _jquery2.default)('.js-eventAlert');
     dataTextArea.html(text);
   }
-});
+}
 
-},{"./tools/json-handler":5,"./tools/message-handler":6,"jquery":1}],4:[function(require,module,exports){
+},{"./tools/json-handler":6,"./tools/message-handler":7,"jquery":1}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26996,7 +27059,7 @@ function getData(itemName) {
   return localStorage.getItem(itemName);
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27021,7 +27084,7 @@ function parse(value) {
   // console.log(s);
 }
 
-},{"lodash":2}],6:[function(require,module,exports){
+},{"lodash":2}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27058,5 +27121,5 @@ function getMessage() {
 	return (0, _jsonHandler.parse)(convertedValue);
 }
 
-},{"../services/local-storage":4,"./json-handler":5}]},{},[3])
+},{"../services/local-storage":5,"./json-handler":6}]},{},[3])
 //# sourceMappingURL=bundle.js.map
