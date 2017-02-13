@@ -2,8 +2,8 @@ import gulp from 'gulp';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
-import jade from 'gulp-jade';
-import data from 'gulp-data';
+// import jade from 'gulp-jade';
+// import data from 'gulp-data';
 import eslint from 'gulp-eslint';
 import exorcist from 'exorcist';
 import browserSync from 'browser-sync';
@@ -15,7 +15,6 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import prefix from 'gulp-autoprefixer';
 import cssnano from 'gulp-cssnano';
-// var fontAwesome = require('node-font-awesome');
 import fontAwesome from 'node-font-awesome';
 
 import util from 'gulp-util';
@@ -74,16 +73,7 @@ gulp.task('lint', () => {
 gulp.task('html', () => {
 	log('html task starts');
 
-	gulp.src(config.paths.jade)
-    .pipe(data(function() {
-        return require('./src/jade/data.json');
-      }
-    ))
-		.pipe(jade(
-			{
-				pretty: true
-			}
-		))
+	gulp.src(config.paths.html)
 		.pipe(gulp.dest(config.paths.dist));
 
 	log('html task ends');
