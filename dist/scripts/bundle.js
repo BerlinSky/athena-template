@@ -26922,6 +26922,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   (0, _messageForm.setMessageCommand)();
 
+  (0, _messageForm.watchMessageChange)();
+
   (0, _messageForm.getMessageCommand)();
 });
 
@@ -26933,6 +26935,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setMessageCommand = setMessageCommand;
 exports.getMessageCommand = getMessageCommand;
+exports.watchMessageChange = watchMessageChange;
 
 var _jquery = require('jquery');
 
@@ -26970,18 +26973,20 @@ function getMessageCommand() {
     var texArea = (0, _jquery2.default)('.js-getDataTextArea');
     texArea.text((0, _jsonHandler.stringify)((0, _messageHandler.getMessage)()));
   });
+}
 
+function watchMessageChange() {
   (0, _jquery2.default)(window).bind('storage', function (e) {
     var messageData = e.originalEvent.newValue;
     console.log("received the custom event from window", messageData);
 
     updateStorageStatus("Stored message data have been updated.");
   });
+}
 
-  function updateStorageStatus(text) {
-    var dataTextArea = (0, _jquery2.default)('.js-eventAlert');
-    dataTextArea.html(text);
-  }
+function updateStorageStatus(text) {
+  var dataTextArea = (0, _jquery2.default)('.js-eventAlert');
+  dataTextArea.html(text);
 }
 
 },{"./tools/json-handler":7,"./tools/message-handler":8,"jquery":1}],5:[function(require,module,exports){

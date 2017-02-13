@@ -29,16 +29,18 @@ export function getMessageCommand() {
     const texArea = $('.js-getDataTextArea');
     texArea.text(stringify(getMessage()));
   })
+}
 
+export function watchMessageChange() {
   $(window).bind('storage', function (e) {
     const messageData = e.originalEvent.newValue;
     console.log("received the custom event from window", messageData);
 
     updateStorageStatus("Stored message data have been updated.");
   });
+}
 
-  function updateStorageStatus(text) {
-    const dataTextArea = $('.js-eventAlert');
-    dataTextArea.html(text);
-  }
+function updateStorageStatus(text) {
+  const dataTextArea = $('.js-eventAlert');
+  dataTextArea.html(text);
 }
