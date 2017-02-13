@@ -26922,7 +26922,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   (0, _messageForm.setMessageCommand)();
 
-  (0, _messageForm.watchMessageChange)();
+  (0, _messageForm.watchMessageChangeEvent)();
 
   (0, _messageForm.getMessageCommand)();
 });
@@ -26935,7 +26935,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setMessageCommand = setMessageCommand;
 exports.getMessageCommand = getMessageCommand;
-exports.watchMessageChange = watchMessageChange;
+exports.watchMessageChangeEvent = watchMessageChangeEvent;
 
 var _jquery = require('jquery');
 
@@ -26975,7 +26975,7 @@ function getMessageCommand() {
   });
 }
 
-function watchMessageChange() {
+function watchMessageChangeEvent() {
   (0, _jquery2.default)(window).bind('storage', function (e) {
     var messageData = e.originalEvent.newValue;
     console.log("received the custom event from window", messageData);

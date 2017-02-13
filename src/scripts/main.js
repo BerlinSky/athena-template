@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 import { mobileMenuCommand } from './mobile-menu';
-import { setMessageCommand, watchMessageChange, getMessageCommand } from './message-form';
+import { setMessageCommand, watchMessageChangeEvent, getMessageCommand } from './message-form';
 
 $(function () {
 
@@ -9,7 +9,7 @@ $(function () {
 
   setMessageCommand();
 
-  watchMessageChange();
+  watchMessageChangeEvent();
 
   getMessageCommand();
 

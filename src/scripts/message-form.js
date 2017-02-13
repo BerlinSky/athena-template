@@ -31,7 +31,7 @@ export function getMessageCommand() {
   })
 }
 
-export function watchMessageChange() {
+export function watchMessageChangeEvent() {
   $(window).bind('storage', function (e) {
     const messageData = e.originalEvent.newValue;
     console.log("received the custom event from window", messageData);
