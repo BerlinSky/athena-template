@@ -10,17 +10,17 @@ import { stringify, parse } from "./json-handler";
 				}
 			};
 
-export function setContext(inputValue) {
+export function setMessage(inputValue) {
 	const data = inputValue || itemValue;
 	const convertedValue = stringify(data);
 
-	// console.log('context saved', convertedValue);
-	saveData("context", convertedValue);
+	// console.log('message saved', convertedValue);
+	saveData("message", convertedValue);
 }
 
-export function getContext() {
-	const convertedValue = getData("context");
+export function getMessage() {
+	const convertedValue = getData("message");
 
-	// console.log('context get', parse(convertedValue));
+	// console.log('message get', parse(convertedValue));
 	return parse(convertedValue);
 }

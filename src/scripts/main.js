@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { setContext, getContext } from './tools/message-handler';
+import { setMessage, getMessage } from './tools/message-handler';
 import { stringify, parse } from "./tools/json-handler";
 
 $(function () {
@@ -43,7 +43,7 @@ $(function () {
     }
     console.log("input", data);
 
-    setContext(data);
+    setMessage(data);
   })
 
   const getContextBtn = $('.js-commandButton__getContext');
@@ -51,7 +51,7 @@ $(function () {
   getContextBtn.click(function(e) {
     e.preventDefault();
     const texArea = $('.js-getDataTextArea');
-    texArea.text(stringify(getContext()));
+    texArea.text(stringify(getMessage()));
   })
 
   $(window).bind('storage', function (e) {

@@ -26956,7 +26956,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
     console.log("input", data);
 
-    (0, _messageHandler.setContext)(data);
+    (0, _messageHandler.setMessage)(data);
   });
 
   var getContextBtn = (0, _jquery2.default)('.js-commandButton__getContext');
@@ -26964,7 +26964,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   getContextBtn.click(function (e) {
     e.preventDefault();
     var texArea = (0, _jquery2.default)('.js-getDataTextArea');
-    texArea.text((0, _jsonHandler.stringify)((0, _messageHandler.getContext)()));
+    texArea.text((0, _jsonHandler.stringify)((0, _messageHandler.getMessage)()));
   });
 
   (0, _jquery2.default)(window).bind('storage', function (e) {
@@ -27027,8 +27027,8 @@ function parse(value) {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.setContext = setContext;
-exports.getContext = getContext;
+exports.setMessage = setMessage;
+exports.getMessage = getMessage;
 
 var _localStorage = require("../services/local-storage");
 
@@ -27043,18 +27043,18 @@ var itemValue = {
 	}
 };
 
-function setContext(inputValue) {
+function setMessage(inputValue) {
 	var data = inputValue || itemValue;
 	var convertedValue = (0, _jsonHandler.stringify)(data);
 
-	// console.log('context saved', convertedValue);
-	(0, _localStorage.saveData)("context", convertedValue);
+	// console.log('message saved', convertedValue);
+	(0, _localStorage.saveData)("message", convertedValue);
 }
 
-function getContext() {
-	var convertedValue = (0, _localStorage.getData)("context");
+function getMessage() {
+	var convertedValue = (0, _localStorage.getData)("message");
 
-	// console.log('context get', parse(convertedValue));
+	// console.log('message get', parse(convertedValue));
 	return (0, _jsonHandler.parse)(convertedValue);
 }
 
