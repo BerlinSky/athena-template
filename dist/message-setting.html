@@ -23,28 +23,28 @@
         <div class="l-menuWrapper menuWrapper js-menuWrapper">
           <div class="l-menuContainer menuContainer js-mobileMenuContainer">
             <ul class="menuList">
-              <li class="menuItem"><a href="#"><span>Home</span></a></li>
-              <li class="menuItem"><a href="#" class="currentSelection"><span>Color Palette</span></a></li>
-              <li class="menuItem"><a href="#"><span>Typography</span></a></li>
-              <li class="menuItem"><a href="#"><span>Text Styles</span></a></li>
-              <li class="menuItem"><a href="#"><span>Breakpoints</span></a></li>
-              <li class="menuItem"><a href="#"><span>Buttons</span></a></li>
+              <li class="menuItem"><a href="/" target="_self"><span>Home</span></a></li>
+              <li class="menuItem"><a href="/message-setting.html" target="_self"><span>Set Context</span></a></li>
+              <li class="menuItem"><a href="/message-getting.html" target="_self"><span>Get Context</span></a></li>
             </ul>
-          </div>
-          <div class="l-searchContainer searchContainer js-showSearchPanel"><a class="searchButton searchButton--default"><i class="fa fa-search"></i></a></div>
-          <div class="l-searchWrapper searchWrapper js-searchPanel">
-            <form action="#" method="post" class="l-searchWrapper__form"><a class="searchButton searchButton--whiteSquare"><i class="fa fa-search"></i></a>
-              <input type="text" name="s" placeholder="Enter your search" class="searchInput"><a class="closeButton closeButton--dimmedSquare js-hideSearchPanel"><i class="fa fa-close"></i></a>
-            </form>
           </div>
         </div>
       </div>
       <div class="l-pageContentWrapper pageContentWrapper">
-        <div class="l-contentContainer contentContainer"><span>
-            <Lorem>ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur officia vero ratione enim voluptatum repellendus, culpa est debitis, necessitatibus accusamus?</Lorem></span></div>
+        <div class="l-contentContainer contentContainer">
+          <div class="alertContainer">
+            <div class="alert alert--error">
+              <div class="alert__icon"><i class="fa fa-bell"></i></div>
+              <div class="alert__wrapper"><span class="js-eventAlert">Context status</span></div>
+            </div>
+          </div>
+          <div class="contextFormContainer">
+            <textarea placeholder="Context Data" class="dataTextArea js-setDataTextArea"></textarea><a href="#" class="commandButton js-commandButton__setContext"><span class="button_label">Set Context</span></a>
+          </div>
+        </div>
       </div>
       <div class="l-contentFooterContainer contentFooterContainer">
-        <div><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore</span></div>
+        <div><span>Application Footer</span></div>
       </div>
     </div>
     <script src="./scripts/bundle.js"></script>

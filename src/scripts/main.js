@@ -3,7 +3,6 @@ import $ from 'jquery';
 import { setContext, getContext } from './context';
 import { stringify, parse } from "./tools/json-handler";
 
-
 $(function () {
 
   $('.js-toggleMobileMenu').click(function(e) {
