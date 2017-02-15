@@ -25,14 +25,22 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
+    background: none;
 
     width: 100%;
 
+    .imageFrame {
+      padding: 0 3% 20px;
+    }
+
     .imagePanel {
+
       flex: 1;
 
-      background-color:gray;
-      border: 10px solid #999;
+      // background-color:gray;
+      // background-color:blue;
+
+      // border: 10px solid #999;
       padding: 0;
 
       min-width: 50%;
