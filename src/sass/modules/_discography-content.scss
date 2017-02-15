@@ -6,13 +6,18 @@
   box-sizing: border-box;
 
 	width: 100%;
-  margin-top: 30px;
+  margin-top: 60px;
+  padding-bottom: 60px;
 
 	margin-right: auto;
 	margin-left: auto;
 
 	@include break(md) {
-		max-width: 56rem;
+		max-width: 60rem;
+	}
+
+	@include break(xl) {
+		max-width: 70rem;
 	}
 
   .imageGallery {
@@ -34,8 +39,8 @@
       max-width: 50%;
 
       @include break(md) {
-        min-width: 25%;
-        max-width: 25%;
+        min-width: 33.33%;
+        max-width: 33.33%;
       }
     }
 
