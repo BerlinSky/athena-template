@@ -28,7 +28,7 @@ block pageTitle
 
 block bodyContent
 	div.l-pageContainer.pageContainer
-		div.l-pageHeader.pageHeader
+		.l-pageHeader.pageHeader
 			div.l-navContainer.navContainer
 				div.l-logoContainer.logoContainer
 					div.imageFrame
@@ -58,7 +58,7 @@ block bodyContent
 						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
 							i.fa.fa-close
 
-		div.l-pageContentWrapper.pageContentWrapper
+		.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer.contentContainer--discographyContent
 				.imageGridContinaer.js-imageGridContainer
 					.gridSizer.js-gridSizer
@@ -81,16 +81,16 @@ block bodyContent
 					.grid.js-grid
 						img(alt='img' src='./images/flight-formation.jpg')
 
-			div.l-contentFooterContainer.contentFooterContainer
-				div.footerPanel.footerPanel--links
-					div.footerPanel__item.footerPanel__item--default
-						ul
-							li
-								a(href="/help" target="") Help
-							li
-								a(href="/help" target="") Newsletter
-							li
-								a(href="/help" target="") Terms of Use
-							li
-								a(href="/help" target="") Privacy Policy
-					div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site
+		.l-pageFooter.contentFooterContainer
+			div.footerPanel.footerPanel--links
+				div.footerPanel__item.footerPanel__item--default
+					ul
+						li
+							a(href="/help" target="") Help
+						li
+							a(href="/help" target="") Newsletter
+						li
+							a(href="/help" target="") Terms of Use
+						li
+							a(href="/help" target="") Privacy Policy
+				div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site
