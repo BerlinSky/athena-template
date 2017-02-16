@@ -29,10 +29,10 @@ $(function () {
     menuWrapper.classList.remove('showSearchPanel');
   })
 
-  const $grid = $('.grid').masonry({
-    itemSelector: '.grid-item',
+  const $grid = $('.js-imageGridContainer').masonry({
+    itemSelector: '.js-grid',
     percentPosition: true,
-    columnWidth: '.grid-sizer'
+    columnWidth: '.js-gridSizer'
   });
 
   $grid.masonry();

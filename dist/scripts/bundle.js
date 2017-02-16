@@ -12317,10 +12317,10 @@ jQueryBridget('masonry', Masonry, _jquery2.default);
     menuWrapper.classList.remove('showSearchPanel');
   });
 
-  var $grid = (0, _jquery2.default)('.grid').masonry({
-    itemSelector: '.grid-item',
+  var $grid = (0, _jquery2.default)('.js-imageGridContainer').masonry({
+    itemSelector: '.js-grid',
     percentPosition: true,
-    columnWidth: '.grid-sizer'
+    columnWidth: '.js-gridSizer'
   });
 
   $grid.masonry();
