@@ -59,9 +59,38 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			div.l-contentContainer.contentContainer
-				+paletteBlockBuilder()
+			div.l-contentContainer.contentContainer.contentContainer--discographyContent
+				div.grid
+					.grid-sizer
+					.grid-item
+						img(alt='img' src='./images/orange-tree.jpg')
+					.grid-item
+						img(alt='img' src='./images/submerged.jpg')
+					.grid-item
+						img(alt='img' src='./images/look-out.jpg')
+					.grid-item
+						img(alt='img' src='./images/one-world-trade.jpg')
+					.grid-item
+						img(alt='img' src='./images/drizzle.jpg')
+					.grid-item
+						img(alt='img' src='./images/cat-nose.jpg')
+					.grid-item
+						img(alt='img' src='./images/contrail.jpg')
+					.grid-item
+						img(alt='img' src='./images/orange-tree.jpg')
+					.grid-item
+						img(alt='img' src='./images/flight-formation.jpg')
 
 			div.l-contentFooterContainer.contentFooterContainer
-				div
-					span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore
+				div.footerPanel.footerPanel--links
+					div.footerPanel__item.footerPanel__item--default
+						ul
+							li
+								a(href="/help" target="") Help
+							li
+								a(href="/help" target="") Newsletter
+							li
+								a(href="/help" target="") Terms of Use
+							li
+								a(href="/help" target="") Privacy Policy
+					div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site
