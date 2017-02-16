@@ -38,5 +38,8 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery-bridget": "^2.0.1",
+    "masonry-layout": "^4.1.1"
+  }
 }

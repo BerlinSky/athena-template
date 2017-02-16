@@ -1,4 +1,8 @@
 import $ from 'jquery';
+var Masonry = require('masonry-layout');
+var jQueryBridget = require('jquery-bridget');
+
+jQueryBridget( 'masonry', Masonry, $ );
 
 $(function () {
 
@@ -25,4 +29,11 @@ $(function () {
     menuWrapper.classList.remove('showSearchPanel');
   })
 
+  const $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    columnWidth: '.grid-sizer'
+  });
+
+  $grid.masonry();
 });
