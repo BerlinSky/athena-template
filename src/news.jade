@@ -16,7 +16,6 @@ block bodyContent
 				div.l-logoContainer.logoContainer
 					div.imageFrame
 						img(alt='img' src='./images/site-logo.png').imageResponsive
-					//- h4.title Great Books
 				div.l-toggleMenuContainer.toggleMenuContainer
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
@@ -42,9 +41,40 @@ block bodyContent
 							i.fa.fa-close
 
 		.l-pageContentWrapper.pageContentWrapper
-			div.l-contentContainer.contentContainer
-				div
-					span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptatem vel ipsam? Cum sint quisquam mollitia magni laborum dolorem odit.
+			div.l-contentContainer.contentContainer.contentContainer--newsContent
+				div.newHeaderPanel
+					h2 News
+					div.imageFrame
+						img(alt='img' src='./images/header-border.png').imageResponsive
+				div.tourNewsPanel
+					div.tourNewsBox
+						h3 Tour Dates
+						h4 Upcoming Tour Dates
+						div.imageFrame
+							img(alt='img' src='./images/header-border.png').imageResponsive
+						div.tourDateAndVenue
+							div.tourDate
+								div.tourMonth Apr
+								div.tourDay 06
+							div.tourLocation
+								div.tourLocation__city St. Louis, MO
+								div.tourLocation__name The Pageant
+						a.siteButton.siteButton--default(href="/tour") More &gt;&gt;
+
+				div.otherNewsPanel
+					h3 Other News
+					div.imageFrame
+						img(alt='img' src='./images/header-border.png').imageResponsive
+					div.newsList
+						div.newsListItem
+							a(href="/news?title=chanterelle") Chanterelle
+						div.newsListItem
+							a(href="/news?title=chanterelle") Chanterelle
+						div.newsListItem
+							a(href="/news?title=chanterelle") Chanterelle
+						div.newsListItem
+							a(href="/news?title=chanterelle") Chanterelle
+
 
 		.l-pageFooter.contentFooterContainer
 			div.footerPanel.footerPanel--links
