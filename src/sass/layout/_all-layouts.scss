@@ -1,8 +1,9 @@
 .l-pageContainer {
-	// height: 100vh;
+	height: 100vh;
 	display: flex;
+
   flex-wrap: wrap;
-	flex-direction: column;
+	flex-direction: row;
   align-content: space-between;
 
 	.l-pageHeader {
@@ -37,7 +38,11 @@
 	}
 
   .l-pageContentWrapper {
-    flex: 1;
+    // flex: 1;
+    align-self: stretch;
+
+    // min-height: 800px;
+
     display: flex;
     flex-direction: column;
 
