@@ -1,8 +1,10 @@
 import $ from 'jquery';
-var Masonry = require('masonry-layout');
-var jQueryBridget = require('jquery-bridget');
+import { paintMasonryLayout } from './masonry-layout';
 
-jQueryBridget( 'masonry', Masonry, $ );
+// var Masonry = require('masonry-layout');
+// var jQueryBridget = require('jquery-bridget');
+
+// jQueryBridget( 'masonry', Masonry, $ );
 
 $(function () {
 
@@ -29,11 +31,14 @@ $(function () {
     menuWrapper.classList.remove('showSearchPanel');
   })
 
-  const $grid = $('.js-imageGridContainer').masonry({
-    itemSelector: '.js-grid',
-    percentPosition: true,
-    columnWidth: '.js-gridSizer'
-  });
+  // const $imageContainer = $('.js-imageGridContainer').masonry({
+  //   itemSelector: '.js-grid',
+  //   percentPosition: true,
+  //   columnWidth: '.js-gridSizer'
+  // });
 
-  $grid.masonry();
+  // $imageContainer.masonry();
+
+  paintMasonryLayout();
+
 });
