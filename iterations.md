@@ -2,20 +2,19 @@
 
 ## Iteration 45. _Watching "Storage" event (HTML version)_
 
-### Branch: windown-event-html-02 
-+ based on windown-event-html
+### Branch: window-event-html-02 
++ based on window-event-html
 
 ### Design Goals:
 + Watching"Storage" change event to monitor the updates of local storage content.
 
 ### Developer's Notes
 1. Refactor the message-form to provide watchMessageChangeEvent()
-2. The branch name bears a typo.
 
 ### Steps to use the iteration
 1. Clone the project
   ```
-  git clone -b windown-event-html-02 [github repository] windown-event-html-02
+  git clone -b window-event-html-02 [github repository] window-event-html-02
   ```
 2. Install the NPM packages:
   ```
@@ -29,8 +28,8 @@
 ---
 ## Iteration 44. _Utlizing "Storage" event (HTML version)_
 
-### Branch: windown-event-html 
-+ based on windown-event
+### Branch: window-event-html 
++ based on window-event
 
 ### Design Goals:
 + Utlizing window "Storage" event to monitor the updates of local storage content.
@@ -38,12 +37,11 @@
 ### Developer's Notes
 1. Created SetMessage and GetMessage pages (HTML)
 2. Cleaned the project to retain only HTML pages.
-3. The branch name bears a typo.
 
 ### Steps to use the iteration
 1. Clone the project
   ```
-  git clone -b windown-event-html [github repository] windown-event-html
+  git clone -b window-event-html [github repository] window-event-html
   ```
 2. Install the NPM packages:
   ```
