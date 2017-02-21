@@ -20165,12 +20165,16 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _pureFunctions = require('./pure-functions');
 
+var _ramda = require('ramda');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // var Masonry = require('masonry-layout');
 // var jQueryBridget = require('jquery-bridget');
 
 // jQueryBridget( 'masonry', Masonry, $ );
+
+// import { paintMasonryLayout } from './masonry-layout';
 
 (0, _jquery2.default)(function () {
 
@@ -20206,15 +20210,55 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   // $imageContainer.masonry();
 
   // paintMasonryLayout();
+
   var x = (0, _pureFunctions.add5ThenMultiply7)(4);
   console.log('x', x);
 
   var y = (0, _pureFunctions.add5ThenMultiply7)(7);
   console.log('y', y);
-});
-// import { paintMasonryLayout } from './masonry-layout';
 
-},{"./pure-functions":312,"jquery":1}],312:[function(require,module,exports){
+  // Point free style:
+  var shouldBeTrue = [6, 3, 4, 5, 2, 1];
+  var shouldBeFalse = [3, 4, 5, 2, 1];
+
+  // version #1
+  // const isFirstBiggest = xs =>
+  //   xs[0] === xs.sort((a, b) => b - a)[0];
+
+  // version #2
+  // const isFirstBiggest = converge(
+  //   equals, [
+  //     xs => xs[0],
+  //     xs => xs.sort((a, b) => b - a)[0]
+  //   ]
+  // );
+
+  // version #3
+  // const isFirstBiggest = converge(
+  //   equals, [
+  //     head,
+  //     xs => head(xs.sort((a, b) => b - a))
+  //   ]
+  // );
+
+  // version #4
+  // const isFirstBiggest = converge(
+  //   equals, [
+  //     head,
+  //     xs => head(sort(descend(identity))(xs))
+  //   ]
+  // );
+
+  var isFirstBiggest = (0, _ramda.converge)(_ramda.equals, [_ramda.head, (0, _ramda.compose)(_ramda.head, (0, _ramda.sort)((0, _ramda.descend)(_ramda.identity)))]);
+
+  console.log(isFirstBiggest(shouldBeTrue));
+  console.log(isFirstBiggest(shouldBeFalse));
+
+  // console.log(isFirstBiggest(shouldBeTrue));
+  // console.log(isFirstBiggest(shouldBeFalse));
+});
+
+},{"./pure-functions":312,"jquery":1,"ramda":2}],312:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20232,6 +20276,7 @@ var multiply7 = function multiply7(value) {
   return value * 7;
 };
 
+// Function composition:
 var add5ThenMultiply7 = exports.add5ThenMultiply7 = (0, _ramda.compose)(multiply7, add5);
 
 },{"ramda":2}]},{},[311])
