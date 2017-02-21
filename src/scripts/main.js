@@ -1,5 +1,7 @@
 import $ from 'jquery';
-import { paintMasonryLayout } from './masonry-layout';
+// import { paintMasonryLayout } from './masonry-layout';
+
+import { add5ThenMultiply7 } from './pure-functions';
 
 // var Masonry = require('masonry-layout');
 // var jQueryBridget = require('jquery-bridget');
@@ -39,6 +41,11 @@ $(function () {
 
   // $imageContainer.masonry();
 
-  paintMasonryLayout();
+  // paintMasonryLayout();
+const x = add5ThenMultiply7(4);
+console.log('x', x);
+
+const y = add5ThenMultiply7(7);
+console.log('y', y);
 
 });
