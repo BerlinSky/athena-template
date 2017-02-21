@@ -7,8 +7,8 @@
 + Pure functions will always produce the same output given the same input.
 + Pure functions have no side effects.
 + Pure functions lead to immutability.
-+ Functional Programming does not have no variables.
-+ Functional Programming uses recursion instead of looping
++ Pure functions have no variables.
++ Pure functions use recursion instead of looping
 
 #### Pure Function
 
