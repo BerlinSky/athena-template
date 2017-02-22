@@ -20165,14 +20165,9 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _pureFunctions = require('./pure-functions');
 
-var _ramda = require('ramda');
+var _pointFree = require('./point-free');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// var Masonry = require('masonry-layout');
-// var jQueryBridget = require('jquery-bridget');
-
-// jQueryBridget( 'masonry', Masonry, $ );
 
 // import { paintMasonryLayout } from './masonry-layout';
 
@@ -20201,64 +20196,63 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     menuWrapper.classList.remove('showSearchPanel');
   });
 
-  // const $imageContainer = $('.js-imageGridContainer').masonry({
-  //   itemSelector: '.js-grid',
-  //   percentPosition: true,
-  //   columnWidth: '.js-gridSizer'
-  // });
-
-  // $imageContainer.masonry();
-
-  // paintMasonryLayout();
-
+  // Pure function and fucntion composition:
   var x = (0, _pureFunctions.add5ThenMultiply7)(4);
   console.log('x', x);
 
   var y = (0, _pureFunctions.add5ThenMultiply7)(7);
   console.log('y', y);
 
-  // Point free style:
-  var shouldBeTrue = [6, 3, 4, 5, 2, 1];
-  var shouldBeFalse = [3, 4, 5, 2, 1];
+  // Point Free fuction:
+  var bigHead = [21, 6, 3, 4, 5, 2, 1];
+  var smallHead = [2, 16, 3, 4, 5, 18, 2, 1];
 
-  // version #1
-  // const isFirstBiggest = xs =>
-  //   xs[0] === xs.sort((a, b) => b - a)[0];
-
-  // version #2
-  // const isFirstBiggest = converge(
-  //   equals, [
-  //     xs => xs[0],
-  //     xs => xs.sort((a, b) => b - a)[0]
-  //   ]
-  // );
-
-  // version #3
-  // const isFirstBiggest = converge(
-  //   equals, [
-  //     head,
-  //     xs => head(xs.sort((a, b) => b - a))
-  //   ]
-  // );
-
-  // version #4
-  // const isFirstBiggest = converge(
-  //   equals, [
-  //     head,
-  //     xs => head(sort(descend(identity))(xs))
-  //   ]
-  // );
-
-  var isFirstBiggest = (0, _ramda.converge)(_ramda.equals, [_ramda.head, (0, _ramda.compose)(_ramda.head, (0, _ramda.sort)((0, _ramda.descend)(_ramda.identity)))]);
-
-  console.log(isFirstBiggest(shouldBeTrue));
-  console.log(isFirstBiggest(shouldBeFalse));
-
-  // console.log(isFirstBiggest(shouldBeTrue));
-  // console.log(isFirstBiggest(shouldBeFalse));
+  console.log('isBigHead?', (0, _pointFree.isBigHead)(bigHead));
+  console.log('isBigHead?', (0, _pointFree.isBigHead)(smallHead));
 });
 
-},{"./pure-functions":312,"jquery":1,"ramda":2}],312:[function(require,module,exports){
+},{"./point-free":312,"./pure-functions":313,"jquery":1}],312:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isBigHead = undefined;
+
+var _ramda = require('ramda');
+
+// version #1
+// export const isBigHead = list =>
+//   list[0] === list.sort((a, b) => b - a)[0];
+
+// version #2
+// export const isBigHead = converge(
+//   equals, [
+//     list => list[0],
+//     list => list.sort((a, b) => b - a)[0]
+//   ]
+// );
+
+// version #3
+// export const isBigHead = converge(
+//   equals, [
+//     head,
+//     list => head(list.sort((a, b) => b - a))
+//   ]
+// );
+
+// version #4
+// export const isBigHead = converge(
+//   equals, [
+//     head,
+//     list => head(sort(descend(identity))(list))
+//   ]
+// );
+
+// version #5
+var isBigHead = exports.isBigHead = (0, _ramda.converge)(_ramda.equals, [_ramda.head, (0, _ramda.compose)(_ramda.head, (0, _ramda.sort)((0, _ramda.descend)(_ramda.identity)))]);
+
+},{"ramda":2}],313:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
