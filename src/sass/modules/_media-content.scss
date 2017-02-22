@@ -115,7 +115,60 @@
           max-width: 25%;
         }
 
-        .imageFrame {
+        .imagePanel__frame {
+          position: relative;
+          background-color: rgba(0,0,0,.15);
+          transition: background-color .2s ease-in-out;
+          width: 100%;
+          height: 100%;
+
+          a.frammeLink:hover {
+            .frammeTitle {
+              color: #111;
+            }
+          }
+
+          a.frammeLink:active, a.frammeLink:hover {
+            outline: 0;
+          }
+
+          a.frammeLink {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 18px 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            color: #999;
+            transition: color .2s ease-in-out,opacity .2s ease-in-out;
+            background-color: transparent;
+
+            .frammeTitle {
+              display: inline-block;
+              max-width: 100%;
+              font-size: 18px;
+              line-height: 1.3;
+              flex: 1;
+
+              margin: 0;
+              color: #fff;
+              text-shadow: 0 1px 1px rgba(0,0,0,.15);
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              letter-spacing: .04em;
+
+              text-transform: uppercase;
+            }
+          }
 
         }
       }
