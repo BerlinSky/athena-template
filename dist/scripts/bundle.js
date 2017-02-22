@@ -20167,9 +20167,14 @@ var _pureFunctions = require('./pure-functions');
 
 var _pointFree = require('./point-free');
 
+var _parseQueryString = require('./parse-query-string');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var queryString = "?page=landing&user=angela&location=nyc&ts=now";
 // import { paintMasonryLayout } from './masonry-layout';
+
+console.log('parsedString: ', (0, _parseQueryString.parseQueryString)(queryString));
 
 (0, _jquery2.default)(function () {
 
@@ -20211,7 +20216,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   console.log('isBigHead?', (0, _pointFree.isBigHead)(smallHead));
 });
 
-},{"./point-free":312,"./pure-functions":313,"jquery":1}],312:[function(require,module,exports){
+},{"./parse-query-string":312,"./point-free":313,"./pure-functions":314,"jquery":1}],312:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.parseQueryString = undefined;
+
+var _ramda = require('ramda');
+
+// Step #1
+// export const parseQueryString = tail();
+
+// Step #2
+// export const parseQueryString = compose(split('&'), tail());
+
+// Step #3
+var parseQueryString = exports.parseQueryString = (0, _ramda.compose)(_ramda.fromPairs, (0, _ramda.map)((0, _ramda.split)('=')), (0, _ramda.split)('&'), (0, _ramda.tail)());
+
+},{"ramda":2}],313:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20252,7 +20276,7 @@ var _ramda = require('ramda');
 // version #5
 var isBigHead = exports.isBigHead = (0, _ramda.converge)(_ramda.equals, [_ramda.head, (0, _ramda.compose)(_ramda.head, (0, _ramda.sort)((0, _ramda.descend)(_ramda.identity)))]);
 
-},{"ramda":2}],313:[function(require,module,exports){
+},{"ramda":2}],314:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -2,9 +2,11 @@ import $ from 'jquery';
 // import { paintMasonryLayout } from './masonry-layout';
 
 import { add5ThenMultiply7 } from './pure-functions';
-
-
 import { isBigHead } from './point-free';
+import { parseQueryString } from './parse-query-string';
+
+const queryString = "?page=landing&user=angela&location=nyc&ts=now";
+console.log('parsedString: ', parseQueryString(queryString));
 
 
 $(function () {
