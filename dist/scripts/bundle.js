@@ -20172,8 +20172,6 @@ var _parseQueryString = require('./parse-query-string');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var queryString = "?page=landing&user=angela&location=nyc&ts=now";
-// import { paintMasonryLayout } from './masonry-layout';
-
 console.log('parsedString: ', (0, _parseQueryString.parseQueryString)(queryString));
 
 (0, _jquery2.default)(function () {
