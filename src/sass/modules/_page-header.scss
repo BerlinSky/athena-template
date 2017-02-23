@@ -107,6 +107,8 @@
       }
 
       .l-searchContainer {
+        visibility: hidden;
+
         display: flex;
 
         flex-direction: column;
