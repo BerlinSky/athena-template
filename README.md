@@ -1,23 +1,18 @@
-# Web Application Starter Kit
+# Application
 
-### Create a site menu template: site-menu-3.html
+### Design goals
 
-### Branch: site-menu-3
+### Branch: master
 
-### Design goals:
-In the desktop mode: Create an animated menu.
+### Notes:
+
 
 ### Steps to use the starter kit
 
-##### #1 Clone the project
+##### Clone the project
 
-##### #2 Install the NPM packages:
+##### Start the app by running gulp:
 ```
-npm install
-```
-
-##### #3 Start the app by running gulp:
-```
-npm strt
+npm start
 ```
 

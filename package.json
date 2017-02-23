@@ -1,7 +1,7 @@
 {
   "name": "athena",
   "version": "1.0.0",
-  "description": "The template project for Ahten book list app",
+  "description": "The template project for Athena book list app",
   "scripts": {
     "test": "jest",
     "start": "gulp"
