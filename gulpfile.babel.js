@@ -2,8 +2,6 @@ import gulp from 'gulp';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
-import jade from 'gulp-jade';
-import data from 'gulp-data';
 import eslint from 'gulp-eslint';
 import exorcist from 'exorcist';
 import browserSync from 'browser-sync';
@@ -15,14 +13,10 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import prefix from 'gulp-autoprefixer';
 import cssnano from 'gulp-cssnano';
-// var fontAwesome = require('node-font-awesome');
-import fontAwesome from 'node-font-awesome';
-
 import util from 'gulp-util';
 
 const config = {
 	paths: {
-    jade: './src/*.jade',
 		html: './src/*.html',
 		js: './src/scripts/**/*.js?',
 		sass: './src/sass/**/*.scss',
@@ -74,16 +68,7 @@ gulp.task('lint', () => {
 gulp.task('html', () => {
 	log('html task starts');
 
-	gulp.src(config.paths.jade)
-    .pipe(data(function() {
-        return require('./src/jade/data.json');
-      }
-    ))
-		.pipe(jade(
-			{
-				pretty: true
-			}
-		))
+	gulp.src(config.paths.html)
 		.pipe(gulp.dest(config.paths.dist));
 
 	log('html task ends');
@@ -95,7 +80,6 @@ gulp.task('sass', () => {
   gulp.src([config.paths.sass])
 	  .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: [fontAwesome.scssPath]
 	    }).on('error', sass.logError))
     .pipe(prefix({
         browsers: ['last 2 versions', 'ie 11'],
@@ -114,7 +98,7 @@ gulp.task('html-watch', ['html'], () => sync.reload());
 gulp.task('sass-watch', ['sass'], () => sync.reload());
 
 gulp.task('watch', ['serve'], () => {
-  gulp.watch('src/*.jade', ['html-watch'])
+  gulp.watch('src/*.html', ['html-watch'])
   gulp.watch(config.paths.sass, ['sass-watch'])
   gulp.watch('src/scripts/**/*', ['js-watch'])
 })
