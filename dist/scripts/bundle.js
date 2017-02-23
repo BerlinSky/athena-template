@@ -12657,52 +12657,19 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _mobileMenu = require('./mobile-menu');
+
 var _masonryLayout = require('./masonry-layout');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// var Masonry = require('masonry-layout');
-// var jQueryBridget = require('jquery-bridget');
-
-// jQueryBridget( 'masonry', Masonry, $ );
-
 (0, _jquery2.default)(function () {
 
-  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
-    e.preventDefault();
-
-    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
-    mobileMenu.toggle("slow");
-  });
-
-  var menuWrapper = document.querySelector('.js-menuWrapper');
-
-  var showSearchPanel = document.querySelector('.js-showSearchPanel');
-  showSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuWrapper.classList.add('showSearchPanel');
-  });
-
-  var hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-  hideSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuWrapper.classList.remove('showSearchPanel');
-  });
-
-  // const $imageContainer = $('.js-imageGridContainer').masonry({
-  //   itemSelector: '.js-grid',
-  //   percentPosition: true,
-  //   columnWidth: '.js-gridSizer'
-  // });
-
-  // $imageContainer.masonry();
-
+  (0, _mobileMenu.initMobileMenu)();
   (0, _masonryLayout.paintMasonryLayout)();
 });
 
-},{"./masonry-layout":12,"jquery":7}],12:[function(require,module,exports){
+},{"./masonry-layout":12,"./mobile-menu":13,"jquery":7}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12743,5 +12710,58 @@ function paintMasonryLayout() {
   }
 }
 
-},{"imagesloaded":5,"jquery":7,"jquery-bridget":6,"masonry-layout":8}]},{},[11])
+},{"imagesloaded":5,"jquery":7,"jquery-bridget":6,"masonry-layout":8}],13:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.initMobileMenu = initMobileMenu;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function initMobileMenu() {
+
+  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
+    e.preventDefault();
+
+    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
+    mobileMenu.toggle("slow");
+  });
+
+  var menuWrapper = (0, _jquery2.default)('.js-menuWrapper');
+  var showSearchPanel = (0, _jquery2.default)('.js-showSearchPanel');
+
+  showSearchPanel.click(function (e) {
+    e.preventDefault();
+
+    menuWrapper.addClass('showSearchPanel');
+  });
+
+  // showSearchPanel.addEventListener('click', (e) => {
+  //   e.preventDefault();
+
+  //   menuWrapper.classList.add('showSearchPanel');
+  // })
+
+  var hideSearchPanel = (0, _jquery2.default)('.js-hideSearchPanel');
+  hideSearchPanel.click(function (e) {
+    e.preventDefault();
+
+    menuWrapper.removeClass('showSearchPanel');
+  });
+
+  // const hideSearchPanel = document.querySelector('.js-hideSearchPanel');
+  // hideSearchPanel.addEventListener('click', (e) => {
+  //   e.preventDefault();
+
+  //   menuWrapper.classList.removeClass('showSearchPanel');
+  // })
+}
+
+},{"jquery":7}]},{},[11])
 //# sourceMappingURL=bundle.js.map
