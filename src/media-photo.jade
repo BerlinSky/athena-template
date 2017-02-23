@@ -1,0 +1,105 @@
+extends jade/includes/base
+
+mixin menuItems(...items)
+	each item in items
+		li.menuItem
+			a(href='#')
+				span= item
+
+block pageTitle
+	title Reading Life
+
+block bodyContent
+	div.l-pageContainer.pageContainer
+		div.l-pageHeader.pageHeader
+			div.l-navContainer.navContainer
+				div.l-logoContainer.logoContainer
+					div.imageFrame
+						img(alt='img' src='./images/site-logo.png').imageResponsive
+					//- h4.title Great Books
+				div.l-toggleMenuContainer.toggleMenuContainer
+					a(href='#').js-toggleMobileMenu
+						i.fa.fa-bars.fa-2x
+
+			div.l-menuWrapper.menuWrapper.js-menuWrapper
+				div.l-menuContainer.menuContainer.js-mobileMenuContainer
+					ul.menuList
+						+menuItems('Home')
+						li.menuItem
+							a(href='#').currentSelection
+								span Color Palette
+						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Buttons')
+
+				div.l-searchContainer.searchContainer.js-showSearchPanel
+					a.searchButton.searchButton--default
+						i.fa.fa-search
+				div.l-searchWrapper.searchWrapper.js-searchPanel
+					form(action="#" method='post').l-searchWrapper__form
+						a.searchButton.searchButton--whiteSquare
+							i.fa.fa-search
+						input(type="text" name="s" placeholder="Enter your search").searchInput
+						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
+							i.fa.fa-close
+
+		div.l-pageContentWrapper.pageContentWrapper
+			div.l-contentContainer.contentContainer.contentContainer--discographyContent
+				.imageGridContinaer.js-imageGridContainer
+					.gridSizer.js-gridSizer
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/canada.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/orange-tree.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/coffee.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/computer.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/submerged.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/couple.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/family.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/look-out.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/fruit.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/girl.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/one-world-trade.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/landscape.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/music.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/drizzle.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/nature.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/office.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/contrail.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/orange-tree.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/people.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/flight-formation.jpg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/pug.jpeg')
+					.grid.js-grid
+						img(alt='img' src='./images/gallery-cover/work.jpeg')
+
+			div.l-contentFooterContainer.contentFooterContainer
+				div.footerPanel.footerPanel--links
+					div.footerPanel__item.footerPanel__item--default
+						ul
+							li
+								a(href="/help" target="") Help
+							li
+								a(href="/help" target="") Newsletter
+							li
+								a(href="/help" target="") Terms of Use
+							li
+								a(href="/help" target="") Privacy Policy
+					div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site
