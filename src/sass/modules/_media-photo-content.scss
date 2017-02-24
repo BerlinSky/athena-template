@@ -23,6 +23,9 @@
   .gridSizer,
   .grid {
     width: 32%;
+
+    /* vertical gutter */
+    margin-bottom: 20px;
   }
 
   .imageGallery {

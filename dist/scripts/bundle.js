@@ -12695,11 +12695,8 @@ function paintMasonryLayout() {
   var $container = (0, _jquery2.default)('.js-imageGridContainer');
   var griderSizer = (0, _jquery2.default)('.js-gridSizer');
 
-  console.log('gutter', griderSizer.attr('data-grid-gutter'));
-
   if ($container) {
     var gutterSize = parseInt(griderSizer.attr('data-grid-gutter')) || 0;
-    // const gutterSize = 10;
 
     var $imageContainer = $container.masonry({
       itemSelector: '.js-grid',
@@ -12707,9 +12704,6 @@ function paintMasonryLayout() {
       columnWidth: '.js-gridSizer',
       gutter: gutterSize
     });
-
-    // export
-    // $imageContainer.masonry();
 
     $imageContainer.imagesLoaded().progress(function () {
       $imageContainer.masonry('layout');
