@@ -16,7 +16,6 @@ block bodyContent
 				div.l-logoContainer.logoContainer
 					div.imageFrame
 						img(alt='img' src='./images/site-logo.png').imageResponsive
-					//- h4.title Great Books
 				div.l-toggleMenuContainer.toggleMenuContainer
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
@@ -42,11 +41,12 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			div.l-contentContainer.contentContainer.contentContainer--discographyContent
+			div.l-contentContainer.contentContainer.contentContainer--mediaPhotoContent
 				.imageGridContinaer.js-imageGridContainer
-					.gridSizer.js-gridSizer
+					.gridSizer.js-gridSizer(data-grid-gutter="20")
 					.grid.js-grid
-						img(alt='img' src='./images/gallery-cover/canada.jpeg')
+						a(href="/")
+							img(alt='img' src='./images/gallery-cover/canada.jpeg')
 					.grid.js-grid
 						img(alt='img' src='./images/orange-tree.jpg')
 					.grid.js-grid
