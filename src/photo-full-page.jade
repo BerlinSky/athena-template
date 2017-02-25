@@ -1,0 +1,16 @@
+extends jade/includes/base
+
+mixin menuItems(...items)
+	each item in items
+		li.menuItem
+			a(href='#')
+				span= item
+
+block pageTitle
+	title Reading Life
+
+block bodyContent
+	div.l-pageContainer.pageContainer
+		.pageContainer--fullPagePhotoContent
+			img(alt='img' src='./images/gallery-cover/canada.jpeg')
+
