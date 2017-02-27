@@ -20207,6 +20207,34 @@ var transform = exports.transform = function transform() {
 },{"ramda":2}],312:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.declarativeMap = declarativeMap;
+
+var _ramda = require('ramda');
+
+var _ramda2 = _interopRequireDefault(_ramda);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var products = [{ name: 'Jeans', price: 80, category: 'clothes', stock: 103 }, { name: 'Hoodie', price: 50, category: 'clothes', stock: 20 }, { name: 'Sneakers', price: 120, category: 'clothes', stock: 30 }, { name: 'Cards', price: 35, category: 'games', stock: 15 }, { name: 'iPhone', price: 655, category: 'electronics', stock: 5 }, { name: 'Sauce Pan', price: 180, category: 'houseware', stock: 201 }];
+var predicate = _ramda2.default.where({
+  category: _ramda2.default.equals('clothes'),
+  stock: _ramda2.default.lt(_ramda2.default.__, 250),
+  price: _ramda2.default.lt(_ramda2.default.__, 100)
+});
+
+function declarativeMap() {
+  var getResults = _ramda2.default.filter(predicate);
+  var result = getResults(products);
+
+  console.table(result);s;
+}
+
+},{"ramda":2}],313:[function(require,module,exports){
+'use strict';
+
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -20216,6 +20244,8 @@ var _mobileMenu = require('./mobile-menu');
 var _dataTransoform = require('./data-transoform');
 
 var _projectProperties = require('./project-properties');
+
+var _declarativeMap = require('./declarative-map');
 
 var _ramda = require('ramda');
 
@@ -20234,9 +20264,11 @@ console.log(result);
   (0, _dataTransoform.transform)();
 
   (0, _projectProperties.extractSubset)();
+
+  (0, _declarativeMap.declarativeMap)();
 });
 
-},{"./data-transoform":311,"./mobile-menu":313,"./project-properties":314,"jquery":1,"ramda":2}],313:[function(require,module,exports){
+},{"./data-transoform":311,"./declarative-map":312,"./mobile-menu":314,"./project-properties":315,"jquery":1,"ramda":2}],314:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20289,7 +20321,7 @@ function initMobileMenu() {
   // })
 }
 
-},{"jquery":1}],314:[function(require,module,exports){
+},{"jquery":1}],315:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20323,5 +20355,5 @@ var extractSubset = exports.extractSubset = function extractSubset() {
   console.table(result);
 };
 
-},{"ramda":2}]},{},[312])
+},{"ramda":2}]},{},[313])
 //# sourceMappingURL=bundle.js.map

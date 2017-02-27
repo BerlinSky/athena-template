@@ -4,6 +4,8 @@ import { initMobileMenu } from './mobile-menu';
 import { transform } from './data-transoform';
 import { extractSubset } from './project-properties';
 
+import { declarativeMap } from './declarative-map';
+
 import { path } from 'ramda';
 const data = { a: { b: 3 } };
 const pathParam = ['a', 'b'];
@@ -19,4 +21,5 @@ $(function () {
 
   extractSubset();
 
+  declarativeMap();
 });
