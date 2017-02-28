@@ -23,42 +23,39 @@
     width: 100%;
     height: 100%;
   }
-}
 
-.paletteBlock {
-  border: none;
-  margin: 0 0 0 0;
-  padding: 15px;
+  .imageNavPanel {
+    position: absolute;
+    height: 80%;
+    top: 400px;
+    // top: 0;
+    // z-index: 500;
 
-  .paletteBlock__palette {
-    height: 70px;
-    border-radius: 6px;
-    text-transform: uppercase;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .paletteBlock__info {
-    line-height: 1.6;
-    margin: 1rem 0.5rem;
-    font-size: 1rem;
-
-    div {
-      margin-bottom: 0.3rem;
+    i.fa {
+      color: #fff;
     }
   }
 
-  .paletteBlock__usage {
-    margin: 1rem 0.5rem;
-    padding: 0;
-    list-style-type: none;
-    line-height: 1.6;
+  .imageNavPanel--left {
+    left: 30px;
+  }
 
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
+  .imageNavPanel--right {
+    right: 30px;
+  }
+
+  .imageTitle {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    @include break(md) {
+      left: 20px;
+      width: 100%;
+      text-align: left;
     }
+    color: #fff;
   }
 }
