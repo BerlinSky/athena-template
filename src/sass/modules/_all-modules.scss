@@ -8,9 +8,8 @@
 @import "discography-content";
 @import "media-photo-content";
 
-
 .pageContainer--fullPagePhotoContent {
-  background-color: paleturquoise;
+  // background-color: paleturquoise;
   width: 100%;
 
   display: flex;
@@ -27,18 +26,25 @@
   .imageNavPanel {
     position: absolute;
     height: 90%;
-    background-color: blue;
-    // top: 400px;
     top: 0;
     width: 15%;
-    // z-index: 500;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    i {
+      visibility: hidden;
+    }
+
     i.fa {
       color: #fff;
+    }
+  }
+
+  .imageNavPanel:hover {
+    i {
+      visibility: visible;
     }
   }
 
