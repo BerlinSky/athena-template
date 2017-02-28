@@ -26,10 +26,16 @@
 
   .imageNavPanel {
     position: absolute;
-    height: 80%;
-    top: 400px;
-    // top: 0;
+    height: 90%;
+    background-color: blue;
+    // top: 400px;
+    top: 0;
+    width: 15%;
     // z-index: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     i.fa {
       color: #fff;
@@ -37,11 +43,11 @@
   }
 
   .imageNavPanel--left {
-    left: 30px;
+    left: 0;
   }
 
   .imageNavPanel--right {
-    right: 30px;
+    right: 0;
   }
 
   .imageTitle {
