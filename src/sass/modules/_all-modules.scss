@@ -23,6 +23,17 @@
     height: 100%;
   }
 
+  a.navToGallaryPanel {
+    // background-color: tomato;
+    position: absolute;
+    height: 90%;
+    width: 70%;
+    top: 0;
+    left: 15%;
+    z-index: 800;
+    border: none;
+  }
+
   a.imageNavPanel {
     text-decoration: none;
   }
