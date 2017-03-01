@@ -23,11 +23,16 @@
     height: 100%;
   }
 
+  a.imageNavPanel {
+    text-decoration: none;
+  }
+
   .imageNavPanel {
     position: absolute;
     height: 90%;
     top: 0;
     width: 15%;
+    border: none;
 
     display: flex;
     justify-content: center;
@@ -43,6 +48,7 @@
   }
 
   .imageNavPanel:hover {
+    cursor: pointer;
     i {
       visibility: visible;
     }
