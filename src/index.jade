@@ -9,15 +9,65 @@ html(lang='en')
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0")
 		meta(http-equiv="Content-Language" content="en")
 
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
 		link(rel="icon" type="image/png" href="favicon.png")
 		link(rel="stylesheet" href="styles/font-awesome.min.css")
 		link(rel="stylesheet" href="styles/main.css")
 
+
 	body
 
-		div.l-siteContainer.l-header-fixed.l-footer-fixed.siteContainer
-			navigation.l-navigation.navigation [Header Section Goes Here ...]
+		.container
+			.top-view
+				.color-layer
+					.navbar
+						a(href="#")
+							i.icon.burger
+						a(href="#")
+							i.icon.search.right
+					.header
+						h1 Good Morning!
+						.profile-container
+							img(src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg").profile.main 
+							.notification 
+								span 3
+					.month-selection
+						i.icon.arrow-left
+						i.icon.right.arrow-right
+						span.month February
 
-			footer.l-footer.footer [Footer Section Goes Here ...]
+			.bottom-view
+				.week-container
+					ul.week
+						li.day.day-names sun
+						li.day.day-names mon
+						li.day.day-names tue
+						li.day.day-names wed
+						li.day.day-names thu
+						li.day.day-names fri
+						li.day.day-names sat
+					ul.week
+						li.day 1
+						li.day 2
+						li.day 3
+						li.day 4
+						li.day 5
+						li.day 6
+						li.day 7
+				
+				.entry-container
+					.entry
+						img(src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg").profile
+						span.title New subpage for Ashley
+						span.time 8 - 10am
+					.entry
+						img(src="https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg").profile
+						span.title Catch up with Jina
+						span.time 11 - 12am hangouts
+					.entry
+						img(src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg").profile
+						span.title Lunch with Victor
+						span.time 12am Restaurant
 
-		script(src="scripts/bundle.js")
+				.actionbutton

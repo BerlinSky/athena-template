@@ -6,16 +6,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0">
-    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Language" content="en"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="l-siteContainer l-header-fixed l-footer-fixed siteContainer">
-      <navigation class="l-navigation navigation">[Header Section Goes Here ...]</navigation>
-      <footer class="l-footer footer">[Footer Section Goes Here ...]</footer>
+    <div class="container">
+      <div class="top-view">
+        <div class="color-layer">
+          <div class="navbar"><a href="#"><i class="icon burger"></i></a><a href="#"><i class="icon search right"></i></a></div>
+          <div class="header">
+            <h1>Good Morning!</h1>
+            <div class="profile-container"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" class="profile main">
+              <div class="notification"> <span>3</span></div>
+            </div>
+          </div>
+          <div class="month-selection"><i class="icon arrow-left"></i><i class="icon right arrow-right"></i><span class="month">February</span></div>
+        </div>
+      </div>
+      <div class="bottom-view">
+        <div class="week-container">
+          <ul class="week">
+            <li class="day day-names">sun</li>
+            <li class="day day-names">mon</li>
+            <li class="day day-names">tue</li>
+            <li class="day day-names">wed</li>
+            <li class="day day-names">thu</li>
+            <li class="day day-names">fri</li>
+            <li class="day day-names">sat</li>
+          </ul>
+          <ul class="week">
+            <li class="day">1</li>
+            <li class="day">2</li>
+            <li class="day">3</li>
+            <li class="day">4</li>
+            <li class="day">5</li>
+            <li class="day">6</li>
+            <li class="day">7</li>
+          </ul>
+        </div>
+        <div class="entry-container">
+          <div class="entry"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg" class="profile"><span class="title">New subpage for Ashley</span><span class="time">8 - 10am</span></div>
+          <div class="entry"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg" class="profile"><span class="title">Catch up with Jina</span><span class="time">11 - 12am hangouts</span></div>
+          <div class="entry"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg" class="profile"><span class="title">Lunch with Victor</span><span class="time">12am Restaurant</span></div>
+        </div>
+        <div class="actionbutton"></div>
+      </div>
     </div>
-    <script src="scripts/bundle.js"></script>
   </body>
 </html>
