@@ -8,6 +8,28 @@
 @import "discography-content";
 @import "media-photo-content";
 
+.validationForm {
+  font-size: 1.0em;
+  color: #333;
+  width: 650px;
+  background-color: tomato;
+
+  p {
+    padding: 5px 10px 7px;
+    margin: 0;
+  }
+
+  label {
+    color: #333;
+    width: 200px;
+    display: inline-block;
+    line-height: 1.8;
+    vertical-align: top;
+    cursor: hand;
+  }
+}
+
+
 .pageContainer--fullPagePhotoContent {
   // background-color: paleturquoise;
   width: 100%;

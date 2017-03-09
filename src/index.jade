@@ -10,6 +10,37 @@ block bodyContent
 		.l-pageContentWrapper.pageContentWrapper
 			div.l-contentContainer.contentContainer
 				div
-					span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptatem vel ipsam? Cum sint quisquam mollitia magni laborum dolorem odit.
+					span Let's validate our form
+					form(id="commentForm", method="get", action="").validationForm
+						p
+							label(for="cname") Name (required, at least 2 characters)
+							input(id="cname", name="name", minlength="2", type="text", required)
+						p
+							label(for="cemail") E-Mail (required)
+							input(id="cemail", type="email", name="email", required)
+						p
+							input(type="submit", value="Submit").submit
+				div
+					form(id="signupForm", method="get", action="").validationForm
+						p
+							label(for="firstname") Firstname
+							input(id="firstname", name="firstname", type="text")
+						p
+							label(for="lastname") lastname
+							input(id="lastname", name="lastname", type="text")
+						p
+							label(for="username") username
+							input(id="username", name="username", type="text")
+						p
+							label(for="password") password
+							input(id="password", name="password", type="password")
+						p
+							label(for="confirm_password") confirm_password
+							input(id="confirm_password", name="confirm_password", type="password")
+						p
+							label(for="email") email
+							input(id="email", name="email", type="email")
+						p
+							input(type="submit", value="Submit").submit
 
 		include ./jade/components/page-footer

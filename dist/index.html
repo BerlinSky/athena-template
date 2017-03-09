@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="styles/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <script type="text/javascript" src="http://mr-a.akamaihd.net/assets/js/mr/embed/mobilerider.min.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.validate.js"></script>
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script src="./scripts/jquery.validate.min.js"></script>
   </head>
   <body>
     <div class="l-pageContainer pageContainer">
@@ -48,7 +48,52 @@
       </div>
       <div class="l-pageContentWrapper pageContentWrapper">
         <div class="l-contentContainer contentContainer">
-          <div><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptatem vel ipsam? Cum sint quisquam mollitia magni laborum dolorem odit.</span></div>
+          <div><span>Let's validate our form</span>
+            <form id="commentForm" method="get" action="" class="validationForm">
+              <p>
+                <label for="cname">Name (required, at least 2 characters)</label>
+                <input id="cname" name="name" minlength="2" type="text" required>
+              </p>
+              <p>
+                <label for="cemail">E-Mail (required)</label>
+                <input id="cemail" type="email" name="email" required>
+              </p>
+              <p>
+                <input type="submit" value="Submit" class="submit">
+              </p>
+            </form>
+          </div>
+          <div>
+            <form id="signupForm" method="get" action="" class="validationForm">
+              <p>
+                <label for="firstname">Firstname</label>
+                <input id="firstname" name="firstname" type="text">
+              </p>
+              <p>
+                <label for="lastname">lastname</label>
+                <input id="lastname" name="lastname" type="text">
+              </p>
+              <p>
+                <label for="username">username</label>
+                <input id="username" name="username" type="text">
+              </p>
+              <p>
+                <label for="password">password</label>
+                <input id="password" name="password" type="password">
+              </p>
+              <p>
+                <label for="confirm_password">confirm_password</label>
+                <input id="confirm_password" name="confirm_password" type="password">
+              </p>
+              <p>
+                <label for="email">email</label>
+                <input id="email" name="email" type="email">
+              </p>
+              <p>
+                <input type="submit" value="Submit" class="submit">
+              </p>
+            </form>
+          </div>
         </div>
       </div>
       <div class="l-pageFooter contentFooterContainer">
