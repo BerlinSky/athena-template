@@ -60,8 +60,7 @@ block bodyContent
 						});
 					});
 
-				div
-					span Let's validate our form
+				div.validationFormContainer
 					form(id="commentForm", method="get", action="").validationForm
 						p
 							label(for="cname") Name (required, at least 2 characters)
@@ -71,7 +70,7 @@ block bodyContent
 							input(id="cemail", type="email", name="email", required)
 						p
 							input(type="submit", value="Submit").submit
-				div
+				div.validationFormContainer
 					form(id="signupForm", method="get", action="").validationForm
 						p
 							label(for="firstname") Firstname

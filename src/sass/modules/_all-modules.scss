@@ -12,6 +12,9 @@
   font-size: 1.0em;
   color: #333;
   width: 650px;
+  padding-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: tomato;
 
   p {
@@ -26,6 +29,9 @@
     line-height: 1.8;
     vertical-align: top;
     cursor: hand;
+  }
+  input {
+    min-width: 300px;
   }
 }
 
