@@ -11,7 +11,6 @@ block bodyContent
 			div.l-contentContainer.contentContainer
 				script(type="text/javascript").
 					$().ready(function() {
-						$("#commentForm").validate();
 						$("#signupForm").validate({
 							rules: {
 								firstname: "required",
@@ -57,16 +56,6 @@ block bodyContent
 						});
 					});
 
-				div.validationFormContainer
-					form(id="commentForm", method="get", action="").validationForm
-						p
-							label(for="cname") Name (required, at least 2 characters)
-							input(id="cname", name="name", minlength="2", type="text", required)
-						p
-							label(for="cemail") E-Mail (required)
-							input(id="cemail", type="email", name="email", required)
-						p
-							input(type="submit", value="Submit").submit
 				div.validationFormContainer
 					form(id="signupForm", method="get", action="").validationForm
 						p
