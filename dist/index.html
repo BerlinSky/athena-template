@@ -48,11 +48,6 @@
       <div class="l-pageContentWrapper pageContentWrapper">
         <div class="l-contentContainer contentContainer">
           <script type="text/javascript">
-            $.validator.setDefaults({
-            	submitHandler: function() {
-            		alert("submitted!");
-            	}
-            });
             $().ready(function() {
             	$("#commentForm").validate();
             	$("#signupForm").validate({
@@ -61,7 +56,8 @@
             			lastname: "required",
             			username: {
             				required: true,
-            				minlength: 2
+            				minlength: 2,
+            				maxlength: 10
             			},
             			password: {
             				required: true,
@@ -82,7 +78,8 @@
             			lastname: "Please enter your lastname",
             			username: {
             				required: "Please enter a username",
-            				minlength: "Your username must consist of at least 2 characters"
+            				minlength: "Your username must consist of at least 2 characters",
+            				maxlength: "Your username must consist of 10 characters or less"
             			},
             			password: {
             				required: "Please provide a password",
