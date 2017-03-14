@@ -20159,116 +20159,67 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 },{"./internal/_curry3":105}],311:[function(require,module,exports){
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.transform = undefined;
+var _jquery = require('jquery');
 
-var _ramda = require('ramda');
-
-var product = {
-  name: 'cog',
-  price: 180,
-  details: {
-    shippingInfo: {
-      weight: 7
-    }
-  }
-};
-
-// Version #1
-// const adjustProduct = p => {
-//   return merge(p, { name: toUpper(p.name)} )
-// }
-
-// Version #2:
-// const adjustProduct = evolve({
-//   name: toUpper,
-//   price: multiply(2)
-// });
-
-// version #3:
-// import { merge, toUpper } from 'ramda';
-var adjustProduct = (0, _ramda.evolve)({
-  name: _ramda.toUpper,
-  price: (0, _ramda.multiply)(2),
-  details: {
-    shippingInfo: {
-      weight: _ramda.inc
-    }
-  }
-});
-
-var transform = exports.transform = function transform() {
-  var result = adjustProduct(product);
-  console.log(result);
-};
-
-},{"ramda":2}],312:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.declarativeMap = declarativeMap;
+var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
 var _ramda2 = _interopRequireDefault(_ramda);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var products = [{ name: 'Jeans', price: 80, category: 'clothes', stock: 103 }, { name: 'Hoodie', price: 50, category: 'clothes', stock: 20 }, { name: 'Sneakers', price: 120, category: 'clothes', stock: 30 }, { name: 'Cards', price: 35, category: 'games', stock: 15 }, { name: 'iPhone', price: 655, category: 'electronics', stock: 5 }, { name: 'Sauce Pan', price: 180, category: 'houseware', stock: 201 }];
-var predicate = _ramda2.default.where({
-  category: _ramda2.default.equals('clothes'),
-  stock: _ramda2.default.lt(_ramda2.default.__, 250),
-  price: _ramda2.default.lt(_ramda2.default.__, 100)
-});
-
-function declarativeMap() {
-  var getResults = _ramda2.default.filter(predicate);
-  var result = getResults(products);
-
-  console.table(result);s;
-}
-
-},{"ramda":2}],313:[function(require,module,exports){
-'use strict';
-
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 var _mobileMenu = require('./mobile-menu');
 
-var _dataTransoform = require('./data-transoform');
-
-var _projectProperties = require('./project-properties');
-
-var _declarativeMap = require('./declarative-map');
-
-var _ramda = require('ramda');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var data = { a: { b: 3 } };
-var pathParam = ['a', 'b'];
-var result = (0, _ramda.path)(pathParam, data);
+// import { transform } from './data-transoform';
+// import { extractSubset } from './project-properties';
 
-console.log(result);
+// import { declarativeMap } from './declarative-map';
+
+// import { path } from 'ramda';
+// const data = { a: { b: 3 } };
+// const pathParam = ['a', 'b'];
+// const result = path(pathParam, data);
+
+// console.log(result);
+var add = _ramda2.default.curry(function (a, b) {
+  return a + b;
+});
+
+// const add = function(a, b) {
+//   return a + b;
+// };
+
+console.log(add(3, 4));
+
+// const flag = R.curry(() => {
+//   return true;
+// })
+
+var flag = function flag() {
+  return true;
+};
+
+console.log(flag());
+
+// const result = R.when(flag(), add());
+var result = _ramda2.default.when(flag, add(5));
+// const more = result(2, 3);
+var x = result(0);
+console.log(x);
 
 (0, _jquery2.default)(function () {
 
   (0, _mobileMenu.initMobileMenu)();
 
-  (0, _dataTransoform.transform)();
+  // transform();
 
-  (0, _projectProperties.extractSubset)();
+  // extractSubset();
 
-  (0, _declarativeMap.declarativeMap)();
+  // declarativeMap();
 });
 
-},{"./data-transoform":311,"./declarative-map":312,"./mobile-menu":314,"./project-properties":315,"jquery":1,"ramda":2}],314:[function(require,module,exports){
+},{"./mobile-menu":312,"jquery":1,"ramda":2}],312:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20321,39 +20272,5 @@ function initMobileMenu() {
   // })
 }
 
-},{"jquery":1}],315:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.extractSubset = undefined;
-
-var _ramda = require('ramda');
-
-var products = [{ name: 'Jeans', price: 80, category: "clothes" }, { name: 'Hodie', price: 60, category: "clothes" }, { name: 'Jacket', price: 120, category: "clothes" }, { name: 'Cards', price: 35, category: "games" }, { name: 'iPhone', price: 649, category: "electronics" }, { name: 'Sauce Pan', price: 100, category: "housewares" }];
-
-// version #1:
-// const result = products.map(p => ({name: p.name, price: p.price}))
-
-// version #2:
-// const result = products.map(p => pick(['name', 'price'], p));
-
-// version #3:
-// const result = products.map(pick(['name', 'price']));
-
-// version #4:
-// const getNameAndPrice = map(pick(['name', 'price']));
-// const result = getNameAndPrice(products);
-
-// version #5:
-// import { map, pick } from 'ramda';
-var getNameAndPrice = (0, _ramda.project)(['name', 'price']);
-var result = getNameAndPrice(products);
-
-var extractSubset = exports.extractSubset = function extractSubset() {
-  console.table(result);
-};
-
-},{"ramda":2}]},{},[313])
+},{"jquery":1}]},{},[311])
 //# sourceMappingURL=bundle.js.map
