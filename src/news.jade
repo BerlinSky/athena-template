@@ -62,8 +62,10 @@ block bodyContent
 			div.l-contentContainer.contentContainer.contentContainer--newsContent
 				div.newHeaderPanel
 					h2 News
-					div.imageFrame
-						img(alt='img' src='./images/header-border.png').imageResponsive
+					//- div.imageFrame
+					//- 	img(alt='img' src='./images/header-border.png').imageResponsive
+					.divider.divider--solid
+
 				div.tourNewsPanel
 					div.tourNewsBox
 						h3 Tour Dates
@@ -81,17 +83,30 @@ block bodyContent
 
 				div.otherNewsPanel
 					h3 Other News
-					div.imageFrame
-						img(alt='img' src='./images/header-border.png').imageResponsive
+					//- div.imageFrame
+					//- 	img(alt='img' src='./images/header-border.png').imageResponsive
+					.divider.divider--solid
 					div.newsList
 						div.newsListItem
 							a(href="/news?title=chanterelle") A Room of One's Own
+							p
+								span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quod doloribus dolorum asperiores ipsa labore aliquam officiis et autem saepe.
+
 						div.newsListItem
 							a(href="/news?title=chanterelle") Chanterelle
+							p
+								span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quod doloribus dolorum asperiores ipsa labore aliquam officiis et autem saepe.
+
 						div.newsListItem
 							a(href="/news?title=chanterelle") A Room of One's Own
+							p
+								span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quod doloribus dolorum asperiores ipsa labore aliquam officiis et autem saepe.
+
 						div.newsListItem
 							a(href="/news?title=chanterelle") Chanterelle
+							p
+								span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quod doloribus dolorum asperiores ipsa labore aliquam officiis et autem saepe.
+
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links

@@ -6,9 +6,23 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  background-color: #fff;
 
   @include break(md) {
     max-width: 56rem;
+    padding: 15px;
+  }
+
+  .divider {
+    display: inline-block;
+    width: 100%;
+    color: #e2e2e2;
+    height: 1px;
+    border-top-width: 1px;
+
+    &.divider--solid {
+      border-top-style: solid;
+    }
   }
 
   .newHeaderPanel {
@@ -126,13 +140,13 @@
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 400;
       line-height: 1.65;
-      margin: 0 0 1em;
+      margin: 0;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
     .newsListItem {
-      font-size: 0.825rem;
+      font-size: 0.875rem;
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 400;
       letter-spacing: 2px;
@@ -145,6 +159,20 @@
         transition: color .2s ease,border-bottom-color .2s ease;
         text-decoration: none;
         border-bottom: none;
+      }
+
+      p {
+        margin: 15px 0 30px;
+        color: #7e7e7e;
+
+        span {
+          font-family: "Source Sans Pro", sans-serif;
+          line-height: 20px;
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-transform: none;
+        }
       }
     }
   }
