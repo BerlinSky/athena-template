@@ -4,42 +4,87 @@
 @import "news-content";
 @import "tour-content";
 @import "media-content";
+@import "masonry-container";
 @import "discography-content";
+@import "media-photo-content";
 
-.paletteBlock {
-  border: none;
-  margin: 0 0 0 0;
-  padding: 15px;
+.pageContainer--fullPagePhotoContent {
+  // background-color: paleturquoise;
+  width: 100%;
 
-  .paletteBlock__palette {
-    height: 70px;
-    border-radius: 6px;
-    text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  a.navToGallaryPanel {
+    // background-color: tomato;
+    position: absolute;
+    height: 90%;
+    width: 70%;
+    top: 0;
+    left: 15%;
+    z-index: 800;
+    border: none;
+  }
+
+  a.imageNavPanel {
+    text-decoration: none;
+  }
+
+  .imageNavPanel {
+    position: absolute;
+    height: 90%;
+    top: 0;
+    width: 15%;
+    border: none;
 
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
-  .paletteBlock__info {
-    line-height: 1.6;
-    margin: 1rem 0.5rem;
-    font-size: 1rem;
+    i {
+      visibility: hidden;
+    }
 
-    div {
-      margin-bottom: 0.3rem;
+    i.fa {
+      color: #fff;
     }
   }
 
-  .paletteBlock__usage {
-    margin: 1rem 0.5rem;
-    padding: 0;
-    list-style-type: none;
-    line-height: 1.6;
-
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
+  .imageNavPanel:hover {
+    cursor: pointer;
+    i {
+      visibility: visible;
     }
+  }
+
+  .imageNavPanel--left {
+    left: 0;
+  }
+
+  .imageNavPanel--right {
+    right: 0;
+  }
+
+  .imageTitle {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    @include break(md) {
+      left: 20px;
+      width: 100%;
+      text-align: left;
+    }
+    color: #fff;
   }
 }

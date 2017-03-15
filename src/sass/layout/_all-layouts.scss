@@ -1,9 +1,15 @@
 .l-pageContainer {
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+
+  flex-wrap: wrap;
+	flex-direction: row;
+  align-content: space-between;
 
 	.l-pageHeader {
+    flex-grow: 1;
+    flex-basis: 100%;
+
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -30,49 +36,58 @@
         }
       }
     }
+
+    .l-menuWrapper {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+
+      @include break(md) {
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+
+      .l-menuContainer {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        @include break(md) {
+          display: block;
+        }
+
+        margin: 0;
+      }
+    }
+
 	}
-}
 
-.l-menuWrapper {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-
-  @include break(md) {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
-	.l-menuContainer {
+  .l-pageContentWrapper {
     flex: 1;
+    flex-basis: 100%;
+
+    // align-self: stretch;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    .l-contentContainer {
+      flex: 1;
+    }
+  }
 
-    // @include break(md) {
-    //   display: block;
-    // }
-
-		margin: 0;
-	}
-}
-
-.l-pageContentWrapper {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-
-	.l-contentContainer {
-		flex: 1;
-	}
+  .l-pageFooter {
+    flex-basis: 100%;
+  }
 }
 
 .l-contentFooterContainer {
