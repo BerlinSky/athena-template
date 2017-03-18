@@ -3,88 +3,89 @@
 @import "page-footer";
 @import "news-content";
 @import "tour-content";
+@import "offer-content";
 @import "media-content";
 @import "masonry-container";
 @import "discography-content";
 @import "media-photo-content";
 
 .pageContainer--fullPagePhotoContent {
-  // background-color: paleturquoise;
-  width: 100%;
+	// background-color: paleturquoise;
+	width: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  overflow: hidden;
+	overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+	img {
+		width: 100%;
+		height: 100%;
+	}
 
-  a.navToGallaryPanel {
-    // background-color: tomato;
-    position: absolute;
-    height: 90%;
-    width: 70%;
-    top: 0;
-    left: 15%;
-    z-index: 800;
-    border: none;
-  }
+	a.navToGallaryPanel {
+		// background-color: tomato;
+		position: absolute;
+		height: 90%;
+		width: 70%;
+		top: 0;
+		left: 15%;
+		z-index: 800;
+		border: none;
+	}
 
-  a.imageNavPanel {
-    text-decoration: none;
-  }
+	a.imageNavPanel {
+		text-decoration: none;
+	}
 
-  .imageNavPanel {
-    position: absolute;
-    height: 90%;
-    top: 0;
-    width: 15%;
-    border: none;
+	.imageNavPanel {
+		position: absolute;
+		height: 90%;
+		top: 0;
+		width: 15%;
+		border: none;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    i {
-      visibility: hidden;
-    }
+		i {
+			visibility: hidden;
+		}
 
-    i.fa {
-      color: #fff;
-    }
-  }
+		i.fa {
+			color: #fff;
+		}
+	}
 
-  .imageNavPanel:hover {
-    cursor: pointer;
-    i {
-      visibility: visible;
-    }
-  }
+	.imageNavPanel:hover {
+		cursor: pointer;
+		i {
+			visibility: visible;
+		}
+	}
 
-  .imageNavPanel--left {
-    left: 0;
-  }
+	.imageNavPanel--left {
+		left: 0;
+	}
 
-  .imageNavPanel--right {
-    right: 0;
-  }
+	.imageNavPanel--right {
+		right: 0;
+	}
 
-  .imageTitle {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    text-align: center;
+	.imageTitle {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		width: 100%;
+		text-align: center;
 
-    @include break(md) {
-      left: 20px;
-      width: 100%;
-      text-align: left;
-    }
-    color: #fff;
-  }
+		@include break(md) {
+			left: 20px;
+			width: 100%;
+			text-align: left;
+		}
+		color: #fff;
+	}
 }
