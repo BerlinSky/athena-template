@@ -2,124 +2,128 @@
 
 	display: block;
 	clear: both;
-  min-height: 80vh;
+	min-height: 80vh;
 
-  width: 100%;
-  margin: 20px auto 20px auto;
-  background-color: #fff;
-  font-family: "Source Sans Pro", sans-serif;
+	width: 100%;
+	margin: 20px auto 20px auto;
+	background-color: #fff;
+	font-family: "Source Sans Pro", sans-serif;
 
 	@include break(md) {
 		max-width: 56rem;
-    padding: 15px;
+		padding: 15px;
 	}
 
  .divider {
-    display: inline-block;
-    width: 100%;
-    color: #e2e2e2;
-    height: 1px;
-    border-top-width: 1px;
-
-    &.divider--solid {
-      border-top-style: solid;
-    }
-  }
-
-  .headerPanel {
-    h1 {
-      letter-spacing: 5px;
-      font-size: 3.5rem;
-      text-align: center;
-      font-weight: 300;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      letter-spacing: 1.2px;
-			font-size: 1.725em;
-      font-weight: 300;
-			text-align: center;
-      margin-bottom: 5px;
-		}
-  }
-
-	.tourListPanel {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-
-    @include break(md) {
-      flex-direction: row;
-    }
-
+		display: inline-block;
 		width: 100%;
-		padding: 5px 15px 5px 15px;
-    margin-bottom: 15px;
+		color: #e2e2e2;
+		height: 1px;
+		border-top-width: 1px;
 
-    // border: 3px solid rgba(86, 80, 79, 0.45);
-    background-color: #f4f4f4;;
+		&.divider--solid {
+			border-top-style: solid;
+		}
+	}
 
-    width: 100%;
-    color: #777;
+	.headerPanel {
+		h1 {
+			letter-spacing: 5px;
+			font-size: 3.5rem;
+			text-align: center;
+			font-weight: 300;
+			margin-bottom: 5px;
+		}
 
-    .tourItem {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+		h2 {
+			letter-spacing: 1.2px;
+			font-size: 1.725em;
+			font-weight: 300;
+			text-align: center;
+			margin-bottom: 5px;
+		}
+	}
+
+	.offerPanel {
+    .imageFrame {
+      img {
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
 
-    .tourDate {
-      color: #333;
-      line-height: 1.825rem;
-      font-size: 1.1rem;
-    }
+    .offerPanel__detail {
+      margin: 10px auto 10px auto;
+      max-width: 460px;
+      border: 1px solid #222;
+      background: #222;
 
-    .tourLocation {
-      color: #909090;
-      font-weight: 300;
-      line-height: 1.725rem;
-      font-size: 1.0rem;
-    }
+      h2 {
+        letter-spacing: 1.2px;
+        line-height: 3rem;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: #d6b161;
+      }
 
-    .tourForCms {
-      color: #909090;
-      font-weight: 300;
-      line-height: 1.725rem;
-      font-size: 1.0rem;
+      .offerPrice {
+        width: 75%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: 40px;
+        padding: 25px 0;
+        color: #fff;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+        .offerPrice__amount {
+          font-size: 2.125rem;
+          font-weight: 300;
+          text-align: center;
+          span {
+            font-size: 0.825rem;
+          }
+        }
+      }
+
+      .purchaseButton {
+        width: 50%;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        color: #222;
+        background: #fff;
+        padding: 10px 40px;
+        text-transform: uppercase;
+        border: 1px solid #e8e8e8;
+      }
+
+      ul.featureList {
+        width: 75%;
+        margin-left:auto;
+        margin-right:auto;
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 30px 0 30px 0;
+        list-style: none;
+        color: #fff;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+        li {
+          color: #7d7d7d;
+          margin-bottom: 15px;
+          font-size: 1.125rem;
+          font-weight: 300;
+          line-height: 1.5;
+        }
+      }
     }
 	}
-}
 
-.tourButton {
-	// background-color: #9c1c1c;
-
-	display: inline-block;
-	padding: 6px 12px;
-	margin-bottom: 0;
-	font-size: 1.25rem;
-	font-weight: 400;
-  letter-spacing: 0;
-	line-height: 1.42857143;
-	text-align: center;
-	white-space: nowrap;
-	// vertical-align: middle;
-	touch-action: manipulation;
-	cursor: pointer;
-	user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-}
-
-.tourButton--default {
-	color: #333;
-  font-size: 1.1rem;
-
-	// background-color: #000;
-	font-weight: 400;
-	border-radius: 0;
-	// border-color: #9c1c1c;
 }

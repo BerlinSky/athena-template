@@ -68,13 +68,17 @@ block bodyContent
 
 				.offerPanel
 					.imageFrame
-						img(alt='img' src='./images/sense-and-sensibility.jpg').imageResponsive
+						img(alt='img' src='./images/musician.jpg').imageResponsive
 
 					.offerPanel__detail
 						h2 PREMIUM MEMBERSHIP
-						h3 $79.99
-						<a class="btn btn-default" href="/subscribe/step1?sku=slafah13">SELECT</a>
-						ul
+						.offerPrice
+							.offerPrice__amount $ 79
+								span .99
+
+						a(href="/subscribe/step1?sku=slafah13").purchaseButton SELECT
+
+						ul.featureList
 							li Access to exclusive NKOTB preferred ticket presales (4-ticket limit per show)
 							li Soft 4'x5' NKOTB portrait blanket + 16 oz. copper plated Moscow Mule Mug
 							li Subscription to NKOTB Newsletter
