@@ -1,7 +1,10 @@
 .contentContainer--newsContent {
 
-  display: block;
-  clear: both;
+  // display: block;
+  // clear: both;
+
+  display: flex;
+  flex-direction: column;
 
   width: 100%;
   margin: 20px auto 20px auto;
