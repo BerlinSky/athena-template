@@ -62,39 +62,52 @@
               <input type="hidden" name="redirect" value="/subscribe/step2">
               <input type="hidden" name="sku" value="slafah13">
               <input type="hidden" name="U_Member_status" value="free">
-              <input name="username" type="text" value="" required="required">
-              <label for="username">User Name</label>
-              <input name="email" type="email" value="" required="required">
-              <label for="email">Email</label>
-              <input type="password" name="password" id="password" required="required" value="">
-              <label for="password">Password</label>
-              <input type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password">
-              <label for="passwordVerify">Password Verify</label>
-              <select name="U_Country" id="U_Country" required="required">
-                <option value="" selected="selected">Country</option>
-                <option value="AF">Afghanistan</option>
-                <option value="AX">Aland Islands</option>
-                <option value="AL">Albania</option>
-                <option value="DZ">Algeria</option>
-                <option value="AS">American Samoa</option>
-              </select>
-              <lebel for="U_Country">Country</lebel>
-              <input name="U_Zip" type="text" value="" required="required" partner="city">
-              <label for="U_Zip">Zip Code</label>
-              <input name="U_Birthday" type="date" required="required" value="">
-              <label for="U_Birthday">Your Birthday (MM/DD/YYYY)</label>
-              <div class="checkbox">
-                <label>
+              <div class="inputGroup">
+                <input name="username" type="text" value="" required="required" class="dataInput">
+                <label for="username">User Name</label>
+              </div>
+              <div class="inputGroup">
+                <input name="email" type="email" value="" required="required" class="dataInput">
+                <label for="email">Email</label>
+              </div>
+              <div class="inputGroup">
+                <input type="password" name="password" id="password" required="required" value="" class="dataInput">
+                <label for="password">Password</label>
+              </div>
+              <div class="inputGroup">
+                <input type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password" class="dataInput">
+                <label for="passwordVerify">Password Verify</label>
+              </div>
+              <div class="inputGroup">
+                <select name="U_Country" id="U_Country" required="required" class="dataInput">
+                  <option value="" selected="selected">Country</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AX">Aland Islands</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                </select>
+                <label for="U_Country">Country</label>
+              </div>
+              <div class="inputGroup">
+                <input name="U_Zip" type="text" value="" required="required" partner="city" class="dataInput">
+                <label for="U_Zip">Zip Code</label>
+              </div>
+              <div class="inputGroup">
+                <input name="U_Birthday" type="date" required="required" value="" class="dataInput">
+                <label for="U_Birthday">Your Birthday (MM/DD/YYYY)</label>
+              </div>
+              <div class="inputCheckbox">
+                <label class="checkboxInline">
                   <input type="hidden" name="tos" value="0">
-                  <input type="checkbox" name="tos" id="tos" value="1" required="required">
-                  <p>I agree to the<a href="/terms">Terms and Conditions</a></p>
+                  <input type="checkbox" name="tos" id="tos" value="1" required="required" class="checkboxInline__input">
+                  <p class="checkboxInline__label">I agree to the &nbsp;<a href="/terms">Terms and Conditions</a></p>
                 </label>
               </div>
               <input type="submit" name="submit" id="proceed" value="Next">
             </form>
           </div>
           <div class="offerPanel">
-            <div class="imageFrame"><img alt="img" src="./images/musician.jpg" class="imageResponsive"></div>
             <div class="offerPanel__detail">
               <h2>PREMIUM MEMBERSHIP</h2>
               <div class="offerPrice">
