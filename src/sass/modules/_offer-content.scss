@@ -142,4 +142,17 @@
     }
 	}
 
+  .dataEntryFormContainer {
+    margin: 0;
+    max-width: 100%;
+
+    @include break(md) {
+      margin: 10px auto 10px auto;
+      max-width: 460px;
+    }
+
+    border: 1px solid #222;
+    background-color: #222;
+  }
+
 }
