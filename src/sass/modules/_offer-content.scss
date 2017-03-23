@@ -145,6 +145,7 @@
   .dataEntryFormContainer {
     margin: 0;
     max-width: 100%;
+    padding: 15px;
 
     @include break(md) {
       margin: 10px auto 10px auto;
