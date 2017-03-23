@@ -104,31 +104,15 @@ block bodyContent
 						.inputGroup
 							input(name="U_Birthday" type="date" required="required" value="").dataInput
 							label(for="U_Birthday") Your Birthday (MM/DD/YYYY)
-						div.inputCheckbox
+						.inputCheckbox
 							label.checkboxInline
 								input(type="hidden" name="tos" value="0")
 								input(type="checkbox" name="tos" id="tos" value="1" required="required").checkboxInline__input
 								p.checkboxInline__label
 									| I agree to the &nbsp;
 									a(href="/terms") Terms and Conditions
-						input(type="submit" name="submit" id="proceed" value="Next")
-
-				.offerPanel
-					.offerPanel__detail
-						h2 PREMIUM MEMBERSHIP
-						.offerPrice
-							.offerPrice__amount $ 79
-								span .99
-
-						a(href="/subscribe/step1?sku=slafah13").purchaseButton SELECT
-
-						ul.featureList
-							li Access to exclusive NKOTB preferred ticket presales (4-ticket limit per show)
-							li Soft 4'x5' NKOTB portrait blanket + 16 oz. copper plated Moscow Mule Mug
-							li Subscription to NKOTB Newsletter
-							li Access to Block Nation special events
-							li Early access to NKOTB Cruise reservations
-							li Members-only promotions and offers
+						.inputButtonGroup
+							input(type="submit" name="submit" id="proceed" value="Next").inputButton
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
