@@ -142,6 +142,17 @@
     }
 	}
 
+  .noticeSection {
+    p {
+      font-family: Source Sans Pro,sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+  }
+
   .dataEntryFormContainer {
     margin: 0;
     max-width: 100%;
