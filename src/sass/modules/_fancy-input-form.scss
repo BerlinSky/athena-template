@@ -119,6 +119,7 @@ input:focus, input:active {
     height: 65px;
     padding-left: 25px;
     padding-top: 20px;
+    margin-bottom: 10px;
   }
 
   select.dataInput + label {
@@ -204,6 +205,18 @@ input:focus, input:active {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  height: 70px;
+
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .checkboxInline {
     min-height: 20px;
