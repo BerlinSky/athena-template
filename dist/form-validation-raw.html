@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reading Life</title>
+    <meta name="description">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="Content-Language" content="en">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="l-pageContainer pageContainer">
+      <div class="l-pageHeader pageHeader">
+        <div class="l-navContainer navContainer">
+          <div class="l-logoContainer logoContainer">
+            <div>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                <path fill="#009cde" d="M399.798 8.104c-45.263 0-74.31-8.104-120.924-8.104-150.642 0-220.896 85.792-220.896 172.936 0 51.339 24.32 68.229 72.282 68.229-3.379-7.432-9.457-15.54-9.457-52.017 0-102.005 38.503-131.729 87.818-133.755 0 0-40.459 396.687-157.889 444.271v12.336h158.297l54.013-256h98.922l22.036-64h-107.454l25.972-123.095c29.723 6.078 58.771 12.158 83.766 12.158 31.074 0 59.447-9.457 74.984-81.063-18.913 6.080-39.181 8.104-61.47 8.104z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="l-toggleMenuContainer toggleMenuContainer"><a href="#" class="js-toggleMobileMenu"><i class="fa fa-bars fa-2x"></i></a></div>
+        </div>
+        <div class="l-menuWrapper menuWrapper js-menuWrapper">
+          <div class="l-menuContainer menuContainer js-mobileMenuContainer">
+            <ul class="menuList">
+              <li class="menuItem"><a href="#"><span>Home</span></a></li>
+              <li class="menuItem"><a href="#" class="currentSelection"><span>Color Palette</span></a></li>
+              <li class="menuItem"><a href="#"><span>Typography</span></a></li>
+              <li class="menuItem"><a href="#"><span>Text Styles</span></a></li>
+              <li class="menuItem"><a href="#"><span>Breakpoints</span></a></li>
+              <li class="menuItem"><a href="#"><span>Buttons</span></a></li>
+            </ul>
+          </div>
+          <div class="l-searchContainer searchContainer js-showSearchPanel"><a class="searchButton searchButton--default"><i class="fa fa-search"></i></a></div>
+          <div class="l-searchWrapper searchWrapper js-searchPanel">
+            <form action="#" method="post" class="l-searchWrapper__form"><a class="searchButton searchButton--whiteSquare"><i class="fa fa-search"></i></a>
+              <input type="text" name="s" placeholder="Enter your search" class="searchInput"><a class="closeButton closeButton--dimmedSquare js-hideSearchPanel"><i class="fa fa-close"></i></a>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="l-pageContentWrapper pageContentWrapper">
+        <div class="l-contentContainer contentContainer contentContainer--newsContent">
+          <form action='/saveform' method='post' enctype='multipart/form-data' class='tmot-form' id='entry-form'>
+            <fieldset>
+              <div class='form-group'>
+                <label for='email' class='control-label tmot-form-label'>Email Address</label>
+                <input
+                      value='mojgan.kavehei@ticketmaster.com'
+                    type='email'
+                    id='entry-6132'
+                    name='email'
+                    class='form-control tmot-form-control   test6132 '  required   />
+              </div>
+              <div class='form-group'>
+                  <label for='first_name' class='control-label tmot-form-label'>First Name</label>
+                  <input
+                        value='mojgan'
+                      type='text'
+                      id='entry-6133'
+                      name='first_name'
+                      class='form-control tmot-form-control   test6133 '  required   />
+              </div><div class='form-group'>
+                  <label for='last_name' class='control-label tmot-form-label'>Last Name</label>
+                  <input
+                        value='kavehei'
+                      type='text'
+                      id='entry-6134'
+                      name='last_name'
+                      class='form-control tmot-form-control   test6134 '  required   />
+              </div><div class='form-group'>
+                  <label for='zip' class='control-label tmot-form-label'>zip</label>
+                  <input
+                        value='94102'
+                      type='text'
+                      id='entry-6135'
+                      name='zip'
+                      class='form-control tmot-form-control   test6135 '  required   />
+              </div><div class='form-group'>
+                  <label for='mobile' class='control-label tmot-form-label'>mobile</label>
+                  <input
+
+                      type='text'
+                      id='entry-6136'
+                      name='mobile'
+                      class='form-control tmot-form-control   test6136 '  required   />
+              </div><div class='form-group'>
+                  <label for='answer_1' class='control-label tmot-form-label'>Enter mobile again</label>
+                  <input
+
+                      type='text'
+                      id='entry-6138'
+                      name='answer_1'
+                      class='form-control tmot-form-control   '
+                      equalTo='#entry-6136' />
+              </div><div class='form-group'>
+          <label class='control-label tmot-form-label'>event</label>
+          <select name='event' class='form-control tmot-form-control  test6137' id='entry-6137' required>
+              <option value=''>SELECT ONE</option><option value='Maybe'>Maybe</option>
+          <option value='No'>No</option>
+          <option value='Yes'>Yes</option>
+
+          </select>
+          </div><div class='form-group'>
+                  <label for='answer_2' class='control-label tmot-form-label'>your fav. animal</label>
+                  <input
+
+                      type='text'
+                      id='entry-6141'
+                      name='answer_2'
+                      class='form-control tmot-form-control    '     />
+              </div><div class='form-group'>
+                  <label for='answer_3' class='control-label tmot-form-label'>re-type your fav animal</label>
+                  <input
+
+                      type='text'
+                      id='entry-6142'
+                      name='answer_3'
+                      class='form-control tmot-form-control   '
+                      equalTo='#entry-6141' />
+              </div><div class='form-group'>
+                  <button type='submit' class='btn btn-block tmot-form-control tmot-btn tmot-submit-btn'>
+                      Submit
+                  </button>
+              </div>
+              </fieldset>
+          </form>
+        </div>
+        <div class="l-contentFooterContainer contentFooterContainer">
+          <div class="footerPanel footerPanel--links">
+            <div class="footerPanel__item footerPanel__item--default">
+              <ul>
+                <li><a href="/help" target="">Help</a></li>
+                <li><a href="/help" target="">Newsletter</a></li>
+                <li><a href="/help" target="">Terms of Use</a></li>
+                <li><a href="/help" target="">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="footerPanel__item footerPanel__item--copyright">Copyright © 2017 This Web Site</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/bundle.js"></script>
+  </body>
+</html>

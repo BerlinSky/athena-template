@@ -9825,6 +9825,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function () {
 
+  var campaignForm = (0, _jquery2.default)('.js-campaignForm');
+  console.log('campaign', campaignForm);
+
+  var input = (0, _jquery2.default)(".js-campaignForm input[type=text]");
+  console.log('input', input);
+
   (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
     e.preventDefault();
 

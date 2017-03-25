@@ -2,6 +2,12 @@ import $ from 'jquery';
 
 $(function () {
 
+  const campaignForm = $('.js-campaignForm');
+  console.log('campaign', campaignForm);
+
+  const input = $(".js-campaignForm input[type=text]")
+  console.log('input', input);
+
   $('.js-toggleMobileMenu').click(function(e) {
     e.preventDefault();
 

@@ -31,9 +31,10 @@ block bodyContent
 		div.l-pageHeader.pageHeader
 			div.l-navContainer.navContainer
 				div.l-logoContainer.logoContainer
-					div.imageFrame
-						img(alt='img' src='./images/site-logo.png').imageResponsive
-					//- h4.title Great Books
+					div
+						svg(version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512")
+							path(fill="#009cde" d="M399.798 8.104c-45.263 0-74.31-8.104-120.924-8.104-150.642 0-220.896 85.792-220.896 172.936 0 51.339 24.32 68.229 72.282 68.229-3.379-7.432-9.457-15.54-9.457-52.017 0-102.005 38.503-131.729 87.818-133.755 0 0-40.459 396.687-157.889 444.271v12.336h158.297l54.013-256h98.922l22.036-64h-107.454l25.972-123.095c29.723 6.078 58.771 12.158 83.766 12.158 31.074 0 59.447-9.457 74.984-81.063-18.913 6.080-39.181 8.104-61.47 8.104z")
+
 				div.l-toggleMenuContainer.toggleMenuContainer
 					a(href='#').js-toggleMobileMenu
 						i.fa.fa-bars.fa-2x
@@ -59,9 +60,76 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			div.l-contentContainer.contentContainer
-				+paletteBlockBuilder()
+			div.l-contentContainer.contentContainer.contentContainer--offerContent
+				.offerPanel
+					.offerPanel__detail
+						h2 FORM VALIDATION IN ACTION
+
+				.dataEntryFormContainer
+					form(action="/" method="post" autocomplete="off" class="js-campaignForm")
+						.inputGroup
+							input(id='entry-6133' name="firstName" type="text" value="" required="required").dataInput
+							label(for="firstName") First Name
+							span(id="entry-6133-error").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6134' name="lastName" type="text" value="" required="required").dataInput
+							label(for="lastName") Last Name
+							span(id="entry-6134-error").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6132' name="email" type="email" value="" required="required").dataInput
+							label(for="email") Email
+							span(id="entry-6132-error").inputError Please enter a valid value
+						.inputGroup
+							input(type="password" name="password" id="password" required="required" value="").dataInput
+							label(for="password") Password
+							span(id="password-error").inputError Please enter a valid value
+						.inputGroup
+							input(type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password").dataInput
+							label(for="passwordVerify") Password Verify
+							span(id="passwordVerify-error").inputError Please enter a valid value
+						.inputGroup
+							select(id='entry-6137' name="country" required="required").dataInput
+								option(value="" selected="selected") Country
+								option(value="AF") Afghanistan
+								option(value="AX") Aland Islands
+								option(value="AL") Albania
+								option(value="DZ") Algeria
+								option(value="AS") American Samoa
+							label(for="country") Country
+							span(id="entry-6137").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city").dataInput
+							label(for="zip") Zip Code
+							span(id="entry-6135").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6136' name="mobile" type="text" required="required" value="").dataInput
+							label(for="mobile") Your Mobile
+							span(id="entry-6136").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6138' name="mobileVerify" type="text" required="required" value="").dataInput
+							label(for="mobileVerify") Your mobile again
+							span(id="entry-6138").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6141' name="favNumber" type="number" required="required" value="").dataInput
+							label(for="favNumber") Your favorite number
+							span(id="entry-6141").inputError Please enter a valid value
+						.inputGroup
+							input(id='entry-6142' name="favNumberVerify" type="number" required="required" value="").dataInput
+							label(for="favNumberVerify") Your favorite number again
+							span(id="entry-6142").inputError Please enter a valid value
+						.inputButtonGroup
+							input(type="submit" name="submit" id="proceed" value="Next").inputButton
 
 			div.l-contentFooterContainer.contentFooterContainer
-				div
-					span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dolore
+				div.footerPanel.footerPanel--links
+					div.footerPanel__item.footerPanel__item--default
+						ul
+							li
+								a(href="/help" target="") Help
+							li
+								a(href="/help" target="") Newsletter
+							li
+								a(href="/help" target="") Terms of Use
+							li
+								a(href="/help" target="") Privacy Policy
+					div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site
