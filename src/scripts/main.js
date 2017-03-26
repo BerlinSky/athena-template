@@ -2,39 +2,53 @@ import $ from 'jquery';
 
 import { validateInput } from './form/validation';
 
-var validate = require("validate.js");
+// var validate = require("validate.js");
 
 $(function () {
 
-  const campaignForm = $('.js-campaignForm');
-  console.log('campaign', campaignForm);
 
-const c = validate.collectFormValues(campaignForm);
-console.log('c', c);
-
-  const input = $(".js-campaignForm input[type=text]")
-  console.log('input', input);
+  const submitForm = $('form.js-campaignForm');
+  // const submitButton = $('.js-campaignForm .js-submitButton');
 
   const testInput = $('#entry-6133');
   const elemId = testInput.attr('id');
   const errorSpanId = `#${elemId}-error`;
   const inputErrorSpan = $(errorSpanId);
 
-  const validateMessage = validateInput(testInput);
-  inputErrorSpan.html(validateMessage);
+  $(submitForm).submit(function( event ) {
+    const validateMessage = validateInput(testInput);
+    if (validateMessage) {
+      inputErrorSpan.html(validateMessage);
+      event.preventDefault();
+    }
+  });
 
-  // const testId = testInput.attr('id');
-  // // const required = testInput.attr('required');
-
-  // const errMsg = testInput.attr('required-msg');
-
-  // const validdateResult = validate({[testId]: ""}, buildConstraints(testId, errMsg));
-  // console.log('validdateResult', validdateResult);
+  // submitButton.click(function(e) {
+    // e.preventDefault();
 
 
-  // const test = getErrorMessage(testId, validdateResult);
-  // console.log('test', test);
+    // return;
+    // submitForm.submit();
+    // console.log('submitted, deh');
+  // });
 
+
+//   const campaignForm = $('.js-campaignForm');
+//   console.log('campaign', campaignForm);
+
+// const c = validate.collectFormValues(campaignForm);
+// console.log('c', c);
+
+//   const input = $(".js-campaignForm input[type=text]")
+//   console.log('input', input);
+
+//   const testInput = $('#entry-6133');
+//   const elemId = testInput.attr('id');
+//   const errorSpanId = `#${elemId}-error`;
+//   const inputErrorSpan = $(errorSpanId);
+
+//   const validateMessage = validateInput(testInput);
+//   inputErrorSpan.html(validateMessage);
 
   $('.js-toggleMobileMenu').click(function(e) {
     e.preventDefault();

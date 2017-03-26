@@ -66,7 +66,7 @@ block bodyContent
 						h2 FORM VALIDATION IN ACTION
 
 				.dataEntryFormContainer
-					form(action="/" method="post" autocomplete="off" class="js-campaignForm")
+					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-campaignForm
 						.inputGroup
 							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a valid value???").dataInput
 							label(for="firstName") First Name
@@ -118,7 +118,7 @@ block bodyContent
 							label(for="favNumberVerify") Your favorite number again
 							span(id="entry-6142").inputError Please enter a valid value
 						.inputButtonGroup
-							input(type="submit" name="submit" id="proceed" value="Next").inputButton
+							input(type="submit" name="submit" id="proceed" value="Next").inputButton.js-submitButton
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links

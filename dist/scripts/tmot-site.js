@@ -21354,8 +21354,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// var validate = require("validate.js");
-
 function validateInput(input) {
   var elem = (0, _jquery2.default)(input);
   var isRequired = elem.attr('required');
@@ -21366,10 +21364,13 @@ function validateInput(input) {
     var msg = elem.attr('required-msg');
     var constraint = buildConstraints(elemId, msg);
     var result = (0, _validate2.validate)(_defineProperty({}, elemId, elemValue), constraint);
-    console.log('result', result);
-    var resultMsg = getMessage(elemId, result);
-    console.log('msg', resultMsg);
-    return resultMsg;
+
+    if (result) {
+      console.log('result', result);
+      var resultMsg = getMessage(elemId, result);
+      console.log('msg', resultMsg);
+      return resultMsg;
+    }
   } else {
     console.log("No need to validate");
   }
@@ -21379,20 +21380,11 @@ function getMessage(id, messageList) {
   return _ramda2.default.prop(id, messageList);
 }
 
-// export function validateForm(testId, msg) {
-//   const validdateResult = validate({[testId]: ""}, buildConstraints(testId, msg));
-//   console.log('validdateResult', validdateResult);
-// }
-
 function buildConstraints(inputId, msg) {
   return _defineProperty({}, inputId, {
     presence: { message: '^' + msg }
   });
 }
-
-// export function getErrorMessage(inputId, validdateResult) {
-//   return R.prop(inputId, validdateResult);
-// }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
 'use strict';
@@ -21405,39 +21397,52 @@ var _validation = require('./form/validation');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var validate = require("validate.js");
+// var validate = require("validate.js");
 
 (0, _jquery2.default)(function () {
 
-  var campaignForm = (0, _jquery2.default)('.js-campaignForm');
-  console.log('campaign', campaignForm);
-
-  var c = validate.collectFormValues(campaignForm);
-  console.log('c', c);
-
-  var input = (0, _jquery2.default)(".js-campaignForm input[type=text]");
-  console.log('input', input);
+  var submitForm = (0, _jquery2.default)('form.js-campaignForm');
+  // const submitButton = $('.js-campaignForm .js-submitButton');
 
   var testInput = (0, _jquery2.default)('#entry-6133');
   var elemId = testInput.attr('id');
   var errorSpanId = '#' + elemId + '-error';
   var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
 
-  var validateMessage = (0, _validation.validateInput)(testInput);
-  inputErrorSpan.html(validateMessage);
+  (0, _jquery2.default)(submitForm).submit(function (event) {
+    var validateMessage = (0, _validation.validateInput)(testInput);
+    if (validateMessage) {
+      inputErrorSpan.html(validateMessage);
+      event.preventDefault();
+    }
+  });
 
-  // const testId = testInput.attr('id');
-  // // const required = testInput.attr('required');
-
-  // const errMsg = testInput.attr('required-msg');
-
-  // const validdateResult = validate({[testId]: ""}, buildConstraints(testId, errMsg));
-  // console.log('validdateResult', validdateResult);
+  // submitButton.click(function(e) {
+  // e.preventDefault();
 
 
-  // const test = getErrorMessage(testId, validdateResult);
-  // console.log('test', test);
+  // return;
+  // submitForm.submit();
+  // console.log('submitted, deh');
+  // });
 
+
+  //   const campaignForm = $('.js-campaignForm');
+  //   console.log('campaign', campaignForm);
+
+  // const c = validate.collectFormValues(campaignForm);
+  // console.log('c', c);
+
+  //   const input = $(".js-campaignForm input[type=text]")
+  //   console.log('input', input);
+
+  //   const testInput = $('#entry-6133');
+  //   const elemId = testInput.attr('id');
+  //   const errorSpanId = `#${elemId}-error`;
+  //   const inputErrorSpan = $(errorSpanId);
+
+  //   const validateMessage = validateInput(testInput);
+  //   inputErrorSpan.html(validateMessage);
 
   (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
     e.preventDefault();
@@ -21463,5 +21468,5 @@ var validate = require("validate.js");
   });
 });
 
-},{"./form/validation":312,"jquery":1,"validate.js":311}]},{},[313])
+},{"./form/validation":312,"jquery":1}]},{},[313])
 //# sourceMappingURL=tmot-site.js.map
