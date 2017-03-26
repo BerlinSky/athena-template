@@ -68,23 +68,23 @@ block bodyContent
 				.dataEntryFormContainer
 					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-campaignForm
 						.inputGroup
-							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a valid value 6133").dataInput
+							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a required value 6133").dataInput
 							label(for="firstName") First Name
 							span(id="entry-6133-error").inputError
 						.inputGroup
-							input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a valid value 6134").dataInput
+							input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a required value 6134").dataInput
 							label(for="lastName") Last Name
 							span(id="entry-6134-error").inputError
 						.inputGroup
-							input(id='entry-6132' name="email" type="email" value="" required="required").dataInput
+							input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132").dataInput
 							label(for="email") Email
 							span(id="entry-6132-error").inputError
 						.inputGroup
-							input(type="password" name="password" id="password" required="required" value="").dataInput
+							input(type="password" name="password" id="password" required="required" value="" required-msg="Please enter a required value password").dataInput
 							label(for="password") Password
 							span(id="password-error").inputError
 						.inputGroup
-							input(type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password").dataInput
+							input(type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password" required-msg="Please enter a required value passwordVerify").dataInput
 							label(for="passwordVerify") Password Verify
 							span(id="passwordVerify-error").inputError
 						.inputGroup
@@ -98,25 +98,25 @@ block bodyContent
 							label(for="country") Country
 							span(id="entry-6137").inputError
 						.inputGroup
-							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a valid value 6135").dataInput
+							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a required value 6135").dataInput
 							label(for="zip") Zip Code
 							span(id="entry-6135-error").inputError
 						.inputGroup
-							input(id='entry-6136' name="mobile" type="text" required="required" value="" required-msg="Please enter a valid value 6136").dataInput
+							input(id='entry-6136' name="mobile" type="text" required="required" value="" required-msg="Please enter a required value 6136").dataInput
 							label(for="mobile") Your Mobile
 							span(id="entry-6136-error").inputError
 						.inputGroup
-							input(id='entry-6138' name="mobileVerify" type="text" required="required" value="" required-msg="Please enter a valid value 6138").dataInput
+							input(id='entry-6138' name="mobileVerify" type="text" required="required" value="" required-msg="Please enter a required value 6138").dataInput
 							label(for="mobileVerify") Your mobile again
 							span(id="entry-6138-error").inputError
 						.inputGroup
-							input(id='entry-6141' name="favNumber" type="number" required="required" value="").dataInput
+							input(id='entry-6141' name="favNumber" type="number" required="required" value="" required-msg="Please enter a required value 6141").dataInput
 							label(for="favNumber") Your favorite number
-							span(id="entry-6141").inputError
+							span(id="entry-6141-error").inputError
 						.inputGroup
-							input(id='entry-6142' name="favNumberVerify" type="number" required="required" value="").dataInput
+							input(id='entry-6142' name="favNumberVerify" type="number" required="required" value="" required-msg="Please enter a required value 6142").dataInput
 							label(for="favNumberVerify") Your favorite number again
-							span(id="entry-6142").inputError
+							span(id="entry-6142-error").inputError
 						.inputButtonGroup
 							input(type="submit" name="submit" id="proceed" value="Next").inputButton.js-submitButton
 

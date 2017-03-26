@@ -5,7 +5,6 @@ import { validate } from 'validate.js';
 export function validateTextInputs(textInputs) {
   R.forEach(validateInput, textInputs);
   console.log('textInputs', textInputs);
-  // validateTextInput(textInputs);
 }
 
 export function validateInput(input) {
@@ -35,14 +34,6 @@ function validationMsg(key, messageList) {
     return R.prop(key, messageList);
   }
 }
-
-// function buildConstraints(inputId, msg) {
-//   return {
-//     [inputId]: {
-//       presence: { message: `^${msg}` }
-//     }
-//   };
-// }
 
 function validateRequired(key, value, msg) {
   const constraint = { [key]: {

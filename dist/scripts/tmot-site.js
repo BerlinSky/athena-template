@@ -21358,7 +21358,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function validateTextInputs(textInputs) {
   _ramda2.default.forEach(validateInput, textInputs);
   console.log('textInputs', textInputs);
-  // validateTextInput(textInputs);
 }
 
 function validateInput(input) {
@@ -21389,14 +21388,6 @@ function validationMsg(key, messageList) {
   }
 }
 
-// function buildConstraints(inputId, msg) {
-//   return {
-//     [inputId]: {
-//       presence: { message: `^${msg}` }
-//     }
-//   };
-// }
-
 function validateRequired(key, value, msg) {
   var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
@@ -21415,68 +21406,46 @@ var _validation = require('./form/validation');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// var validate = require("validate.js");
-
 (0, _jquery2.default)(function () {
+	var submitForm = (0, _jquery2.default)('form.js-campaignForm');
 
-  var submitForm = (0, _jquery2.default)('form.js-campaignForm');
+	(0, _jquery2.default)(submitForm).submit(function (event) {
+		event.preventDefault();
 
-  // const testInput = $('#entry-6133');
-  // const elemId = testInput.attr('id');
-  // const errorSpanId = `#${elemId}-error`;
-  // const inputErrorSpan = $(errorSpanId);
+		var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number]');
+		(0, _validation.validateTextInputs)(inputList);
 
-  (0, _jquery2.default)(submitForm).submit(function (event) {
-    event.preventDefault();
+		// const validateMessage = validateInput(testInput);
+		// if (validateMessage) {
+		//   inputErrorSpan.html(validateMessage);
+		//   event.preventDefault();
+		// }
 
-    var textInputs = (0, _jquery2.default)(".js-campaignForm input[type=text]");
-    (0, _validation.validateTextInputs)(textInputs);
+		event.preventDefault();
+	});
 
-    // const validateMessage = validateInput(testInput);
-    // if (validateMessage) {
-    //   inputErrorSpan.html(validateMessage);
-    //   event.preventDefault();
-    // }
+	(0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
+		e.preventDefault();
 
-    event.preventDefault();
-  });
+		var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
+		mobileMenu.toggle("slow");
+	});
 
-  // const c = validate.collectFormValues(campaignForm);
-  // console.log('c', c);
+	var menuWrapper = document.querySelector('.js-menuWrapper');
 
-  //   const input = $(".js-campaignForm input[type=text]")
-  //   console.log('input', input);
+	var showSearchPanel = document.querySelector('.js-showSearchPanel');
+	showSearchPanel.addEventListener('click', function (e) {
+		e.preventDefault();
 
-  //   const testInput = $('#entry-6133');
-  //   const elemId = testInput.attr('id');
-  //   const errorSpanId = `#${elemId}-error`;
-  //   const inputErrorSpan = $(errorSpanId);
+		menuWrapper.classList.add('showSearchPanel');
+	});
 
-  //   const validateMessage = validateInput(testInput);
-  //   inputErrorSpan.html(validateMessage);
+	var hideSearchPanel = document.querySelector('.js-hideSearchPanel');
+	hideSearchPanel.addEventListener('click', function (e) {
+		e.preventDefault();
 
-  (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
-    e.preventDefault();
-
-    var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
-    mobileMenu.toggle("slow");
-  });
-
-  var menuWrapper = document.querySelector('.js-menuWrapper');
-
-  var showSearchPanel = document.querySelector('.js-showSearchPanel');
-  showSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuWrapper.classList.add('showSearchPanel');
-  });
-
-  var hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-  hideSearchPanel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuWrapper.classList.remove('showSearchPanel');
-  });
+		menuWrapper.classList.remove('showSearchPanel');
+	});
 });
 
 },{"./form/validation":312,"jquery":1}]},{},[313])

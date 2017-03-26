@@ -1,73 +1,49 @@
 import $ from 'jquery';
-
-import { validateInput, validateTextInputs } from './form/validation';
-
-// var validate = require("validate.js");
+import { validateTextInputs } from './form/validation';
 
 $(function () {
+	const submitForm = $('form.js-campaignForm');
 
+	$(submitForm).submit(function( event ) {
+		event.preventDefault();
 
-  const submitForm = $('form.js-campaignForm');
+		const inputList = $(`.js-campaignForm input[type=text],
+												 .js-campaignForm input[type=password],
+												 .js-campaignForm input[type=email],
+												 .js-campaignForm input[type=number]`);
+		validateTextInputs(inputList);
 
+		// const validateMessage = validateInput(testInput);
+		// if (validateMessage) {
+		//   inputErrorSpan.html(validateMessage);
+		//   event.preventDefault();
+		// }
 
-  // const testInput = $('#entry-6133');
-  // const elemId = testInput.attr('id');
-  // const errorSpanId = `#${elemId}-error`;
-  // const inputErrorSpan = $(errorSpanId);
+		event.preventDefault();
 
-  $(submitForm).submit(function( event ) {
-    event.preventDefault();
+	});
 
-    const textInputs = $(".js-campaignForm input[type=text]")
-    validateTextInputs(textInputs);
+	$('.js-toggleMobileMenu').click(function(e) {
+		e.preventDefault();
 
-    // const validateMessage = validateInput(testInput);
-    // if (validateMessage) {
-    //   inputErrorSpan.html(validateMessage);
-    //   event.preventDefault();
-    // }
+		const mobileMenu = $('.js-mobileMenuContainer');
+		mobileMenu.toggle("slow");
+	})
 
-    event.preventDefault();
+	const menuWrapper = document.querySelector('.js-menuWrapper');
 
-  });
+	const showSearchPanel = document.querySelector('.js-showSearchPanel');
+	showSearchPanel.addEventListener('click', (e) => {
+		e.preventDefault();
 
+		menuWrapper.classList.add('showSearchPanel');
+	})
 
+	const hideSearchPanel = document.querySelector('.js-hideSearchPanel');
+	hideSearchPanel.addEventListener('click', (e) => {
+		e.preventDefault();
 
-// const c = validate.collectFormValues(campaignForm);
-// console.log('c', c);
-
-//   const input = $(".js-campaignForm input[type=text]")
-//   console.log('input', input);
-
-//   const testInput = $('#entry-6133');
-//   const elemId = testInput.attr('id');
-//   const errorSpanId = `#${elemId}-error`;
-//   const inputErrorSpan = $(errorSpanId);
-
-//   const validateMessage = validateInput(testInput);
-//   inputErrorSpan.html(validateMessage);
-
-  $('.js-toggleMobileMenu').click(function(e) {
-    e.preventDefault();
-
-    const mobileMenu = $('.js-mobileMenuContainer');
-    mobileMenu.toggle("slow");
-  })
-
-  const menuWrapper = document.querySelector('.js-menuWrapper');
-
-  const showSearchPanel = document.querySelector('.js-showSearchPanel');
-  showSearchPanel.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    menuWrapper.classList.add('showSearchPanel');
-  })
-
-  const hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-  hideSearchPanel.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    menuWrapper.classList.remove('showSearchPanel');
-  })
+		menuWrapper.classList.remove('showSearchPanel');
+	})
 
 });
