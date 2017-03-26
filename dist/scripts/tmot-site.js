@@ -21338,28 +21338,63 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.buildConstraints = buildConstraints;
-exports.getErrorMessage = getErrorMessage;
+exports.validateInput = validateInput;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
 var _ramda2 = _interopRequireDefault(_ramda);
 
+var _validate2 = require('validate.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function buildConstraints(inputId, errorMsg) {
+// var validate = require("validate.js");
+
+function validateInput(input) {
+  var elem = (0, _jquery2.default)(input);
+  var isRequired = elem.attr('required');
+  if (isRequired) {
+    var elemId = elem.attr('id');
+    var elemValue = elem.val();
+    console.log("need to validate", elemValue);
+    var msg = elem.attr('required-msg');
+    var constraint = buildConstraints(elemId, msg);
+    var result = (0, _validate2.validate)(_defineProperty({}, elemId, elemValue), constraint);
+    console.log('result', result);
+    var resultMsg = getMessage(elemId, result);
+    console.log('msg', resultMsg);
+    return resultMsg;
+  } else {
+    console.log("No need to validate");
+  }
+}
+
+function getMessage(id, messageList) {
+  return _ramda2.default.prop(id, messageList);
+}
+
+// export function validateForm(testId, msg) {
+//   const validdateResult = validate({[testId]: ""}, buildConstraints(testId, msg));
+//   console.log('validdateResult', validdateResult);
+// }
+
+function buildConstraints(inputId, msg) {
   return _defineProperty({}, inputId, {
-    presence: { message: '^' + errorMsg }
+    presence: { message: '^' + msg }
   });
 }
 
-function getErrorMessage(inputId, validdateResult) {
-  return _ramda2.default.prop(inputId, validdateResult);
-}
+// export function getErrorMessage(inputId, validdateResult) {
+//   return R.prop(inputId, validdateResult);
+// }
 
-},{"ramda":2}],313:[function(require,module,exports){
+},{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -21369,8 +21404,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 var _validation = require('./form/validation');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var validate = require("validate.js");
 
@@ -21386,21 +21419,25 @@ var validate = require("validate.js");
   console.log('input', input);
 
   var testInput = (0, _jquery2.default)('#entry-6133');
-  var testId = testInput.attr('id');
-  // const required = testInput.attr('required');
-
-  var errMsg = testInput.attr('required-err');
-
-  var validdateResult = validate(_defineProperty({}, testId, ""), (0, _validation.buildConstraints)(testId, errMsg));
-  console.log('validdateResult', validdateResult);
-
-  var errorSpanId = '#' + testId + '-error';
-
+  var elemId = testInput.attr('id');
+  var errorSpanId = '#' + elemId + '-error';
   var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
-  var test = (0, _validation.getErrorMessage)(testId, validdateResult);
-  console.log('test', test);
 
-  inputErrorSpan.html(test);
+  var validateMessage = (0, _validation.validateInput)(testInput);
+  inputErrorSpan.html(validateMessage);
+
+  // const testId = testInput.attr('id');
+  // // const required = testInput.attr('required');
+
+  // const errMsg = testInput.attr('required-msg');
+
+  // const validdateResult = validate({[testId]: ""}, buildConstraints(testId, errMsg));
+  // console.log('validdateResult', validdateResult);
+
+
+  // const test = getErrorMessage(testId, validdateResult);
+  // console.log('test', test);
+
 
   (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
     e.preventDefault();

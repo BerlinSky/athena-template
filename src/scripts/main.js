@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { buildConstraints, getErrorMessage } from './form/validation';
+import { validateInput } from './form/validation';
 
 var validate = require("validate.js");
 
@@ -16,21 +16,25 @@ console.log('c', c);
   console.log('input', input);
 
   const testInput = $('#entry-6133');
-  const testId = testInput.attr('id');
-  // const required = testInput.attr('required');
-
-  const errMsg = testInput.attr('required-err');
-
-  const validdateResult = validate({[testId]: ""}, buildConstraints(testId, errMsg));
-  console.log('validdateResult', validdateResult);
-
-  const errorSpanId = `#${testId}-error`;
-
+  const elemId = testInput.attr('id');
+  const errorSpanId = `#${elemId}-error`;
   const inputErrorSpan = $(errorSpanId);
-  const test = getErrorMessage(testId, validdateResult);
-  console.log('test', test);
 
-  inputErrorSpan.html(test);
+  const validateMessage = validateInput(testInput);
+  inputErrorSpan.html(validateMessage);
+
+  // const testId = testInput.attr('id');
+  // // const required = testInput.attr('required');
+
+  // const errMsg = testInput.attr('required-msg');
+
+  // const validdateResult = validate({[testId]: ""}, buildConstraints(testId, errMsg));
+  // console.log('validdateResult', validdateResult);
+
+
+  // const test = getErrorMessage(testId, validdateResult);
+  // console.log('test', test);
+
 
   $('.js-toggleMobileMenu').click(function(e) {
     e.preventDefault();
