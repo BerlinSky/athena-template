@@ -21338,6 +21338,7 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.validateTextInputs = validateTextInputs;
 exports.validateInput = validateInput;
 
 var _jquery = require('jquery');
@@ -21354,36 +21355,53 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function validateTextInputs(textInputs) {
+  _ramda2.default.forEach(validateInput, textInputs);
+  console.log('textInputs', textInputs);
+  // validateTextInput(textInputs);
+}
+
 function validateInput(input) {
   var elem = (0, _jquery2.default)(input);
+  var elemId = elem.attr('id');
+  var elemValue = elem.val();
   var isRequired = elem.attr('required');
-  if (isRequired) {
-    var elemId = elem.attr('id');
-    var elemValue = elem.val();
-    console.log("need to validate", elemValue);
-    var msg = elem.attr('required-msg');
-    var constraint = buildConstraints(elemId, msg);
-    var result = (0, _validate2.validate)(_defineProperty({}, elemId, elemValue), constraint);
+  var msg = elem.attr('required-msg');
 
-    if (result) {
-      console.log('result', result);
-      var resultMsg = getMessage(elemId, result);
-      console.log('msg', resultMsg);
-      return resultMsg;
-    }
-  } else {
-    console.log("No need to validate");
+  if (isRequired) {
+    var result = validateRequired(elemId, elemValue, msg);
+    console.log(result);
+
+    var resultMsg = validationMsg(elemId, result);
+    paintMessagePanel(elemId, resultMsg);
   }
 }
 
-function getMessage(id, messageList) {
-  return _ramda2.default.prop(id, messageList);
+function paintMessagePanel(elemId, msg) {
+  var errorSpanId = '#' + elemId + '-error';
+  var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
+  inputErrorSpan.html(msg);
 }
 
-function buildConstraints(inputId, msg) {
-  return _defineProperty({}, inputId, {
+function validationMsg(key, messageList) {
+  if (messageList) {
+    return _ramda2.default.prop(key, messageList);
+  }
+}
+
+// function buildConstraints(inputId, msg) {
+//   return {
+//     [inputId]: {
+//       presence: { message: `^${msg}` }
+//     }
+//   };
+// }
+
+function validateRequired(key, value, msg) {
+  var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
   });
+  return (0, _validate2.validate)(_defineProperty({}, key, value), constraint);
 }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
@@ -21402,33 +21420,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)(function () {
 
   var submitForm = (0, _jquery2.default)('form.js-campaignForm');
-  // const submitButton = $('.js-campaignForm .js-submitButton');
 
-  var testInput = (0, _jquery2.default)('#entry-6133');
-  var elemId = testInput.attr('id');
-  var errorSpanId = '#' + elemId + '-error';
-  var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
+  // const testInput = $('#entry-6133');
+  // const elemId = testInput.attr('id');
+  // const errorSpanId = `#${elemId}-error`;
+  // const inputErrorSpan = $(errorSpanId);
 
   (0, _jquery2.default)(submitForm).submit(function (event) {
-    var validateMessage = (0, _validation.validateInput)(testInput);
-    if (validateMessage) {
-      inputErrorSpan.html(validateMessage);
-      event.preventDefault();
-    }
+    event.preventDefault();
+
+    var textInputs = (0, _jquery2.default)(".js-campaignForm input[type=text]");
+    (0, _validation.validateTextInputs)(textInputs);
+
+    // const validateMessage = validateInput(testInput);
+    // if (validateMessage) {
+    //   inputErrorSpan.html(validateMessage);
+    //   event.preventDefault();
+    // }
+
+    event.preventDefault();
   });
-
-  // submitButton.click(function(e) {
-  // e.preventDefault();
-
-
-  // return;
-  // submitForm.submit();
-  // console.log('submitted, deh');
-  // });
-
-
-  //   const campaignForm = $('.js-campaignForm');
-  //   console.log('campaign', campaignForm);
 
   // const c = validate.collectFormValues(campaignForm);
   // console.log('c', c);

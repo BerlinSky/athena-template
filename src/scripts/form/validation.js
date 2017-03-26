@@ -2,37 +2,51 @@ import $ from 'jquery';
 import R from 'ramda';
 import { validate } from 'validate.js';
 
+export function validateTextInputs(textInputs) {
+  R.forEach(validateInput, textInputs);
+  console.log('textInputs', textInputs);
+  // validateTextInput(textInputs);
+}
+
 export function validateInput(input) {
   const elem = $(input);
+  const elemId = elem.attr('id');
+  const elemValue = elem.val();
   const isRequired = elem.attr('required');
+  const msg = elem.attr('required-msg');
+
   if (isRequired) {
-    const elemId = elem.attr('id');
-    const elemValue = elem.val();
-    console.log("need to validate", elemValue);
-    const msg = elem.attr('required-msg');
-    const constraint = buildConstraints(elemId, msg);
-    const result = validate( {[elemId]: elemValue}, constraint );
+    const result = validateRequired(elemId, elemValue, msg);
+    console.log(result);
 
-    if (result) {
-      console.log('result', result);
-      const resultMsg = getMessage(elemId, result);
-      console.log('msg', resultMsg);
-      return resultMsg;
-    }
-  }
-  else {
-    console.log("No need to validate");
+    const resultMsg = validationMsg(elemId, result);
+    paintMessagePanel(elemId, resultMsg);
   }
 }
 
-function getMessage(id, messageList) {
-  return R.prop(id, messageList);
+function paintMessagePanel(elemId, msg) {
+  const errorSpanId = `#${elemId}-error`;
+  const inputErrorSpan = $(errorSpanId);
+  inputErrorSpan.html(msg);
 }
 
-function buildConstraints(inputId, msg) {
-  return {
-    [inputId]: {
-      presence: { message: `^${msg}` }
-    }
-  };
+function validationMsg(key, messageList) {
+  if(messageList) {
+    return R.prop(key, messageList);
+  }
+}
+
+// function buildConstraints(inputId, msg) {
+//   return {
+//     [inputId]: {
+//       presence: { message: `^${msg}` }
+//     }
+//   };
+// }
+
+function validateRequired(key, value, msg) {
+  const constraint = { [key]: {
+    presence: { message: `^${msg}` }
+  }};
+  return validate( {[key]: value}, constraint );
 }

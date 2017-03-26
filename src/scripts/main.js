@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { validateInput } from './form/validation';
+import { validateInput, validateTextInputs } from './form/validation';
 
 // var validate = require("validate.js");
 
@@ -8,33 +8,30 @@ $(function () {
 
 
   const submitForm = $('form.js-campaignForm');
-  // const submitButton = $('.js-campaignForm .js-submitButton');
 
-  const testInput = $('#entry-6133');
-  const elemId = testInput.attr('id');
-  const errorSpanId = `#${elemId}-error`;
-  const inputErrorSpan = $(errorSpanId);
+
+  // const testInput = $('#entry-6133');
+  // const elemId = testInput.attr('id');
+  // const errorSpanId = `#${elemId}-error`;
+  // const inputErrorSpan = $(errorSpanId);
 
   $(submitForm).submit(function( event ) {
-    const validateMessage = validateInput(testInput);
-    if (validateMessage) {
-      inputErrorSpan.html(validateMessage);
-      event.preventDefault();
-    }
+    event.preventDefault();
+
+    const textInputs = $(".js-campaignForm input[type=text]")
+    validateTextInputs(textInputs);
+
+    // const validateMessage = validateInput(testInput);
+    // if (validateMessage) {
+    //   inputErrorSpan.html(validateMessage);
+    //   event.preventDefault();
+    // }
+
+    event.preventDefault();
+
   });
 
-  // submitButton.click(function(e) {
-    // e.preventDefault();
 
-
-    // return;
-    // submitForm.submit();
-    // console.log('submitted, deh');
-  // });
-
-
-//   const campaignForm = $('.js-campaignForm');
-//   console.log('campaign', campaignForm);
 
 // const c = validate.collectFormValues(campaignForm);
 // console.log('c', c);

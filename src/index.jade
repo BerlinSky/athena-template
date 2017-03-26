@@ -68,11 +68,11 @@ block bodyContent
 				.dataEntryFormContainer
 					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-campaignForm
 						.inputGroup
-							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a valid value???").dataInput
+							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a valid value 6133").dataInput
 							label(for="firstName") First Name
 							span(id="entry-6133-error").inputError
 						.inputGroup
-							input(id='entry-6134' name="lastName" type="text" value="" required="required").dataInput
+							input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a valid value 6134").dataInput
 							label(for="lastName") Last Name
 							span(id="entry-6134-error").inputError Please enter a valid value
 						.inputGroup
@@ -98,17 +98,17 @@ block bodyContent
 							label(for="country") Country
 							span(id="entry-6137").inputError Please enter a valid value
 						.inputGroup
-							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city").dataInput
+							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a valid value 6135").dataInput
 							label(for="zip") Zip Code
-							span(id="entry-6135").inputError Please enter a valid value
+							span(id="entry-6135-error").inputError
 						.inputGroup
-							input(id='entry-6136' name="mobile" type="text" required="required" value="").dataInput
+							input(id='entry-6136' name="mobile" type="text" required="required" value="" required-msg="Please enter a valid value 6136").dataInput
 							label(for="mobile") Your Mobile
-							span(id="entry-6136").inputError Please enter a valid value
+							span(id="entry-6136-error").inputError
 						.inputGroup
-							input(id='entry-6138' name="mobileVerify" type="text" required="required" value="").dataInput
+							input(id='entry-6138' name="mobileVerify" type="text" required="required" value="" required-msg="Please enter a valid value 6138").dataInput
 							label(for="mobileVerify") Your mobile again
-							span(id="entry-6138").inputError Please enter a valid value
+							span(id="entry-6138-error").inputError
 						.inputGroup
 							input(id='entry-6141' name="favNumber" type="number" required="required" value="").dataInput
 							label(for="favNumber") Your favorite number
