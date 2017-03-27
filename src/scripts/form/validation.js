@@ -18,8 +18,18 @@ export function validateInput(input) {
     const result = validateRequired(elemId, elemValue, msg);
     console.log(result);
 
-    const resultMsg = validationMsg(elemId, result);
-    paintMessagePanel(elemId, resultMsg);
+    if (result) {
+      const resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+    }
+    else {
+      const formatMsg = "test format????";
+      const formatResult = validateFormat(elemId, elemValue, formatMsg);
+      const resultMsg = validationMsg(elemId, formatResult);
+      paintMessagePanel(elemId, resultMsg);
+
+      console.log('formatResult', formatResult);
+    }
   }
 }
 
@@ -39,5 +49,22 @@ function validateRequired(key, value, msg) {
   const constraint = { [key]: {
     presence: { message: `^${msg}` }
   }};
+  return validate( {[key]: value}, constraint );
+}
+
+function validateFormat(key, value, pattern, msg) {
+  pattern = "[0-9]+";
+  msg = "Really???";
+
+  const constraint = {
+    [key]: {
+      format: {
+        pattern: pattern,
+        flags: "i",
+        message: `^${msg}`
+      }
+    }
+  };
+
   return validate( {[key]: value}, constraint );
 }

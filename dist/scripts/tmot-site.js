@@ -21349,7 +21349,7 @@ var _ramda = require('ramda');
 
 var _ramda2 = _interopRequireDefault(_ramda);
 
-var _validate2 = require('validate.js');
+var _validate3 = require('validate.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21371,8 +21371,17 @@ function validateInput(input) {
     var result = validateRequired(elemId, elemValue, msg);
     console.log(result);
 
-    var resultMsg = validationMsg(elemId, result);
-    paintMessagePanel(elemId, resultMsg);
+    if (result) {
+      var resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+    } else {
+      var formatMsg = "test format????";
+      var formatResult = validateFormat(elemId, elemValue, formatMsg);
+      var _resultMsg = validationMsg(elemId, formatResult);
+      paintMessagePanel(elemId, _resultMsg);
+
+      console.log('formatResult', formatResult);
+    }
   }
 }
 
@@ -21392,7 +21401,22 @@ function validateRequired(key, value, msg) {
   var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
   });
-  return (0, _validate2.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+}
+
+function validateFormat(key, value, pattern, msg) {
+  pattern = "[0-9]+";
+  msg = "Really???";
+
+  var constraint = _defineProperty({}, key, {
+    format: {
+      pattern: pattern,
+      flags: "i",
+      message: '^' + msg
+    }
+  });
+
+  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
 }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
