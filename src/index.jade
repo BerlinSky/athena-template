@@ -88,7 +88,7 @@ block bodyContent
 							label(for="passwordVerify") Password Verify
 							span(id="passwordVerify-error").inputError
 						.inputGroup
-							select(id='entry-6137' name="country" required="required").dataInput
+							select(id='entry-6137' name="country" required="required" required-msg="Please enter a required value country").dataInput
 								option(value="" selected="selected") Country
 								option(value="AF") Afghanistan
 								option(value="AX") Aland Islands
@@ -96,7 +96,7 @@ block bodyContent
 								option(value="DZ") Algeria
 								option(value="AS") American Samoa
 							label(for="country") Country
-							span(id="entry-6137").inputError
+							span(id="entry-6137-error").inputError
 						.inputGroup
 							input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a required value 6135").dataInput
 							label(for="zip") Zip Code

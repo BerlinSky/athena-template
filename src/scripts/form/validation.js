@@ -2,7 +2,7 @@ import $ from 'jquery';
 import R from 'ramda';
 import { validate } from 'validate.js';
 
-export function validateTextInputs(textInputs) {
+export function validateInputList(textInputs) {
   R.forEach(validateInput, textInputs);
   console.log('textInputs', textInputs);
 }

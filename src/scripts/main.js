@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { validateTextInputs } from './form/validation';
+import { validateInputList } from './form/validation';
 
 $(function () {
 	const submitForm = $('form.js-campaignForm');
@@ -7,11 +7,14 @@ $(function () {
 	$(submitForm).submit(function( event ) {
 		event.preventDefault();
 
+    $('.js-campaignForm .inputError').html('');
+
 		const inputList = $(`.js-campaignForm input[type=text],
 												 .js-campaignForm input[type=password],
 												 .js-campaignForm input[type=email],
-												 .js-campaignForm input[type=number]`);
-		validateTextInputs(inputList);
+												 .js-campaignForm input[type=number],
+                         .js-campaignForm select`);
+		validateInputList(inputList);
 
 		// const validateMessage = validateInput(testInput);
 		// if (validateMessage) {

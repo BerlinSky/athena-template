@@ -21338,7 +21338,7 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateTextInputs = validateTextInputs;
+exports.validateInputList = validateInputList;
 exports.validateInput = validateInput;
 
 var _jquery = require('jquery');
@@ -21355,7 +21355,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function validateTextInputs(textInputs) {
+function validateInputList(textInputs) {
   _ramda2.default.forEach(validateInput, textInputs);
   console.log('textInputs', textInputs);
 }
@@ -21412,8 +21412,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	(0, _jquery2.default)(submitForm).submit(function (event) {
 		event.preventDefault();
 
-		var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number]');
-		(0, _validation.validateTextInputs)(inputList);
+		(0, _jquery2.default)('.js-campaignForm .inputError').html('');
+
+		var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n                         .js-campaignForm select');
+		(0, _validation.validateInputList)(inputList);
 
 		// const validateMessage = validateInput(testInput);
 		// if (validateMessage) {
