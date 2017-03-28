@@ -21347,42 +21347,84 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
-var _ramda2 = _interopRequireDefault(_ramda);
-
-var _validate3 = require('validate.js');
+var _validate4 = require('validate.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function validateInputList(textInputs) {
-  _ramda2.default.forEach(validateInput, textInputs);
-  console.log('textInputs', textInputs);
+function validateInputList(inputList) {
+  (0, _ramda.forEach)(validateInput, inputList);
+  console.log('inputList', inputList);
 }
 
 function validateInput(input) {
   var elem = (0, _jquery2.default)(input);
   var elemId = elem.attr('id');
   var elemValue = elem.val();
+  var elemType = elem.attr('type');
   var isRequired = elem.attr('required');
   var msg = elem.attr('required-msg');
+  var formatPattern = elem.attr('pattern');
+  var formatMsg = elem.attr('pattern-msg');
 
+  var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
+  if (!isRequiredPassed) {
+    return;
+  }
+
+  var numericPassed = inspectNumericality(elemType, elemId, elemValue, formatMsg);
+  if (!numericPassed) {
+    return;
+  }
+
+  var formatPassed = inspectFormat(formatPattern, elemId, elemValue, formatMsg);
+  if (!formatPassed) {
+    return;
+  }
+}
+
+function inspectRequired(isRequired, elemId, elemValue, msg) {
   if (isRequired) {
     var result = validateRequired(elemId, elemValue, msg);
-    console.log(result);
-
     if (result) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
-    } else {
-      var formatMsg = "test format????";
-      var formatResult = validateFormat(elemId, elemValue, formatMsg);
-      var _resultMsg = validationMsg(elemId, formatResult);
-      paintMessagePanel(elemId, _resultMsg);
 
-      console.log('formatResult', formatResult);
+      console.log('resultMsg', resultMsg);
+
+      return false;
     }
   }
+  return true;
+}
+
+function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
+  if (elemType === 'number') {
+    var result = validateNumericality(elemId, elemValue, formatMsg);
+    if (result !== 'undefined') {
+      var resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+
+      console.log('resultMsg', resultMsg);
+      return false;
+    }
+  }
+  return true;
+}
+
+function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
+  if (formatPattern) {
+    var result = validateFormat(elemId, elemValue, formatPattern, formatMsg);
+    if (result !== 'undefined') {
+      var resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+
+      console.log('resultMsg', resultMsg);
+      return false;
+    }
+  }
+  return true;
 }
 
 function paintMessagePanel(elemId, msg) {
@@ -21393,7 +21435,7 @@ function paintMessagePanel(elemId, msg) {
 
 function validationMsg(key, messageList) {
   if (messageList) {
-    return _ramda2.default.prop(key, messageList);
+    return (0, _ramda.prop)(key, messageList);
   }
 }
 
@@ -21401,22 +21443,30 @@ function validateRequired(key, value, msg) {
   var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
   });
-  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
 }
 
-function validateFormat(key, value, pattern, msg) {
-  pattern = "[0-9]+";
-  msg = "Really???";
-
+function validateNumericality(key, value, msg) {
   var constraint = _defineProperty({}, key, {
-    format: {
-      pattern: pattern,
-      flags: "i",
+    numericality: {
+      notValid: "must be evenly divisible by two",
       message: '^' + msg
     }
   });
 
-  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
+}
+
+function validateFormat(key, value, pattern, msg) {
+  var constraint = _defineProperty({}, key, {
+    format: {
+      pattern: pattern,
+      flags: "gi",
+      message: '^' + msg
+    }
+  });
+
+  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
 }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
@@ -21441,36 +21491,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n                         .js-campaignForm select');
 		(0, _validation.validateInputList)(inputList);
 
-		// const validateMessage = validateInput(testInput);
-		// if (validateMessage) {
-		//   inputErrorSpan.html(validateMessage);
-		//   event.preventDefault();
-		// }
-
 		event.preventDefault();
-	});
-
-	(0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
-		e.preventDefault();
-
-		var mobileMenu = (0, _jquery2.default)('.js-mobileMenuContainer');
-		mobileMenu.toggle("slow");
-	});
-
-	var menuWrapper = document.querySelector('.js-menuWrapper');
-
-	var showSearchPanel = document.querySelector('.js-showSearchPanel');
-	showSearchPanel.addEventListener('click', function (e) {
-		e.preventDefault();
-
-		menuWrapper.classList.add('showSearchPanel');
-	});
-
-	var hideSearchPanel = document.querySelector('.js-hideSearchPanel');
-	hideSearchPanel.addEventListener('click', function (e) {
-		e.preventDefault();
-
-		menuWrapper.classList.remove('showSearchPanel');
 	});
 });
 
