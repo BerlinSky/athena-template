@@ -21347,7 +21347,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
-var _validate4 = require('validate.js');
+var _validate5 = require('validate.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21366,15 +21366,21 @@ function validateInput(input) {
   var isRequired = elem.attr('required');
   var msg = elem.attr('required-msg');
   var formatPattern = elem.attr('pattern');
-  var formatMsg = elem.attr('pattern-msg');
+  var numberMsg = elem.attr('number-msg');
+  var emailMsg = elem.attr('email-msg');
 
   var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
   if (!isRequiredPassed) {
     return;
   }
 
-  var numericPassed = inspectNumericality(elemType, elemId, elemValue, formatMsg);
+  var numericPassed = inspectNumericality(elemType, elemId, elemValue, numberMsg);
   if (!numericPassed) {
+    return;
+  }
+
+  var emailPassed = inspectEmail(elemType, elemId, elemValue, emailMsg);
+  if (!emailPassed) {
     return;
   }
 
@@ -21402,6 +21408,20 @@ function inspectRequired(isRequired, elemId, elemValue, msg) {
 function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
   if (elemType === 'number') {
     var result = validateNumericality(elemId, elemValue, formatMsg);
+    if (result !== 'undefined') {
+      var resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+
+      console.log('resultMsg', resultMsg);
+      return false;
+    }
+  }
+  return true;
+}
+
+function inspectEmail(elemType, elemId, elemValue, emailMsg) {
+  if (elemType === 'email') {
+    var result = validateEmail(elemId, elemValue, emailMsg);
     if (result !== 'undefined') {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
@@ -21443,7 +21463,7 @@ function validateRequired(key, value, msg) {
   var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
   });
-  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
 }
 
 function validateNumericality(key, value, msg) {
@@ -21454,7 +21474,17 @@ function validateNumericality(key, value, msg) {
     }
   });
 
-  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
+}
+
+function validateEmail(key, value, msg) {
+  var constraint = _defineProperty({}, key, {
+    email: {
+      message: '^' + msg
+    }
+  });
+
+  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
 }
 
 function validateFormat(key, value, pattern, msg) {
@@ -21466,7 +21496,7 @@ function validateFormat(key, value, pattern, msg) {
     }
   });
 
-  return (0, _validate4.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
 }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
