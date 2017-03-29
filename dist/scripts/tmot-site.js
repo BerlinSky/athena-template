@@ -21353,9 +21353,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var isValid = true;
+
 function validateInputList(inputList) {
+  console.log('isValid', isValid);
   (0, _ramda.forEach)(validateInput, inputList);
   console.log('inputList', inputList);
+  console.log('isValid', isValid);
+  return isValid;
 }
 
 function validateInput(input) {
@@ -21374,28 +21379,30 @@ function validateInput(input) {
 
   var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
   if (!isRequiredPassed) {
-    return;
+    return isValid = false;
   }
 
   var numericPassed = inspectNumericality(elemType, elemId, elemValue, numberMsg);
   if (!numericPassed) {
-    return;
+    return isValid = false;
   }
 
   var emailPassed = inspectEmail(elemType, elemId, elemValue, emailMsg);
   if (!emailPassed) {
-    return;
+    return isValid = false;;
   }
 
   var formatPassed = inspectFormat(formatPattern, elemId, elemValue, formatMsg);
   if (!formatPassed) {
-    return;
+    return isValid = false;;
   }
 
   var equalityPassed = inspectEquality(partnerElemId, elemId, elemValue, equalityMsg);
   if (!equalityPassed) {
-    return;
+    return isValid = false;;
   }
+
+  return isValid = true;
 }
 
 function inspectRequired(isRequired, elemId, elemValue, msg) {
@@ -21416,7 +21423,8 @@ function inspectRequired(isRequired, elemId, elemValue, msg) {
 function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
   if (elemType === 'number') {
     var result = validateNumericality(elemId, elemValue, formatMsg);
-    if (result !== 'undefined') {
+    console.log(result);
+    if (!(0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21430,7 +21438,7 @@ function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
 function inspectEmail(elemType, elemId, elemValue, emailMsg) {
   if (elemType === 'email') {
     var result = validateEmail(elemId, elemValue, emailMsg);
-    if (result !== 'undefined') {
+    if ((0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21444,7 +21452,7 @@ function inspectEmail(elemType, elemId, elemValue, emailMsg) {
 function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
   if (formatPattern) {
     var result = validateFormat(elemId, elemValue, formatPattern, formatMsg);
-    if (result !== 'undefined') {
+    if ((0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21459,7 +21467,7 @@ function inspectEquality(partnerElemId, elemId, elemValue, equalityMsg) {
   if (partnerElemId) {
     var partnerValue = (0, _jquery2.default)('#' + partnerElemId).val();
     var result = validateEquality(elemId, elemValue, partnerValue, equalityMsg);
-    if (result !== 'undefined') {
+    if ((0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21547,18 +21555,20 @@ var _validation = require('./form/validation');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-	var submitForm = (0, _jquery2.default)('form.js-campaignForm');
+		var submitForm = (0, _jquery2.default)('form.js-campaignForm');
 
-	(0, _jquery2.default)(submitForm).submit(function (event) {
-		event.preventDefault();
+		(0, _jquery2.default)(submitForm).submit(function (event) {
 
-		(0, _jquery2.default)('.js-campaignForm .inputError').html('');
+				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
+				// event.preventDefault();
 
-		var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n                         .js-campaignForm select');
-		(0, _validation.validateInputList)(inputList);
+				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n                         .js-campaignForm select');
+				var isValid = (0, _validation.validateInputList)(inputList);
 
-		event.preventDefault();
-	});
+				if (!isValid) {
+						event.preventDefault();
+				}
+		});
 });
 
 },{"./form/validation":312,"jquery":1}]},{},[313])
