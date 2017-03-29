@@ -21562,7 +21562,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
 				// event.preventDefault();
 
-				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n                         .js-campaignForm select');
+				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select');
 				var isValid = (0, _validation.validateInputList)(inputList);
 
 				if (!isValid) {
