@@ -21347,7 +21347,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
-var _validate5 = require('validate.js');
+var _validate6 = require('validate.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21360,14 +21360,17 @@ function validateInputList(inputList) {
 
 function validateInput(input) {
   var elem = (0, _jquery2.default)(input);
-  var elemId = elem.attr('id');
   var elemValue = elem.val();
+  var elemId = elem.attr('id');
   var elemType = elem.attr('type');
   var isRequired = elem.attr('required');
+  var partnerElemId = elem.attr('partner-id');
   var msg = elem.attr('required-msg');
   var formatPattern = elem.attr('pattern');
   var numberMsg = elem.attr('number-msg');
+  var formatMsg = elem.attr('pattern-msg');
   var emailMsg = elem.attr('email-msg');
+  var equalityMsg = elem.attr('equality-msg');
 
   var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
   if (!isRequiredPassed) {
@@ -21386,6 +21389,11 @@ function validateInput(input) {
 
   var formatPassed = inspectFormat(formatPattern, elemId, elemValue, formatMsg);
   if (!formatPassed) {
+    return;
+  }
+
+  var equalityPassed = inspectEquality(partnerElemId, elemId, elemValue, equalityMsg);
+  if (!equalityPassed) {
     return;
   }
 }
@@ -21447,6 +21455,21 @@ function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
   return true;
 }
 
+function inspectEquality(partnerElemId, elemId, elemValue, equalityMsg) {
+  if (partnerElemId) {
+    var partnerValue = (0, _jquery2.default)('#' + partnerElemId).val();
+    var result = validateEquality(elemId, elemValue, partnerValue, equalityMsg);
+    if (result !== 'undefined') {
+      var resultMsg = validationMsg(elemId, result);
+      paintMessagePanel(elemId, resultMsg);
+
+      console.log('resultMsg', resultMsg);
+      return false;
+    }
+  }
+  return true;
+}
+
 function paintMessagePanel(elemId, msg) {
   var errorSpanId = '#' + elemId + '-error';
   var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
@@ -21463,7 +21486,7 @@ function validateRequired(key, value, msg) {
   var constraint = _defineProperty({}, key, {
     presence: { message: '^' + msg }
   });
-  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
 }
 
 function validateNumericality(key, value, msg) {
@@ -21474,7 +21497,7 @@ function validateNumericality(key, value, msg) {
     }
   });
 
-  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
 }
 
 function validateEmail(key, value, msg) {
@@ -21484,7 +21507,20 @@ function validateEmail(key, value, msg) {
     }
   });
 
-  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
+}
+
+function validateEquality(key, value, partnerValue, msg) {
+  var _validate4;
+
+  var constraint = _defineProperty({}, key, {
+    equality: {
+      attribute: "partnerKey",
+      message: '^' + msg
+    }
+  });
+
+  return (0, _validate6.validate)((_validate4 = {}, _defineProperty(_validate4, key, value), _defineProperty(_validate4, 'partnerKey', partnerValue), _validate4), constraint);
 }
 
 function validateFormat(key, value, pattern, msg) {
@@ -21496,7 +21532,7 @@ function validateFormat(key, value, pattern, msg) {
     }
   });
 
-  return (0, _validate5.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
 }
 
 },{"jquery":1,"ramda":2,"validate.js":311}],313:[function(require,module,exports){
