@@ -21338,6 +21338,7 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.validateCheckboxList = validateCheckboxList;
 exports.validateInputList = validateInputList;
 exports.validateInput = validateInput;
 
@@ -21354,6 +21355,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var isValid = true;
+
+function validateCheckboxList(checkboxList) {
+  (0, _ramda.forEach)(validateCheckbox, checkboxList);
+  return isValid;
+}
+
+function validateCheckbox(checkbox) {
+  var elem = (0, _jquery2.default)(checkbox);
+  var elemId = elem.attr('id');
+  var msg = elem.attr('required-msg');
+
+  console.log('checkbox-id', elemId);
+
+  if (elem.prop("checked", false)) {
+    console.log('checkbox-msg', msg);
+    paintMessagePanel(elemId, msg);
+
+    return isValid = false;
+  }
+}
 
 function validateInputList(inputList) {
   console.log('isValid', isValid);
@@ -21563,9 +21584,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				// event.preventDefault();
 
 				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select');
-				var isValid = (0, _validation.validateInputList)(inputList);
+				var isValidInputs = (0, _validation.validateInputList)(inputList);
 
-				if (!isValid) {
+				// validate checkbox
+				var checkboxList = (0, _jquery2.default)('.js-campaignForm input[type=checkbox]');
+				var isValidCheckboxes = (0, _validation.validateCheckboxList)(checkboxList);
+
+				if (!isValidInputs || !isValidCheckboxes) {
 						event.preventDefault();
 				}
 		});
