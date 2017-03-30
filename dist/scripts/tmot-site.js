@@ -21423,7 +21423,8 @@ function validateInput(input) {
     return isValid = false;;
   }
 
-  return isValid = true;
+  // return isValid = true;
+  // return isValid;
 }
 
 function inspectRequired(isRequired, elemId, elemValue, msg) {
@@ -21459,7 +21460,8 @@ function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
 function inspectEmail(elemType, elemId, elemValue, emailMsg) {
   if (elemType === 'email') {
     var result = validateEmail(elemId, elemValue, emailMsg);
-    if ((0, _ramda.isNil)(result)) {
+    console.log(result);
+    if (!(0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
