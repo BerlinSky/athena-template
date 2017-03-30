@@ -21368,12 +21368,13 @@ function validateCheckbox(checkbox) {
 
   console.log('checkbox-id', elemId);
 
-  if (elem.prop("checked", false)) {
+  if (!elem.prop("checked")) {
     console.log('checkbox-msg', msg);
     paintMessagePanel(elemId, msg);
 
     return isValid = false;
   }
+  return true;
 }
 
 function validateInputList(inputList) {
