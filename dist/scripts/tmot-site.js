@@ -21475,7 +21475,7 @@ function inspectEmail(elemType, elemId, elemValue, emailMsg) {
 function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
   if (formatPattern) {
     var result = validateFormat(elemId, elemValue, formatPattern, formatMsg);
-    if ((0, _ramda.isNil)(result)) {
+    if (!(0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21490,7 +21490,7 @@ function inspectEquality(partnerElemId, elemId, elemValue, equalityMsg) {
   if (partnerElemId) {
     var partnerValue = (0, _jquery2.default)('#' + partnerElemId).val();
     var result = validateEquality(elemId, elemValue, partnerValue, equalityMsg);
-    if ((0, _ramda.isNil)(result)) {
+    if (!(0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
