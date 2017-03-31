@@ -21338,7 +21338,6 @@ module.exports = _curry3(function zipWith(fn, a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateCheckboxList = validateCheckboxList;
 exports.validateInputList = validateInputList;
 exports.validateInput = validateInput;
 
@@ -21354,12 +21353,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var isValid = true;
+// function formValidationStatus() {
 
-function validateCheckboxList(checkboxList) {
-  (0, _ramda.forEach)(validateCheckbox, checkboxList);
-  return isValid;
-}
+// }
+
+// function readValidationStatus(input) {
+//   const elem = $(input);
+//   const status = elem.attr("valid-input");
+//   console.log("status", status);
+// }
 
 function validateCheckbox(checkbox) {
   var elem = (0, _jquery2.default)(checkbox);
@@ -21371,18 +21373,13 @@ function validateCheckbox(checkbox) {
   if (!elem.prop("checked")) {
     console.log('checkbox-msg', msg);
     paintMessagePanel(elemId, msg);
-
-    return isValid = false;
   }
-  return true;
 }
 
 function validateInputList(inputList) {
-  console.log('isValid', isValid);
   (0, _ramda.forEach)(validateInput, inputList);
+
   console.log('inputList', inputList);
-  console.log('isValid', isValid);
-  return isValid;
 }
 
 function validateInput(input) {
@@ -21401,39 +21398,41 @@ function validateInput(input) {
 
   updateValidationStatus(elemId, "true");
 
+  if (elemType === 'checkbox') {
+    validateCheckbox(elem);
+    return;
+  }
+
   var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
   if (!isRequiredPassed) {
-    return isValid = false;
+    return;
   }
 
   var numericPassed = inspectNumericality(elemType, elemId, elemValue, numberMsg);
   if (!numericPassed) {
-    return isValid = false;
+    return;
   }
 
   var emailPassed = inspectEmail(elemType, elemId, elemValue, emailMsg);
   if (!emailPassed) {
-    return isValid = false;;
+    return;
   }
 
   var formatPassed = inspectFormat(formatPattern, elemId, elemValue, formatMsg);
   if (!formatPassed) {
-    return isValid = false;;
+    return;
   }
 
   var equalityPassed = inspectEquality(partnerElemId, elemId, elemValue, equalityMsg);
   if (!equalityPassed) {
-    return isValid = false;;
+    return;
   }
-
-  // return isValid = true;
-  // return isValid;
 }
 
 function inspectRequired(isRequired, elemId, elemValue, msg) {
   if (isRequired) {
     var result = validateRequired(elemId, elemValue, msg);
-    if (result) {
+    if (!(0, _ramda.isNil)(result)) {
       var resultMsg = validationMsg(elemId, result);
       paintMessagePanel(elemId, resultMsg);
 
@@ -21595,14 +21594,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
 				// event.preventDefault();
 
-				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select');
-				var isValidInputs = (0, _validation.validateInputList)(inputList);
+				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
+				(0, _validation.validateInputList)(inputList);
 
-				// validate checkbox
-				var checkboxList = (0, _jquery2.default)('.js-campaignForm input[type=checkbox]');
-				var isValidCheckboxes = (0, _validation.validateCheckboxList)(checkboxList);
+				var validationSatusList = (0, _jquery2.default)('.js-campaignForm input[valid-input="false"],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea[valid-input="false"],\n                         .js-campaignForm select[valid-input="false"]');
 
-				if (!isValidInputs || !isValidCheckboxes) {
+				console.log('validationSatusList', validationSatusList.length);
+
+				if (validationSatusList.length > 0) {
 						event.preventDefault();
 				}
 		});
