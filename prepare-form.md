@@ -42,6 +42,15 @@ input(id='entry-6132' name="email" type="email" value="" required="required" req
 input(id='entry-6138' name="mobileVerify" type="text" required="required" partner-id="entry-6136" equality-msg="Do not match!!!" value="" required-msg="Please enter a required value 6138").dataInput
 ```
 
+### add class="js-fileUploader" to the file upload input:
+```
+<input id="upload" name="upload" type="file" multiple="" class="js-fileUploader">
+```
+
+### add class="js-fileUploaded to the text input that houses the file name(s):
+```
+<input id="entry-8727" name="upload" type="text" value="" required="required" required-msg="Please enter a required value 8727" class="js-fileUploaded">
+```
 
 ### remove all inline form validation JavaScripts
 
