@@ -21397,6 +21397,7 @@ function validateInput(input) {
   var equalityMsg = elem.attr('equality-msg');
 
   updateValidationStatus(elemId, "true");
+  paintMessagePanel(elemId, "");
 
   if (elemType === 'checkbox') {
     validateCheckbox(elem);

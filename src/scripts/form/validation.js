@@ -46,6 +46,7 @@ export function validateInput(input) {
   const equalityMsg = elem.attr('equality-msg');
 
   updateValidationStatus(elemId, "true");
+  paintMessagePanel(elemId, "");
 
   if (elemType === 'checkbox') {
     validateCheckbox(elem);
