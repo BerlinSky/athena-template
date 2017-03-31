@@ -3,6 +3,18 @@ import { validateInputList } from './form/validation';
 
 $(function () {
 
+  const fileUploader = $('.js-fileUploader');
+  const fileUploaded = $('.js-fileUploaded');
+
+  fileUploader.change(function() {
+    const fileName = fileUploader.val().replace( '/.*(\/|\)/',  '');
+    fileUploaded.val(fileName);
+  })
+
+  // $('input[id=upload]').change(function() {
+  //     $('#uploadedFile').val($(this).val().replace( '/.*(\/|\)/',  ''));
+  // });
+
   const input = $(`.js-campaignForm input[type=text],
 												 .js-campaignForm input[type=password],
 												 .js-campaignForm input[type=email],

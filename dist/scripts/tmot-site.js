@@ -21588,32 +21588,44 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function () {
 
-		var input = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
-		input.blur(function (event) {
-				// event.preventDefault();
-				var thisInput = (0, _jquery2.default)(event.target);
-				console.log('this', thisInput);
-				(0, _validation.validateInputList)(thisInput);
-		});
+  var fileUploader = (0, _jquery2.default)('.js-fileUploader');
+  var fileUploaded = (0, _jquery2.default)('.js-fileUploaded');
 
-		var submitForm = (0, _jquery2.default)('form.js-campaignForm');
+  fileUploader.change(function () {
+    var fileName = fileUploader.val().replace('/.*(\/|\)/', '');
+    fileUploaded.val(fileName);
+  });
 
-		(0, _jquery2.default)(submitForm).submit(function (event) {
+  // $('input[id=upload]').change(function() {
+  //     $('#uploadedFile').val($(this).val().replace( '/.*(\/|\)/',  ''));
+  // });
 
-				// event.preventDefault();
+  var input = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
+  input.blur(function (event) {
+    // event.preventDefault();
+    var thisInput = (0, _jquery2.default)(event.target);
+    console.log('this', thisInput);
+    (0, _validation.validateInputList)(thisInput);
+  });
 
-				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
-				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
-				(0, _validation.validateInputList)(inputList);
+  var submitForm = (0, _jquery2.default)('form.js-campaignForm');
 
-				var validationSatusList = (0, _jquery2.default)('.js-campaignForm input[valid-input="false"],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea[valid-input="false"],\n                         .js-campaignForm select[valid-input="false"]');
+  (0, _jquery2.default)(submitForm).submit(function (event) {
 
-				console.log('validationSatusList', validationSatusList.length);
+    // event.preventDefault();
 
-				if (validationSatusList.length > 0) {
-						event.preventDefault();
-				}
-		});
+    (0, _jquery2.default)('.js-campaignForm .inputError').html('');
+    var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
+    (0, _validation.validateInputList)(inputList);
+
+    var validationSatusList = (0, _jquery2.default)('.js-campaignForm input[valid-input="false"],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea[valid-input="false"],\n                         .js-campaignForm select[valid-input="false"]');
+
+    console.log('validationSatusList', validationSatusList.length);
+
+    if (validationSatusList.length > 0) {
+      event.preventDefault();
+    }
+  });
 });
 
 },{"./form/validation":312,"jquery":1}]},{},[313])
