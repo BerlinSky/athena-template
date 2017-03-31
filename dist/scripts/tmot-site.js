@@ -21587,13 +21587,22 @@ var _validation = require('./form/validation');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
+
+		var input = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
+		input.blur(function (event) {
+				// event.preventDefault();
+				var thisInput = (0, _jquery2.default)(event.target);
+				console.log('this', thisInput);
+				(0, _validation.validateInputList)(thisInput);
+		});
+
 		var submitForm = (0, _jquery2.default)('form.js-campaignForm');
 
 		(0, _jquery2.default)(submitForm).submit(function (event) {
 
-				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
 				// event.preventDefault();
 
+				(0, _jquery2.default)('.js-campaignForm .inputError').html('');
 				var inputList = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
 				(0, _validation.validateInputList)(inputList);
 

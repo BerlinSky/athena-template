@@ -2,13 +2,28 @@ import $ from 'jquery';
 import { validateInputList } from './form/validation';
 
 $(function () {
+
+  const input = $(`.js-campaignForm input[type=text],
+												 .js-campaignForm input[type=password],
+												 .js-campaignForm input[type=email],
+												 .js-campaignForm input[type=number],
+												 .js-campaignForm textarea,
+                         .js-campaignForm select,
+                         .js-campaignForm input[type=checkbox]`);
+  input.blur(function(event) {
+		// event.preventDefault();
+    const thisInput =$( event.target );
+    console.log('this', thisInput);
+		validateInputList(thisInput);
+  })
+
 	const submitForm = $('form.js-campaignForm');
 
 	$(submitForm).submit(function( event ) {
 
-    $('.js-campaignForm .inputError').html('');
 		// event.preventDefault();
 
+    $('.js-campaignForm .inputError').html('');
 		const inputList = $(`.js-campaignForm input[type=text],
 												 .js-campaignForm input[type=password],
 												 .js-campaignForm input[type=email],
