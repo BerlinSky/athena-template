@@ -21399,6 +21399,8 @@ function validateInput(input) {
   var emailMsg = elem.attr('email-msg');
   var equalityMsg = elem.attr('equality-msg');
 
+  updateValidationStatus(elemId, "true");
+
   var isRequiredPassed = inspectRequired(isRequired, elemId, elemValue, msg);
   if (!isRequiredPassed) {
     return isValid = false;
@@ -21506,6 +21508,13 @@ function paintMessagePanel(elemId, msg) {
   var errorSpanId = '#' + elemId + '-error';
   var inputErrorSpan = (0, _jquery2.default)(errorSpanId);
   inputErrorSpan.html(msg);
+
+  updateValidationStatus(elemId, "false");
+}
+
+function updateValidationStatus(elemId, status) {
+  var elem = (0, _jquery2.default)('#' + elemId);
+  elem.attr("valid-input", status);
 }
 
 function validationMsg(key, messageList) {
