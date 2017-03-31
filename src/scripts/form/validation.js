@@ -2,16 +2,6 @@ import $ from 'jquery';
 import { forEach, prop, isNil } from 'ramda';
 import { validate } from 'validate.js';
 
-// function formValidationStatus() {
-
-// }
-
-// function readValidationStatus(input) {
-//   const elem = $(input);
-//   const status = elem.attr("valid-input");
-//   console.log("status", status);
-// }
-
 function validateCheckbox(checkbox) {
   const elem = $(checkbox);
   const elemId = elem.attr('id');
