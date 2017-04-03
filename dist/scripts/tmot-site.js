@@ -21339,7 +21339,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.validateInputList = validateInputList;
-exports.validateInput = validateInput;
 
 var _jquery = require('jquery');
 
@@ -21386,8 +21385,8 @@ function validateInput(input) {
   var emailMsg = elem.attr('email-msg');
   var equalityMsg = elem.attr('equality-msg');
 
-  updateValidationStatus(elemId, "true");
   paintMessagePanel(elemId, "");
+  updateValidationStatus(elemId, "true");
 
   if (elemType === 'checkbox') {
     validateCheckbox(elem);

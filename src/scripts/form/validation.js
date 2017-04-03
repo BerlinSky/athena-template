@@ -21,7 +21,7 @@ export function validateInputList(inputList) {
   console.log('inputList', inputList);
 }
 
-export function validateInput(input) {
+function validateInput(input) {
   const elem = $(input);
   const elemValue = elem.val();
   const elemId = elem.attr('id');
@@ -35,8 +35,8 @@ export function validateInput(input) {
   const emailMsg = elem.attr('email-msg');
   const equalityMsg = elem.attr('equality-msg');
 
-  updateValidationStatus(elemId, "true");
   paintMessagePanel(elemId, "");
+  updateValidationStatus(elemId, "true");
 
   if (elemType === 'checkbox') {
     validateCheckbox(elem);
