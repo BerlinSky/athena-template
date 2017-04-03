@@ -21586,15 +21586,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     fileUploaded.val(fileName);
   });
 
-  // $('input[id=upload]').change(function() {
-  //     $('#uploadedFile').val($(this).val().replace( '/.*(\/|\)/',  ''));
-  // });
-
   var input = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea,\n                         .js-campaignForm select,\n                         .js-campaignForm input[type=checkbox]');
   input.blur(function (event) {
     // event.preventDefault();
     var thisInput = (0, _jquery2.default)(event.target);
-    console.log('this', thisInput);
+    // console.log('this', thisInput);
     (0, _validation.validateInputList)(thisInput);
   });
 
