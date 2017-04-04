@@ -44,70 +44,47 @@
         </div>
       </div>
       <div class="l-pageContentWrapper pageContentWrapper">
-        <div class="l-contentContainer contentContainer contentContainer--offerContent">
+        <div class="l-contentContainer contentContainer contentContainer--signOnContent">
           <div class="headerPanel">
-            <div class="noticeSection">
-              <p>A Mastersite membership includes exclusive access to Mastersite headlining concert ticket presales.  There is a four (4) ticket presale limit per show, per membership.  Gifts will ship in approx. 8 weeks of purchase.</p>
-              <p>Please note, when creating your Username, use only letters or numbers.  No special characters or punctuation.</p>
-            </div>
+            <h1>LOGIN REGISTER</h1>
           </div>
           <div class="divider divider--solid"></div>
-          <div class="offerPanel">
-            <div class="offerPanel__detail">
-              <h2>PREMIUM MEMBERSHIP</h2>
+          <div class="formPanel">
+            <h2>Sign in using a social account</h2>
+            <div class="dataEntryFormContainer">
+              <div class="inputGroup">
+                <input type="button" name="submit" id="proceed" value="Facebook" class="inputButton inputButton--facebook">
+              </div>
             </div>
           </div>
-          <div class="dataEntryFormContainer">
-            <form action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword">
-              <input type="hidden" name="redirect" value="/subscribe/step2">
-              <input type="hidden" name="sku" value="slafah13">
-              <input type="hidden" name="U_Member_status" value="free">
-              <div class="inputGroup">
-                <input name="username" type="text" value="" required="required" class="dataInput">
-                <label for="username">User Name</label>
-              </div>
-              <div class="inputGroup">
-                <input name="email" type="email" value="" required="required" class="dataInput">
-                <label for="email">Email</label>
-              </div>
-              <div class="inputGroup">
-                <input type="password" name="password" id="password" required="required" value="" class="dataInput">
-                <label for="password">Password</label>
-              </div>
-              <div class="inputGroup">
-                <input type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password" class="dataInput">
-                <label for="passwordVerify">Password Verify</label>
-              </div>
-              <div class="inputGroup">
-                <select name="U_Country" id="U_Country" required="required" class="dataInput">
-                  <option value="" selected="selected">Country</option>
-                  <option value="AF">Afghanistan</option>
-                  <option value="AX">Aland Islands</option>
-                  <option value="AL">Albania</option>
-                  <option value="DZ">Algeria</option>
-                  <option value="AS">American Samoa</option>
-                </select>
-                <label for="U_Country">Country</label>
-              </div>
-              <div class="inputGroup">
-                <input name="U_Zip" type="text" value="" required="required" partner="city" class="dataInput">
-                <label for="U_Zip">Zip Code</label>
-              </div>
-              <div class="inputGroup">
-                <input name="U_Birthday" type="text" required="required" value="" class="dataInput">
-                <label for="U_Birthday">Your Birthday (MM/DD/YYYY)</label>
-              </div>
-              <div class="inputCheckbox">
-                <label class="checkboxInline">
-                  <input type="hidden" name="tos" value="0">
-                  <input type="checkbox" name="tos" id="tos" value="1" required="required" class="checkboxInline__input">
-                  <p class="checkboxInline__label">I agree to the &nbsp;<a href="/terms">Terms and Conditions</a></p>
-                </label>
-              </div>
-              <div class="inputButtonGroup">
-                <input type="submit" name="submit" id="proceed" value="Next" class="inputButton">
-              </div>
-            </form>
+          <div class="formPanel">
+            <h2>Sign in with your artist account</h2>
+            <div class="dataEntryFormContainer">
+              <form action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword">
+                <div class="inputGroup">
+                  <input name="username" type="text" value="" required="required" class="dataInput">
+                  <label for="username">User Name Or Email</label>
+                </div>
+                <div class="inputGroup">
+                  <input type="password" name="password" id="password" required="required" value="" class="dataInput">
+                  <label for="password">Password</label>
+                </div>
+                <div class="inputGroup">
+                  <input type="submit" name="submit" id="proceed" value="Sign In" class="inputButton inputButton--signon">
+                </div>
+                <div class="inputCheckbox">
+                  <label class="checkboxInline">
+                    <input type="hidden" name="tos" value="0">
+                    <input type="checkbox" name="tos" id="tos" value="1" required="required" class="checkboxInline__input">
+                    <p class="checkboxInline__label">Remember me for two weeks unless I log out.</p>
+                    <p class="checkboxInline__label">(Uncheck this box if you are on a shared computer.)</p>
+                  </label><a href="#forgotPass" class="linkForgotPassword">Forgot Password?</a>
+                </div>
+                <div class="inputGroup">
+                  <input type="submit" name="submit" id="proceed" value="Not a member yet? &amp;nbsp; register now" class="inputButton inputButton--registerNow">
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         <div class="l-contentFooterContainer contentFooterContainer">

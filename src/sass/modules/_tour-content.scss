@@ -9,8 +9,18 @@
   background-color: #fff;
   font-family: "Source Sans Pro", sans-serif;
 
-	@include break(md) {
-		max-width: 56rem;
+	// @include break(md) {
+	// 	max-width: 56rem;
+  //   padding: 15px;
+	// }
+
+  @include break(md) {
+		max-width: 60rem;
+    padding: 15px;
+	}
+
+	@include break(xl) {
+		max-width: 70rem;
     padding: 15px;
 	}
 

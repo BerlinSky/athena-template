@@ -6,7 +6,7 @@ $(function () {
     e.preventDefault();
 
     const mobileMenu = $('.js-mobileMenuContainer');
-    mobileMenu.toggle("slow");
+    mobileMenu.toggleClass("js-l-mobile");
   })
 
   const menuWrapper = document.querySelector('.js-menuWrapper');

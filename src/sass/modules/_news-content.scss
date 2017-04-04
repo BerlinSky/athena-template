@@ -12,10 +12,20 @@
   margin: 20px auto 20px auto;
   background-color: #fff;
 
+  // @include break(md) {
+  //   max-width: 56rem;
+  //   padding: 15px;
+  // }
+
   @include break(md) {
-    max-width: 56rem;
+		max-width: 60rem;
     padding: 15px;
-  }
+	}
+
+	@include break(xl) {
+		max-width: 70rem;
+    padding: 15px;
+	}
 
   .divider {
     display: inline-block;
