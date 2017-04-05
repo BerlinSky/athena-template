@@ -145,8 +145,12 @@
       width: 100%;
       letter-spacing: 0.85px;
       line-height: 2.725rem;
-      text-transform: uppercase;
-      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      display: inline-block;
+      text-align: center;
+      // text-transform: uppercase;
+      // cursor: pointer;
     }
 
     .linkForgotPassword {

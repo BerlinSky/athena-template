@@ -96,10 +96,14 @@ block bodyContent
 										| (Uncheck this box if you are on a shared computer.)
 
 							.inputGroup
-								input(type="submit" name="submit" id="proceed" value="Forgot Password?").inputButton.inputButton--registerNow
+								//- input(type="submit" name="submit" id="proceed" value="Forgot Password?").inputButton.inputButton--registerNow
+								a(href="google.com").inputButton--registerNow
+									| Forgot Password?
 
 							.inputGroup
-								input(type="submit" name="submit" id="proceed" value="Not a member yet? register now").inputButton.inputButton--registerNow
+								//- input(type="submit" name="submit" id="proceed" value="Not a member yet? register now").inputButton.inputButton--registerNow
+								a(href="google.com").inputButton--registerNow
+									| Not a member yet? register now
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
