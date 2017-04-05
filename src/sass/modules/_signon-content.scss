@@ -111,7 +111,11 @@
     // background-color: $white;
 
     .inputButton--facebook {
-      margin-bottom: 0;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px 0;
+      // margin-bottom: 0;
       padding: 0;
       background-color: #3b5999;
       font-weight: 400;
