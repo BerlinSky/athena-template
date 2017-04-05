@@ -83,8 +83,9 @@ block bodyContent
 							.inputGroup
 								input(type="password" name="password" id="password" required="required" value="").dataInput
 								label(for="password") Password
-							.inputGroup
-								input(type="submit" name="submit" id="proceed" value="Sign In").inputButton.inputButton--signon
+							.inputButtonGroup
+								input(type="submit" name="submit" id="proceed" value="Sign In").inputButton
+
 							.inputCheckbox
 								label.checkboxInline
 									input(type="hidden" name="tos" value="0")
@@ -93,10 +94,12 @@ block bodyContent
 										| Remember me for two weeks unless I log out.
 									p.checkboxInline__label
 										| (Uncheck this box if you are on a shared computer.)
-								a(href="#forgotPass").linkForgotPassword
-									| Forgot Password?
+
 							.inputGroup
-								input(type="submit" name="submit" id="proceed" value="Not a member yet? &nbsp; register now").inputButton.inputButton--registerNow
+								input(type="submit" name="submit" id="proceed" value="Forgot Password?").inputButton.inputButton--registerNow
+
+							.inputGroup
+								input(type="submit" name="submit" id="proceed" value="Not a member yet? register now").inputButton.inputButton--registerNow
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links

@@ -64,7 +64,7 @@
 
   .formPanel {
     border: 1px solid $color_log_cabin;
-    background: $white;
+    background: $color_log_cabin;
     margin: 0;
     padding-right: 15px;
     padding-left: 15px;
@@ -75,19 +75,14 @@
     }
 
     h2 {
-      letter-spacing: .5px;
-      font-size: 1.0rem;
-      line-height: 1.2rem;
+      letter-spacing: 1.2px;
+      font-size: 1.5rem;
+      line-height: 2.0rem;
       font-weight: 300;
       text-align: center;
-      margin-top: 30px;
-      margin-bottom: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       color: $color_sundance;
-    }
-
-    .dataInput {
-      background-color: $white;
-      color: #555;
     }
   }
 
@@ -113,9 +108,10 @@
     }
 
     // border: 1px solid $color_log_cabin;
-    background-color: $white;
+    // background-color: $white;
 
     .inputButton--facebook {
+      margin-bottom: 0;
       padding: 0;
       background-color: #3b5999;
       font-weight: 400;
@@ -123,18 +119,6 @@
       width: 100%;
       color: #fff;
       border-radius: 4px;
-      line-height: 2.725rem;
-      text-transform: capitalize;
-      cursor: pointer;
-    }
-
-    .inputButton--signon {
-      padding: 0;
-      color: $white;
-      background: #222;
-      font-weight: 400;
-      font-size: 1rem;
-      width: 100%;
       line-height: 2.725rem;
       text-transform: capitalize;
       cursor: pointer;
@@ -148,39 +132,23 @@
       font-weight: 400;
       font-size: 1rem;
       width: 100%;
+      letter-spacing: 0.85px;
       line-height: 2.725rem;
       text-transform: uppercase;
       cursor: pointer;
     }
 
-    .inputCheckbox {
-      margin-bottom: 20px;
-      background-color: $white;
+    .linkForgotPassword {
+      display: inline-block;
+      font-weight: 400;
+      font-size: .9rem;
+      color: #d6b161;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
       border: none;
-      color:#777;
-      display: block;
-
-      .checkboxInline {
-        padding-left: 20px;
-        font-size: .85rem;
-
-        p {
-          margin-bottom: 2px;
-        }
-      }
-
-      .linkForgotPassword {
-        display: inline-block;
-        font-weight: 400;
-        font-size: .9rem;
-        color: #d6b161;
-        margin-top: 15px;
-        margin-bottom: 25px;
-        width: 100%;
-        text-align: center;
-        text-decoration: none;
-        border: none;
-      }
     }
 
     .inputPanel {
@@ -190,7 +158,6 @@
       font-size: 14px;
       font-weight: 400;
     }
-
   }
 
 }
