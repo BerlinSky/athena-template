@@ -109,13 +109,20 @@
 
     // border: 1px solid $color_log_cabin;
     // background-color: $white;
+    .checkboxInline {
+      padding-left: 20px;
+
+      p {
+        margin-bottom: 0;
+        font-size: .875rem;
+      }
+    }
 
     .inputButton--facebook {
       text-align: center;
       text-decoration: none;
       display: inline-block;
       margin: 4px 2px 0;
-      // margin-bottom: 0;
       padding: 0;
       background-color: #3b5999;
       font-weight: 400;
