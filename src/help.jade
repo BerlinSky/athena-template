@@ -60,55 +60,60 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			div.l-contentContainer.contentContainer.contentContainer--offerContent
-				.headerPanel
-					.noticeSection
-						p A Mastersite membership includes exclusive access to Mastersite headlining concert ticket presales.  There is a four (4) ticket presale limit per show, per membership.  Gifts will ship in approx. 8 weeks of purchase.
-						p Please note, when creating your Username, use only letters or numbers.  No special characters or punctuation.
+			.l-contentContainer.contentContainer.contentContainer--sectionContent
+				.sectionPanel
+					.headerPanel
+						p Updated on November 18, 2016
+					.detailPanel
+						p
+							| I can't remember my username/password.
+						p
+							| If you forget your username and/or password, <a href="/resetpassword/">you may follow the steps to reset</a>. If you are unsure of what email address you have registered for your account, you may contact Fan Support using the Contact Us form on this page.
+						p
+							| Where can I find my unique presale access code?
 
-				.divider.divider--solid
 
-				.offerPanel
-					.offerPanel__detail
-						h2 CONTACT US
+				.sectionPanel
+					.offerPanel
+						.offerPanel__detail
+							h2 CONTACT US
 
-				.dataEntryFormContainer
-					form(action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword")
-						input(type="hidden" name="redirect" value="/subscribe/step2")
-						input(type="hidden" name="sku" value="slafah13")
-						input(type="hidden" name="U_Member_status" value="free")
-						.inputGroup
-							select(name="U_Country" id="U_Country" required="required").dataInput
-								option(value="" selected="selected") Any
-								option(value="AF") Billing/Membership
-								option(value="AX") Membership Poster
-								option(value="AL") Order Help
-								option(value="DZ") Suggestion Box
-								option(value="AS") Technical Support
-							label(for="U_Country") Topic
-						.inputGroup
-							input(name="username" type="text" value="" required="required").dataInput
-							label(for="username") First Name
-						.inputGroup
-							input(name="username" type="text" value="" required="required").dataInput
-							label(for="username") Last Name
-						.inputGroup
-							input(name="email" type="email" value="" required="required").dataInput
-							label(for="email") Email
-						.inputGroup
-							input(name="username" type="text" value="" required="required").dataInput
-							label(for="username") User Name (if you have one)
-						.inputGroup
-							input(name="username" type="text" value="" required="required").dataInput
-							label(for="username") Order Number (if applicable)
+					.dataEntryFormContainer
+						form(action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword")
+							input(type="hidden" name="redirect" value="/subscribe/step2")
+							input(type="hidden" name="sku" value="slafah13")
+							input(type="hidden" name="U_Member_status" value="free")
+							.inputGroup
+								select(name="U_Country" id="U_Country" required="required").dataInput
+									option(value="" selected="selected") Any
+									option(value="AF") Billing/Membership
+									option(value="AX") Membership Poster
+									option(value="AL") Order Help
+									option(value="DZ") Suggestion Box
+									option(value="AS") Technical Support
+								label(for="U_Country") Topic
+							.inputGroup
+								input(name="username" type="text" value="" required="required").dataInput
+								label(for="username") First Name
+							.inputGroup
+								input(name="username" type="text" value="" required="required").dataInput
+								label(for="username") Last Name
+							.inputGroup
+								input(name="email" type="email" value="" required="required").dataInput
+								label(for="email") Email
+							.inputGroup
+								input(name="username" type="text" value="" required="required").dataInput
+								label(for="username") User Name (if you have one)
+							.inputGroup
+								input(name="username" type="text" value="" required="required").dataInput
+								label(for="username") Order Number (if applicable)
 
-						.inputGroup.inputGroup--textAreaWrapper
-							textarea(name="textPad" id="textPad" rows="5" cols="40").dataInput
-							label(for="textPad").labelTextArea Comments/Description:
+							.inputGroup.inputGroup--textAreaWrapper
+								textarea(name="textPad" id="textPad" rows="5" cols="40").dataInput
+								label(for="textPad").labelTextArea Comments/Description:
 
-						.inputButtonGroup
-							input(type="submit" name="submit" id="proceed" value="Submit").inputButton
-
+							.inputButtonGroup
+								input(type="submit" name="submit" id="proceed" value="Submit").inputButton
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
