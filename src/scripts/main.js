@@ -15,10 +15,17 @@ $(function () {
 												 .js-campaignForm input[type=password],
 												 .js-campaignForm input[type=email],
 												 .js-campaignForm input[type=number],
-												 .js-campaignForm textarea,
-                         .js-campaignForm select,
-                         .js-campaignForm input[type=checkbox]`);
-  input.blur(function(event) {
+												 .js-campaignForm textarea`);
+  input.keyup(function(event) {
+		// event.preventDefault();
+    const thisInput =$( event.target );
+    // console.log('this', thisInput);
+		validateInputList(thisInput);
+  })
+
+  const options = $(`.js-campaignForm select,
+                      .js-campaignForm input[type=checkbox]`);
+  options.change(function(event) {
 		// event.preventDefault();
     const thisInput =$( event.target );
     // console.log('this', thisInput);
@@ -50,6 +57,8 @@ $(function () {
     if (validationSatusList.length > 0) {
       event.preventDefault();
     }
+
+    return true;
 	});
 
 });
