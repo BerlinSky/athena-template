@@ -20,6 +20,34 @@
 		max-width: 70rem;
 	}
 
+  .headerPanel {
+    h1 {
+      text-align: center;
+      font-weight: 300;
+      // font-size: 2rem;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+
+      @include break(md) {
+        letter-spacing: 5px;
+        font-size: 3.5rem;
+      }
+    }
+
+    h2 {
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+      font-size: 1.2em;
+
+      @include break(md) {
+        letter-spacing: 1.2px;
+        font-size: 1.725em;
+      }
+    }
+  }
+
   .imageGallery {
     display: flex;
     flex-wrap: wrap;
