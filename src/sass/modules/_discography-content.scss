@@ -1,5 +1,13 @@
 .contentContainer--discographyContent {
-  // background-color: tomato;
+  $white: #fff;
+  $white_20: rgba(255, 255, 255, .2);
+  $color_bon_jour: #e2e2e2;
+  $color_sundance: #d6b161;
+  $color_log_cabin: #222;
+  $color_gray_nurse: #e8e8e8;
+
+  $font_primary: Source Sans Pro;
+  $font_secondary: sans-serif;
 
 	display: block;
 	clear: both;
@@ -11,6 +19,9 @@
 
 	margin-right: auto;
 	margin-left: auto;
+
+  background-color: $white;
+	font-family: $font_primary, $font_secondary;
 
 	@include break(md) {
 		max-width: 60rem;
@@ -45,6 +56,41 @@
         letter-spacing: 1.2px;
         font-size: 1.725em;
       }
+    }
+  }
+
+  .panelSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include break(md) {
+      flex-direction: row;
+      .panel {
+        flex: 1;
+      }
+    }
+
+    .panel {
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .albumInfoPanel {
+    padding-top: 20px;
+    .infoLabel {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      line-height: 1.65rem;
+    }
+
+    .infoDetail {
+      font-weight: 300;
+      font-size: 1.0rem;
+      line-height: 1.65rem;
     }
   }
 
