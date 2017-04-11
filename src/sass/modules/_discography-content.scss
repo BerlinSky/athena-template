@@ -76,6 +76,29 @@
       padding-left: 15px;
       padding-bottom: 30px;
     }
+
+    .panel.panel-trackList {
+      .heading {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        line-height: 1.65rem;
+      }
+      ol.trackList {
+        counter-reset: item;
+        list-style-type: none;
+
+        li {
+          list-style-position: inside;
+          list-style-type: decimal;
+          font-size: 1.0rem;
+          height: 2.0rem;
+        }
+      }
+    }
   }
 
   .albumInfoPanel {
