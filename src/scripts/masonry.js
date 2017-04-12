@@ -1,6 +1,8 @@
 import $ from 'jquery';
-// var Masonry = require('masonry-layout');
-// var jQueryBridget = require('jquery-bridget');
+var Masonry = require('masonry-layout');
+var jQueryBridget = require('jquery-bridget');
+
+jQueryBridget( 'masonry', Masonry, $ );
 
 $(function () {
 
@@ -8,7 +10,7 @@ $(function () {
     e.preventDefault();
 
     const mobileMenu = $('.js-mobileMenuContainer');
-    mobileMenu.toggleClass("js-l-mobile");
+    mobileMenu.toggle("slow");
   })
 
   const menuWrapper = document.querySelector('.js-menuWrapper');

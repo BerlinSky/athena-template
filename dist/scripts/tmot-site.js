@@ -9823,6 +9823,9 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// var Masonry = require('masonry-layout');
+// var jQueryBridget = require('jquery-bridget');
+
 (0, _jquery2.default)(function () {
 
   (0, _jquery2.default)('.js-toggleMobileMenu').click(function (e) {
@@ -9847,6 +9850,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     menuWrapper.classList.remove('showSearchPanel');
   });
+
+  var $grid = (0, _jquery2.default)('.js-imageGridContainer').masonry({
+    itemSelector: '.js-grid',
+    percentPosition: true,
+    columnWidth: '.js-gridSizer'
+  });
+
+  $grid.masonry();
 });
 
 },{"jquery":1}]},{},[2])
