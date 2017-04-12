@@ -1,6 +1,8 @@
 import $ from 'jquery';
-// var Masonry = require('masonry-layout');
-// var jQueryBridget = require('jquery-bridget');
+var Masonry = require('masonry-layout');
+var jQueryBridget = require('jquery-bridget');
+
+jQueryBridget( 'masonry', Masonry, $ );
 
 $(function () {
 
