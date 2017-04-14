@@ -43,35 +43,39 @@
     filter: alpha(opacity=0);
     transform: translate(460px, -100px) rotate(180deg);
     transition: all 0.2s 0.4s ease-in-out;
+
+    h2 {
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      font-size: 17px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    a.info {
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      width: 70%;
+      display: inline-block;
+      text-decoration: none;
+      padding: 7px 14px;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid #fff;
+      margin: 0 0 0 0;
+      background-color: transparent;
+      transform: translateY(-200px);
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   img {
     display: block;
     position: relative;
     transition: all 0.2s ease-in;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    font-size: 17px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  a.info {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 14px;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid #fff;
-    margin: 50px 0 0 0;
-    background-color: transparent;
-    transform: translateY(-200px);
-    transition: all 0.2s ease-in-out;
   }
 }
 
