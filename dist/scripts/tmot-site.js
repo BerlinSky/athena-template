@@ -12327,5 +12327,16 @@ jQueryBridget('masonry', Masonry, _jquery2.default);
   $grid.masonry();
 });
 
+// import $ from 'jquery';
+// import { initMobileMenu } from './mobile-menu';
+// import { paintMasonryLayout } from './masonry-layout';
+// import { initFancyInputBox } from './fancy-input';
+
+// $(function () {
+//   initMobileMenu();
+//   paintMasonryLayout();
+//   initFancyInputBox();
+// });
+
 },{"jquery":6,"jquery-bridget":5,"masonry-layout":7}]},{},[10])
 //# sourceMappingURL=tmot-site.js.map
