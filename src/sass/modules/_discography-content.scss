@@ -1,13 +1,13 @@
 .contentContainer--discographyContent {
 
   // http://www.color-blindness.com/color-name-hue/
-  $color-white: #fff;
-  $color-black: #000;
-  $color-grey-night-rider: rgba(255, 255, 255, .2);
-  $color-tiber: #e2e2e2;
-  $color-jewel: #d6b161;
-  $color-nero: #222;
-  $color-gainsboro: #e8e8e8;
+  // $color-white: #fff;
+  // $color-black: #000;
+  // $color-grey-night-rider: rgba(255, 255, 255, .2);
+  // $color-tiber: #e2e2e2;
+  // $color-jewel: #d6b161;
+  // $color-nero: #222;
+  // $color-gainsboro: #e8e8e8;
 
   $font-primary: Source Sans Pro;
   $font-secondary: sans-serif;
@@ -67,9 +67,9 @@
 
     @include break(md) {
       flex-direction: row;
-      .albumSection__albumInfo {
-        flex: 1;
-      }
+      // .albumSection__albumInfo {
+      //   flex: 1;
+      // }
     }
 
     .albumSection__albumInfo {
