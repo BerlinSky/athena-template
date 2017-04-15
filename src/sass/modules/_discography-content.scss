@@ -60,25 +60,25 @@
     }
   }
 
-  .panelSection {
+  .albumSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     @include break(md) {
       flex-direction: row;
-      .panel {
+      .albumSection__albumInfo {
         flex: 1;
       }
     }
 
-    .panel {
+    .albumSection__albumInfo {
       padding-right: 15px;
       padding-left: 15px;
       padding-bottom: 30px;
     }
 
-    .panel-trackList {
+    .albumSection__albumInfo--trackList {
       .heading {
         margin-top: 10px;
         margin-bottom: 15px;
@@ -88,6 +88,7 @@
         letter-spacing: .15em;
         line-height: 1.65rem;
       }
+
       ol.trackList {
         counter-reset: item;
         list-style-type: none;
