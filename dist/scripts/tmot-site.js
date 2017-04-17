@@ -21583,7 +21583,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   fileUploader.change(function () {
     var fileName = fileUploader.val().replace('/.*(\/|\)/', '');
-    fileUploaded.val(fileName);
+    var fileInput = fileName.replace("C:\\fakepath\\", '');
+
+    fileUploaded.val(fileInput);
   });
 
   var input = (0, _jquery2.default)('.js-campaignForm input[type=text],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=password],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=email],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm input[type=number],\n\t\t\t\t\t\t\t\t\t\t\t\t .js-campaignForm textarea');

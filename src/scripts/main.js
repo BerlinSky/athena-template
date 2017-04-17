@@ -8,7 +8,9 @@ $(function () {
 
   fileUploader.change(function() {
     const fileName = fileUploader.val().replace( '/.*(\/|\)/',  '');
-    fileUploaded.val(fileName);
+    const fileInput = fileName.replace("C:\\fakepath\\", '');
+
+    fileUploaded.val(fileInput);
   })
 
   const input = $(`.js-campaignForm input[type=text],
