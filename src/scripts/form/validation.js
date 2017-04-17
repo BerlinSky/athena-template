@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { forEach, prop, isNil } from 'ramda';
+import { forEach, prop, isNil, isEmpty } from 'ramda';
 import { validate } from 'validate.js';
 
 function validateCheckbox(checkbox) {
@@ -75,6 +75,8 @@ function inspectRequired(isRequired, elemId, elemValue, msg) {
 }
 
 function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
+  if (isEmpty(elemValue)) { return true; };
+
   if (elemType === 'number') {
     const result = validateNumericality(elemId, elemValue, formatMsg);
     console.log(result);

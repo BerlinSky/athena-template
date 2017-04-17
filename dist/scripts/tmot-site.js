@@ -21435,6 +21435,10 @@ function inspectRequired(isRequired, elemId, elemValue, msg) {
 }
 
 function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
+  if ((0, _ramda.isEmpty)(elemValue)) {
+    return true;
+  };
+
   if (elemType === 'number') {
     var result = validateNumericality(elemId, elemValue, formatMsg);
     console.log(result);
