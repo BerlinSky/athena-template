@@ -92,6 +92,8 @@ function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
 }
 
 function inspectEmail(elemType, elemId, elemValue, emailMsg) {
+  if (isEmpty(elemValue)) { return true; };
+
   if (elemType === 'email') {
     const result = validateEmail(elemId, elemValue, emailMsg);
     console.log(result);
@@ -107,6 +109,8 @@ function inspectEmail(elemType, elemId, elemValue, emailMsg) {
 }
 
 function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
+  if (isEmpty(elemValue)) { return true; };
+
   if (formatPattern) {
     const result = validateFormat(elemId, elemValue, formatPattern, formatMsg);
     if (!isNil(result)) {

@@ -21454,6 +21454,10 @@ function inspectNumericality(elemType, elemId, elemValue, formatMsg) {
 }
 
 function inspectEmail(elemType, elemId, elemValue, emailMsg) {
+  if ((0, _ramda.isEmpty)(elemValue)) {
+    return true;
+  };
+
   if (elemType === 'email') {
     var result = validateEmail(elemId, elemValue, emailMsg);
     console.log(result);
@@ -21469,6 +21473,10 @@ function inspectEmail(elemType, elemId, elemValue, emailMsg) {
 }
 
 function inspectFormat(formatPattern, elemId, elemValue, formatMsg) {
+  if ((0, _ramda.isEmpty)(elemValue)) {
+    return true;
+  };
+
   if (formatPattern) {
     var result = validateFormat(elemId, elemValue, formatPattern, formatMsg);
     if (!(0, _ramda.isNil)(result)) {
