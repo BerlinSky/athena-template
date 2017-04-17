@@ -1,14 +1,5 @@
 .contentContainer--discographyContent {
 
-  // http://www.color-blindness.com/color-name-hue/
-  // $color-white: #fff;
-  // $color-black: #000;
-  // $color-grey-night-rider: rgba(255, 255, 255, .2);
-  // $color-tiber: #e2e2e2;
-  // $color-jewel: #d6b161;
-  // $color-nero: #222;
-  // $color-gainsboro: #e8e8e8;
-
   $font-primary: Source Sans Pro;
   $font-secondary: sans-serif;
 
@@ -17,7 +8,7 @@
   box-sizing: border-box;
 
   margin: 60px auto 10px auto;
-  padding-bottom: 60px;
+  padding: 5px 15px 60px 15px;
 
   background-color: $color-white;
 	font-family: $font-primary, $font-secondary;
@@ -64,18 +55,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
     @include break(md) {
       flex-direction: row;
-      // .albumSection__albumInfo {
-      //   flex: 1;
-      // }
+      // max-width: 75%;
     }
 
     .albumSection__albumInfo {
+      flex: 0 0 50%;
       padding-right: 15px;
       padding-left: 15px;
       padding-bottom: 30px;
+    }
+
+    .albumSection__albumInfo--default {
+      margin-top: 15px;
     }
 
     .albumSection__albumInfo--trackList {
