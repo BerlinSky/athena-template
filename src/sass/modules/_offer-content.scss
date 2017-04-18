@@ -67,6 +67,19 @@
 		}
 	}
 
+  .offerSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include break(md) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    flex-wrap: nowrap;
+  }
+
 	.offerPanel {
     .imageFrame {
       img {
