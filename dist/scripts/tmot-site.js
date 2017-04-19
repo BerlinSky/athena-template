@@ -21594,6 +21594,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var fileUploaded = (0, _jquery2.default)('.js-fileUploaded');
 
   fileUploader.change(function () {
+
+    // validate file size:
+    var sizeLimit = 2.00;
+    // MB
+    var thisFileSize = fileUploader[0].files[0].size;
+    console.log(thisFileSize);
+
+    // console.log(uploadErrorSpan);
+
+    if (thisFileSize > 0) {
+      var calculatedSize = (thisFileSize / 1024 / 1024).toFixed(2);
+      console.log(calculatedSize);
+      if (calculatedSize > sizeLimit) {
+        // alert("File size too large: " + calculatedSize + "MB");
+        var uploadErrorSpan = (0, _jquery2.default)("#entry-upload");
+        var uploadErrMsg = "File Size does not meet the expected value";
+        uploadErrorSpan.html(uploadErrMsg);
+        fileUploader.val('');
+        return;
+      }
+    }
+    // End: validate file size:
+
     var fileName = fileUploader.val().replace('/.*(\/|\)/', '');
     var fileInput = fileName.replace("C:\\fakepath\\", '');
 
