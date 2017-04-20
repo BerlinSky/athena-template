@@ -20,7 +20,7 @@
 }
 
 .uploadProgressContainer.uploadProgressContainer--active {
-  background-color: grey;
+  background-color: transparent;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -29,12 +29,10 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  // .bar {
-  //   width: 1%;
-  //   height: 100%;
-  //   background-color: green;
-  // }
+
   .bar {
+    margin-left: auto;
+    margin-right: auto;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid blue;
@@ -47,6 +45,10 @@
   }
 }
 
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

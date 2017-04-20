@@ -21656,15 +21656,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     if (validationSatusList.length > 0) {
       event.preventDefault();
+    } else {
+      if (fileUploader.length > 0) {
+        var progressContainer = (0, _jquery2.default)(".uploadProgressContainer");
+        progressContainer.addClass("uploadProgressContainer--active");
+        (0, _jquery2.default)('.js-campaignForm').css("visibility", "hidden");
+      }
     }
-    // event.preventDefault();   // test line
-
-    if (fileUploader.length > 0) {
-      var progressContainer = (0, _jquery2.default)(".uploadProgressContainer");
-      progressContainer.addClass("uploadProgressContainer--active");
-    }
-
-    return true;
   });
 });
 

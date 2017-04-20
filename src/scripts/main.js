@@ -83,14 +83,13 @@ $(function () {
     if (validationSatusList.length > 0) {
       event.preventDefault();
     }
-    // event.preventDefault();   // test line
-
-    if (fileUploader.length>0) {
-      const progressContainer = $(".uploadProgressContainer");
-      progressContainer.addClass("uploadProgressContainer--active");
+    else {
+      if (fileUploader.length>0) {
+        const progressContainer = $(".uploadProgressContainer");
+        progressContainer.addClass("uploadProgressContainer--active");
+        $('.js-campaignForm').css("visibility", "hidden");
+      }
     }
-
-    return true;
 	});
 
 });

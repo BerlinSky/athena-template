@@ -66,14 +66,14 @@ block bodyContent
 						h2 FORM VALIDATION IN ACTION
 
 				.dataEntryFormContainer
+					.uploadProgressContainer
+						.bar
 					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-campaignForm
 						.inputGroup
 							input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a required value 6133").dataInput
 							label(for="firstName") First Name
 							span(id="entry-6133-error").inputError
 						.inputGroup
-							.uploadProgressContainer
-								.bar
 							input(id='upload' name="upload" type="file" multiple="" accept=".gif, .jpg, .jpeg, .pdf, .png, .mov, .mpeg4, .mp4, .avi, .wmv").js-fileUploader
 							input(id='entry-8727' name="upload" type="text" value="" required="required" required-msg="Please enter a required value 8727").dataInput.js-fileUploaded
 							label(for="upload") Upload File
