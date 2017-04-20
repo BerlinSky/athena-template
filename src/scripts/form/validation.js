@@ -7,7 +7,7 @@ function validateCheckbox(checkbox) {
   const elemId = elem.attr('id');
   const msg = elem.attr('required-msg');
 
-  console.log('checkbox-id', elemId);
+  // console.log('checkbox-id', elemId);
 
   if (!elem.prop("checked")) {
     console.log('checkbox-msg', msg);
@@ -17,8 +17,7 @@ function validateCheckbox(checkbox) {
 
 export function validateInputList(inputList) {
   forEach(validateInput, inputList);
-
-  console.log('inputList', inputList);
+  // console.log('inputList', inputList);
 }
 
 function validateInput(input) {

@@ -21357,7 +21357,7 @@ function validateCheckbox(checkbox) {
   var elemId = elem.attr('id');
   var msg = elem.attr('required-msg');
 
-  console.log('checkbox-id', elemId);
+  // console.log('checkbox-id', elemId);
 
   if (!elem.prop("checked")) {
     console.log('checkbox-msg', msg);
@@ -21367,8 +21367,7 @@ function validateCheckbox(checkbox) {
 
 function validateInputList(inputList) {
   (0, _ramda.forEach)(validateInput, inputList);
-
-  console.log('inputList', inputList);
+  // console.log('inputList', inputList);
 }
 
 function validateInput(input) {
