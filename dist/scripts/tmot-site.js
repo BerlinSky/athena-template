@@ -21596,20 +21596,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   fileUploader.change(function () {
 
     // validate file size:
-    var sizeLimit = 2.00;
+    var sizeLimit = 75.00; // Should be 75 MB
+
     // MB
     var thisFileSize = fileUploader[0].files[0].size;
-    console.log(thisFileSize);
+    var uploadErrorSpan = (0, _jquery2.default)("#entry-upload");
+    var uploadErrMsg = "The file you have uploaded has exceeded the maximum file size of 75MB.  Please select a smaller file and try again.";
 
-    // console.log(uploadErrorSpan);
+    console.log(thisFileSize);
+    uploadErrorSpan.html('');
 
     if (thisFileSize > 0) {
       var calculatedSize = (thisFileSize / 1024 / 1024).toFixed(2);
       console.log(calculatedSize);
       if (calculatedSize > sizeLimit) {
         // alert("File size too large: " + calculatedSize + "MB");
-        var uploadErrorSpan = (0, _jquery2.default)("#entry-upload");
-        var uploadErrMsg = "File Size does not meet the expected value";
         uploadErrorSpan.html(uploadErrMsg);
         fileUploader.val('');
         return;
@@ -21655,6 +21656,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     if (validationSatusList.length > 0) {
       event.preventDefault();
+    }
+    // event.preventDefault();   // test line
+
+    if (fileUploader.length > 0) {
+      var progressContainer = (0, _jquery2.default)(".uploadProgressContainer");
+      progressContainer.addClass("uploadProgressContainer--active");
     }
 
     return true;

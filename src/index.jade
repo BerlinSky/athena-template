@@ -72,7 +72,9 @@ block bodyContent
 							label(for="firstName") First Name
 							span(id="entry-6133-error").inputError
 						.inputGroup
-							input(id='upload' name="upload" type="file" multiple="").js-fileUploader
+							.uploadProgressContainer
+								.bar
+							input(id='upload' name="upload" type="file" multiple="" accept=".gif, .jpg, .jpeg, .pdf, .png, .mov, .mpeg4, .mp4, .avi, .wmv").js-fileUploader
 							input(id='entry-8727' name="upload" type="text" value="" required="required" required-msg="Please enter a required value 8727").dataInput.js-fileUploaded
 							label(for="upload") Upload File
 							span(id="entry-8727-error").inputError
@@ -82,10 +84,10 @@ block bodyContent
 							input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a required value 6134").dataInput
 							label(for="lastName") Last Name
 							span(id="entry-6134-error").inputError
-						.inputGroup
-							input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132", email-msg="Only valid email address is allowed.").dataInput
-							label(for="email") Email
-							span(id="entry-6132-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132", email-msg="Only valid email address is allowed.").dataInput
+						//- 	label(for="email") Email
+						//- 	span(id="entry-6132-error").inputError
 						//- .inputGroup
 						//- 	input(type="password" name="password" id="password" required="required" value="" required-msg="Please enter a required value password").dataInput
 						//- 	label(for="password") Password
@@ -104,10 +106,10 @@ block bodyContent
 						//- 		option(value="AS") American Samoa
 						//- 	label(for="country") Country
 						//- 	span(id="entry-6137-error").inputError
-						.inputGroup
-							input(id='entry-6135' name="zip" type="text" value="" partner="city").dataInput
-							label(for="zip") Not required Zip Code
-							span(id="entry-6135-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6135' name="zip" type="text" value="" partner="city").dataInput
+						//- 	label(for="zip") Not required Zip Code
+						//- 	span(id="entry-6135-error").inputError
 
 						//- .inputGroup
 						//- 	input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a required value 6135").dataInput
@@ -121,10 +123,10 @@ block bodyContent
 						//- 	input(id='entry-6138' name="mobileVerify" type="text" required="required" partner-id="entry-6136" equality-msg="Do not match!!!" value="" required-msg="Please enter a required value 6138").dataInput
 						//- 	label(for="mobileVerify") Your mobile again
 						//- 	span(id="entry-6138-error").inputError
-						.inputGroup
-							input(id='entry-6140' name="favNumber" type="number").dataInput
-							label(for="favNumber") Your optional number
-							span(id="entry-6140-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6140' name="favNumber" type="number").dataInput
+						//- 	label(for="favNumber") Your optional number
+						//- 	span(id="entry-6140-error").inputError
 
 						//- .inputGroup
 						//- 	input(id='entry-6141' name="favNumber" type="number" required="required" value="" required-msg="Please enter a required value 6141" pattern="[0-9]{5}" pattern-msg="The value needs to be numeric and 5 digits long.").dataInput
@@ -139,10 +141,10 @@ block bodyContent
 						//- 	textarea(name="textAreaInput" id="entry-8257" required="" required-msg="Ce champ est requis.")
 						//- 	label(for="textAreaInput") Text editor is here.
 						//- 	span(id="entry-8257-error").inputError
-						.inputGroup
-							input(type="checkbox" id="entry-8258" name="checkboxInput" required="" value="1" required-msg="Checkbox is required.")
-							label(for="checkboxInput") Use checkbox
-							span(id="entry-8258-error").inputError
+						//- .inputGroup
+						//- 	input(type="checkbox" id="entry-8258" name="checkboxInput" required="" value="1" required-msg="Checkbox is required.")
+						//- 	label(for="checkboxInput") Use checkbox
+						//- 	span(id="entry-8258-error").inputError
 
 						.inputButtonGroup
 							input(type="submit" name="submit" id="proceed" value="Next").inputButton.js-submitButton

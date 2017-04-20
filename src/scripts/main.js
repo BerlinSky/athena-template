@@ -9,20 +9,21 @@ $(function () {
   fileUploader.change(function() {
 
      // validate file size:
-    const sizeLimit = 2.00;
+    const sizeLimit = 75.00;  // Should be 75 MB
+
      // MB
     const thisFileSize = fileUploader[0].files[0].size;
-    console.log(thisFileSize);
+    const uploadErrorSpan = $("#entry-upload");
+    const uploadErrMsg = "The file you have uploaded has exceeded the maximum file size of 75MB.  Please select a smaller file and try again.";
 
-    // console.log(uploadErrorSpan);
+    console.log(thisFileSize);
+    uploadErrorSpan.html('');
 
     if (thisFileSize > 0) {
       const calculatedSize = (thisFileSize / 1024 / 1024).toFixed(2);
       console.log(calculatedSize);
       if (calculatedSize > sizeLimit) {
         // alert("File size too large: " + calculatedSize + "MB");
-        const uploadErrorSpan = $("#entry-upload");
-        const uploadErrMsg = "File Size does not meet the expected value";
         uploadErrorSpan.html(uploadErrMsg);
         fileUploader.val('');
         return;
@@ -81,6 +82,12 @@ $(function () {
 
     if (validationSatusList.length > 0) {
       event.preventDefault();
+    }
+    // event.preventDefault();   // test line
+
+    if (fileUploader.length>0) {
+      const progressContainer = $(".uploadProgressContainer");
+      progressContainer.addClass("uploadProgressContainer--active");
     }
 
     return true;
