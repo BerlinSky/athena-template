@@ -1,0 +1,173 @@
+extends jade/includes/base
+
+mixin menuItems(...items)
+	each item in items
+		li.menuItem
+			a(href='#')
+				span= item
+
+mixin paletteBlockBuilder ()
+	for website in websites
+		div.siteBlock
+			h2.siteName= website.siteName
+			a.siteLink(href='http://' + website.siteLink)= website.siteLink
+			div.l-paletteBlockContainer.paletteBlockContainer
+				for block in website.colorPaletteBlocks
+					div.l-paletteBlock.paletteBlock
+						div.paletteBlock__palette(style='background-color: ' + block.paletteInfo.colorValue + ';')
+							div= block.paletteInfo.colorValue
+						div.paletteBlock__info
+							div= block.paletteInfo.colorName
+							div= block.paletteInfo.varName
+						ul.paletteBlock__usage
+							for uage in block.colorUage
+								li= uage
+
+block pageTitle
+	title Reading Life
+
+block bodyContent
+	div.l-pageContainer.pageContainer
+		div.l-pageHeader.pageHeader
+			div.l-navContainer.navContainer
+				div.l-logoContainer.logoContainer
+					div
+						svg(version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512")
+							path(fill="#009cde" d="M399.798 8.104c-45.263 0-74.31-8.104-120.924-8.104-150.642 0-220.896 85.792-220.896 172.936 0 51.339 24.32 68.229 72.282 68.229-3.379-7.432-9.457-15.54-9.457-52.017 0-102.005 38.503-131.729 87.818-133.755 0 0-40.459 396.687-157.889 444.271v12.336h158.297l54.013-256h98.922l22.036-64h-107.454l25.972-123.095c29.723 6.078 58.771 12.158 83.766 12.158 31.074 0 59.447-9.457 74.984-81.063-18.913 6.080-39.181 8.104-61.47 8.104z")
+
+				div.l-toggleMenuContainer.toggleMenuContainer
+					a(href='#').js-toggleMobileMenu
+						i.fa.fa-bars.fa-2x
+
+			div.l-menuWrapper.menuWrapper.js-menuWrapper
+				div.l-menuContainer.menuContainer.js-mobileMenuContainer
+					ul.menuList
+						+menuItems('Home')
+						li.menuItem
+							a(href='#').currentSelection
+								span Color Palette
+						+menuItems('Typography', 'Text Styles', 'Breakpoints', 'Buttons')
+
+				div.l-searchContainer.searchContainer.js-showSearchPanel
+					a.searchButton.searchButton--default
+						i.fa.fa-search
+				div.l-searchWrapper.searchWrapper.js-searchPanel
+					form(action="#" method='post').l-searchWrapper__form
+						a.searchButton.searchButton--whiteSquare
+							i.fa.fa-search
+						input(type="text" name="s" placeholder="Enter your search").searchInput
+						a.closeButton.closeButton--dimmedSquare.js-hideSearchPanel
+							i.fa.fa-close
+
+		div.l-pageContentWrapper.pageContentWrapper
+			div.l-contentContainer.contentContainer.contentContainer--offerContent
+				.offerPanel
+					.offerPanel__detail
+						h2 FORM VALIDATION IN ACTION
+
+				.dataEntryFormContainer
+					.uploadProgressContainer
+						.bar
+					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-FormValidation
+						.inputGroup
+							input(name="userName" type="text" value="" required="required").dataInput.js-userName
+							label(for="firstName") User Name
+							span.inputError.js-userName-error
+						.inputGroup
+							input(name="email" type="email" value="" required="required").dataInput.js-email
+							label(for="email") Email
+							span.inputError.js-email-error
+
+						//- .inputGroup
+							//- input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a required value 6133").dataInput
+							//- label(for="firstName") First Name
+							//- span(id="entry-6133-error").inputError
+						//- .inputGroup
+						//- 	input(id='upload' name="upload" type="file" multiple="" accept=".gif, .jpg, .jpeg, .pdf, .png, .mov, .mpeg4, .mp4, .avi, .wmv").js-fileUploader
+						//- 	input(id='entry-8727' name="upload" type="text" value="" required="required" required-msg="Please enter a required value 8727").dataInput.js-fileUploaded
+						//- 	label(for="upload") Upload File
+						//- 	span(id="entry-8727-error").inputError
+						//- 	span(id="entry-upload").inputError
+
+						//- .inputGroup
+						//- 	input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a required value 6134").dataInput
+						//- 	label(for="lastName") Last Name
+						//- 	span(id="entry-6134-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132", email-msg="Only valid email address is allowed.").dataInput
+						//- 	label(for="email") Email
+						//- 	span(id="entry-6132-error").inputError
+						//- .inputGroup
+						//- 	input(type="password" name="password" id="password" required="required" value="" required-msg="Please enter a required value password").dataInput
+						//- 	label(for="password") Password
+						//- 	span(id="password-error").inputError
+						//- .inputGroup
+						//- 	input(type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password" required-msg="Please enter a required value passwordVerify").dataInput
+						//- 	label(for="passwordVerify") Password Verify
+						//- 	span(id="passwordVerify-error").inputError
+						//- .inputGroup
+						//- 	select(id='entry-6137' name="country" required="required" required-msg="Please enter a required value country").dataInput
+						//- 		option(value="" selected="selected") Country
+						//- 		option(value="AF") Afghanistan
+						//- 		option(value="AX") Aland Islands
+						//- 		option(value="AL") Albania
+						//- 		option(value="DZ") Algeria
+						//- 		option(value="AS") American Samoa
+						//- 	label(for="country") Country
+						//- 	span(id="entry-6137-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6135' name="zip" type="text" value="" partner="city").dataInput
+						//- 	label(for="zip") Not required Zip Code
+						//- 	span(id="entry-6135-error").inputError
+
+						//- .inputGroup
+						//- 	input(id='entry-6135' name="zip" type="text" value="" required="required" partner="city" required-msg="Please enter a required value 6135").dataInput
+						//- 	label(for="zip") Zip Code
+						//- 	span(id="entry-6135-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6136' name="mobile" type="text" required="required" value="" required-msg="Please enter a required value 6136").dataInput
+						//- 	label(for="mobile") Your Mobile
+						//- 	span(id="entry-6136-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6138' name="mobileVerify" type="text" required="required" partner-id="entry-6136" equality-msg="Do not match!!!" value="" required-msg="Please enter a required value 6138").dataInput
+						//- 	label(for="mobileVerify") Your mobile again
+						//- 	span(id="entry-6138-error").inputError
+						//- .inputGroup
+						//- 	input(id='entry-6140' name="favNumber" type="number").dataInput
+						//- 	label(for="favNumber") Your optional number
+						//- 	span(id="entry-6140-error").inputError
+
+						//- .inputGroup
+						//- 	input(id='entry-6141' name="favNumber" type="number" required="required" value="" required-msg="Please enter a required value 6141" pattern="[0-9]{5}" pattern-msg="The value needs to be numeric and 5 digits long.").dataInput
+						//- 	label(for="favNumber") Your favorite number
+						//- 	span(id="entry-6141-error").inputError
+
+						//- .inputGroup
+						//- 	input(id='entry-6142' name="favNumberVerify" type="number" required="required" value="" required-msg="Please enter a required value 6142" pattern-msg="The value needs to be numeric.").dataInput
+						//- 	label(for="favNumberVerify") Your favorite number again
+						//- 	span(id="entry-6142-error").inputError
+						//- .inputGroup
+						//- 	textarea(name="textAreaInput" id="entry-8257" required="" required-msg="Ce champ est requis.")
+						//- 	label(for="textAreaInput") Text editor is here.
+						//- 	span(id="entry-8257-error").inputError
+						//- .inputGroup
+						//- 	input(type="checkbox" id="entry-8258" name="checkboxInput" required="" value="1" required-msg="Checkbox is required.")
+						//- 	label(for="checkboxInput") Use checkbox
+						//- 	span(id="entry-8258-error").inputError
+
+						.inputButtonGroup
+							input(type="submit" name="submit" id="proceed" value="Next").inputButton.js-submitButton
+
+			div.l-contentFooterContainer.contentFooterContainer
+				div.footerPanel.footerPanel--links
+					div.footerPanel__item.footerPanel__item--default
+						ul
+							li
+								a(href="/help" target="") Help
+							li
+								a(href="/help" target="") Newsletter
+							li
+								a(href="/help" target="") Terms of Use
+							li
+								a(href="/help" target="") Privacy Policy
+					div.footerPanel__item.footerPanel__item--copyright Copyright © 2017 This Web Site

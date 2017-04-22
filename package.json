@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "jquery-bridget": "^2.0.1",
-    "masonry-layout": "^4.1.1"
+    "masonry-layout": "^4.1.1",
+    "ramda": "^0.23.0"
   }
 }

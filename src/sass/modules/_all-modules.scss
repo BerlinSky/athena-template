@@ -12,6 +12,12 @@
 @import "media-photo-content";
 @import "fancy-input-form";
 
+// form validation
+span.inputError {
+  color: tomato;
+}
+// end: validation
+
 .inputButton--facebook {
   padding: 0;
   background-color: #3b5998;
