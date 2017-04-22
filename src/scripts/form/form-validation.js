@@ -1,6 +1,25 @@
 import $ from 'jquery';
-import { isNil, map, prop, invoker, compose, constructN } from 'ramda';
+import { isNil, map, prop, invoker, compose, constructN , partial} from 'ramda';
 
+import { validateRequired, validationMsg } from "./apply-validation-rules";
+
+const updateErrorPanel = (elemKey, msg) => {
+  $(`.${elemKey}-error`).html(msg);
+}
+
+export const inputRequired = () => {
+  const elemKey = "js-userName";
+  const elemValue = null;
+  const msg = "something is 5 wrong."
+
+  const test = compose(
+    partial(updateErrorPanel, [elemKey]),
+    partial(validationMsg, [elemKey]),
+    validateRequired
+  );
+
+  test(elemKey, elemValue, msg);
+}
 
 // Validate required field
 // 1. retrieve the required attr
@@ -8,43 +27,71 @@ import { isNil, map, prop, invoker, compose, constructN } from 'ramda';
 // 3. retrieve elem value
 // 4. if value is
 
+// const isValueRequired = (elem) => {
+//   return isNil($(elem).attr('required'));
+// }
 
-const errorSpan = $('.js-userName-error');
+// const inspectRequired = (key, value, msg) => {
+//   const result = validateRequired(key, value, msg);
+//   return isNil(result) ? "" : validationMsg(key, result);
+// }
 
-const paintErrorSpan = (x) => {
-  isNil(x) ? errorSpan.html('') : errorSpan.html(x);
-}
+// function inspectRequired(isRequired, elemId, elemValue, msg) {
+//   if (isRequired) {
+//     const result = validateRequired(elemId, elemValue, msg);
+//     if (!isNil(result)) {
+//       const resultMsg = validationMsg(elemId, result);
+//       paintMessagePanel(elemId, resultMsg);
 
-const isInputRequired = (elem) => {
-  return isNil($(elem).attr('required'));
-}
+//       console.log('resultMsg', resultMsg);
 
-const printName = (elem) => {
-  const n = $(elem).attr('name');
-  console.log(n)
-}
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-const jq = constructN(1, $);
 
-const validateRequired = compose(
-  printName,
-  jq
-);
 
-export const inputRequired = (elem) => {
-  validateRequired(elem);
+// const validateRequiredInput = (elemKey, msg) => {
+//   return msg;
+// }
 
-  if (isInputRequired(elem)) {
-    paintErrorSpan("");
-  }
-  else {
-    // check the elem value, and then:
-    const x = map(printName, elem);
-    console.log(x);
-    paintErrorSpan("Missing required value");
-  }
-}
+// const isInputRequired = (elemKey) => {
+//   const attr = $(`.${elemKey}`).attr('required');
+//   return isNil(attr);
+// }
 
+// const errorSpan = $('.js-userName-error');
+
+// const paintErrorSpan = (x) => {
+//   isNil(x) ? errorSpan.html('') : errorSpan.html(x);
+// }
+
+
+// const printName = (elem) => {
+//   const n = $(elem).attr('name');
+//   console.log(n)
+// }
+
+// const jq = constructN(1, $);
+
+// const validateRequired = compose(
+//   printName,
+//   jq
+// );
+
+
+
+  // if (isValueRequired(elem)) {
+  //   paintErrorSpan("");
+  // }
+  // else {
+  //   // check the elem value, and then:
+  //   const x = map(printName, elem);
+  //   console.log(x);
+  //   paintErrorSpan("Missing required value");
+  // }
 // const {invoker, compose, constructN} = R
 
 // $('#sample')
