@@ -24232,7 +24232,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.validateRequired = undefined;
-exports.validationMsg = validationMsg;
+exports.readValidationMsg = readValidationMsg;
 
 var _validate2 = require("validate.js");
 
@@ -24247,7 +24247,7 @@ var validateRequired = exports.validateRequired = function validateRequired(key,
   return (0, _validate2.validate)(_defineProperty({}, key, value), constraint);
 };
 
-function validationMsg(key, messageList) {
+function readValidationMsg(key, messageList) {
   if (messageList) {
     return (0, _ramda.prop)(key, messageList);
   }
@@ -24271,8 +24271,14 @@ var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var isNotNil = (0, _ramda.complement)(_ramda.isNil);
+
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
+};
+
+var isValueRequired = function isValueRequired(elemKey) {
+  return isNotNil((0, _jquery2.default)('.' + elemKey).attr('required'));
 };
 
 var inputRequired = exports.inputRequired = function inputRequired() {
@@ -24280,7 +24286,10 @@ var inputRequired = exports.inputRequired = function inputRequired() {
   var elemValue = null;
   var msg = "something is 5 wrong.";
 
-  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.validationMsg, [elemKey]), _applyValidationRules.validateRequired);
+  var temp = isValueRequired(elemKey);
+  console.info(temp);
+
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), _applyValidationRules.validateRequired);
 
   test(elemKey, elemValue, msg);
 };
@@ -24291,20 +24300,17 @@ var inputRequired = exports.inputRequired = function inputRequired() {
 // 3. retrieve elem value
 // 4. if value is
 
-// const isValueRequired = (elem) => {
-//   return isNil($(elem).attr('required'));
-// }
 
 // const inspectRequired = (key, value, msg) => {
 //   const result = validateRequired(key, value, msg);
-//   return isNil(result) ? "" : validationMsg(key, result);
+//   return isNil(result) ? "" : readValidationMsg(key, result);
 // }
 
 // function inspectRequired(isRequired, elemId, elemValue, msg) {
 //   if (isRequired) {
 //     const result = validateRequired(elemId, elemValue, msg);
 //     if (!isNil(result)) {
-//       const resultMsg = validationMsg(elemId, result);
+//       const resultMsg = readValidationMsg(elemId, result);
 //       paintMessagePanel(elemId, resultMsg);
 
 //       console.log('resultMsg', resultMsg);

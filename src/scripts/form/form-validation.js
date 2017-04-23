@@ -1,10 +1,16 @@
 import $ from 'jquery';
-import { isNil, map, prop, invoker, compose, constructN , partial} from 'ramda';
+import { isNil, complement, map, prop, invoker, compose, constructN , partial} from 'ramda';
 
-import { validateRequired, validationMsg } from "./apply-validation-rules";
+import { validateRequired, readValidationMsg } from "./apply-validation-rules";
+
+const isNotNil = complement(isNil);
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
+}
+
+const isValueRequired = (elemKey) => {
+  return isNotNil($(`.${elemKey}`).attr('required'));
 }
 
 export const inputRequired = () => {
@@ -12,9 +18,12 @@ export const inputRequired = () => {
   const elemValue = null;
   const msg = "something is 5 wrong."
 
+const temp = isValueRequired(elemKey);
+console.info(temp);
+
   const test = compose(
     partial(updateErrorPanel, [elemKey]),
-    partial(validationMsg, [elemKey]),
+    partial(readValidationMsg, [elemKey]),
     validateRequired
   );
 
@@ -27,20 +36,18 @@ export const inputRequired = () => {
 // 3. retrieve elem value
 // 4. if value is
 
-// const isValueRequired = (elem) => {
-//   return isNil($(elem).attr('required'));
-// }
+
 
 // const inspectRequired = (key, value, msg) => {
 //   const result = validateRequired(key, value, msg);
-//   return isNil(result) ? "" : validationMsg(key, result);
+//   return isNil(result) ? "" : readValidationMsg(key, result);
 // }
 
 // function inspectRequired(isRequired, elemId, elemValue, msg) {
 //   if (isRequired) {
 //     const result = validateRequired(elemId, elemValue, msg);
 //     if (!isNil(result)) {
-//       const resultMsg = validationMsg(elemId, result);
+//       const resultMsg = readValidationMsg(elemId, result);
 //       paintMessagePanel(elemId, resultMsg);
 
 //       console.log('resultMsg', resultMsg);
