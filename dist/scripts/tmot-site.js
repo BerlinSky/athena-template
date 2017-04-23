@@ -24286,12 +24286,14 @@ var inputRequired = exports.inputRequired = function inputRequired() {
   var elemValue = null;
   var msg = "something is 5 wrong.";
 
+  var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
+
   var temp = isValueRequired(elemKey);
   console.info(temp);
 
-  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), _applyValidationRules.validateRequired);
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), curryValidateRequired(elemKey));
 
-  test(elemKey, elemValue, msg);
+  test(elemValue, msg);
 };
 
 // Validate required field
