@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { _, isNil, complement, curry, map, prop, invoker, compose, constructN , partial} from 'ramda';
+import { _, isNil, complement, curry, always, ifElse, map, prop, invoker, compose, constructN , partial} from 'ramda';
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
@@ -19,17 +19,24 @@ export const inputRequired = () => {
   const msg = "something is 5 wrong."
 
   const curryValidateRequired = curry(validateRequired);
+  const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
+
 
 const temp = isValueRequired(elemKey);
 console.info(temp);
 
+
   const test = compose(
     partial(updateErrorPanel, [elemKey]),
     partial(readValidationMsg, [elemKey]),
-    curryValidateRequired(elemKey)
+    onlyValidateRequiredInput(elemKey)
+    // curryValidateRequired(elemKey)
   );
 
   test(elemValue, msg);
+
+  // const test2 = ifElse(isValueRequired, curryValidateRequired, always("nancy"));
+  // console.log(test2(elemKey));
 }
 
 // Validate required field

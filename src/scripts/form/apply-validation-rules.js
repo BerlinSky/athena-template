@@ -1,5 +1,5 @@
 import { validate } from "validate.js";
-import { prop } from 'ramda';
+import { prop, isNil, always, ifElse } from 'ramda';
 
 export const validateRequired = (key, value, msg) => {
   const constraint = { [key]: {
@@ -8,9 +8,7 @@ export const validateRequired = (key, value, msg) => {
   return validate( {[key]: value}, constraint );
 }
 
-export function readValidationMsg(key, messageList) {
-  if(messageList) {
-    return prop(key, messageList);
-  }
+export const readValidationMsg = (key, messageList) => {
+  return ifElse(isNil, always(""), prop(key))(messageList);
 }
 

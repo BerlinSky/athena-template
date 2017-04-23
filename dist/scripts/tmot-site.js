@@ -24231,8 +24231,7 @@ function initFancyInputBox() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateRequired = undefined;
-exports.readValidationMsg = readValidationMsg;
+exports.readValidationMsg = exports.validateRequired = undefined;
 
 var _validate2 = require("validate.js");
 
@@ -24247,11 +24246,9 @@ var validateRequired = exports.validateRequired = function validateRequired(key,
   return (0, _validate2.validate)(_defineProperty({}, key, value), constraint);
 };
 
-function readValidationMsg(key, messageList) {
-  if (messageList) {
-    return (0, _ramda.prop)(key, messageList);
-  }
-}
+var readValidationMsg = exports.readValidationMsg = function readValidationMsg(key, messageList) {
+  return (0, _ramda.ifElse)(_ramda.isNil, (0, _ramda.always)(""), (0, _ramda.prop)(key))(messageList);
+};
 
 },{"ramda":11,"validate.js":320}],323:[function(require,module,exports){
 'use strict';
@@ -24287,13 +24284,19 @@ var inputRequired = exports.inputRequired = function inputRequired() {
   var msg = "something is 5 wrong.";
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
+  var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));
 
   var temp = isValueRequired(elemKey);
   console.info(temp);
 
-  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), curryValidateRequired(elemKey));
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey)
+  // curryValidateRequired(elemKey)
+  );
 
   test(elemValue, msg);
+
+  // const test2 = ifElse(isValueRequired, curryValidateRequired, always("nancy"));
+  // console.log(test2(elemKey));
 };
 
 // Validate required field
