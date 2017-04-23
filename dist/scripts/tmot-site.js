@@ -24268,35 +24268,26 @@ var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var isNotNil = (0, _ramda.complement)(_ramda.isNil);
-
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
 
 var isValueRequired = function isValueRequired(elemKey) {
+  var isNotNil = (0, _ramda.complement)(_ramda.isNil);
   return isNotNil((0, _jquery2.default)('.' + elemKey).attr('required'));
 };
 
-var inputRequired = exports.inputRequired = function inputRequired() {
-  var elemKey = "js-userName";
+var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
+  // const elemKey = "js-userName";
   var elemValue = null;
   var msg = "something is 5 wrong.";
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
   var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));
 
-  var temp = isValueRequired(elemKey);
-  console.info(temp);
-
-  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey)
-  // curryValidateRequired(elemKey)
-  );
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
 
   test(elemValue, msg);
-
-  // const test2 = ifElse(isValueRequired, curryValidateRequired, always("nancy"));
-  // console.log(test2(elemKey));
 };
 
 // Validate required field
@@ -24414,8 +24405,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   // }
 
   // console.log("here");
-  var userName = (0, _jquery2.default)('.js-userName');
-  (0, _formValidation.inputRequired)(userName);
+  // const userName = $('.js-userName');
+  var elemKey = "js-userName";
+  (0, _formValidation.inputRequired)(elemKey);
+
+  var elemKey2 = "js-email";
+  (0, _formValidation.inputRequired)(elemKey2);
 });
 
 },{"./fancy-input":321,"./form/form-validation":323,"./masonry-layout":325,"./mobile-menu":326,"jquery":7}],325:[function(require,module,exports){

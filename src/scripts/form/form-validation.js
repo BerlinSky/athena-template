@@ -3,40 +3,31 @@ import { _, isNil, complement, curry, always, ifElse, map, prop, invoker, compos
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
-const isNotNil = complement(isNil);
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
 }
 
 const isValueRequired = (elemKey) => {
+  const isNotNil = complement(isNil);
   return isNotNil($(`.${elemKey}`).attr('required'));
 }
 
-export const inputRequired = () => {
-  const elemKey = "js-userName";
+export const inputRequired = (elemKey) => {
+  // const elemKey = "js-userName";
   const elemValue = null;
   const msg = "something is 5 wrong."
 
   const curryValidateRequired = curry(validateRequired);
   const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
 
-
-const temp = isValueRequired(elemKey);
-console.info(temp);
-
-
   const test = compose(
     partial(updateErrorPanel, [elemKey]),
     partial(readValidationMsg, [elemKey]),
     onlyValidateRequiredInput(elemKey)
-    // curryValidateRequired(elemKey)
   );
 
   test(elemValue, msg);
-
-  // const test2 = ifElse(isValueRequired, curryValidateRequired, always("nancy"));
-  // console.log(test2(elemKey));
 }
 
 // Validate required field

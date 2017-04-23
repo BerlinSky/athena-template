@@ -16,7 +16,11 @@ $(function () {
   // }
 
   // console.log("here");
-  const userName = $('.js-userName');
-  inputRequired(userName);
+  // const userName = $('.js-userName');
+  const elemKey = "js-userName";
+  inputRequired(elemKey);
+
+  const elemKey2 = "js-email";
+  inputRequired(elemKey2);
 
 });
