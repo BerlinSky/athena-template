@@ -24277,9 +24277,13 @@ var isValueRequired = function isValueRequired(elemKey) {
   return isNotNil((0, _jquery2.default)('.' + elemKey).attr('required'));
 };
 
+var inputValue = function inputValue(elemKey) {
+  return (0, _jquery2.default)('.' + elemKey).val();
+};
+
 var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
   // const elemKey = "js-userName";
-  var elemValue = null;
+  // const elemValue = null;
   var msg = "something is 5 wrong.";
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
@@ -24287,6 +24291,7 @@ var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
 
   var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
 
+  var elemValue = inputValue(elemKey);
   test(elemValue, msg);
 };
 

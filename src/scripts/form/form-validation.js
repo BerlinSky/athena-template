@@ -13,9 +13,13 @@ const isValueRequired = (elemKey) => {
   return isNotNil($(`.${elemKey}`).attr('required'));
 }
 
+const inputValue = (elemKey) => {
+  return $(`.${elemKey}`).val();
+}
+
 export const inputRequired = (elemKey) => {
   // const elemKey = "js-userName";
-  const elemValue = null;
+  // const elemValue = null;
   const msg = "something is 5 wrong."
 
   const curryValidateRequired = curry(validateRequired);
@@ -27,6 +31,7 @@ export const inputRequired = (elemKey) => {
     onlyValidateRequiredInput(elemKey)
   );
 
+  const elemValue = inputValue(elemKey);
   test(elemValue, msg);
 }
 
