@@ -24299,7 +24299,7 @@ var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
   var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', 'js-FormValidation'));
   var inputList = (0, _ramda.prop)('inputList');
   var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
-  // const messageList = prop('messages');
+  var messageList = (0, _ramda.prop)('messages');
   // const msg = prop('isRequired');
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
@@ -24309,10 +24309,10 @@ var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
 
   var elemValue = inputValue(elemKey);
 
-  var messages = (0, _ramda.compose)((0, _ramda.prop)('messages'), inputData, inputList, currentFormData);
+  var messages = (0, _ramda.compose)(messageList, inputData, inputList, currentFormData);
 
-  var messageList = messages(formDataMap);
-  var msg = (0, _ramda.prop)('isRequired')(messageList);
+  var allMessages = messages(formDataMap);
+  var msg = (0, _ramda.prop)('isRequired')(allMessages);
   test(elemValue, msg);
 };
 
@@ -24338,13 +24338,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _masonryLayout.paintMasonryLayout)();
   (0, _fancyInput.initFancyInputBox)();
 
-  // const paintErrorSpan = (x) => {
-  //   const errorSpan = $('.js-userName-error');
-  //   errorSpan.html(x);
-  // }
-
-  // console.log("here");
-  // const userName = $('.js-userName');
   var elemKey = "js-userName";
   (0, _formValidation.inputRequired)(elemKey);
 

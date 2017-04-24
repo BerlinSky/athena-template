@@ -38,7 +38,7 @@ export const inputRequired = (elemKey) => {
   const currentFormData = find(propEq('formKey', 'js-FormValidation'));
   const inputList = prop('inputList');
   const inputData = find(propEq('elemKey', elemKey));
-  // const messageList = prop('messages');
+  const messageList = prop('messages');
   // const msg = prop('isRequired');
 
   const curryValidateRequired = curry(validateRequired);
@@ -53,13 +53,13 @@ export const inputRequired = (elemKey) => {
   const elemValue = inputValue(elemKey);
 
   const messages = compose(
-    prop('messages'),
+    messageList,
     inputData,
     inputList,
     currentFormData
   )
 
-  const messageList = messages(formDataMap);
-  const msg = prop('isRequired')(messageList);
+  const allMessages = messages(formDataMap);
+  const msg = prop('isRequired')(allMessages);
   test(elemValue, msg);
 }

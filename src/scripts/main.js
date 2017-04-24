@@ -10,13 +10,6 @@ $(function () {
   paintMasonryLayout();
   initFancyInputBox();
 
-  // const paintErrorSpan = (x) => {
-  //   const errorSpan = $('.js-userName-error');
-  //   errorSpan.html(x);
-  // }
-
-  // console.log("here");
-  // const userName = $('.js-userName');
   const elemKey = "js-userName";
   inputRequired(elemKey);
 
