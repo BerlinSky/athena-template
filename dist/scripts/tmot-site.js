@@ -24268,6 +24268,37 @@ var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var formDataMap = [{
+  formKey: "js-FormValidation",
+  inputList: [{
+    elemKey: "js-userName",
+    messageList: [{ "isRequired": "Please enter a valid user name" }]
+  }, {
+    elemKey: "js-email",
+    messageList: [{ "isRequired": "Please enter a valid email address" }, { "email": "Only valid email address is allowed." }]
+  }] }];
+
+var currentFormData = function currentFormData(formKey) {
+  formKey = 'js-FormValidation';
+  var thisForm = function thisForm(f) {
+    return f.formKey === formKey;
+  };
+
+  return (0, _ramda.filter)(thisForm, formDataMap);
+};
+
+// const p = path(["js-FormValidation"]);
+
+
+// const getSizes = prop('sizes')
+// const getColors = chain(prop('colors'))
+// const getColorNames = pluck('name')
+
+// const getUniqueColors = compose(uniq, getColorNames, getColors, getSizes)
+
+// const result = getUniqueColors(product)
+// console.log(result)
+
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
@@ -24282,9 +24313,22 @@ var inputValue = function inputValue(elemKey) {
 };
 
 var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
-  // const elemKey = "js-userName";
-  // const elemValue = null;
-  var msg = "something is 5 wrong.";
+
+  var formData = currentFormData();
+  var inputList = (0, _ramda.map)((0, _ramda.prop)('inputList'), formData);
+
+  var thisInput = function thisInput(d) {
+    return d.elemKey === elemKey;
+  };
+  var inputData = (0, _ramda.filter)(thisInput, inputList[0]);
+
+  var messageList = (0, _ramda.map)((0, _ramda.prop)('messageList'), inputData);
+  console.log(messageList[0]);
+
+  // const msg = "something is 5 wrong."
+  var msg = (0, _ramda.prop)('isRequired', messageList[0][0]);
+  console.log(msg);
+  // const msg = "something is 5 wrong."
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
   var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));

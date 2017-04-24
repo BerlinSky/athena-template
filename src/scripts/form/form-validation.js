@@ -1,8 +1,46 @@
 import $ from 'jquery';
-import { _, isNil, complement, curry, always, ifElse, map, prop, invoker, compose, constructN , partial} from 'ramda';
+import { filter, path, isNil, complement, curry, always, ifElse, map, prop, invoker, compose, constructN , partial} from 'ramda';
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
+const formDataMap = [{
+  formKey: "js-FormValidation",
+  inputList: [
+    {
+      elemKey: "js-userName",
+      messageList: [
+        { "isRequired": "Please enter a valid user name" }
+      ]
+    },
+    {
+      elemKey: "js-email",
+      messageList: [
+        { "isRequired": "Please enter a valid email address" },
+        { "email": "Only valid email address is allowed." }
+      ]
+    }
+  ]}
+];
+
+
+const currentFormData = (formKey) => {
+  formKey = 'js-FormValidation';
+  const thisForm = (f) =>  f.formKey === formKey;
+
+  return filter(thisForm, formDataMap);
+}
+
+// const p = path(["js-FormValidation"]);
+
+
+// const getSizes = prop('sizes')
+// const getColors = chain(prop('colors'))
+// const getColorNames = pluck('name')
+
+// const getUniqueColors = compose(uniq, getColorNames, getColors, getSizes)
+
+// const result = getUniqueColors(product)
+// console.log(result)
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
@@ -18,9 +56,20 @@ const inputValue = (elemKey) => {
 }
 
 export const inputRequired = (elemKey) => {
-  // const elemKey = "js-userName";
-  // const elemValue = null;
-  const msg = "something is 5 wrong."
+
+  const formData = currentFormData();
+  const inputList = map(prop('inputList'), formData);
+
+  const thisInput = (d) => d.elemKey === elemKey;
+  const inputData = filter(thisInput, inputList[0]);
+
+  const messageList = map(prop('messageList'), inputData);
+  console.log(messageList[0]);
+
+  // const msg = "something is 5 wrong."
+  const msg = prop('isRequired', messageList[0][0]);
+  console.log(msg);
+  // const msg = "something is 5 wrong."
 
   const curryValidateRequired = curry(validateRequired);
   const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
