@@ -24281,30 +24281,6 @@ var formDataMap = [{
     }
   }] }];
 
-// const currentFormData = (formKey) => {
-//   formKey = 'js-FormValidation';
-//   const thisForm = (f) =>  f.formKey === formKey;
-
-//   return filter(thisForm, formDataMap);
-// }
-
-var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', 'js-FormValidation'))(formDataMap); //=> {a: 2}
-console.log(currentFormData);
-
-// R.find(R.propEq('a', 2))(xs); //=> {a: 2}
-
-// const p = path(["js-FormValidation"]);
-
-
-// const getSizes = prop('sizes')
-// const getColors = chain(prop('colors'))
-// const getColorNames = pluck('name')
-
-// const getUniqueColors = compose(uniq, getColorNames, getColors, getSizes)
-
-// const result = getUniqueColors(product)
-// console.log(result)
-
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
@@ -24320,19 +24296,11 @@ var inputValue = function inputValue(elemKey) {
 
 var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
 
-  var inputList = (0, _ramda.prop)('inputList')(currentFormData);
-  console.log(inputList);
-
-  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey))(inputList);
-  console.log(inputData);
-
-  var messageList = (0, _ramda.prop)('messages')(inputData);
-  console.log(messageList);
-
-  // const msg = "something is 5 wrong."
-  var msg = (0, _ramda.prop)('isRequired')(messageList);
-  console.log(msg);
-  // const msg = "something is 5 wrong."
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', 'js-FormValidation'));
+  var inputList = (0, _ramda.prop)('inputList');
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
+  // const messageList = prop('messages');
+  // const msg = prop('isRequired');
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
   var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));
@@ -24340,95 +24308,13 @@ var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
   var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
 
   var elemValue = inputValue(elemKey);
+
+  var messages = (0, _ramda.compose)((0, _ramda.prop)('messages'), inputData, inputList, currentFormData);
+
+  var messageList = messages(formDataMap);
+  var msg = (0, _ramda.prop)('isRequired')(messageList);
   test(elemValue, msg);
 };
-
-// Validate required field
-// 1. retrieve the required attr
-// 2. if required, retrieve value and move to step 3; it not, paint validation span to empty string
-// 3. retrieve elem value
-// 4. if value is
-
-
-// const inspectRequired = (key, value, msg) => {
-//   const result = validateRequired(key, value, msg);
-//   return isNil(result) ? "" : readValidationMsg(key, result);
-// }
-
-// function inspectRequired(isRequired, elemId, elemValue, msg) {
-//   if (isRequired) {
-//     const result = validateRequired(elemId, elemValue, msg);
-//     if (!isNil(result)) {
-//       const resultMsg = readValidationMsg(elemId, result);
-//       paintMessagePanel(elemId, resultMsg);
-
-//       console.log('resultMsg', resultMsg);
-
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-
-
-// const validateRequiredInput = (elemKey, msg) => {
-//   return msg;
-// }
-
-// const isInputRequired = (elemKey) => {
-//   const attr = $(`.${elemKey}`).attr('required');
-//   return isNil(attr);
-// }
-
-// const errorSpan = $('.js-userName-error');
-
-// const paintErrorSpan = (x) => {
-//   isNil(x) ? errorSpan.html('') : errorSpan.html(x);
-// }
-
-
-// const printName = (elem) => {
-//   const n = $(elem).attr('name');
-//   console.log(n)
-// }
-
-// const jq = constructN(1, $);
-
-// const validateRequired = compose(
-//   printName,
-//   jq
-// );
-
-
-// if (isValueRequired(elem)) {
-//   paintErrorSpan("");
-// }
-// else {
-//   // check the elem value, and then:
-//   const x = map(printName, elem);
-//   console.log(x);
-//   paintErrorSpan("Missing required value");
-// }
-// const {invoker, compose, constructN} = R
-
-// $('#sample')
-//   .animate({left:'250px'})
-//   .animate({left:'10px'})
-//   .slideUp()
-
-// const animate = invoker(1, 'animate')
-// const slide = invoker(0, 'slideUp')
-// const jq = constructN(1, $)
-
-// const animateDiv = compose(
-//   slide,
-//   animate({left:'10px'}),
-//   animate({left:'250px'}),
-//   jq
-//   )
-
-// animateDiv('#sample')
-// animateDiv('#sample2')
 
 },{"./apply-validation-rules":322,"jquery":7,"ramda":11}],324:[function(require,module,exports){
 'use strict';
