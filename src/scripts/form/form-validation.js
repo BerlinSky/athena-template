@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { filter, path, isNil, complement, curry, always, ifElse, map, prop, invoker, compose, constructN , partial} from 'ramda';
+import { find, propEq, filter, path, isNil, complement, curry, always, ifElse, map, prop, invoker, compose, constructN , partial} from 'ramda';
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
@@ -8,27 +8,30 @@ const formDataMap = [{
   inputList: [
     {
       elemKey: "js-userName",
-      messageList: [
-        { "isRequired": "Please enter a valid user name" }
-      ]
+      messages: { "isRequired": "Please enter a valid user name" }
     },
     {
       elemKey: "js-email",
-      messageList: [
-        { "isRequired": "Please enter a valid email address" },
-        { "email": "Only valid email address is allowed." }
-      ]
+      messages: {
+        "isRequired": "Please enter a valid email address",
+        "email": "Only valid email address is allowed."
+      }
     }
   ]}
 ];
 
 
-const currentFormData = (formKey) => {
-  formKey = 'js-FormValidation';
-  const thisForm = (f) =>  f.formKey === formKey;
+// const currentFormData = (formKey) => {
+//   formKey = 'js-FormValidation';
+//   const thisForm = (f) =>  f.formKey === formKey;
 
-  return filter(thisForm, formDataMap);
-}
+//   return filter(thisForm, formDataMap);
+// }
+
+const currentFormData = find(propEq('formKey', 'js-FormValidation'))(formDataMap); //=> {a: 2}
+console.log(currentFormData);
+
+// R.find(R.propEq('a', 2))(xs); //=> {a: 2}
 
 // const p = path(["js-FormValidation"]);
 
@@ -57,17 +60,17 @@ const inputValue = (elemKey) => {
 
 export const inputRequired = (elemKey) => {
 
-  const formData = currentFormData();
-  const inputList = map(prop('inputList'), formData);
+  const inputList = prop('inputList')(currentFormData);
+console.log(inputList);
 
-  const thisInput = (d) => d.elemKey === elemKey;
-  const inputData = filter(thisInput, inputList[0]);
+  const inputData = find(propEq('elemKey', elemKey))(inputList);
+console.log(inputData);
 
-  const messageList = map(prop('messageList'), inputData);
-  console.log(messageList[0]);
+  const messageList = prop('messages')(inputData);
+  console.log(messageList);
 
   // const msg = "something is 5 wrong."
-  const msg = prop('isRequired', messageList[0][0]);
+  const msg = prop('isRequired')(messageList);
   console.log(msg);
   // const msg = "something is 5 wrong."
 

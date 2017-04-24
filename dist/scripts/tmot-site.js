@@ -24272,20 +24272,26 @@ var formDataMap = [{
   formKey: "js-FormValidation",
   inputList: [{
     elemKey: "js-userName",
-    messageList: [{ "isRequired": "Please enter a valid user name" }]
+    messages: { "isRequired": "Please enter a valid user name" }
   }, {
     elemKey: "js-email",
-    messageList: [{ "isRequired": "Please enter a valid email address" }, { "email": "Only valid email address is allowed." }]
+    messages: {
+      "isRequired": "Please enter a valid email address",
+      "email": "Only valid email address is allowed."
+    }
   }] }];
 
-var currentFormData = function currentFormData(formKey) {
-  formKey = 'js-FormValidation';
-  var thisForm = function thisForm(f) {
-    return f.formKey === formKey;
-  };
+// const currentFormData = (formKey) => {
+//   formKey = 'js-FormValidation';
+//   const thisForm = (f) =>  f.formKey === formKey;
 
-  return (0, _ramda.filter)(thisForm, formDataMap);
-};
+//   return filter(thisForm, formDataMap);
+// }
+
+var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', 'js-FormValidation'))(formDataMap); //=> {a: 2}
+console.log(currentFormData);
+
+// R.find(R.propEq('a', 2))(xs); //=> {a: 2}
 
 // const p = path(["js-FormValidation"]);
 
@@ -24314,19 +24320,17 @@ var inputValue = function inputValue(elemKey) {
 
 var inputRequired = exports.inputRequired = function inputRequired(elemKey) {
 
-  var formData = currentFormData();
-  var inputList = (0, _ramda.map)((0, _ramda.prop)('inputList'), formData);
+  var inputList = (0, _ramda.prop)('inputList')(currentFormData);
+  console.log(inputList);
 
-  var thisInput = function thisInput(d) {
-    return d.elemKey === elemKey;
-  };
-  var inputData = (0, _ramda.filter)(thisInput, inputList[0]);
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey))(inputList);
+  console.log(inputData);
 
-  var messageList = (0, _ramda.map)((0, _ramda.prop)('messageList'), inputData);
-  console.log(messageList[0]);
+  var messageList = (0, _ramda.prop)('messages')(inputData);
+  console.log(messageList);
 
   // const msg = "something is 5 wrong."
-  var msg = (0, _ramda.prop)('isRequired', messageList[0][0]);
+  var msg = (0, _ramda.prop)('isRequired')(messageList);
   console.log(msg);
   // const msg = "something is 5 wrong."
 
