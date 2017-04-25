@@ -3,28 +3,30 @@ import { initMobileMenu } from './mobile-menu';
 import { paintMasonryLayout } from './masonry-layout';
 import { initFancyInputBox } from './fancy-input';
 
-import { validateInputList, inputRequired } from './form/form-validation';
+// import { validateInputList } from './form/form-validation';
+import { formValidationEvents } from './form/form-events';
 
 $(function () {
   initMobileMenu();
   paintMasonryLayout();
   initFancyInputBox();
 
-  const input = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
-  input.keyup(function(event) {
-    const thisInput =$( event.target );
+  formValidationEvents();
 
-    inputRequired(thisInput);
-  })
+  // const submitForm = $('form.js-FormValidation');
+	// $(submitForm).submit(function( event ) {
 
-  const submitForm = $('form.js-FormValidation');
-	$(submitForm).submit(function( event ) {
+	// 	const inputList = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
+	// 	validateInputList(inputList);
 
-		event.preventDefault();
+  //   const validationStatusList = $(`.js-FormValidation input[valid-input="false"],
+	// 											 .js-FormValidation textarea[valid-input="false"],
+  //                        .js-FormValidation select[valid-input="false"]`);
 
-		const inputList = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
-		validateInputList(inputList);
+  //   if (validationStatusList.length > 0) {
+  //     event.preventDefault();
+  //   }
 
-	});
+	// });
 
 });

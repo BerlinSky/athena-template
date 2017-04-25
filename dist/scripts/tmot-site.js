@@ -24251,6 +24251,77 @@ var readValidationMsg = exports.readValidationMsg = function readValidationMsg(k
 };
 
 },{"ramda":11,"validate.js":320}],323:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.formInputStatusList = exports.formInputList = exports.formDataMap = undefined;
+
+var _jquery = require("jquery");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var formDataMap = exports.formDataMap = [{
+  formKey: "js-FormValidation",
+  inputList: [{
+    elemKey: "js-userName",
+    messages: { "isRequired": "Please enter a valid user name" }
+  }, {
+    elemKey: "js-email",
+    messages: {
+      "isRequired": "Please enter a valid email address",
+      "email": "Only valid email address is allowed."
+    }
+  }] }];
+
+var formInputList = exports.formInputList = (0, _jquery2.default)(".js-FormValidation input[type=text], .js-FormValidation input[type=email]");
+
+var formInputStatusList = exports.formInputStatusList = function formInputStatusList() {
+  var list = (0, _jquery2.default)(".js-FormValidation input[valid-input=\"false\"],\n                                        .js-FormValidation textarea[valid-input=\"false\"],\n                                        .js-FormValidation select[valid-input=\"false\"]");
+
+  return list;
+};
+
+},{"jquery":7}],324:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.formValidationEvents = undefined;
+
+var _jquery = require("jquery");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _formData = require("./form-data");
+
+var _formValidation = require("./form-validation");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var formValidationEvents = exports.formValidationEvents = function formValidationEvents() {
+
+  _formData.formInputList.keyup(function (event) {
+    var thisInput = (0, _jquery2.default)(event.target);
+    (0, _formValidation.inputRequired)(thisInput);
+  });
+
+  var submitForm = (0, _jquery2.default)('form.js-FormValidation');
+
+  (0, _jquery2.default)(submitForm).submit(function (event) {
+    (0, _formValidation.validateInputList)(_formData.formInputList);
+
+    if ((0, _formData.formInputStatusList)().length > 0) {
+      event.preventDefault();
+    }
+  });
+};
+
+},{"./form-data":323,"./form-validation":325,"jquery":7}],325:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24265,22 +24336,28 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _ramda = require('ramda');
 
+var _formData = require('./form-data');
+
 var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var formDataMap = [{
-  formKey: "js-FormValidation",
-  inputList: [{
-    elemKey: "js-userName",
-    messages: { "isRequired": "Please enter a valid user name" }
-  }, {
-    elemKey: "js-email",
-    messages: {
-      "isRequired": "Please enter a valid email address",
-      "email": "Only valid email address is allowed."
-    }
-  }] }];
+// const formDataMap = [{
+//   formKey: "js-FormValidation",
+//   inputList: [
+//     {
+//       elemKey: "js-userName",
+//       messages: { "isRequired": "Please enter a valid user name" }
+//     },
+//     {
+//       elemKey: "js-email",
+//       messages: {
+//         "isRequired": "Please enter a valid email address",
+//         "email": "Only valid email address is allowed."
+//       }
+//     }
+//   ]}
+// ];
 
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
@@ -24293,6 +24370,11 @@ var isValueRequired = function isValueRequired(elemKey) {
 
 var inputValue = function inputValue(elemKey) {
   return (0, _jquery2.default)('.' + elemKey).val();
+};
+
+var updateValidationStatus = function updateValidationStatus(elemKey, msg) {
+  (0, _jquery2.default)('.' + elemKey).attr("valid-input", (0, _ramda.isEmpty)(msg));
+  return msg;
 };
 
 var getElemKey = function getElemKey(elem) {
@@ -24316,13 +24398,13 @@ var inputRequired = exports.inputRequired = function inputRequired(elem) {
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
   var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));
 
-  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
 
   var elemValue = inputValue(elemKey);
 
   var messages = (0, _ramda.compose)(messageList, inputData, inputList, currentFormData);
 
-  var allMessages = messages(formDataMap);
+  var allMessages = messages(_formData.formDataMap);
   var msg = (0, _ramda.prop)('isRequired')(allMessages);
 
   test(elemValue, msg);
@@ -24333,7 +24415,7 @@ function validateInputList(inputList) {
   (0, _ramda.forEach)(inputRequired, inputList);
 }
 
-},{"./apply-validation-rules":322,"jquery":7,"ramda":11}],324:[function(require,module,exports){
+},{"./apply-validation-rules":322,"./form-data":323,"jquery":7,"ramda":11}],326:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -24346,7 +24428,7 @@ var _masonryLayout = require('./masonry-layout');
 
 var _fancyInput = require('./fancy-input');
 
-var _formValidation = require('./form/form-validation');
+var _formEvents = require('./form/form-events');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24355,24 +24437,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _masonryLayout.paintMasonryLayout)();
   (0, _fancyInput.initFancyInputBox)();
 
-  var input = (0, _jquery2.default)('.js-FormValidation input[type=text], .js-FormValidation input[type=email]');
-  input.keyup(function (event) {
-    var thisInput = (0, _jquery2.default)(event.target);
+  (0, _formEvents.formValidationEvents)();
 
-    (0, _formValidation.inputRequired)(thisInput);
-  });
+  // const submitForm = $('form.js-FormValidation');
+  // $(submitForm).submit(function( event ) {
 
-  var submitForm = (0, _jquery2.default)('form.js-FormValidation');
-  (0, _jquery2.default)(submitForm).submit(function (event) {
+  // 	const inputList = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
+  // 	validateInputList(inputList);
 
-    event.preventDefault();
+  //   const validationStatusList = $(`.js-FormValidation input[valid-input="false"],
+  // 											 .js-FormValidation textarea[valid-input="false"],
+  //                        .js-FormValidation select[valid-input="false"]`);
 
-    var inputList = (0, _jquery2.default)('.js-FormValidation input[type=text], .js-FormValidation input[type=email]');
-    (0, _formValidation.validateInputList)(inputList);
-  });
+  //   if (validationStatusList.length > 0) {
+  //     event.preventDefault();
+  //   }
+
+  // });
 });
 
-},{"./fancy-input":321,"./form/form-validation":323,"./masonry-layout":325,"./mobile-menu":326,"jquery":7}],325:[function(require,module,exports){
+// import { validateInputList } from './form/form-validation';
+
+},{"./fancy-input":321,"./form/form-events":324,"./masonry-layout":327,"./mobile-menu":328,"jquery":7}],327:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24415,7 +24501,7 @@ function paintMasonryLayout() {
   }
 }
 
-},{"imagesloaded":5,"jquery":7,"jquery-bridget":6,"masonry-layout":8}],326:[function(require,module,exports){
+},{"imagesloaded":5,"jquery":7,"jquery-bridget":6,"masonry-layout":8}],328:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24455,5 +24541,5 @@ function initMobileMenu() {
   });
 }
 
-},{"jquery":7}]},{},[324])
+},{"jquery":7}]},{},[326])
 //# sourceMappingURL=tmot-site.js.map
