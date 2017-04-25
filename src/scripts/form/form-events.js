@@ -14,7 +14,7 @@ export const formValidationEvents = () => {
 
     console.log(formKey);
 
-		validateInputList(formInputList);
+		validateInputList(formKey, formInputList);
 
     if (formInputStatusList().length > 0) {
       event.preventDefault();

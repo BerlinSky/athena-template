@@ -24317,7 +24317,7 @@ var formValidationEvents = exports.formValidationEvents = function formValidatio
 
     console.log(_formData.formKey);
 
-    (0, _formValidation.validateInputList)(_formData.formInputList);
+    (0, _formValidation.validateInputList)(_formData.formKey, _formData.formInputList);
 
     if ((0, _formData.formInputStatusList)().length > 0) {
       event.preventDefault();
@@ -24397,9 +24397,10 @@ var inputRequired = exports.inputRequired = function inputRequired(formKey, elem
   test(elemValue, msg);
 };
 
-function validateInputList(inputList) {
+function validateInputList(formKey, inputList) {
   // forEach(validateInput, inputList);
-  (0, _ramda.forEach)(inputRequired, inputList);
+  var currentInputRequired = (0, _ramda.partial)(inputRequired, [formKey]);
+  (0, _ramda.forEach)(currentInputRequired, inputList);
 }
 
 },{"./apply-validation-rules":322,"./form-data":323,"jquery":7,"ramda":11}],326:[function(require,module,exports){
