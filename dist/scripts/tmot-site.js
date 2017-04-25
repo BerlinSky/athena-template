@@ -24256,7 +24256,7 @@ var readValidationMsg = exports.readValidationMsg = function readValidationMsg(k
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.formInputStatusList = exports.formInputList = exports.formDataMap = undefined;
+exports.formInputStatusList = exports.formInputList = exports.formKey = exports.currentForm = exports.formDataMap = undefined;
 
 var _jquery = require("jquery");
 
@@ -24265,10 +24265,13 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var formDataMap = exports.formDataMap = [{
-  formKey: "js-FormValidation",
+  formKey: "contactForm",
   inputList: [{
-    elemKey: "js-userName",
-    messages: { "isRequired": "Please enter a valid user name" }
+    elemKey: "js-firstName",
+    messages: { "isRequired": "Please enter a valid first name" }
+  }, {
+    elemKey: "js-lastName",
+    messages: { "isRequired": "Please enter a valid last name" }
   }, {
     elemKey: "js-email",
     messages: {
@@ -24277,13 +24280,13 @@ var formDataMap = exports.formDataMap = [{
     }
   }] }];
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(".js-FormValidation input[type=text], .js-FormValidation input[type=email]");
+var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValidation");
 
-var formInputStatusList = exports.formInputStatusList = function formInputStatusList() {
-  var list = (0, _jquery2.default)(".js-FormValidation input[valid-input=\"false\"],\n                                        .js-FormValidation textarea[valid-input=\"false\"],\n                                        .js-FormValidation select[valid-input=\"false\"]");
+var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-  return list;
-};
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email]");
+
+var formInputStatusList = exports.formInputStatusList = (0, _jquery2.default)(currentForm).find("input[valid-input=\"false\"], textarea[valid-input=\"false\"], select[valid-input=\"false\"]");
 
 },{"jquery":7}],324:[function(require,module,exports){
 "use strict";
@@ -24305,14 +24308,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var formValidationEvents = exports.formValidationEvents = function formValidationEvents() {
 
-  _formData.formInputList.keyup(function (event) {
+  (0, _jquery2.default)(_formData.formInputList).keyup(function (event) {
+
+    console.log(_formData.formKey);
+
     var thisInput = (0, _jquery2.default)(event.target);
     (0, _formValidation.inputRequired)(thisInput);
   });
 
-  var submitForm = (0, _jquery2.default)('form.js-FormValidation');
+  (0, _jquery2.default)(_formData.currentForm).submit(function (event) {
 
-  (0, _jquery2.default)(submitForm).submit(function (event) {
+    console.log(_formData.formKey);
+
     (0, _formValidation.validateInputList)(_formData.formInputList);
 
     if ((0, _formData.formInputStatusList)().length > 0) {
@@ -24438,25 +24445,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _fancyInput.initFancyInputBox)();
 
   (0, _formEvents.formValidationEvents)();
-
-  // const submitForm = $('form.js-FormValidation');
-  // $(submitForm).submit(function( event ) {
-
-  // 	const inputList = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
-  // 	validateInputList(inputList);
-
-  //   const validationStatusList = $(`.js-FormValidation input[valid-input="false"],
-  // 											 .js-FormValidation textarea[valid-input="false"],
-  //                        .js-FormValidation select[valid-input="false"]`);
-
-  //   if (validationStatusList.length > 0) {
-  //     event.preventDefault();
-  //   }
-
-  // });
 });
-
-// import { validateInputList } from './form/form-validation';
 
 },{"./fancy-input":321,"./form/form-events":324,"./masonry-layout":327,"./mobile-menu":328,"jquery":7}],327:[function(require,module,exports){
 'use strict';

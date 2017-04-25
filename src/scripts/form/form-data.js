@@ -1,11 +1,15 @@
 import $ from 'jquery';
 
 export const formDataMap = [{
-  formKey: "js-FormValidation",
+  formKey: "contactForm",
   inputList: [
     {
-      elemKey: "js-userName",
-      messages: { "isRequired": "Please enter a valid user name" }
+      elemKey: "js-firstName",
+      messages: { "isRequired": "Please enter a valid first name" }
+    },
+    {
+      elemKey: "js-lastName",
+      messages: { "isRequired": "Please enter a valid last name" }
     },
     {
       elemKey: "js-email",
@@ -17,12 +21,11 @@ export const formDataMap = [{
   ]}
 ];
 
-export const formInputList = $(`.js-FormValidation input[type=text], .js-FormValidation input[type=email]`);
+export const currentForm = $(`form.js-FormValidation`);
 
-export const formInputStatusList = () => {
-  const list = $(`.js-FormValidation input[valid-input="false"],
-                                        .js-FormValidation textarea[valid-input="false"],
-                                        .js-FormValidation select[valid-input="false"]`);
+export const formKey = $(currentForm).attr('id');
 
-  return list;
-}
+export const formInputList = $(currentForm).find(`input[type=text], input[type=email]`);
+
+export const formInputStatusList = $(currentForm).find(`input[valid-input="false"], textarea[valid-input="false"], select[valid-input="false"]`);
+

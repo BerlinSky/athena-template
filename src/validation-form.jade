@@ -68,11 +68,15 @@ block bodyContent
 				.dataEntryFormContainer
 					.uploadProgressContainer
 						.bar
-					form(action="http://google.com" method="post" autocomplete="off" novalidate).js-FormValidation
+					form(action="http://google.com" method="post" autocomplete="off" novalidate)#contactForm.js-FormValidation
 						.inputGroup
-							input(name="userName" type="text" value="" required="required").dataInput.js-userName
-							label(for="firstName") User Name
-							span.inputError.js-userName-error
+							input(name="firstName" type="text" value="" required="required").dataInput.js-firstName
+							label(for="firstName") First Name
+							span.inputError.js-firstName-error
+						.inputGroup
+							input(name="lastName" type="text" value="" required="required").dataInput.js-lastName
+							label(for="lastName") Last Name
+							span.inputError.js-lastName-error
 						.inputGroup
 							input(name="email" type="email" value="" required="required").dataInput.js-email
 							label(for="email") Email
@@ -89,10 +93,7 @@ block bodyContent
 						//- 	span(id="entry-8727-error").inputError
 						//- 	span(id="entry-upload").inputError
 
-						//- .inputGroup
-						//- 	input(id='entry-6134' name="lastName" type="text" value="" required="required" required-msg="Please enter a required value 6134").dataInput
-						//- 	label(for="lastName") Last Name
-						//- 	span(id="entry-6134-error").inputError
+
 						//- .inputGroup
 						//- 	input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132", email-msg="Only valid email address is allowed.").dataInput
 						//- 	label(for="email") Email

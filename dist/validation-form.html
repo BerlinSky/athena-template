@@ -54,15 +54,20 @@
             <div class="uploadProgressContainer">
               <div class="bar"></div>
             </div>
-            <form action="http://google.com" method="post" autocomplete="off" novalidate class="js-FormValidation">
+            <form action="http://google.com" method="post" autocomplete="off" novalidate id="contactForm" class="js-FormValidation">
               <div class="inputGroup">
-                <input name="userName" type="text" value="" required="required" class="dataInput js-userName">
-                <label for="firstName">User Name</label><span class="inputError js-userName-error"></span>
+                <input name="firstName" type="text" value="" required="required" class="dataInput js-firstName">
+                <label for="firstName">First Name</label><span class="inputError js-firstName-error"></span>
+              </div>
+              <div class="inputGroup">
+                <input name="lastName" type="text" value="" required="required" class="dataInput js-lastName">
+                <label for="lastName">Last Name</label><span class="inputError js-lastName-error"></span>
               </div>
               <div class="inputGroup">
                 <input name="email" type="email" value="" required="required" class="dataInput js-email">
                 <label for="email">Email</label><span class="inputError js-email-error"></span>
               </div>
+              
               <div class="inputButtonGroup">
                 <input type="submit" name="submit" id="proceed" value="Next" class="inputButton js-submitButton">
               </div>
