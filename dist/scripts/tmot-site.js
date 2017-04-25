@@ -24257,6 +24257,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.inputRequired = undefined;
+exports.validateInputList = validateInputList;
 
 var _jquery = require('jquery');
 
@@ -24327,6 +24328,11 @@ var inputRequired = exports.inputRequired = function inputRequired(elem) {
   test(elemValue, msg);
 };
 
+function validateInputList(inputList) {
+  // forEach(validateInput, inputList);
+  (0, _ramda.forEach)(inputRequired, inputList);
+}
+
 },{"./apply-validation-rules":322,"jquery":7,"ramda":11}],324:[function(require,module,exports){
 'use strict';
 
@@ -24350,21 +24356,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _fancyInput.initFancyInputBox)();
 
   var input = (0, _jquery2.default)('.js-FormValidation input[type=text], .js-FormValidation input[type=email]');
-
   input.keyup(function (event) {
     var thisInput = (0, _jquery2.default)(event.target);
-    // validateInputList(thisInput);const
-    // const elemKey = getElemKey(thisInput);
 
     (0, _formValidation.inputRequired)(thisInput);
-    console.log(thisInput);
   });
 
-  // const elemKey = "js-userName";
-  // inputRequired(elemKey);
+  var submitForm = (0, _jquery2.default)('form.js-FormValidation');
+  (0, _jquery2.default)(submitForm).submit(function (event) {
 
-  // const elemKey2 = "js-email";
-  // inputRequired(elemKey2);
+    event.preventDefault();
+
+    var inputList = (0, _jquery2.default)('.js-FormValidation input[type=text], .js-FormValidation input[type=email]');
+    (0, _formValidation.validateInputList)(inputList);
+  });
 });
 
 },{"./fancy-input":321,"./form/form-validation":323,"./masonry-layout":325,"./mobile-menu":326,"jquery":7}],325:[function(require,module,exports){

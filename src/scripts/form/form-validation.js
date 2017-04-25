@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { find, filter, head, propEq, isNil, complement, curry, always, ifElse, prop, compose, partial} from 'ramda';
+import { find, filter, head, propEq, isNil, complement, curry, always, ifElse, prop, compose, partial, forEach } from 'ramda';
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
@@ -71,4 +71,9 @@ export const inputRequired = (elem) => {
   const msg = prop('isRequired')(allMessages);
 
   test(elemValue, msg);
+}
+
+export function validateInputList(inputList) {
+  // forEach(validateInput, inputList);
+  forEach(inputRequired, inputList);
 }
