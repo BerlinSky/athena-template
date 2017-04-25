@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { find, propEq, isNil, complement, curry, always, ifElse, prop, compose, partial} from 'ramda';
+import { find, filter, head, propEq, isNil, complement, curry, always, ifElse, prop, compose, partial} from 'ramda';
 
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
@@ -33,13 +33,21 @@ const inputValue = (elemKey) => {
   return $(`.${elemKey}`).val();
 }
 
-export const inputRequired = (elemKey) => {
+const getElemKey = (elem) => {
+  const classList = $(elem).attr('class').split(" ");
+  const jsClass = (x) => x.startsWith('js-');
+  const elemKey = head()(filter(jsClass, classList));
+  return elemKey;
+}
+
+export const inputRequired = (elem) => {
+
+  const elemKey = getElemKey(elem);
 
   const currentFormData = find(propEq('formKey', 'js-FormValidation'));
   const inputList = prop('inputList');
   const inputData = find(propEq('elemKey', elemKey));
   const messageList = prop('messages');
-  // const msg = prop('isRequired');
 
   const curryValidateRequired = curry(validateRequired);
   const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
@@ -61,5 +69,6 @@ export const inputRequired = (elemKey) => {
 
   const allMessages = messages(formDataMap);
   const msg = prop('isRequired')(allMessages);
+
   test(elemValue, msg);
 }
