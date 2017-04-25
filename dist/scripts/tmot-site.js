@@ -24309,11 +24309,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var formValidationEvents = exports.formValidationEvents = function formValidationEvents() {
 
   (0, _jquery2.default)(_formData.formInputList).keyup(function (event) {
-
-    console.log(_formData.formKey);
-
     var thisInput = (0, _jquery2.default)(event.target);
-    (0, _formValidation.inputRequired)(thisInput);
+    (0, _formValidation.inputRequired)(_formData.formKey, thisInput);
   });
 
   (0, _jquery2.default)(_formData.currentForm).submit(function (event) {
@@ -24349,23 +24346,6 @@ var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// const formDataMap = [{
-//   formKey: "js-FormValidation",
-//   inputList: [
-//     {
-//       elemKey: "js-userName",
-//       messages: { "isRequired": "Please enter a valid user name" }
-//     },
-//     {
-//       elemKey: "js-email",
-//       messages: {
-//         "isRequired": "Please enter a valid email address",
-//         "email": "Only valid email address is allowed."
-//       }
-//     }
-//   ]}
-// ];
-
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
@@ -24393,11 +24373,11 @@ var getElemKey = function getElemKey(elem) {
   return elemKey;
 };
 
-var inputRequired = exports.inputRequired = function inputRequired(elem) {
+var inputRequired = exports.inputRequired = function inputRequired(formKey, elem) {
 
   var elemKey = getElemKey(elem);
 
-  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', 'js-FormValidation'));
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
   var inputList = (0, _ramda.prop)('inputList');
   var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
   var messageList = (0, _ramda.prop)('messages');

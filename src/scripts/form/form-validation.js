@@ -3,23 +3,6 @@ import { find, filter, head, propEq, isNil, isEmpty, complement, curry, always, 
 import { formDataMap } from './form-data';
 import { validateRequired, readValidationMsg } from "./apply-validation-rules";
 
-// const formDataMap = [{
-//   formKey: "js-FormValidation",
-//   inputList: [
-//     {
-//       elemKey: "js-userName",
-//       messages: { "isRequired": "Please enter a valid user name" }
-//     },
-//     {
-//       elemKey: "js-email",
-//       messages: {
-//         "isRequired": "Please enter a valid email address",
-//         "email": "Only valid email address is allowed."
-//       }
-//     }
-//   ]}
-// ];
-
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
 }
@@ -45,11 +28,11 @@ const getElemKey = (elem) => {
   return elemKey;
 }
 
-export const inputRequired = (elem) => {
+export const inputRequired = (formKey, elem) => {
 
   const elemKey = getElemKey(elem);
 
-  const currentFormData = find(propEq('formKey', 'js-FormValidation'));
+  const currentFormData = find(propEq('formKey', formKey));
   const inputList = prop('inputList');
   const inputData = find(propEq('elemKey', elemKey));
   const messageList = prop('messages');
