@@ -27,5 +27,5 @@ export const formKey = $(currentForm).attr('id');
 
 export const formInputList = $(currentForm).find(`input[type=text], input[type=email]`);
 
-export const formInputStatusList = $(currentForm).find(`input[valid-input="false"], textarea[valid-input="false"], select[valid-input="false"]`);
+export const formInputStatusList = () => $(currentForm).find(`input[valid-input="false"], textarea[valid-input="false"], select[valid-input="false"]`);
 

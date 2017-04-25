@@ -11,14 +11,10 @@ export const formValidationEvents = () => {
   })
 
 	$(currentForm).submit(function( event ) {
-
-    console.log(formKey);
-
 		validateInputList(formKey, formInputList);
 
     if (formInputStatusList().length > 0) {
       event.preventDefault();
     }
-
 	});
 }

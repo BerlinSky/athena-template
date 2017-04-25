@@ -24286,7 +24286,9 @@ var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
 var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email]");
 
-var formInputStatusList = exports.formInputStatusList = (0, _jquery2.default)(currentForm).find("input[valid-input=\"false\"], textarea[valid-input=\"false\"], select[valid-input=\"false\"]");
+var formInputStatusList = exports.formInputStatusList = function formInputStatusList() {
+  return (0, _jquery2.default)(currentForm).find("input[valid-input=\"false\"], textarea[valid-input=\"false\"], select[valid-input=\"false\"]");
+};
 
 },{"jquery":7}],324:[function(require,module,exports){
 "use strict";
@@ -24314,9 +24316,6 @@ var formValidationEvents = exports.formValidationEvents = function formValidatio
   });
 
   (0, _jquery2.default)(_formData.currentForm).submit(function (event) {
-
-    console.log(_formData.formKey);
-
     (0, _formValidation.validateInputList)(_formData.formKey, _formData.formInputList);
 
     if ((0, _formData.formInputStatusList)().length > 0) {
