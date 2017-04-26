@@ -24372,12 +24372,8 @@ var isValueRequired = function isValueRequired(elemKey) {
 var inputValue = function inputValue(elemKey) {
   var type = (0, _jquery2.default)('.' + elemKey).attr('type');
 
-  debugger;
-
   if (type === 'checkbox') {
-    var c = (0, _jquery2.default)('.' + elemKey).prop('checked');
-    var v = c === true ? "checked" : "";
-    return v;
+    return (0, _jquery2.default)('.' + elemKey).prop('checked') ? "checked" : "";
   }
   return (0, _jquery2.default)('.' + elemKey).val();
 };
