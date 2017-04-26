@@ -5,6 +5,8 @@ import { inputRequired, validateInputList } from "./form-validation";
 
 export const formValidationEvents = () => {
 
+  $(currentForm).attr('novalidate', 'novalidate');
+
   $(formInputList).keyup(function(event) {
     const thisInput =$( event.target );
     inputRequired(formKey, thisInput);

@@ -24310,6 +24310,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var formValidationEvents = exports.formValidationEvents = function formValidationEvents() {
 
+  (0, _jquery2.default)(_formData.currentForm).attr('novalidate', 'novalidate');
+
   (0, _jquery2.default)(_formData.formInputList).keyup(function (event) {
     var thisInput = (0, _jquery2.default)(event.target);
     (0, _formValidation.inputRequired)(_formData.formKey, thisInput);
