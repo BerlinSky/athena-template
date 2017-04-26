@@ -67,10 +67,9 @@
                 <input name="email" type="email" value="" required="required" class="dataInput js-email">
                 <label for="email">Email</label><span class="inputError js-email-error"></span>
               </div>
-              
               <div class="inputGroup">
                 <select name="country" required="required" class="dataInput js-subject">
-                  <option value="" selected="selected">Country</option>
+                  <option value="" selected="selected">Select</option>
                   <option value="AF">Afghanistan</option>
                   <option value="AX">Aland Islands</option>
                   <option value="AL">Albania</option>
@@ -79,6 +78,12 @@
                 </select>
                 <label for="country">Country</label><span class="inputError js-subject-error"></span>
               </div>
+              <div class="inputGroup">
+                <input type="checkbox" name="checkboxInput" required="required" class="js-agreement">
+                <label for="checkboxInput">Use checkbox</label><span class="inputError js-agreement-error"></span>
+              </div>
+              
+              
               <div class="inputButtonGroup">
                 <input type="submit" name="submit" id="proceed" value="Next" class="inputButton js-submitButton">
               </div>

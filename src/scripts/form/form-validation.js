@@ -13,6 +13,15 @@ const isValueRequired = (elemKey) => {
 }
 
 const inputValue = (elemKey) => {
+  const type = $(`.${elemKey}`).attr('type');
+
+debugger;
+
+  if (type === 'checkbox') {
+    const c = $(`.${elemKey}`).prop('checked');
+    const v = c === true ? "checked" : "";
+    return v;
+  }
   return $(`.${elemKey}`).val();
 }
 

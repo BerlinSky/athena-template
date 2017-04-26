@@ -24276,6 +24276,9 @@ var formDataMap = exports.formDataMap = [{
     elemKey: "js-subject",
     messages: { "isRequired": "Please enter a required value country" }
   }, {
+    elemKey: "js-agreement",
+    messages: { "isRequired": "Checkbox is required" }
+  }, {
     elemKey: "js-email",
     messages: {
       "isRequired": "Please enter a valid email address",
@@ -24287,7 +24290,7 @@ var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValid
 
 var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select");
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select, input[type=checkbox]");
 
 var formOptionList = exports.formOptionList = (0, _jquery2.default)(currentForm).find("select, input[type=checkbox]");
 
@@ -24367,6 +24370,15 @@ var isValueRequired = function isValueRequired(elemKey) {
 };
 
 var inputValue = function inputValue(elemKey) {
+  var type = (0, _jquery2.default)('.' + elemKey).attr('type');
+
+  debugger;
+
+  if (type === 'checkbox') {
+    var c = (0, _jquery2.default)('.' + elemKey).prop('checked');
+    var v = c === true ? "checked" : "";
+    return v;
+  }
   return (0, _jquery2.default)('.' + elemKey).val();
 };
 
