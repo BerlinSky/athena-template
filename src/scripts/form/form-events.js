@@ -1,11 +1,16 @@
 import $ from 'jquery';
 
-import { currentForm, formKey, formInputList, formInputStatusList } from "./form-data";
+import { currentForm, formKey, formOptionList, formInputList, formInputStatusList } from "./form-data";
 import { inputRequired, validateInputList } from "./form-validation";
 
 export const formValidationEvents = () => {
 
   $(currentForm).attr('novalidate', 'novalidate');
+
+  formOptionList.change(function(event) {
+    const thisInput =$( event.target );
+    inputRequired(formKey, thisInput);
+  })
 
   $(formInputList).keyup(function(event) {
     const thisInput =$( event.target );

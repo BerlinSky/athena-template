@@ -12,6 +12,10 @@ export const formDataMap = [{
       messages: { "isRequired": "Please enter a valid last name" }
     },
     {
+      elemKey: "js-subject",
+      messages: { "isRequired": "Please enter a required value country" }
+    },
+    {
       elemKey: "js-email",
       messages: {
         "isRequired": "Please enter a valid email address",
@@ -25,7 +29,10 @@ export const currentForm = $(`form.js-FormValidation`);
 
 export const formKey = $(currentForm).attr('id');
 
-export const formInputList = $(currentForm).find(`input[type=text], input[type=email]`);
+export const formInputList = $(currentForm).find(`input[type=text], input[type=email], select`);
+
+export const formOptionList = $(currentForm).find(`select, input[type=checkbox]`);
 
 export const formInputStatusList = () => $(currentForm).find(`input[valid-input="false"], textarea[valid-input="false"], select[valid-input="false"]`);
+
 

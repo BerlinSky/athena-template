@@ -24256,7 +24256,7 @@ var readValidationMsg = exports.readValidationMsg = function readValidationMsg(k
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.formInputStatusList = exports.formInputList = exports.formKey = exports.currentForm = exports.formDataMap = undefined;
+exports.formInputStatusList = exports.formOptionList = exports.formInputList = exports.formKey = exports.currentForm = exports.formDataMap = undefined;
 
 var _jquery = require("jquery");
 
@@ -24273,6 +24273,9 @@ var formDataMap = exports.formDataMap = [{
     elemKey: "js-lastName",
     messages: { "isRequired": "Please enter a valid last name" }
   }, {
+    elemKey: "js-subject",
+    messages: { "isRequired": "Please enter a required value country" }
+  }, {
     elemKey: "js-email",
     messages: {
       "isRequired": "Please enter a valid email address",
@@ -24284,7 +24287,9 @@ var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValid
 
 var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email]");
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select");
+
+var formOptionList = exports.formOptionList = (0, _jquery2.default)(currentForm).find("select, input[type=checkbox]");
 
 var formInputStatusList = exports.formInputStatusList = function formInputStatusList() {
   return (0, _jquery2.default)(currentForm).find("input[valid-input=\"false\"], textarea[valid-input=\"false\"], select[valid-input=\"false\"]");
@@ -24311,6 +24316,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var formValidationEvents = exports.formValidationEvents = function formValidationEvents() {
 
   (0, _jquery2.default)(_formData.currentForm).attr('novalidate', 'novalidate');
+
+  _formData.formOptionList.change(function (event) {
+    var thisInput = (0, _jquery2.default)(event.target);
+    (0, _formValidation.inputRequired)(_formData.formKey, thisInput);
+  });
 
   (0, _jquery2.default)(_formData.formInputList).keyup(function (event) {
     var thisInput = (0, _jquery2.default)(event.target);
