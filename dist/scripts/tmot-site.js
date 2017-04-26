@@ -24322,12 +24322,12 @@ var formValidationEvents = exports.formValidationEvents = function formValidatio
 
   _formData.formOptionList.change(function (event) {
     var thisInput = (0, _jquery2.default)(event.target);
-    (0, _formValidation.inputRequired)(_formData.formKey, thisInput);
+    (0, _formValidation.validateInput)(_formData.formKey, thisInput);
   });
 
   (0, _jquery2.default)(_formData.formInputList).keyup(function (event) {
     var thisInput = (0, _jquery2.default)(event.target);
-    (0, _formValidation.inputRequired)(_formData.formKey, thisInput);
+    (0, _formValidation.validateInput)(_formData.formKey, thisInput);
   });
 
   (0, _jquery2.default)(_formData.currentForm).submit(function (event) {
@@ -24345,7 +24345,7 @@ var formValidationEvents = exports.formValidationEvents = function formValidatio
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.inputRequired = undefined;
+exports.validateInput = exports.inputRequired = undefined;
 exports.validateInputList = validateInputList;
 
 var _jquery = require('jquery');
@@ -24417,10 +24417,14 @@ var inputRequired = exports.inputRequired = function inputRequired(formKey, elem
 };
 
 function validateInputList(formKey, inputList) {
-  // forEach(validateInput, inputList);
-  var currentInputRequired = (0, _ramda.partial)(inputRequired, [formKey]);
+  var currentInputRequired = (0, _ramda.partial)(validateInput, [formKey]);
   (0, _ramda.forEach)(currentInputRequired, inputList);
 }
+
+var validateInput = exports.validateInput = function validateInput(formKey, elem) {
+  inputRequired(formKey, elem);
+  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
+};
 
 },{"./apply-validation-rules":322,"./form-data":323,"jquery":7,"ramda":11}],326:[function(require,module,exports){
 'use strict';

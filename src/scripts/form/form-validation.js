@@ -68,8 +68,11 @@ export const inputRequired = (formKey, elem) => {
 }
 
 export function validateInputList(formKey, inputList) {
-  // forEach(validateInput, inputList);
-  const currentInputRequired = partial(inputRequired, [formKey]);
+  const currentInputRequired = partial(validateInput, [formKey]);
   forEach(currentInputRequired, inputList);
 }
 
+export const validateInput = (formKey, elem) => {
+  inputRequired(formKey, elem);
+  if ($(elem).attr('valid-input') === 'false') return;
+}
