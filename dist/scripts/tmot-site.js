@@ -24354,7 +24354,7 @@ var formValidationEvents = exports.formValidationEvents = function formValidatio
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateInput = exports.inputRequired = undefined;
+exports.validateInput = undefined;
 exports.validateInputList = validateInputList;
 
 var _jquery = require('jquery');
@@ -24411,7 +24411,8 @@ var messageContainer = function messageContainer(formKey, elemKey) {
 
   return messages(_formData.formDataMap);
 };
-var inputRequired = exports.inputRequired = function inputRequired(formKey, elem) {
+
+var inputRequired = function inputRequired(formKey, elem) {
 
   var elemKey = getElemKey(elem);
   var elemValue = inputValue(elemKey);

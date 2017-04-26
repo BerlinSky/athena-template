@@ -48,7 +48,8 @@ const messageContainer = (formKey, elemKey) => {
 
   return messages(formDataMap);
 }
-export const inputRequired = (formKey, elem) => {
+
+const inputRequired = (formKey, elem) => {
 
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
