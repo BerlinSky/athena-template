@@ -24231,9 +24231,9 @@ function initFancyInputBox() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.readValidationMsg = exports.validateRequired = undefined;
+exports.readValidationMsg = exports.validateEmail = exports.validateRequired = undefined;
 
-var _validate2 = require("validate.js");
+var _validate3 = require("validate.js");
 
 var _ramda = require("ramda");
 
@@ -24243,7 +24243,16 @@ var validateRequired = exports.validateRequired = function validateRequired(key,
   var constraint = _defineProperty({}, key, {
     presence: { message: "^" + msg }
   });
-  return (0, _validate2.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+};
+
+var validateEmail = exports.validateEmail = function validateEmail(key, value, msg) {
+  var constraint = _defineProperty({}, key, {
+    email: {
+      message: "^" + msg
+    }
+  });
+  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
 };
 
 var readValidationMsg = exports.readValidationMsg = function readValidationMsg(key, messageList) {
@@ -24392,39 +24401,41 @@ var getElemKey = function getElemKey(elem) {
   return elemKey;
 };
 
+var messageContainer = function messageContainer(formKey, elemKey) {
+  var messageList = (0, _ramda.prop)('messages');
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
+  var inputList = (0, _ramda.prop)('inputList');
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
+
+  var messages = (0, _ramda.compose)(messageList, inputData, inputList, currentFormData);
+
+  return messages(_formData.formDataMap);
+};
 var inputRequired = exports.inputRequired = function inputRequired(formKey, elem) {
 
   var elemKey = getElemKey(elem);
-
-  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
-  var inputList = (0, _ramda.prop)('inputList');
-  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
-  var messageList = (0, _ramda.prop)('messages');
+  var elemValue = inputValue(elemKey);
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
   var onlyValidateRequiredInput = (0, _ramda.ifElse)(isValueRequired, curryValidateRequired, (0, _ramda.always)(undefined));
 
   var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), onlyValidateRequiredInput(elemKey));
 
-  var elemValue = inputValue(elemKey);
-
-  var messages = (0, _ramda.compose)(messageList, inputData, inputList, currentFormData);
-
-  var allMessages = messages(_formData.formDataMap);
-  var msg = (0, _ramda.prop)('isRequired')(allMessages);
+  var msgContainer = messageContainer(formKey, elemKey);
+  var msg = (0, _ramda.prop)('isRequired')(msgContainer);
 
   test(elemValue, msg);
+};
+
+var validateInput = exports.validateInput = function validateInput(formKey, elem) {
+  inputRequired(formKey, elem);
+  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
 };
 
 function validateInputList(formKey, inputList) {
   var currentInputRequired = (0, _ramda.partial)(validateInput, [formKey]);
   (0, _ramda.forEach)(currentInputRequired, inputList);
 }
-
-var validateInput = exports.validateInput = function validateInput(formKey, elem) {
-  inputRequired(formKey, elem);
-  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
-};
 
 },{"./apply-validation-rules":322,"./form-data":323,"jquery":7,"ramda":11}],326:[function(require,module,exports){
 'use strict';

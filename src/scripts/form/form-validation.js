@@ -33,14 +33,25 @@ const getElemKey = (elem) => {
   return elemKey;
 }
 
+const messageContainer = (formKey, elemKey) => {
+  const messageList = prop('messages');
+  const inputData = find(propEq('elemKey', elemKey));
+  const inputList = prop('inputList');
+  const currentFormData = find(propEq('formKey', formKey));
+
+  const messages = compose(
+    messageList,
+    inputData,
+    inputList,
+    currentFormData
+  )
+
+  return messages(formDataMap);
+}
 export const inputRequired = (formKey, elem) => {
 
   const elemKey = getElemKey(elem);
-
-  const currentFormData = find(propEq('formKey', formKey));
-  const inputList = prop('inputList');
-  const inputData = find(propEq('elemKey', elemKey));
-  const messageList = prop('messages');
+  const elemValue = inputValue(elemKey);
 
   const curryValidateRequired = curry(validateRequired);
   const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
@@ -52,19 +63,15 @@ export const inputRequired = (formKey, elem) => {
     onlyValidateRequiredInput(elemKey)
   );
 
-  const elemValue = inputValue(elemKey);
-
-  const messages = compose(
-    messageList,
-    inputData,
-    inputList,
-    currentFormData
-  )
-
-  const allMessages = messages(formDataMap);
-  const msg = prop('isRequired')(allMessages);
+  const msgContainer = messageContainer(formKey, elemKey);
+  const msg = prop('isRequired')(msgContainer);
 
   test(elemValue, msg);
+}
+
+export const validateInput = (formKey, elem) => {
+  inputRequired(formKey, elem);
+  if ($(elem).attr('valid-input') === 'false') return;
 }
 
 export function validateInputList(formKey, inputList) {
@@ -72,7 +79,3 @@ export function validateInputList(formKey, inputList) {
   forEach(currentInputRequired, inputList);
 }
 
-export const validateInput = (formKey, elem) => {
-  inputRequired(formKey, elem);
-  if ($(elem).attr('valid-input') === 'false') return;
-}

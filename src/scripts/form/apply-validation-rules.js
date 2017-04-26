@@ -8,6 +8,17 @@ export const validateRequired = (key, value, msg) => {
   return validate( {[key]: value}, constraint );
 }
 
+export const validateEmail = (key, value, msg) => {
+  const constraint = {
+    [key]: {
+      email: {
+        message: `^${msg}`
+      }
+    }
+  };
+  return validate( {[key]: value}, constraint );
+}
+
 export const readValidationMsg = (key, messageList) => {
   return ifElse(isNil, always(""), prop(key))(messageList);
 }
