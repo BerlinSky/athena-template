@@ -24338,6 +24338,11 @@ var formDataMap = exports.formDataMap = [{
     messages: {
       "isRequired": "Please enter a secure password"
     }
+  }, {
+    elemKey: "js-passwordVerify",
+    messages: {
+      "isRequired": "Please enter a secure password"
+    }
   }] }];
 
 var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValidation");

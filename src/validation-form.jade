@@ -85,10 +85,10 @@ block bodyContent
 							input(type="password" name="password" required="required").dataInput.js-password
 							label(for="password") Password
 							span.inputError.js-password-error
-						//- .inputGroup
-						//-   input(type="password" name="passwordVerify" value="" required="required" autocomplete="off" match="password" required-msg="Please enter a required value passwordVerify").dataInput
-						//-   label(for="passwordVerify") Password Verify
-						//-   span(id="passwordVerify-error").inputError
+						.inputGroup
+							input(type="password" name="passwordVerify" required="required").dataInput.js-passwordVerify
+							label(for="passwordVerify") Password Verify
+							span.inputError.js-passwordVerify-error
 						.inputGroup
 							select(name="country" required="required").dataInput.js-subject
 								option(value="" selected="selected") Select

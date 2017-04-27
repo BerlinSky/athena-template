@@ -35,6 +35,12 @@ export const formDataMap = [{
       messages: {
         "isRequired": "Please enter a secure password"
       }
+    },
+    {
+      elemKey: "js-passwordVerify",
+      messages: {
+        "isRequired": "Please enter a secure password"
+      }
     }
   ]}
 ];
