@@ -24232,8 +24232,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.readValidationMsg = exports.validateEmail = exports.validateRequired = undefined;
+exports.validateFormat = validateFormat;
+exports.validateEquality = validateEquality;
+exports.validateNumericality = validateNumericality;
 
-var _validate3 = require("validate.js");
+var _validate6 = require("validate.js");
 
 var _ramda = require("ramda");
 
@@ -24243,7 +24246,7 @@ var validateRequired = exports.validateRequired = function validateRequired(key,
   var constraint = _defineProperty({}, key, {
     presence: { message: "^" + msg }
   });
-  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
 };
 
 var validateEmail = exports.validateEmail = function validateEmail(key, value, msg) {
@@ -24252,8 +24255,42 @@ var validateEmail = exports.validateEmail = function validateEmail(key, value, m
       message: "^" + msg
     }
   });
-  return (0, _validate3.validate)(_defineProperty({}, key, value), constraint);
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
 };
+
+function validateFormat(key, value, pattern, msg) {
+  var constraint = _defineProperty({}, key, {
+    format: {
+      pattern: pattern,
+      flags: "gi",
+      message: "^" + msg
+    }
+  });
+
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
+}
+
+function validateEquality(key, value, partnerValue, msg) {
+  var _validate4;
+
+  var constraint = _defineProperty({}, key, {
+    equality: {
+      attribute: "partnerKey",
+      message: "^" + msg
+    }
+  });
+  return (0, _validate6.validate)((_validate4 = {}, _defineProperty(_validate4, key, value), _defineProperty(_validate4, "partnerKey", partnerValue), _validate4), constraint);
+}
+
+function validateNumericality(key, value, msg) {
+  var constraint = _defineProperty({}, key, {
+    numericality: {
+      notValid: "must be evenly divisible by two",
+      message: "^" + msg
+    }
+  });
+  return (0, _validate6.validate)(_defineProperty({}, key, value), constraint);
+}
 
 var readValidationMsg = exports.readValidationMsg = function readValidationMsg(key, messageList) {
   return (0, _ramda.ifElse)(_ramda.isNil, (0, _ramda.always)(""), (0, _ramda.prop)(key))(messageList);
@@ -24296,13 +24333,18 @@ var formDataMap = exports.formDataMap = [{
       "isRequired": "Please enter a valid email address",
       "email": "Only valid email address is allowed."
     }
+  }, {
+    elemKey: "js-password",
+    messages: {
+      "isRequired": "Please enter a secure password"
+    }
   }] }];
 
 var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValidation");
 
 var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select, input[type=checkbox], textarea");
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], input[type=password], select, input[type=checkbox], textarea");
 
 var formOptionList = exports.formOptionList = (0, _jquery2.default)(currentForm).find("select, input[type=checkbox]");
 
@@ -24452,8 +24494,8 @@ var validateInput = exports.validateInput = function validateInput(formKey, elem
   inputRequired(formKey, elem);
   if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
 
-  // inspectEmail(formKey, elem);
-  // if ($(elem).attr('valid-input') === 'false') return;
+  inspectEmail(formKey, elem);
+  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
 };
 
 function validateInputList(formKey, inputList) {

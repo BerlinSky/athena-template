@@ -82,6 +82,14 @@ block bodyContent
 							label(for="email") Email
 							span.inputError.js-email-error
 						.inputGroup
+							input(type="password" name="password" required="required").dataInput.js-password
+							label(for="password") Password
+							span.inputError.js-password-error
+						//- .inputGroup
+						//-   input(type="password" name="passwordVerify" value="" required="required" autocomplete="off" match="password" required-msg="Please enter a required value passwordVerify").dataInput
+						//-   label(for="passwordVerify") Password Verify
+						//-   span(id="passwordVerify-error").inputError
+						.inputGroup
 							select(name="country" required="required").dataInput.js-subject
 								option(value="" selected="selected") Select
 								option(value="AF") Afghanistan
@@ -115,14 +123,6 @@ block bodyContent
 						//- 	input(id='entry-6132' name="email" type="email" value="" required="required" required-msg="Please enter a required value 6132", email-msg="Only valid email address is allowed.").dataInput
 						//- 	label(for="email") Email
 						//- 	span(id="entry-6132-error").inputError
-						//- .inputGroup
-						//- 	input(type="password" name="password" id="password" required="required" value="" required-msg="Please enter a required value password").dataInput
-						//- 	label(for="password") Password
-						//- 	span(id="password-error").inputError
-						//- .inputGroup
-						//- 	input(type="password" name="passwordVerify" id="passwordVerify" value="" required="required" autocomplete="off" match="password" required-msg="Please enter a required value passwordVerify").dataInput
-						//- 	label(for="passwordVerify") Password Verify
-						//- 	span(id="passwordVerify-error").inputError
 
 						//- .inputGroup
 						//- 	input(id='entry-6135' name="zip" type="text" value="" partner="city").dataInput

@@ -97,8 +97,8 @@ export const validateInput = (formKey, elem) => {
   inputRequired(formKey, elem);
   if ($(elem).attr('valid-input') === 'false') return;
 
-  // inspectEmail(formKey, elem);
-  // if ($(elem).attr('valid-input') === 'false') return;
+  inspectEmail(formKey, elem);
+  if ($(elem).attr('valid-input') === 'false') return;
 }
 
 export function validateInputList(formKey, inputList) {
