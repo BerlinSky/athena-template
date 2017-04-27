@@ -24341,7 +24341,8 @@ var formDataMap = exports.formDataMap = [{
   }, {
     elemKey: "js-passwordVerify",
     messages: {
-      "isRequired": "Please enter a secure password"
+      "isRequired": "Please enter a secure password",
+      "partner": "Password values need to match."
     }
   }] }];
 
