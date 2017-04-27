@@ -16,6 +16,10 @@ export const formDataMap = [{
       messages: { "isRequired": "Please enter a required value country" }
     },
     {
+      elemKey: "js-description",
+      messages: { "isRequired": "Please enter a required value country" }
+    },
+    {
       elemKey: "js-agreement",
       messages: { "isRequired": "Checkbox is required" }
     },
@@ -33,7 +37,7 @@ export const currentForm = $(`form.js-FormValidation`);
 
 export const formKey = $(currentForm).attr('id');
 
-export const formInputList = $(currentForm).find(`input[type=text], input[type=email], select, input[type=checkbox]`);
+export const formInputList = $(currentForm).find(`input[type=text], input[type=email], select, input[type=checkbox], textarea`);
 
 export const formOptionList = $(currentForm).find(`select, input[type=checkbox]`);
 

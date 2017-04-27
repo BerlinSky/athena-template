@@ -24285,6 +24285,9 @@ var formDataMap = exports.formDataMap = [{
     elemKey: "js-subject",
     messages: { "isRequired": "Please enter a required value country" }
   }, {
+    elemKey: "js-description",
+    messages: { "isRequired": "Please enter a required value country" }
+  }, {
     elemKey: "js-agreement",
     messages: { "isRequired": "Checkbox is required" }
   }, {
@@ -24299,7 +24302,7 @@ var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValid
 
 var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select, input[type=checkbox]");
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], select, input[type=checkbox], textarea");
 
 var formOptionList = exports.formOptionList = (0, _jquery2.default)(currentForm).find("select, input[type=checkbox]");
 

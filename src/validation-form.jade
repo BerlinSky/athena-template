@@ -92,9 +92,13 @@ block bodyContent
 							label(for="country") Country
 							span.inputError.js-subject-error
 						.inputGroup
-							input(type="checkbox" name="checkboxInput" required="required").js-agreement
-							label(for="checkboxInput") Use checkbox
-							span.inputError.js-agreement-error
+							textarea(name="textAreaInput" required="required").js-description
+							label(for="textAreaInput") Text editor is here.
+							span.inputError.js-description-error
+						//- .inputGroup
+						//- 	input(type="checkbox" name="checkboxInput" required="required").js-agreement
+						//- 	label(for="checkboxInput") Use checkbox
+						//- 	span.inputError.js-agreement-error
 						//- .inputGroup
 							//- input(id='entry-6133' name="firstName" type="text" value="" required="required" required-msg="Please enter a required value 6133").dataInput
 							//- label(for="firstName") First Name
@@ -151,10 +155,7 @@ block bodyContent
 						//- 	input(id='entry-6142' name="favNumberVerify" type="number" required="required" value="" required-msg="Please enter a required value 6142" pattern-msg="The value needs to be numeric.").dataInput
 						//- 	label(for="favNumberVerify") Your favorite number again
 						//- 	span(id="entry-6142-error").inputError
-						//- .inputGroup
-						//- 	textarea(name="textAreaInput" id="entry-8257" required="" required-msg="Ce champ est requis.")
-						//- 	label(for="textAreaInput") Text editor is here.
-						//- 	span(id="entry-8257-error").inputError
+
 
 
 						.inputButtonGroup
