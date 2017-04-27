@@ -50,9 +50,6 @@ const messageContainer = (formKey, elemKey) => {
 }
 
 const inputRequired = (formKey, elem) => {
-
-debugger;
-
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
 
