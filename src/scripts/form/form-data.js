@@ -17,7 +17,7 @@ export const formDataMap = [{
     },
     {
       elemKey: "js-description",
-      messages: { "isRequired": "Please enter a required value country" }
+      messages: { "isRequired": "Please enter some required text here." }
     },
     {
       elemKey: "js-agreement",

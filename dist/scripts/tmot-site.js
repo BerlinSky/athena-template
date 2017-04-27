@@ -24286,7 +24286,7 @@ var formDataMap = exports.formDataMap = [{
     messages: { "isRequired": "Please enter a required value country" }
   }, {
     elemKey: "js-description",
-    messages: { "isRequired": "Please enter a required value country" }
+    messages: { "isRequired": "Please enter some required text here." }
   }, {
     elemKey: "js-agreement",
     messages: { "isRequired": "Checkbox is required" }
@@ -24417,6 +24417,8 @@ var messageContainer = function messageContainer(formKey, elemKey) {
 
 var inputRequired = function inputRequired(formKey, elem) {
 
+  debugger;
+
   var elemKey = getElemKey(elem);
   var elemValue = inputValue(elemKey);
 
@@ -24440,7 +24442,6 @@ var inspectEmail = function inspectEmail(formKey, elem) {
   if ((0, _jquery2.default)(elem).attr('type') != 'email') return;
 
   var curryValidateEmail = (0, _ramda.curry)(_applyValidationRules.validateEmail);
-  // const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
 
   var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), curryValidateEmail(elemKey));
 
@@ -24454,8 +24455,8 @@ var validateInput = exports.validateInput = function validateInput(formKey, elem
   inputRequired(formKey, elem);
   if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
 
-  inspectEmail(formKey, elem);
-  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
+  // inspectEmail(formKey, elem);
+  // if ($(elem).attr('valid-input') === 'false') return;
 };
 
 function validateInputList(formKey, inputList) {

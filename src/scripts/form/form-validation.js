@@ -51,6 +51,8 @@ const messageContainer = (formKey, elemKey) => {
 
 const inputRequired = (formKey, elem) => {
 
+debugger;
+
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
 
@@ -79,7 +81,6 @@ const inspectEmail = (formKey, elem) => {
   if ($(elem).attr('type') != 'email') return;
 
   const curryValidateEmail = curry(validateEmail);
-  // const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
 
   const test = compose(
     partial(updateErrorPanel, [elemKey]),
@@ -99,8 +100,8 @@ export const validateInput = (formKey, elem) => {
   inputRequired(formKey, elem);
   if ($(elem).attr('valid-input') === 'false') return;
 
-  inspectEmail(formKey, elem);
-  if ($(elem).attr('valid-input') === 'false') return;
+  // inspectEmail(formKey, elem);
+  // if ($(elem).attr('valid-input') === 'false') return;
 }
 
 export function validateInputList(formKey, inputList) {
