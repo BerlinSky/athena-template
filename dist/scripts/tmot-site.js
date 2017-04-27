@@ -24428,8 +24428,30 @@ var inputRequired = function inputRequired(formKey, elem) {
   test(elemValue, msg);
 };
 
+var inspectEmail = function inspectEmail(formKey, elem) {
+  var elemKey = getElemKey(elem);
+  var elemValue = inputValue(elemKey);
+
+  if ((0, _ramda.isEmpty)(elemValue)) return;
+
+  if ((0, _jquery2.default)(elem).attr('type') != 'email') return;
+
+  var curryValidateEmail = (0, _ramda.curry)(_applyValidationRules.validateEmail);
+  // const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
+
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), curryValidateEmail(elemKey));
+
+  var msgContainer = messageContainer(formKey, elemKey);
+  var msg = (0, _ramda.prop)('email')(msgContainer);
+
+  test(elemValue, msg);
+};
+
 var validateInput = exports.validateInput = function validateInput(formKey, elem) {
   inputRequired(formKey, elem);
+  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
+
+  inspectEmail(formKey, elem);
   if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
 };
 

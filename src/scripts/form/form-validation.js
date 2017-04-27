@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { find, filter, head, propEq, isNil, isEmpty, complement, curry, always, ifElse, prop, compose, partial, forEach } from 'ramda';
 import { formDataMap } from './form-data';
-import { validateRequired, readValidationMsg } from "./apply-validation-rules";
+import { validateRequired, validateEmail, readValidationMsg } from "./apply-validation-rules";
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
@@ -70,8 +70,36 @@ const inputRequired = (formKey, elem) => {
   test(elemValue, msg);
 }
 
+const inspectEmail = (formKey, elem) => {
+  const elemKey = getElemKey(elem);
+  const elemValue = inputValue(elemKey);
+
+  if (isEmpty(elemValue)) return;
+
+  if ($(elem).attr('type') != 'email') return;
+
+  const curryValidateEmail = curry(validateEmail);
+  // const onlyValidateRequiredInput = ifElse(isValueRequired, curryValidateRequired, always(undefined));
+
+  const test = compose(
+    partial(updateErrorPanel, [elemKey]),
+    partial(updateValidationStatus, [elemKey]),
+    partial(readValidationMsg, [elemKey]),
+    curryValidateEmail(elemKey)
+  );
+
+  const msgContainer = messageContainer(formKey, elemKey);
+  const msg = prop('email')(msgContainer);
+
+  test(elemValue, msg);
+
+}
+
 export const validateInput = (formKey, elem) => {
   inputRequired(formKey, elem);
+  if ($(elem).attr('valid-input') === 'false') return;
+
+  inspectEmail(formKey, elem);
   if ($(elem).attr('valid-input') === 'false') return;
 }
 
