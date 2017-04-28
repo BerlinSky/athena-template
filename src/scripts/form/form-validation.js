@@ -1,10 +1,14 @@
 import $ from 'jquery';
 import { equals, always, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach } from 'ramda';
 import { formDataMap } from './form-data';
-import { validateRequired, validateEmail, validateEquality, readValidationMsg } from "./apply-validation-rules";
+import { validateRequired, validateEmail, validateEquality, readValidationMsg, validateFormat } from "./apply-validation-rules";
 
 const falsy = always('false');
 const isNotNil = complement(isNil);
+
+const log = (x) => {
+  console.log(x);
+}
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
@@ -67,6 +71,22 @@ const partnerElemKey = (formKey, elemKey) => {
   return elemKeyPartner(formDataMap);
 }
 
+const formatPattern = (formKey, elemKey) => {
+  const currentFormData = find(propEq('formKey', formKey));
+  const inputList = prop('inputList');
+  const inputData = find(propEq('elemKey', elemKey));
+  const pattern = prop('formatPattern');
+
+  const elemFormatPattern = compose(
+    pattern,
+    inputData,
+    inputList,
+    currentFormData
+  )
+
+  return elemFormatPattern(formDataMap);
+}
+
 const inspectRequired = (formKey, elem) => {
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
@@ -111,16 +131,31 @@ const inspectEmail = (formKey, elem) => {
 }
 
 const inspectFormat = (formKey, elem) => {
+
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
-  return;
+  if (isEmpty(elemValue)) return;
+
+  const pattern = formatPattern(formKey, elemKey);
+  if (isNil(pattern)) return;
+
+  const msgContainer = messageContainer(formKey, elemKey);
+  const msg = prop('pattern')(msgContainer);
+
+  const curriedValidateFormatPattern = curry(validateFormat);
+
+  const test = compose(
+    partial(updateErrorPanel, [elemKey]),
+    partial(updateValidationStatus, [elemKey]),
+    partial(readValidationMsg, [elemKey]),
+    tap(log),
+    curriedValidateFormatPattern(elemKey, elemValue, pattern)
+  );
+
+  test(msg);
 }
 
-const log = (x) => {
-  console.log(x);
-}
 const inspectEquality = (formKey, elem) => {
-
   const elemKey = getElemKey(elem);
 
   const elemValue = inputValue(elemKey);
@@ -154,14 +189,16 @@ const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
 export const validateInput = (formKey, elem) => {
   inspectRequired(formKey, elem);
 
-  console.log(hasInputErrors(elem));
-
   if (!hasInputErrors(elem)) {
     inspectEmail(formKey, elem);
   }
 
   if (!hasInputErrors(elem)) {
     inspectEquality(formKey, elem)
+  }
+
+  if (!hasInputErrors(elem)) {
+    inspectFormat(formKey, elem)
   }
 }
 

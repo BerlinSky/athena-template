@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export const formDataMap = [{
-  formKey: "contactForm",
+  formKey: "sampleForm",
   inputList: [
     {
       elemKey: "js-firstName",
@@ -31,6 +31,15 @@ export const formDataMap = [{
       }
     },
     {
+      elemKey: "js-favNumber",
+      formatPattern: "[0-9]{5}",
+      messages: {
+        "isRequired": "Please enter a valid email address",
+        "pattern": "Please enter a numeric and 5 digits long.",
+        "email": "Only valid email address is allowed."
+      }
+    },
+    {
       elemKey: "js-password",
       messages: {
         "isRequired": "Please enter a secure password"
@@ -51,7 +60,7 @@ export const currentForm = $(`form.js-FormValidation`);
 
 export const formKey = $(currentForm).attr('id');
 
-export const formInputList = $(currentForm).find(`input[type=text], input[type=email], input[type=password], select, input[type=checkbox], textarea`);
+export const formInputList = $(currentForm).find(`input[type=text], input[type=number], input[type=email], input[type=password], select, input[type=checkbox], textarea`);
 
 export const formOptionList = $(currentForm).find(`select, input[type=checkbox]`);
 

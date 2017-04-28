@@ -68,7 +68,7 @@ block bodyContent
 				.dataEntryFormContainer
 					.uploadProgressContainer
 						.bar
-					form(action="http://google.com" method="post" autocomplete="off")#contactForm.js-FormValidation
+					form(action="http://google.com" method="post" autocomplete="off")#sampleForm.js-FormValidation
 						.inputGroup
 							input(name="firstName" type="text" value="" required="required").dataInput.js-firstName
 							label(for="firstName") First Name
@@ -82,13 +82,17 @@ block bodyContent
 							label(for="email") Email
 							span.inputError.js-email-error
 						.inputGroup
-							input(type="password" name="password" required="required").dataInput.js-password.js-partner-Password
+							input(type="password" name="password" required="required").dataInput.js-password
 							label(for="password") Password
 							span.inputError.js-password-error
 						.inputGroup
-							input(type="password" name="passwordVerify" required="required").dataInput.js-passwordVerify.js-partner-Password-match
+							input(type="password" name="passwordVerify" required="required").dataInput.js-passwordVerify
 							label(for="passwordVerify") Password Verify
 							span.inputError.js-passwordVerify-error
+						.inputGroup
+							input(type="text" name="favNumber").dataInput.js-favNumber
+							label(for="favNumber") Your favorite number
+							span.inputError.js-favNumber-error
 						.inputGroup
 							select(name="country" required="required").dataInput.js-subject
 								option(value="" selected="selected") Select

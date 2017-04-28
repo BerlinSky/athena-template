@@ -24311,7 +24311,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var formDataMap = exports.formDataMap = [{
-  formKey: "contactForm",
+  formKey: "sampleForm",
   inputList: [{
     elemKey: "js-firstName",
     messages: { "isRequired": "Please enter a valid first name" }
@@ -24334,6 +24334,14 @@ var formDataMap = exports.formDataMap = [{
       "email": "Only valid email address is allowed."
     }
   }, {
+    elemKey: "js-favNumber",
+    formatPattern: "[0-9]{5}",
+    messages: {
+      "isRequired": "Please enter a valid email address",
+      "pattern": "Please enter a numeric and 5 digits long.",
+      "email": "Only valid email address is allowed."
+    }
+  }, {
     elemKey: "js-password",
     messages: {
       "isRequired": "Please enter a secure password"
@@ -24351,7 +24359,7 @@ var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValid
 
 var formKey = exports.formKey = (0, _jquery2.default)(currentForm).attr('id');
 
-var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=email], input[type=password], select, input[type=checkbox], textarea");
+var formInputList = exports.formInputList = (0, _jquery2.default)(currentForm).find("input[type=text], input[type=number], input[type=email], input[type=password], select, input[type=checkbox], textarea");
 
 var formOptionList = exports.formOptionList = (0, _jquery2.default)(currentForm).find("select, input[type=checkbox]");
 
@@ -24424,6 +24432,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var falsy = (0, _ramda.always)('false');
 var isNotNil = (0, _ramda.complement)(_ramda.isNil);
 
+var log = function log(x) {
+  console.log(x);
+};
+
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
@@ -24477,6 +24489,17 @@ var partnerElemKey = function partnerElemKey(formKey, elemKey) {
   return elemKeyPartner(_formData.formDataMap);
 };
 
+var formatPattern = function formatPattern(formKey, elemKey) {
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
+  var inputList = (0, _ramda.prop)('inputList');
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
+  var pattern = (0, _ramda.prop)('formatPattern');
+
+  var elemFormatPattern = (0, _ramda.compose)(pattern, inputData, inputList, currentFormData);
+
+  return elemFormatPattern(_formData.formDataMap);
+};
+
 var inspectRequired = function inspectRequired(formKey, elem) {
   var elemKey = getElemKey(elem);
   var elemValue = inputValue(elemKey);
@@ -24511,16 +24534,25 @@ var inspectEmail = function inspectEmail(formKey, elem) {
 };
 
 var inspectFormat = function inspectFormat(formKey, elem) {
+
   var elemKey = getElemKey(elem);
   var elemValue = inputValue(elemKey);
-  return;
+  if ((0, _ramda.isEmpty)(elemValue)) return;
+
+  var pattern = formatPattern(formKey, elemKey);
+  if ((0, _ramda.isNil)(pattern)) return;
+
+  var msgContainer = messageContainer(formKey, elemKey);
+  var msg = (0, _ramda.prop)('pattern')(msgContainer);
+
+  var curriedValidateFormatPattern = (0, _ramda.curry)(_applyValidationRules.validateFormat);
+
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), (0, _ramda.tap)(log), curriedValidateFormatPattern(elemKey, elemValue, pattern));
+
+  test(msg);
 };
 
-var log = function log(x) {
-  console.log(x);
-};
 var inspectEquality = function inspectEquality(formKey, elem) {
-
   var elemKey = getElemKey(elem);
 
   var elemValue = inputValue(elemKey);
@@ -24549,14 +24581,16 @@ var hasInputErrors = function hasInputErrors(elem) {
 var validateInput = exports.validateInput = function validateInput(formKey, elem) {
   inspectRequired(formKey, elem);
 
-  console.log(hasInputErrors(elem));
-
   if (!hasInputErrors(elem)) {
     inspectEmail(formKey, elem);
   }
 
   if (!hasInputErrors(elem)) {
     inspectEquality(formKey, elem);
+  }
+
+  if (!hasInputErrors(elem)) {
+    inspectFormat(formKey, elem);
   }
 };
 

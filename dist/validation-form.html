@@ -54,7 +54,7 @@
             <div class="uploadProgressContainer">
               <div class="bar"></div>
             </div>
-            <form action="http://google.com" method="post" autocomplete="off" id="contactForm" class="js-FormValidation">
+            <form action="http://google.com" method="post" autocomplete="off" id="sampleForm" class="js-FormValidation">
               <div class="inputGroup">
                 <input name="firstName" type="text" value="" required="required" class="dataInput js-firstName">
                 <label for="firstName">First Name</label><span class="inputError js-firstName-error"></span>
@@ -68,12 +68,16 @@
                 <label for="email">Email</label><span class="inputError js-email-error"></span>
               </div>
               <div class="inputGroup">
-                <input type="password" name="password" required="required" class="dataInput js-password js-partner-Password">
+                <input type="password" name="password" required="required" class="dataInput js-password">
                 <label for="password">Password</label><span class="inputError js-password-error"></span>
               </div>
               <div class="inputGroup">
-                <input type="password" name="passwordVerify" required="required" class="dataInput js-passwordVerify js-partner-Password-match">
+                <input type="password" name="passwordVerify" required="required" class="dataInput js-passwordVerify">
                 <label for="passwordVerify">Password Verify</label><span class="inputError js-passwordVerify-error"></span>
+              </div>
+              <div class="inputGroup">
+                <input type="text" name="favNumber" class="dataInput js-favNumber">
+                <label for="favNumber">Your favorite number</label><span class="inputError js-favNumber-error"></span>
               </div>
               <div class="inputGroup">
                 <select name="country" required="required" class="dataInput js-subject">
