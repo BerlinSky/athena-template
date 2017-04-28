@@ -38,6 +38,7 @@ export const formDataMap = [{
     },
     {
       elemKey: "js-passwordVerify",
+      partner: "js-password",
       messages: {
         "isRequired": "Please enter a secure password",
         "partner": "Password values need to match."

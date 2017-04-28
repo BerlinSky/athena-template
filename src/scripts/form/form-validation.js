@@ -1,14 +1,16 @@
 import $ from 'jquery';
-import { find, filter, head, propEq, isNil, isEmpty, complement, curry, always, ifElse, prop, compose, partial, forEach } from 'ramda';
+import { equals, always, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach } from 'ramda';
 import { formDataMap } from './form-data';
-import { validateRequired, validateEmail, readValidationMsg } from "./apply-validation-rules";
+import { validateRequired, validateEmail, validateEquality, readValidationMsg } from "./apply-validation-rules";
+
+const falsy = always('false');
+const isNotNil = complement(isNil);
 
 const updateErrorPanel = (elemKey, msg) => {
   $(`.${elemKey}-error`).html(msg);
 }
 
 const isValueRequired = (elemKey) => {
-  const isNotNil = complement(isNil);
   return isNotNil($(`.${elemKey}`).attr('required'));
 }
 
@@ -49,7 +51,23 @@ const messageContainer = (formKey, elemKey) => {
   return messages(formDataMap);
 }
 
-const inputRequired = (formKey, elem) => {
+const partnerElemKey = (formKey, elemKey) => {
+  const currentFormData = find(propEq('formKey', formKey));
+  const inputList = prop('inputList');
+  const inputData = find(propEq('elemKey', elemKey));
+  const partner = prop('partner');
+
+  const elemKeyPartner = compose(
+    partner,
+    inputData,
+    inputList,
+    currentFormData
+  )
+
+  return elemKeyPartner(formDataMap);
+}
+
+const inspectRequired = (formKey, elem) => {
   const elemKey = getElemKey(elem);
   const elemValue = inputValue(elemKey);
 
@@ -90,19 +108,64 @@ const inspectEmail = (formKey, elem) => {
   const msg = prop('email')(msgContainer);
 
   test(elemValue, msg);
-
 }
 
-export const validateInput = (formKey, elem) => {
-  inputRequired(formKey, elem);
-  if ($(elem).attr('valid-input') === 'false') return;
+const inspectFormat = (formKey, elem) => {
+  const elemKey = getElemKey(elem);
+  const elemValue = inputValue(elemKey);
+  return;
+}
 
-  inspectEmail(formKey, elem);
-  if ($(elem).attr('valid-input') === 'false') return;
+const log = (x) => {
+  console.log(x);
+}
+const inspectEquality = (formKey, elem) => {
+
+  const elemKey = getElemKey(elem);
+
+  const elemValue = inputValue(elemKey);
+  if (isEmpty(elemValue)) return;
+
+  const elemKeyPartner = partnerElemKey(formKey, elemKey);
+  if (isNil(elemKeyPartner)) return;
+
+  const elemPartner = $(`#${formKey}`).find(`.${elemKeyPartner}`);
+  const partnerValue = $(elemPartner).val();
+
+  const msgContainer = messageContainer(formKey, elemKey);
+  const msg = prop('partner')(msgContainer);
+
+
+  const curriedValidateEquality = curry(validateEquality);
+
+  const test = compose(
+    partial(updateErrorPanel, [elemKey]),
+    partial(updateValidationStatus, [elemKey]),
+    partial(readValidationMsg, [elemKey]),
+    tap(log),
+    curriedValidateEquality(elemKey, elemValue, partnerValue)
+  );
+
+  test(msg);
+}
+
+const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
+
+export const validateInput = (formKey, elem) => {
+  inspectRequired(formKey, elem);
+
+  console.log(hasInputErrors(elem));
+
+  if (!hasInputErrors(elem)) {
+    inspectEmail(formKey, elem);
+  }
+
+  if (!hasInputErrors(elem)) {
+    inspectEquality(formKey, elem)
+  }
 }
 
 export function validateInputList(formKey, inputList) {
-  const currentInputRequired = partial(validateInput, [formKey]);
-  forEach(currentInputRequired, inputList);
+  const currentinspectRequired = partial(validateInput, [formKey]);
+  forEach(currentinspectRequired, inputList);
 }
-

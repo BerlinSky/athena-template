@@ -24340,6 +24340,7 @@ var formDataMap = exports.formDataMap = [{
     }
   }, {
     elemKey: "js-passwordVerify",
+    partner: "js-password",
     messages: {
       "isRequired": "Please enter a secure password",
       "partner": "Password values need to match."
@@ -24420,12 +24421,14 @@ var _applyValidationRules = require('./apply-validation-rules');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var falsy = (0, _ramda.always)('false');
+var isNotNil = (0, _ramda.complement)(_ramda.isNil);
+
 var updateErrorPanel = function updateErrorPanel(elemKey, msg) {
   (0, _jquery2.default)('.' + elemKey + '-error').html(msg);
 };
 
 var isValueRequired = function isValueRequired(elemKey) {
-  var isNotNil = (0, _ramda.complement)(_ramda.isNil);
   return isNotNil((0, _jquery2.default)('.' + elemKey).attr('required'));
 };
 
@@ -24463,7 +24466,18 @@ var messageContainer = function messageContainer(formKey, elemKey) {
   return messages(_formData.formDataMap);
 };
 
-var inputRequired = function inputRequired(formKey, elem) {
+var partnerElemKey = function partnerElemKey(formKey, elemKey) {
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
+  var inputList = (0, _ramda.prop)('inputList');
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
+  var partner = (0, _ramda.prop)('partner');
+
+  var elemKeyPartner = (0, _ramda.compose)(partner, inputData, inputList, currentFormData);
+
+  return elemKeyPartner(_formData.formDataMap);
+};
+
+var inspectRequired = function inspectRequired(formKey, elem) {
   var elemKey = getElemKey(elem);
   var elemValue = inputValue(elemKey);
 
@@ -24496,17 +24510,59 @@ var inspectEmail = function inspectEmail(formKey, elem) {
   test(elemValue, msg);
 };
 
-var validateInput = exports.validateInput = function validateInput(formKey, elem) {
-  inputRequired(formKey, elem);
-  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
+var inspectFormat = function inspectFormat(formKey, elem) {
+  var elemKey = getElemKey(elem);
+  var elemValue = inputValue(elemKey);
+  return;
+};
 
-  inspectEmail(formKey, elem);
-  if ((0, _jquery2.default)(elem).attr('valid-input') === 'false') return;
+var log = function log(x) {
+  console.log(x);
+};
+var inspectEquality = function inspectEquality(formKey, elem) {
+
+  var elemKey = getElemKey(elem);
+
+  var elemValue = inputValue(elemKey);
+  if ((0, _ramda.isEmpty)(elemValue)) return;
+
+  var elemKeyPartner = partnerElemKey(formKey, elemKey);
+  if ((0, _ramda.isNil)(elemKeyPartner)) return;
+
+  var elemPartner = (0, _jquery2.default)('#' + formKey).find('.' + elemKeyPartner);
+  var partnerValue = (0, _jquery2.default)(elemPartner).val();
+
+  var msgContainer = messageContainer(formKey, elemKey);
+  var msg = (0, _ramda.prop)('partner')(msgContainer);
+
+  var curriedValidateEquality = (0, _ramda.curry)(_applyValidationRules.validateEquality);
+
+  var test = (0, _ramda.compose)((0, _ramda.partial)(updateErrorPanel, [elemKey]), (0, _ramda.partial)(updateValidationStatus, [elemKey]), (0, _ramda.partial)(_applyValidationRules.readValidationMsg, [elemKey]), (0, _ramda.tap)(log), curriedValidateEquality(elemKey, elemValue, partnerValue));
+
+  test(msg);
+};
+
+var hasInputErrors = function hasInputErrors(elem) {
+  return (0, _ramda.equals)((0, _jquery2.default)(elem).attr('valid-input'), falsy());
+};
+
+var validateInput = exports.validateInput = function validateInput(formKey, elem) {
+  inspectRequired(formKey, elem);
+
+  console.log(hasInputErrors(elem));
+
+  if (!hasInputErrors(elem)) {
+    inspectEmail(formKey, elem);
+  }
+
+  if (!hasInputErrors(elem)) {
+    inspectEquality(formKey, elem);
+  }
 };
 
 function validateInputList(formKey, inputList) {
-  var currentInputRequired = (0, _ramda.partial)(validateInput, [formKey]);
-  (0, _ramda.forEach)(currentInputRequired, inputList);
+  var currentinspectRequired = (0, _ramda.partial)(validateInput, [formKey]);
+  (0, _ramda.forEach)(currentinspectRequired, inputList);
 }
 
 },{"./apply-validation-rules":322,"./form-data":323,"jquery":7,"ramda":11}],326:[function(require,module,exports){
