@@ -60,86 +60,90 @@ block bodyContent
 							i.fa.fa-close
 
 		div.l-pageContentWrapper.pageContentWrapper
-			.l-contentContainer.contentContainer.contentContainer--signOnContent
+			.l-contentContainer.contentContainer.contentContainer--profileContent
+
 				.headerPanel
 					h1 PROFILE
 				.divider.divider--solid
 
-				.formPanel
-					h2 Your Info
-					.dataEntryFormContainer
-						.inputGroup
-							div User Name
-							div abc1234
-						.inputGroup
-							div Display Name
-							div Real Music Fan
-						.inputGroup
-							div Email Status
-							div Invlid
-						.inputGroup
-							div Your Email Address
-							div abc1234@google.com
-						.inputGroup
-							div
-								| CONNECT WITH FACEBOOK (RECOMMENDED)
-							a(href="facebook.com").inputButton--facebook Facebook
-							div
-								| CONNECT WITH FACEBOOK (RECOMMENDED)
-								| ONE-CLICK LOG IN.
-								| SHARE CONTENT WITH YOUR FRIENDS.
+				.formPanelSection
 
-				.formPanel
-					.dataEntryFormContainer
-						form(action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword")
+					.formPanel
+						h2 Your Info
+						.dataEntryFormContainer
 							.inputGroup
-								input(name="firstName" type="text" value="" required="required").dataInput
-								label(for="username") First Name
+								div User Name
+								div abc1234
 							.inputGroup
-								input(name="lastName" type="text" value="" required="required").dataInput
-								label(for="username") Last Name
+								div Display Name
+								div Real Music Fan
 							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Email Address
+								div Email Status
+								div Invlid
 							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Address
+								div Your Email Address
+								div abc1234@google.com
 							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Address 2
-							.inputGroup
-								select(name="U_Country" id="U_Country" required="required").dataInput
-									option(value="" selected="selected") Country
-									option(value="AF") Afghanistan
-									option(value="AX") Aland Islands
-									option(value="AL") Albania
-									option(value="DZ") Algeria
-									option(value="AS") American Samoa
-								label(for="U_Country") Country
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") State
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") City
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") ZIP Code / Postal Code
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Address 2
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Phone Number
-							.inputGroup
-								input(name="username" type="text" value="" required="required").dataInput
-								label(for="username") Mobile Number
-							.inputButtonGroup
-								input(type="submit" name="submit" id="proceed" value="Sign In").inputButton
+								div
+									| CONNECT WITH FACEBOOK (RECOMMENDED)
+								a(href="facebook.com").inputButton--facebook Facebook
+								div
+									| CONNECT WITH FACEBOOK (RECOMMENDED)
+									| ONE-CLICK LOG IN.
+									| SHARE CONTENT WITH YOUR FRIENDS.
 
-							.inputGroup
-								a(href="google.com").inputButton--registerNow
-									| Change Password
+					.formPanel
+						h2 Your Profile
+						.dataEntryFormContainer
+							form(action="/subscribe/step1?sku=slafah13" method="post" autocomplete="off" id="formCheckPassword")
+								.inputGroup
+									input(name="firstName" type="text" value="" required="required").dataInput
+									label(for="username") First Name
+								.inputGroup
+									input(name="lastName" type="text" value="" required="required").dataInput
+									label(for="username") Last Name
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Email Address
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Address
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Address 2
+								.inputGroup
+									select(name="U_Country" id="U_Country" required="required").dataInput
+										option(value="" selected="selected") Country
+										option(value="AF") Afghanistan
+										option(value="AX") Aland Islands
+										option(value="AL") Albania
+										option(value="DZ") Algeria
+										option(value="AS") American Samoa
+									label(for="U_Country") Country
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") State
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") City
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") ZIP Code / Postal Code
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Address 2
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Phone Number
+								.inputGroup
+									input(name="username" type="text" value="" required="required").dataInput
+									label(for="username") Mobile Number
+								.inputButtonGroup
+									input(type="submit" name="submit" id="proceed" value="Sign In").inputButton
+
+								.inputGroup
+									a(href="google.com").inputButton--registerNow
+										| Change Password
 
 			div.l-contentFooterContainer.contentFooterContainer
 				div.footerPanel.footerPanel--links
