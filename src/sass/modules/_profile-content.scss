@@ -105,6 +105,15 @@
         color: $color_sundance;
       }
     }
+
+    .formPanelGap {
+      width: 100%;
+      height: 20px;
+      @include break(md) {
+        width: 10px;
+        height: 100%;
+      }
+    }
   }
 
 
