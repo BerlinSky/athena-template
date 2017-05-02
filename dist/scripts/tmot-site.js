@@ -24353,7 +24353,40 @@ var formDataMap = exports.formDataMap = [{
       "isRequired": "Please enter a secure password",
       "partner": "Password values need to match."
     }
-  }] }];
+  }] }, {
+  formKey: "contactForm",
+  inputList: [{
+    elemKey: "js-firstName",
+    messages: { "isRequired": "Please enter a valid first name." }
+  }, {
+    elemKey: "js-lastName",
+    messages: { "isRequired": "Please enter a valid last name." }
+  }, {
+    elemKey: "js-subject",
+    messages: { "isRequired": "Please select a topic." }
+  }, {
+    elemKey: "js-email",
+    messages: {
+      "isRequired": "Please enter a valid email address.",
+      "email": "Only valid email address is allowed."
+    }
+  }, {
+    elemKey: "js-description",
+    messages: { "isRequired": "Please enter some required text here." }
+  }, {
+    elemKey: "js-password",
+    messages: {
+      "isRequired": "Please enter a secure password"
+    }
+  }, {
+    elemKey: "js-passwordVerify",
+    partner: "js-password",
+    messages: {
+      "isRequired": "Please enter a secure password",
+      "partner": "Password values need to match."
+    }
+  }]
+}];
 
 var currentForm = exports.currentForm = (0, _jquery2.default)("form.js-FormValidation");
 
@@ -24465,6 +24498,20 @@ var getElemKey = function getElemKey(elem) {
   };
   var elemKey = (0, _ramda.head)()((0, _ramda.filter)(jsClass, classList));
   return elemKey;
+};
+
+var isOnValidationList = function isOnValidationList(formKey, elem) {
+
+  // debugger;
+  var elemKey = getElemKey(elem);
+
+  var inputData = (0, _ramda.find)((0, _ramda.propEq)('elemKey', elemKey));
+  var inputList = (0, _ramda.prop)('inputList');
+  var currentFormData = (0, _ramda.find)((0, _ramda.propEq)('formKey', formKey));
+
+  var result = (0, _ramda.compose)((0, _ramda.tap)(log), inputData, inputList, currentFormData);
+
+  return result(_formData.formDataMap);
 };
 
 var messageContainer = function messageContainer(formKey, elemKey) {
@@ -24579,7 +24626,12 @@ var hasInputErrors = function hasInputErrors(elem) {
 };
 
 var validateInput = exports.validateInput = function validateInput(formKey, elem) {
-  inspectRequired(formKey, elem);
+
+  var shouldValidate = isOnValidationList(formKey, elem);
+
+  if (isNotNil(shouldValidate)) {
+    inspectRequired(formKey, elem);
+  }
 
   if (!hasInputErrors(elem)) {
     inspectEmail(formKey, elem);

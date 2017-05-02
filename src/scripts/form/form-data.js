@@ -53,7 +53,49 @@ export const formDataMap = [{
         "partner": "Password values need to match."
       }
     }
-  ]}
+  ]},
+  {
+    formKey: "contactForm",
+	  inputList: [
+		  {
+			  elemKey: "js-firstName",
+			  messages: { "isRequired": "Please enter a valid first name." }
+		  },
+		  {
+			  elemKey: "js-lastName",
+			  messages: { "isRequired": "Please enter a valid last name." }
+		  },
+		  {
+			  elemKey: "js-subject",
+			  messages: { "isRequired": "Please select a topic." }
+      },
+		  {
+			  elemKey: "js-email",
+			  messages: {
+				  "isRequired": "Please enter a valid email address.",
+				  "email": "Only valid email address is allowed."
+				}
+		  },
+		  {
+			  elemKey: "js-description",
+			  messages: { "isRequired": "Please enter some required text here." }
+		  },
+      {
+        elemKey: "js-password",
+        messages: {
+          "isRequired": "Please enter a secure password"
+        }
+      },
+      {
+        elemKey: "js-passwordVerify",
+        partner: "js-password",
+        messages: {
+          "isRequired": "Please enter a secure password",
+          "partner": "Password values need to match."
+        }
+      }
+	  ]
+  }
 ];
 
 export const currentForm = $(`form.js-FormValidation`);

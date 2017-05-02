@@ -39,6 +39,25 @@ const getElemKey = (elem) => {
   return elemKey;
 }
 
+const isOnValidationList = (formKey, elem) => {
+
+  // debugger;
+  const elemKey = getElemKey(elem);
+
+  const inputData = find(propEq('elemKey', elemKey));
+  const inputList = prop('inputList');
+  const currentFormData = find(propEq('formKey', formKey));
+
+  const result = compose (
+    tap(log),
+    inputData,
+    inputList,
+    currentFormData
+  )
+
+  return result(formDataMap);
+}
+
 const messageContainer = (formKey, elemKey) => {
   const messageList = prop('messages');
   const inputData = find(propEq('elemKey', elemKey));
@@ -187,7 +206,12 @@ const inspectEquality = (formKey, elem) => {
 const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
 
 export const validateInput = (formKey, elem) => {
-  inspectRequired(formKey, elem);
+
+  const shouldValidate = isOnValidationList(formKey, elem);
+
+  if (isNotNil(shouldValidate)) {
+    inspectRequired(formKey, elem);
+  }
 
   if (!hasInputErrors(elem)) {
     inspectEmail(formKey, elem);
