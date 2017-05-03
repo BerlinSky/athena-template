@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { equals, always, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach } from 'ramda';
+import { equals, always, when, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach } from 'ramda';
 import { formDataMap } from './form-data';
 import { validateRequired, validateEmail, validateEquality, readValidationMsg, validateFormat } from "./apply-validation-rules";
 
@@ -207,15 +207,15 @@ const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
 
 export const validateInput = (formKey, elem) => {
 
-  const shouldValidate = isOnValidationList(formKey, elem);
+  const runInspectRequired = when(partial(inspectRequired, [formKey]), partial(isOnValidationList, [formKey]))
+  runInspectRequired(elem)
 
-  if (isNotNil(shouldValidate)) {
-    inspectRequired(formKey, elem);
-  }
+const run = unless(partial(inspectEmail, [formKey]), hasInputErrors)
+run(elem);
 
-  if (!hasInputErrors(elem)) {
-    inspectEmail(formKey, elem);
-  }
+  // if (!hasInputErrors(elem)) {
+  //   inspectEmail(formKey, elem);
+  // }
 
   if (!hasInputErrors(elem)) {
     inspectEquality(formKey, elem)

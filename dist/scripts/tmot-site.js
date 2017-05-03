@@ -24627,15 +24627,15 @@ var hasInputErrors = function hasInputErrors(elem) {
 
 var validateInput = exports.validateInput = function validateInput(formKey, elem) {
 
-  var shouldValidate = isOnValidationList(formKey, elem);
+  var runInspectRequired = (0, _ramda.when)((0, _ramda.partial)(inspectRequired, [formKey]), (0, _ramda.partial)(isOnValidationList, [formKey]));
+  runInspectRequired(elem);
 
-  if (isNotNil(shouldValidate)) {
-    inspectRequired(formKey, elem);
-  }
+  var run = (0, _ramda.unless)((0, _ramda.partial)(inspectEmail, [formKey]), hasInputErrors);
+  run(elem);
 
-  if (!hasInputErrors(elem)) {
-    inspectEmail(formKey, elem);
-  }
+  // if (!hasInputErrors(elem)) {
+  //   inspectEmail(formKey, elem);
+  // }
 
   if (!hasInputErrors(elem)) {
     inspectEquality(formKey, elem);
