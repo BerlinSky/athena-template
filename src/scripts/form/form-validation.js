@@ -207,15 +207,13 @@ const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
 
 export const validateInput = (formKey, elem) => {
 
+debugger;
+
   const runInspectRequired = when(partial(inspectRequired, [formKey]), partial(isOnValidationList, [formKey]))
   runInspectRequired(elem)
 
-const run = unless(partial(inspectEmail, [formKey]), hasInputErrors)
-run(elem);
-
-  // if (!hasInputErrors(elem)) {
-  //   inspectEmail(formKey, elem);
-  // }
+  const runInspectEmail = unless(partial(inspectEmail, [formKey]), hasInputErrors)
+  runInspectEmail(elem);
 
   if (!hasInputErrors(elem)) {
     inspectEquality(formKey, elem)

@@ -95,6 +95,16 @@ export const formDataMap = [{
         }
       }
 	  ]
+  },
+  {
+	  formKey: "resetPasswordForm",
+	  inputList: [{
+      elemKey: "js-email",
+      messages: {
+        "isRequired": "Please enter a valid email address.",
+        "email": "Only valid email address is allowed."
+      }
+    }]
   }
 ];
 
