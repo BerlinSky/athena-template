@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { equals, always, when, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach } from 'ramda';
+import { equals, always, when, unless, tap, find, filter, head, propEq, isNil, isEmpty, complement, curry, ifElse, prop, compose, partial, forEach, defaultTo } from 'ramda';
 import { formDataMap } from './form-data';
 import { validateRequired, validateEmail, validateEquality, readValidationMsg, validateFormat } from "./apply-validation-rules";
 
@@ -33,9 +33,13 @@ const updateValidationStatus = (elemKey, msg) => {
 }
 
 const getElemKey = (elem) => {
+  const defaltToNoKey = defaultTo('noKey');
   const classList = $(elem).attr('class').split(" ");
   const jsClass = (x) => x.startsWith('js-');
-  const elemKey = head()(filter(jsClass, classList));
+  const elemKey = defaltToNoKey(head()(filter(jsClass, classList)));
+
+  // console.log('elemKey', elemKey);
+
   return elemKey;
 }
 
@@ -108,6 +112,9 @@ const formatPattern = (formKey, elemKey) => {
 
 const inspectRequired = (formKey, elem) => {
   const elemKey = getElemKey(elem);
+
+  if (equals('noKey', elemKey)) return;
+
   const elemValue = inputValue(elemKey);
 
   const curryValidateRequired = curry(validateRequired);
@@ -128,6 +135,8 @@ const inspectRequired = (formKey, elem) => {
 
 const inspectEmail = (formKey, elem) => {
   const elemKey = getElemKey(elem);
+  if (equals('noKey', elemKey)) return;
+  
   const elemValue = inputValue(elemKey);
 
   if (isEmpty(elemValue)) return;
@@ -152,6 +161,8 @@ const inspectEmail = (formKey, elem) => {
 const inspectFormat = (formKey, elem) => {
 
   const elemKey = getElemKey(elem);
+  if (equals('noKey', elemKey)) return;  
+  
   const elemValue = inputValue(elemKey);
   if (isEmpty(elemValue)) return;
 
@@ -176,6 +187,7 @@ const inspectFormat = (formKey, elem) => {
 
 const inspectEquality = (formKey, elem) => {
   const elemKey = getElemKey(elem);
+  if (equals('noKey', elemKey)) return;
 
   const elemValue = inputValue(elemKey);
   if (isEmpty(elemValue)) return;
@@ -206,8 +218,6 @@ const inspectEquality = (formKey, elem) => {
 const hasInputErrors = (elem) => equals($(elem).attr('valid-input'), falsy());
 
 export const validateInput = (formKey, elem) => {
-
-debugger;
 
   const runInspectRequired = when(partial(inspectRequired, [formKey]), partial(isOnValidationList, [formKey]))
   runInspectRequired(elem)

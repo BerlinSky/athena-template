@@ -7,13 +7,13 @@ export const formValidationEvents = () => {
 
   $(currentForm).attr('novalidate', 'novalidate');
 
-  formOptionList.change(function(event) {
-    const thisInput =$( event.target );
+  (formOptionList).change(function(event) {
+    const thisInput = $( event.target );
     validateInput(formKey, thisInput);
   })
 
   $(formInputList).keyup(function(event) {
-    const thisInput =$( event.target );
+    const thisInput = $( event.target );
     validateInput(formKey, thisInput);
   })
 

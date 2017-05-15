@@ -34676,6 +34676,33 @@ var formDataMap = exports.formDataMap = [{
     }
   }]
 }, {
+  formKey: "subscribeStep2Form",
+  inputList: [{
+    elemKey: "js-firstName",
+    messages: { "isRequired": "Please enter a valid first name." }
+  }, {
+    elemKey: "js-lastName",
+    messages: { "isRequired": "Please enter a valid last name." }
+  }, {
+    elemKey: "js-gender",
+    messages: { "isRequired": "Please select a gender." }
+  }, {
+    elemKey: "js-country",
+    messages: { "isRequired": "Please select a country." }
+  }, {
+    elemKey: "js-zipcode",
+    messages: { "isRequired": "Please enter a valid zipcode." }
+  }, {
+    elemKey: "js-city",
+    messages: { "isRequired": "Please enter a city." }
+  }, {
+    elemKey: "js-address",
+    messages: { "isRequired": "Please enter your address." }
+  }, {
+    elemKey: "js-state",
+    messages: { "isRequired": "Please select a state." }
+  }]
+}, {
   formKey: "resetPasswordForm",
   inputList: [{
     elemKey: "js-email",
@@ -34790,11 +34817,15 @@ var updateValidationStatus = function updateValidationStatus(elemKey, msg) {
 };
 
 var getElemKey = function getElemKey(elem) {
+  var defaltToNoKey = (0, _ramda.defaultTo)('noKey');
   var classList = (0, _jquery2.default)(elem).attr('class').split(" ");
   var jsClass = function jsClass(x) {
     return x.startsWith('js-');
   };
-  var elemKey = (0, _ramda.head)()((0, _ramda.filter)(jsClass, classList));
+  var elemKey = defaltToNoKey((0, _ramda.head)()((0, _ramda.filter)(jsClass, classList)));
+
+  // console.log('elemKey', elemKey);
+
   return elemKey;
 };
 
@@ -34847,6 +34878,9 @@ var formatPattern = function formatPattern(formKey, elemKey) {
 
 var inspectRequired = function inspectRequired(formKey, elem) {
   var elemKey = getElemKey(elem);
+
+  if ((0, _ramda.equals)('noKey', elemKey)) return;
+
   var elemValue = inputValue(elemKey);
 
   var curryValidateRequired = (0, _ramda.curry)(_applyValidationRules.validateRequired);
@@ -34862,6 +34896,8 @@ var inspectRequired = function inspectRequired(formKey, elem) {
 
 var inspectEmail = function inspectEmail(formKey, elem) {
   var elemKey = getElemKey(elem);
+  if ((0, _ramda.equals)('noKey', elemKey)) return;
+
   var elemValue = inputValue(elemKey);
 
   if ((0, _ramda.isEmpty)(elemValue)) return;
@@ -34881,6 +34917,8 @@ var inspectEmail = function inspectEmail(formKey, elem) {
 var inspectFormat = function inspectFormat(formKey, elem) {
 
   var elemKey = getElemKey(elem);
+  if ((0, _ramda.equals)('noKey', elemKey)) return;
+
   var elemValue = inputValue(elemKey);
   if ((0, _ramda.isEmpty)(elemValue)) return;
 
@@ -34899,6 +34937,7 @@ var inspectFormat = function inspectFormat(formKey, elem) {
 
 var inspectEquality = function inspectEquality(formKey, elem) {
   var elemKey = getElemKey(elem);
+  if ((0, _ramda.equals)('noKey', elemKey)) return;
 
   var elemValue = inputValue(elemKey);
   if ((0, _ramda.isEmpty)(elemValue)) return;
@@ -34924,8 +34963,6 @@ var hasInputErrors = function hasInputErrors(elem) {
 };
 
 var validateInput = exports.validateInput = function validateInput(formKey, elem) {
-
-  debugger;
 
   var runInspectRequired = (0, _ramda.when)((0, _ramda.partial)(inspectRequired, [formKey]), (0, _ramda.partial)(isOnValidationList, [formKey]));
   runInspectRequired(elem);

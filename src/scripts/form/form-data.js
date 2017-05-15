@@ -97,6 +97,43 @@ export const formDataMap = [{
 	  ]
   },
   {
+    formKey: "subscribeStep2Form",
+    inputList: [
+      {
+        elemKey: "js-firstName",
+        messages: { "isRequired": "Please enter a valid first name." }
+      },
+      {
+        elemKey: "js-lastName",
+        messages: { "isRequired": "Please enter a valid last name." }
+      },
+      {
+        elemKey: "js-gender",
+        messages: { "isRequired": "Please select a gender." }
+        },
+      {
+        elemKey: "js-country",
+        messages: { "isRequired": "Please select a country." }
+      },
+      {
+        elemKey: "js-zipcode",
+        messages: { "isRequired": "Please enter a valid zipcode." }
+      },
+      {
+        elemKey: "js-city",
+        messages: { "isRequired": "Please enter a city." }
+      },
+      {
+        elemKey: "js-address",
+        messages: { "isRequired": "Please enter your address." }
+      },
+      {
+        elemKey: "js-state",
+        messages: { "isRequired": "Please select a state." }
+      }
+    ]
+  },
+  {
 	  formKey: "resetPasswordForm",
 	  inputList: [{
       elemKey: "js-email",
